@@ -1,0 +1,83 @@
+<script>
+    export let selectedYear;
+    import { geojsons } from "$lib/geojsons/basemaps.js";
+    import { onMount } from "svelte";
+    import maplibregl from "maplibre-gl";
+    import { baseMapYears } from "$lib/utils/arrays.js";
+
+    // return the most recent basemap year
+    const getBaseMapYear = (selection) => {
+        for (let i = baseMapYears.length - 1; i >= 0; i--) {
+            if (selection >= baseMapYears[i]) {
+                return baseMapYears[i].toString();
+            }
+        }
+        return baseMapYears[0].toString(); // Return the first year if selection is less than the smallest year
+    };
+    // get numeric form of selectedYear
+    $: numericSelectedYear = Number(selectedYear.substring(0, 4));
+
+    $: console.log("selectedYear: ", selectedYear);
+    $: console.log("numericSelectedYear: ", numericSelectedYear);
+    $: baseMapYear = isNaN(numericSelectedYear)
+        ? 2000
+        : getBaseMapYear(numericSelectedYear);
+    $: console.log("baseMapYear: ", baseMapYear);
+
+    let container; // to bind to
+    let map; // initialize so can be used in or out of onMount
+    let geojsonLayerId = "geojson-layer";
+    onMount(async () => {
+        map = new maplibregl.Map({
+            container: container,
+            // style: "https://demotiles.maplibre.org/style.json", // style URL
+            center: [0, 0], // starting position [lng, lat]
+            zoom: 1, // starting zoom
+        });
+
+        // add initial geojson layer (should be year 2000)
+        addGeoJsonLayer(baseMapYear);
+    });
+
+    // if map already is all initialized etc, and baseMapYear updates,
+    // update the map to that basemap
+    $: if (map && map.isStyleLoaded() && geojsons[baseMapYear]) {
+        updateGeoJsonLayer(baseMapYear);
+    }
+
+    function addGeoJsonLayer(year) {
+        if (geojsons[year]) {
+            map.addSource(geojsonLayerId, {
+                type: "geojson",
+                data: geojsons[year],
+            });
+            map.addLayer({
+                id: geojsonLayerId,
+                type: "fill",
+                source: geojsonLayerId,
+                paint: {
+                    "fill-color": "#888888",
+                    "fill-opacity": 0.4,
+                },
+            });
+        }
+    }
+
+    function updateGeoJsonLayer(year) {
+        if (map.getSource(geojsonLayerId)) {
+            map.getSource(geojsonLayerId).setData(geojsons[year]);
+        } else {
+            addGeoJsonLayer(year);
+        }
+    }
+</script>
+
+<p>{baseMapYear}</p>
+<div bind:this={container} id="map" />
+
+<style>
+    #map {
+        height: 600px;
+        width: 100%;
+    }
+</style>

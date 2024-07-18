@@ -3,7 +3,7 @@
     import maplibregl from "maplibre-gl";
     import { baseMapYears } from "../lib/utils/arrays.js";
     import "maplibre-gl/dist/maplibre-gl.css";
-    import geoData from "$lib/geojsons/world_1880.json";
+    import {geojsons} from "$lib/geojsons/basemaps.js";
     export let selectedYear;
 
     // return the most recent basemap year
@@ -35,7 +35,7 @@
 
         map.addSource("1880", {
             type: "geojson",
-            data: geoData,
+            data: geojsons[1880],
         });
 
         map.addLayer({
