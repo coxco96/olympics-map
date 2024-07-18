@@ -17,10 +17,9 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltestrap/sveltestrap": "^6.2.7",
-		"d3-geo": "^3.1.1",
 		"dotenv": "^16.4.5",
 		"googleapis": "^140.0.1",
-		"topojson-client": "^3.1.0",
+		"maplibre-gl": "^4.5.0",
 		"vite-plugin-env-compatible": "^2.0.1"
 	}
 }
