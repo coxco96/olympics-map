@@ -1,7 +1,6 @@
 <script>
     export let data;
-    import Map from "./Map.svelte";
-    import Map2 from '$lib/Map2.svelte';
+    import Map from '$lib/Map.svelte';
     import {yearsArray} from '../lib/utils/arrays.js';
     import { Container, Col, Row, InputGroup, Input} from "@sveltestrap/sveltestrap";
     // console.log(data);
@@ -55,8 +54,7 @@
         </Row>
         <Row>
             <Col>
-                <!-- <Map {selectedYear}/> -->
-                <Map2 {selectedYear}/>
+                <Map {selectedYear}/>
             </Col>
         </Row>
         <Row>

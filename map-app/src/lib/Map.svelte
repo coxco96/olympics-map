@@ -12,7 +12,7 @@
                 return baseMapYears[i].toString();
             }
         }
-        return baseMapYears[0].toString(); // Return the first year if selection is less than the smallest year
+        return baseMapYears[0].toString(); // return the first year if selection is less than the smallest year
     };
     // get numeric form of selectedYear
     $: numericSelectedYear = Number(selectedYear.substring(0, 4));
@@ -72,7 +72,7 @@
     }
 </script>
 
-<p>{baseMapYear}</p>
+<p>Basemap year (most recent): {baseMapYear}</p>
 <div bind:this={container} id="map" />
 
 <style>
