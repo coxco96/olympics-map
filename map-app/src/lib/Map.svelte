@@ -63,6 +63,7 @@
         }
     }
 
+    // update to different basemap if different year is selected
     function updateGeoJsonLayer(year) {
         if (map.getSource(geojsonLayerId)) {
             map.getSource(geojsonLayerId).setData(geojsons[year]);
