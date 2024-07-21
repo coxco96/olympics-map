@@ -54,7 +54,7 @@
         </Row>
         <Row>
             <Col>
-                <Map {selectedYear}/>
+                <Map {selectedYear} {data}/>
             </Col>
         </Row>
         <Row>

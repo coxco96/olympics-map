@@ -1,9 +1,13 @@
 <script>
     export let selectedYear;
+    export let data;
     import { geojsons } from "$lib/geojsons/basemaps.js";
     import { onMount } from "svelte";
     import maplibregl from "maplibre-gl";
+    import "maplibre-gl/dist/maplibre-gl.css";
     import { baseMapYears } from "$lib/utils/arrays.js";
+
+    console.log(data);
 
     // return the most recent basemap year
     const getBaseMapYear = (selection) => {
@@ -37,6 +41,56 @@
 
         // add initial geojson layer (should be year 2000)
         addGeoJsonLayer(baseMapYear);
+
+        // add hover effect layer
+        map.addLayer({
+            id: "hover-layer",
+            type: "fill",
+            source: geojsonLayerId,
+            layout: {},
+            paint: {
+                "fill-color": "#627BC1",
+                "fill-opacity": 0.75,
+            },
+            filter: ["==", "NAME", ""], // initially set to no country
+        });
+
+        // add tooltip
+        const tooltip = new maplibregl.Popup({
+            closeButton: false,
+            closeOnClick: false,
+        });
+        map.on("mousemove", geojsonLayerId, (e) => {
+            // ui indicator
+            map.getCanvas().style.cursor = "pointer";
+
+            let coords = e.features[0].geometry.coordinates.slice();
+            let country = e.features[0].properties.NAME;
+
+            // if map is zoomed out so multiple copies of feature are visible, tooltip
+            // only will appear over the one being hovered over
+            while (Math.abs(e.lngLat.lng - coords[0]) > 180) {
+                coords[0] += e.lngLat.lng > coords[0] ? 360 : -360;
+            }
+
+            // add tooltip
+            if (country) {
+                tooltip
+                    .setLngLat([e.lngLat.lng, e.lngLat.lat])
+                    .setHTML(country)
+                    .addTo(map);
+
+                map.setFilter("hover-layer", ["==", "NAME", country]);
+            } else {
+                tooltip.remove();
+                map.setFilter("hover-layer", ["==", "NAME", ""]);
+            }
+        });
+
+        map.on("mouseleave", geojsonLayerId, () => {
+            map.getCanvas().style.cursor = "";
+            tooltip.remove();
+        });
     });
 
     // if map already is all initialized etc, and baseMapYear updates,
