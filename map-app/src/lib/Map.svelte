@@ -1,13 +1,13 @@
 <script>
     export let selectedYear;
-    export let data;
+    export let dataObj;
     import { geojsons } from "$lib/geojsons/basemaps.js";
     import { onMount } from "svelte";
     import maplibregl from "maplibre-gl";
     import "maplibre-gl/dist/maplibre-gl.css";
     import { baseMapYears } from "$lib/utils/arrays.js";
 
-    console.log(data);
+   console.log(dataObj);
 
     // return the most recent basemap year
     const getBaseMapYear = (selection) => {

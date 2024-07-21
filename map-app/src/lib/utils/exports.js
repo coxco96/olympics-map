@@ -1,3 +1,28 @@
+// turn data array into object with each country as key and 
+// all of its medals data as value
+export function convertData(data) {
+    const dataObj = {};
+    data = data.post;
+    data.forEach(row => {
+        const [country, medal, year, sport, sportEvent, athlete, source] = row;
+
+        if (!dataObj[country]) {
+            dataObj[country] = []
+        }
+
+        dataObj[country].push({
+            medal,
+            year,
+            sport,
+            sportEvent,
+            athlete,
+            source
+        });
+    });
+    return dataObj;
+}
+
+
 export const baseMapYears = [1880, 1900, 1914, 1920, 1938, 1945, 1960, 1994, 2000];
 
 export const yearsArray = ["1896",

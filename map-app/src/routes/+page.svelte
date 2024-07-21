@@ -1,11 +1,12 @@
 <script>
     export let data;
     import Map from '$lib/Map.svelte';
-    import {yearsArray} from '../lib/utils/arrays.js';
+    import {yearsArray} from '../lib/utils/exports.js';
     import { Container, Col, Row, InputGroup, Input} from "@sveltestrap/sveltestrap";
-    // console.log(data);
+    import {convertData} from '../lib/utils/exports.js';
     $: selectedYear = "All years (1896-2024)";
 
+    const dataObj = convertData(data);
     
     // need to convert this data into something that can filter only to the year
 </script>
@@ -54,7 +55,7 @@
         </Row>
         <Row>
             <Col>
-                <Map {selectedYear} {data}/>
+                <Map {selectedYear} {dataObj}/>
             </Col>
         </Row>
         <Row>
