@@ -5,9 +5,9 @@
     import { onMount } from "svelte";
     import maplibregl from "maplibre-gl";
     import "maplibre-gl/dist/maplibre-gl.css";
-    import { baseMapYears } from "$lib/utils/arrays.js";
+    import { baseMapYears } from "$lib/utils/exports.js";
 
-   console.log(dataObj);
+    console.log(dataObj);
 
     // return the most recent basemap year
     const getBaseMapYear = (selection) => {
@@ -60,24 +60,60 @@
             closeButton: false,
             closeOnClick: false,
         });
+
         map.on("mousemove", geojsonLayerId, (e) => {
             // ui indicator
             map.getCanvas().style.cursor = "pointer";
 
             let coords = e.features[0].geometry.coordinates.slice();
             let country = e.features[0].properties.NAME;
+            let countryData = dataObj[country];
 
             // if map is zoomed out so multiple copies of feature are visible, tooltip
             // only will appear over the one being hovered over
             while (Math.abs(e.lngLat.lng - coords[0]) > 180) {
                 coords[0] += e.lngLat.lng > coords[0] ? 360 : -360;
             }
+            let tooltipContent;
+            // get tooltip content for the country being hovered over
+            // if (countryData) {
+            //     tooltipContent = `<strong>${country}</strong>`;
+            //     countryData.forEach((d) => {
+            //         tooltipContent += `
+            //         <p>
+            //                     Medal: ${d.medal}<br>
+            //                     Year: ${d.year}<br>
+            //                     Sport: ${d.sport}<br>
+            //                     Event: ${d.sportEvent}<br>
+            //                     Athlete: ${d.athlete}<br>
+            //         `;
+            //     });
+            // }
 
             // add tooltip
-            if (country) {
+            if (countryData) {
+                // only show data for currently selected year
+                let filteredData = countryData.filter(
+                    (d) => d.year === selectedYear,
+                );
+                if (filteredData.length > 0) {
+                    tooltipContent = `<strong>${country}</strong>`;
+                    filteredData.forEach((d) => {
+                        tooltipContent += `
+                    <p>
+                                Medal: ${d.medal}<br>
+                                Year: ${d.year}<br>
+                                Sport: ${d.sport}<br>
+                                Event: ${d.sportEvent}<br>
+                                Athlete: ${d.athlete}<br>
+                    </p>
+                    `;
+                    });
+                }
+
                 tooltip
                     .setLngLat([e.lngLat.lng, e.lngLat.lat])
-                    .setHTML(country)
+                    .setHTML(tooltipContent)
                     .addTo(map);
 
                 map.setFilter("hover-layer", ["==", "NAME", country]);
