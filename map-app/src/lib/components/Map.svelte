@@ -3,9 +3,22 @@
     export let dataObj;
     
     // variables to filter map by
-    export let selectedYear;
-    export let selectedSport;
-    export let selectedEvent;
+    // export let year;
+    // export let selectedSport;
+    // export let selectedEvent;
+
+    // import and subscribe to stores for data filtering
+        import {
+        selectedYear,
+        selectedSport,
+        selectedEvent,
+    } from "$lib/stores/filters.js";
+
+    // subscribe to the stores
+    let year, sport, sportEvent;
+    $: selectedYear.subscribe((value) => (year = value));
+    $: selectedSport.subscribe((value) => (sport = value));
+    $: selectedEvent.subscribe((value) => (sportEvent = value));
 
     // historic base maps
     import { geojsons } from "$lib/geojsons/basemaps.js";
@@ -26,14 +39,14 @@
         }
         return baseMapYears[0].toString(); // return the first year if selection is less than the smallest year
     };
-    // get numeric form of selectedYear
-    $: numericSelectedYear = Number(selectedYear.substring(0, 4));
+    // get numeric form of year
+    $: numericyear = Number(year.substring(0, 4));
 
     // if all years are selected, use basemap from year 2000
     // otherwise, get the right baseMapYear
-    $: baseMapYear = isNaN(numericSelectedYear)
+    $: baseMapYear = isNaN(numericyear)
         ? 2000
-        : getBaseMapYear(numericSelectedYear);
+        : getBaseMapYear(numericyear);
 
     let container; // to bind to
     let map; // initialize so can be used in or out of onMount
@@ -89,7 +102,7 @@
                 if (countryData) {
                     // only show data for currently selected year
                     let filteredData = countryData.filter(
-                        (d) => d.year === selectedYear,
+                        (d) => d.year === year,
                     );
                     if (filteredData.length > 0) {
                         tooltipContent = `<strong>${country}</strong>`;

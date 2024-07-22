@@ -33,7 +33,7 @@
         </Row>
         <Row>
             <Col>
-                <Map {selectedYear} {dataObj}/>
+                <Map {dataObj}/>
             </Col>
         </Row>
         <Row>
