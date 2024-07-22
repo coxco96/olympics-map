@@ -157,7 +157,12 @@
 
     // if map already is all initialized etc, and baseMapYear updates,
     // update the map to that basemap
-    $: if (map && map.isStyleLoaded() && geojsons[baseMapYear] && year) {
+    $: if (
+        map &&
+        map.isStyleLoaded() &&
+        geojsons[baseMapYear] &&
+        ((year && sport && sportEvent) || (year && sport) || year)
+    ) {
         updateGeoJsonLayer(baseMapYear);
         // updatePaint();
         updateFeatureStates(map);
@@ -171,35 +176,9 @@
 
     /* FUNCTIONS */
 
-    // function setPaint() {
-    //     console.log("set paint properties");
-    //     map.setPaintProperty(geojsonLayerId, "fill-color", getColor());
-    //     // let filters = ['==', 'NAME', 'Mexico'];
-    //     // map.setFilter(geojsonLayerId, filters);
-    // }
-
-    // function updatePaint() {
-    //     console.log("update paint");
-    //     if (map.getSource(geojsonLayerId)) {
-    //         map.setPaintProperty(geojsonLayerId, "fill-color", getColor());
-    //     }
-    // }
-
-    // function getColor() {
-    //     return year === "2020"
-    //         ? "green"
-    //         : year === "2016"
-    //           ? "red"
-    //           : year === "1896"
-    //             ? "purple"
-    //             : // : year === '2018'
-    //               // ? "['case'], ['boolean', ['feature-state', 'hover'], false]"
-    //               "gray";
-    // }
-
     function getRelevantCountryData(data) {
         // filter data by year, sport and event
-        return data.filter((row) => {
+        let filteredData = data.filter((row) => {
             let matchesYear = year ? row["year"] === year : true;
             let matchesSport = sport ? row["sport"] === sport : true;
             let matchestEvent = sportEvent
@@ -207,6 +186,7 @@
                 : true;
             return matchesYear && matchesSport && matchestEvent;
         });
+        return filteredData;
     }
 
     function addGeoJsonLayer(year) {
@@ -224,13 +204,11 @@
                 paint: {
                     "fill-color": [
                         "case",
-                        ["==", ["feature-state", "opacity"], "high"],
-                        "#f00", // Red for high opacity
-                        ["==", ["feature-state", "opacity"], "medium"],
-                        "#0f0", // Green for medium opacity
-                        ["==", ["feature-state", "opacity"], "low"],
-                        "#00f", // Blue for low opacity
-                        "#ccc", // Default color
+                        ["==", ["feature-state", "color"], "high"],
+                        "#00f", // blue for high
+                        ["==", ["feature-state", "color"], "low"],
+                        "#ccc", // gray for low 
+                        "#000", // default black
                     ],
                     "fill-opacity": 0.8,
                 },
@@ -241,40 +219,49 @@
     function updateFeatureStates(map) {
         let features = map.querySourceFeatures(geojsonLayerId);
         features.forEach((feature) => {
+            let pointsTotal = 0; // to get points totals based on medal type and count
+            let medalType;
             let featureId = feature.id;
-
             let opacityLevel;
-            if (feature.properties.NAME === "Mexico") {
-                console.log(feature);
-                opacityLevel = "high";
-            } else {
+            let country;
+            if (feature.properties.NAME) {
+                country = feature.properties.NAME;
+            }
+
+            // if the country exists in the data, filter it to what's relevant to the year, sport and event
+            let relevant;
+            if (dataObj[country]) {
+                relevant = getRelevantCountryData(dataObj[country]);
+                if (relevant.length > 0) {
+                    relevant.forEach((win) => {
+                        // console.log(win.medal);
+                        medalType = win.medal;
+
+                        // assign points total based on medals
+                        pointsTotal +=
+                            medalType === "Bronze"
+                                ? 1
+                                : medalType === "Silver"
+                                  ? 2
+                                  : medalType === "Gold"
+                                    ? 3
+                                    : 0;
+                    });
+                    console.log(country, pointsTotal)
+                }
+            }
+            if (pointsTotal == 0) {
                 opacityLevel = "low";
+            } else {
+                opacityLevel = "high";
             }
 
             map.setFeatureState(
                 { source: geojsonLayerId, id: featureId },
-                { opacity: opacityLevel },
+                { color: opacityLevel },
             );
         });
     }
-
-    // $: myArr = [];
-    // $: myArrLiteral = ["literal", myArr];
-    // $: getNameOfFeature = ["get", "NAME"];
-    // $: isInArr = ["in", getNameOfFeature, myArrLiteral];
-    // $: caseInArr = ["case", isInArr, 0, 1];
-    // function getOpacity() {
-    //     // if it's Mexico, Canada or France, show 0 opacity.
-    //     // otherwise show 1
-
-    //     if (year == 2000) {
-    //         myArr = ["Mexico", "Canada", "France", "Argentina"];
-    //     } else {
-    //         myArr = ["Mexico"];
-    //     }
-
-    //     return caseInArr;
-    // }
 
     // update to different basemap if different year is selected
     function updateGeoJsonLayer(year) {
