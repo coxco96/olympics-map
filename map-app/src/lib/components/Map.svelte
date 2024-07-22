@@ -1,5 +1,5 @@
 <script>
-    // full dataset imported by sheet
+    // full dataset by country
     export let dataObj;
     
     // variables to filter map by
@@ -16,8 +16,6 @@
     import "maplibre-gl/dist/maplibre-gl.css";
     
     import { baseMapYears } from "$lib/utils/exports.js";
-
-    console.log(dataObj);
 
     // return the most recent basemap year
     const getBaseMapYear = (selection) => {

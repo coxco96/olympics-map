@@ -1,27 +1,21 @@
 <script>
-    // import {sportsArray, eventsByYear} from '$lib/utils/exports.js';
-    // export let selectedSport, selectedYear;
-    // // console.log(eventsByYear[selectedYear]);
-    // $: selectedYear;
-    // $: console.log('selectedYear from SportsFilter', selectedYear)
-
-
-    import {selectedSport, selectedYear} from '$lib/stores/filters.js';
+    import {selectedSport, selectedYear, selectedEvent} from '$lib/stores/filters.js';
     import {sportsArray, eventsByYear} from '$lib/utils/exports.js';
 
-    let sport, year;
+
+    let sport, year, sportEvent;
     $: selectedSport.subscribe(value => sport = value);
-    $: selectedYear.subscribe(value => {
-        year = value;
-        // update sportsArray based on selected year
-        // if (year) {
-        //     sportsArray = Object.keys(eventsByYear[year] || {})
-        // }
-    })
+    $: selectedYear.subscribe(value => year = value)
+    $: selectedEvent.subscribe(value => sportEvent = value)
 
     function handleChange(event) {
         selectedSport.set(event.target.value);
     }
+    
+
+    $: console.log(`year from SportsFilter: ${year}`)
+    $: console.log(`sport from SportsFilter: ${sport}`)
+    $: console.log(`sportEvent from SportsFilter: ${sportEvent}`)
 
 </script>
 
@@ -33,9 +27,3 @@
             >
     {/each}
 </select>
-
-<!-- <select bind:value={selectedSport} class='form-select' name='Sport'>
-    {#if eventsByYear[selectedYear][selectedSport]}
-    
-{/if}
-</select> -->

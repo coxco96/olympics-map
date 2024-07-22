@@ -1,7 +1,7 @@
 <script>
     export let data;
     import Map from '$lib/components/Map.svelte';
-    import {sportsArray, eventsArray, convertData} from '../lib/utils/exports.js';
+    import {convertData} from '../lib/utils/exports.js';
     import { Container, Col, Row, InputGroup, Input} from "@sveltestrap/sveltestrap";
     import Filters from '$lib/components/Filters.svelte';
     $: selectedYear = "All years (1896-2024)";

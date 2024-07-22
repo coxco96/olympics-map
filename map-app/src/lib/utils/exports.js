@@ -110,9 +110,6 @@ export const sportsArray = [
     "Wrestling"
 ]
 
-
-export const eventsArray = ['All events', 'Example event']
-
 export const yearsArray = ["1896",
     "1900", "1904",
     "1908",

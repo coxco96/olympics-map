@@ -1,13 +1,50 @@
 <script>
-    import {eventsArray} from '$lib/utils/exports.js';
-    export let selectedEvent, selectedSport, selectedYear;
+    import {
+        selectedSport,
+        selectedYear,
+        selectedEvent,
+    } from "$lib/stores/filters.js";
+    import { eventsByYear } from "$lib/utils/exports.js";
+
+    let sport, year, sportEvent;
+    $: selectedEvent.subscribe((value) => (sportEvent = value));
+    $: selectedSport.subscribe((value) => (sport = value));
+    $: selectedYear.subscribe((value) => (year = value));
+
+    function handleChange(event) {
+        selectedEvent.set(event.target.value);
+    }
+
+    let relevantSports, relevantEvents;
+
+    $: {
+        if (year) {
+            relevantSports = Object.keys(eventsByYear[year] || {}).sort();
+        }
+        if (year && sport) {
+            relevantEvents = (eventsByYear[year][sport] || []).sort();
+        } else {
+            relevantSports = [];
+            relevantEvents = [];
+        }
+    }
+
+    $: console.log(`year from EventsFilter: ${year}`);
+    $: console.log(`sport from EventsFilter: ${sport}`);
+    $: console.log(`sportEvent from EventsFilter: ${sportEvent}`);
+    // $: console.log(relevantSports);
+    // $: console.log(relevantEvents);
 </script>
 
-<!-- TODO: show only sports relevant to selectedYear and selectedSport -->
-<select bind:value={selectedEvent} class="form-select" name="Event">
-    {#each eventsArray as sportEvent}
-            <option value={sportEvent}
-                >{sportEvent}</option
-            >
-    {/each}
+<select
+    bind:value={sportEvent}
+    on:change={handleChange}
+    class="form-select"
+    name="Event"
+>
+
+        {#each relevantEvents as event}
+            <option value={event}>{event}</option>
+        {/each}
+
 </select>
