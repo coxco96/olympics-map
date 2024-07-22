@@ -1,9 +1,22 @@
 <script>
-    export let selectedYear;
+    // export let selectedYear;
+    // import {yearsArray} from '$lib/utils/exports.js';
+    // $: selectedYear;
+    // $: console.log('selectedYear from YearsFilter: ', selectedYear);
+
+    import {selectedYear} from '$lib/stores/filters.js';
     import {yearsArray} from '$lib/utils/exports.js';
+
+    let year;
+    $: selectedYear.subscribe(value => year = value);
+
+    function handleChange(event) {
+        selectedYear.set(event.target.value);
+    }
+
 </script>
 
-<select bind:value={selectedYear} class="form-select" name="Year">
+<select bind:value={year} on:change={handleChange} class="form-select" name="Year">
     {#each yearsArray.reverse() as year}
         {#if year == "1906 (intercalary games)" || year == "1916 (not held)" || year == "1940 (not held)" || year == "1944 (not held)"}
             <option

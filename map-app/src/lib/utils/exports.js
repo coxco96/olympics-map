@@ -8582,3 +8582,8856 @@ export const sportEvents = {
       ]
     }
   }
+
+  export const eventsByYear = {
+    "1896": {
+      "Athletics": [
+        "800 metres, Men",
+        "1,500 metres, Men",
+        "Triple Jump, Men",
+        "100 metres, Men",
+        "400 metres, Men",
+        "110 metres Hurdles, Men",
+        "Marathon, Men",
+        "Pole Vault, Men",
+        "Shot Put, Men",
+        "Discus Throw, Men",
+        "High Jump, Men",
+        "Long Jump, Men"
+      ],
+      "Tennis": [
+        "Doubles, Men",
+        "Singles, Men"
+      ],
+      "Cycling Track": [
+        "333⅓ metres Time Trial, Men",
+        "10,000 metres, Men",
+        "12-Hours Race, Men",
+        "Sprint, Men",
+        "100 kilometres, Men"
+      ],
+      "Swimming": [
+        "100 metres Freestyle, Men",
+        "500 metres Freestyle, Men",
+        "1,200 metres Freestyle, Men",
+        "100 metres Freestyle For Sailors, Men"
+      ],
+      "Fencing": [
+        "Sabre, Individual, Men",
+        "Foil, Individual, Men",
+        "Foil, Masters, Individual, Men"
+      ],
+      "Shooting": [
+        "Free Pistol, 30 metres, Men",
+        "Muzzle-Loading Pistol, 25 metres, Men",
+        "Free Rifle, Any Position, 300 metres, Men",
+        "Military Pistol, 25 metres, Men",
+        "Military Rifle, 200 metres, Men"
+      ],
+      "Weightlifting": [
+        "Unlimited, One Hand, Men",
+        "Unlimited, Two Hands, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Horse Vault, Men",
+        "Parallel Bars, Men",
+        "Parallel Bars, Teams, Men",
+        "Horizontal Bar, Men",
+        "Horizontal Bar, Teams, Men",
+        "Rings, Men",
+        "Pommelled Horse, Men",
+        "Rope Climbing, Men"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men"
+      ],
+      "Wrestling": [
+        "Unlimited Class, Greco-Roman, Men"
+      ]
+    },
+    "1900": {
+      "Athletics": [
+        "60 metres, Men",
+        "100 metres, Men",
+        "200 metres, Men",
+        "Discus Throw, Men",
+        "400 metres, Men",
+        "1,500 metres, Men",
+        "Marathon, Men",
+        "400 metres Hurdles, Men",
+        "2,500 metres Steeplechase, Men",
+        "5,000 metres, Team, Men",
+        "Standing Long Jump, Men",
+        "800 metres, Men",
+        "4,000 metres Steeplechase, Men",
+        "High Jump, Men",
+        "Long Jump, Men",
+        "200 metres Hurdles, Men",
+        "Pole Vault, Men",
+        "110 metres Hurdles, Men",
+        "Standing High Jump, Men",
+        "Triple Jump, Men",
+        "Standing Triple Jump, Men",
+        "Shot Put, Men",
+        "Hammer Throw, Men"
+      ],
+      "Fencing": [
+        "Sabre, Individual, Men",
+        "Sabre, Masters, Individual, Men",
+        "Épée, Individual, Men",
+        "Épée, Masters and Amateurs, Individual, Men",
+        "Foil, Individual, Men",
+        "Foil, Masters, Individual, Men",
+        "Épée, Masters, Individual, Men"
+      ],
+      "Swimming": [
+        "200 metres Freestyle, Men",
+        "1,000 metres Freestyle, Men",
+        "200 metres Backstroke, Men",
+        "200 metres Obstacle Course, Men",
+        "Underwater Swimming, Men",
+        "4,000 metres Freestyle, Men",
+        "200 metres Team Swimming, Men"
+      ],
+      "Archery": [
+        "Au Chapelet, 33 metres, Men",
+        "Au Cordon Doré, 33 metres, Men",
+        "Au Cordon Doré, 50 metres, Men",
+        "Sur La Perche À La Herse, Men",
+        "Sur La Perche À La Pyramide, Men",
+        "Championnat Du Monde, Men",
+        "Au Chapelet, 50 metres, Men"
+      ],
+      "Equestrian Driving": [
+        "Four-In-Hand Competition, Open"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Open",
+        "Long Jump, Open",
+        "High Jump, Open"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Rowing": [
+        "Eights, Men",
+        "Single Sculls, Men",
+        "Coxed Pairs, Men",
+        "Coxed Fours, Men"
+      ],
+      "Shooting": [
+        "Free Rifle, Three Positions, 300 metres, Men",
+        "Free Rifle, Standing, 300 metres, Men",
+        "Trap, Men",
+        "Free Rifle, Kneeling, 300 metres, Men",
+        "Free Rifle, Prone, 300 metres, Men",
+        "Free Pistol, 50 metres, Men",
+        "Free Pistol, 50 metres, Team, Men",
+        "Free Rifle, Three Positions, 300 metres, Team, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Tennis": [
+        "Singles, Women",
+        "Doubles, Mixed",
+        "Doubles, Men",
+        "Singles, Men"
+      ],
+      "Tug-Of-War": [
+        "Tug-Of-War, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Individual All-Around, Men"
+      ],
+      "Cricket": [
+        "Cricket, Men"
+      ],
+      "Croquet": [
+        "Singles, One Ball, Open",
+        "Singles, Two Balls, Open",
+        "Doubles, Open"
+      ],
+      "Cycling Track": [
+        "Sprint, Men",
+        "Points Race, Men",
+        "25 kilometres, Men"
+      ],
+      "Equestrian Dressage": [
+        "Hacks and Hunter Combined, Open"
+      ],
+      "Golf": [
+        "Individual, Women",
+        "Individual, Men"
+      ],
+      "Polo": [
+        "Polo, Men"
+      ],
+      "Rugby": [
+        "Rugby, Men"
+      ],
+      "Sailing": [
+        "Open, Open",
+        "0-½ Ton, Open",
+        "½-1 Ton, Open",
+        "1-2 Ton, Open",
+        "2-3 Ton, Open",
+        "3-10 Ton, Open",
+        "10-20 Ton, Open",
+        "20+ Ton, Open"
+      ],
+      "Basque pelota": [
+        "Two-Man Teams With Cesta, Men"
+      ]
+    },
+    "1904": {
+      "Athletics": [
+        "56-pound Weight Throw, Men",
+        "High Jump, Men",
+        "2,590 metres Steeplechase, Men",
+        "All-Around Championship, Men",
+        "Discus Throw, Men",
+        "60 metres, Men",
+        "100 metres, Men",
+        "200 metres, Men",
+        "400 metres, Men",
+        "800 metres, Men",
+        "1,500 metres, Men",
+        "Marathon, Men",
+        "110 metres Hurdles, Men",
+        "200 metres Hurdles, Men",
+        "400 metres Hurdles, Men",
+        "4 miles, Team, Men",
+        "Standing High Jump, Men",
+        "Pole Vault, Men",
+        "Long Jump, Men",
+        "Standing Long Jump, Men",
+        "Triple Jump, Men",
+        "Standing Triple Jump, Men",
+        "Shot Put, Men",
+        "Hammer Throw, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Golf": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Lacrosse": [
+        "Lacrosse, Men"
+      ],
+      "Rowing": [
+        "Eights, Men",
+        "Single Sculls, Men",
+        "Double Sculls, Men",
+        "Coxless Pairs, Men",
+        "Coxless Fours, Men"
+      ],
+      "Fencing": [
+        "Foil, Individual, Men",
+        "Foil, Team, Men",
+        "Épée, Individual, Men",
+        "Sabre, Individual, Men",
+        "Single Sticks, Individual, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Individual All-Around, Men",
+        "Individual All-Around, Apparatus Work, Men",
+        "Individual All-Around, Field Sports, Men",
+        "Individual All-Around, 4 Events, Men",
+        "Team All-Around, Men",
+        "Horse Vault, Men",
+        "Parallel Bars, Men",
+        "Horizontal Bar, Men",
+        "Rings, Men",
+        "Rope Climbing, Men",
+        "Club Swinging, Men",
+        "Side Horse, Men"
+      ],
+      "Diving": [
+        "Springboard, Men"
+      ],
+      "Swimming": [
+        "220 yards Freestyle, Men",
+        "880 yards Freestyle, Men",
+        "1 mile Freestyle, Men",
+        "100 yards Backstroke, Men",
+        "440 yards Breaststroke, Men",
+        "50 yards Freestyle, Men",
+        "100 yards Freestyle, Men",
+        "440 yards Freestyle, Men",
+        "4 × 50 yards Freestyle Relay, Men",
+        "Plunge For Distance, Men"
+      ],
+      "Weightlifting": [
+        "Unlimited, Two Hands, Men",
+        "All-Around Dumbbell Contest, Men"
+      ],
+      "Archery": [
+        "Double American Round, Men",
+        "Double York Round, Men",
+        "Team Round, Men",
+        "Double Columbia Round, Women",
+        "Double National Round, Women",
+        "Team Round, Women"
+      ],
+      "Boxing": [
+        "Flyweight, Men",
+        "Bantamweight, Men",
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Welterweight, Men",
+        "Middleweight, Men",
+        "Heavyweight, Men"
+      ],
+      "Cycling Track": [
+        "¼ mile, Men",
+        "⅓ mile, Men",
+        "½ mile, Men",
+        "1 mile, Men",
+        "2 miles, Men",
+        "5 miles, Men",
+        "25 miles, Men"
+      ],
+      "Roque": [
+        "Singles, Men"
+      ],
+      "Tennis": [
+        "Singles, Men",
+        "Doubles, Men"
+      ],
+      "Tug-Of-War": [
+        "Tug-Of-War, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Wrestling": [
+        "Light-Flyweight, Freestyle, Men",
+        "Flyweight, Freestyle, Men",
+        "Bantamweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men"
+      ]
+    },
+    "1908": {
+      "Athletics": [
+        "3,500 metres Race Walk, Men",
+        "100 metres, Men",
+        "200 metres, Men",
+        "Pole Vault, Men",
+        "Long Jump, Men",
+        "Triple Jump, Men",
+        "Hammer Throw, Men",
+        "Discus Throw, Greek Style, Men",
+        "3 miles, Team, Men",
+        "High Jump, Men",
+        "800 metres, Men",
+        "1,600 metres Medley Relay, Men",
+        "400 metres, Men",
+        "1,500 metres, Men",
+        "5 miles, Men",
+        "400 metres Hurdles, Men",
+        "3,200 metres Steeplechase, Men",
+        "10 miles Race Walk, Men",
+        "Shot Put, Men",
+        "Standing High Jump, Men",
+        "Standing Long Jump, Men",
+        "Javelin Throw, Freestyle, Men",
+        "Javelin Throw, Men",
+        "Marathon, Men",
+        "110 metres Hurdles, Men",
+        "Discus Throw, Men"
+      ],
+      "Boxing": [
+        "Middleweight, Men",
+        "Bantamweight, Men",
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Heavyweight, Men"
+      ],
+      "Rugby": [
+        "Rugby, Men"
+      ],
+      "Swimming": [
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "100 metres Backstroke, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "200 metres Breaststroke, Men",
+        "100 metres Freestyle, Men"
+      ],
+      "Cycling Track": [
+        "20 kilometres, Men",
+        "Team Pursuit, 1,980 yards, Men",
+        "Sprint, Men",
+        "Tandem Sprint, 2,000 metres, Men",
+        "5,000 metres, Men",
+        "100 kilometres, Men"
+      ],
+      "Fencing": [
+        "Épée, Team, Men",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men",
+        "Épée, Individual, Men"
+      ],
+      "Rowing": [
+        "Eights, Men",
+        "Coxless Pairs, Men",
+        "Coxless Fours, Men",
+        "Single Sculls, Men"
+      ],
+      "Sailing": [
+        "6 metres, Open",
+        "7 metres, Open",
+        "8 metres, Open",
+        "12 metres, Open"
+      ],
+      "Shooting": [
+        "Free Pistol, 50 yards, Men",
+        "Free Pistol, 50 yards, Team, Men",
+        "Military Rifle, 200/500/600/800/900/1,000 yards, Team, Men",
+        "Trap, Men",
+        "Trap, Team, Men",
+        "Free Rifle, Three Positions, 300 metres, Team, Men",
+        "Small-Bore Rifle, 50 and 100 yards, Team, Men",
+        "Free Rifle, 1,000 yards, Men",
+        "Small-Bore Rifle, Prone, 50 and 100 yards, Men",
+        "Small-Bore Rifle, Disappearing Target, 25 yards, Men",
+        "Small-Bore Rifle, Moving Target, 25 yards, Men",
+        "Running Target, Single Shot, Men",
+        "Running Target, Single Shot, Team, Men",
+        "Running Target, Double Shot, Men",
+        "Free Rifle, Three Positions, 300 metres, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Lacrosse": [
+        "Lacrosse, Men"
+      ],
+      "Wrestling": [
+        "Bantamweight, Freestyle, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Featherweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Team All-Around, Men",
+        "Individual All-Around, Men"
+      ],
+      "Archery": [
+        "Continental Style, Men",
+        "Double York Round, Men",
+        "Double National Round, Women"
+      ],
+      "Motorboating": [
+        "A-Class (Open), Open",
+        "B-Class (Under 60 feet), Open",
+        "C-Class, Open"
+      ],
+      "Diving": [
+        "Springboard, Men",
+        "Platform, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Women",
+        "Pairs, Mixed",
+        "Special Figures, Men",
+        "Singles, Men"
+      ],
+      "Tennis": [
+        "Singles, Men",
+        "Doubles, Men",
+        "Singles, Covered Courts, Men",
+        "Doubles, Covered Courts, Men",
+        "Singles, Women",
+        "Singles, Covered Courts, Women"
+      ],
+      "Hockey": [
+        "Hockey, Men"
+      ],
+      "Jeu De Paume": [
+        "Singles, Men"
+      ],
+      "Polo": [
+        "Polo, Men"
+      ],
+      "Racquets": [
+        "Singles, Men",
+        "Doubles, Men"
+      ],
+      "Tug-Of-War": [
+        "Tug-Of-War, Men"
+      ]
+    },
+    "1912": {
+      "Swimming": [
+        "100 metres Freestyle, Men",
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "100 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Backstroke, Men",
+        "200 metres Breaststroke, Men",
+        "400 metres Breaststroke, Men"
+      ],
+      "Tennis": [
+        "Singles, Covered Courts, Men",
+        "Doubles, Men",
+        "Singles, Covered Courts, Women",
+        "Doubles, Covered Courts, Men",
+        "Singles, Women",
+        "Doubles, Mixed",
+        "Singles, Men",
+        "Doubles, Covered Courts, Mixed"
+      ],
+      "Fencing": [
+        "Foil, Individual, Men",
+        "Sabre, Team, Men",
+        "Épée, Individual, Men",
+        "Épée, Team, Men",
+        "Sabre, Individual, Men"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Rowing": [
+        "Single Sculls, Men",
+        "Coxed Fours, Outriggers, Men",
+        "Coxed Fours, Inriggers, Men",
+        "Eights, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Athletics": [
+        "10 kilometres Race Walk, Men",
+        "Pole Vault, Men",
+        "Long Jump, Men",
+        "Hammer Throw, Men",
+        "Pentathlon, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "Cross-Country, Individual, Men",
+        "Cross-Country, Team, Men",
+        "Shot Put, Both Hands, Men",
+        "Discus Throw, Men",
+        "Discus Throw, Both Hands, Men",
+        "Javelin Throw, Men",
+        "Javelin Throw, Both Hands, Men",
+        "4 × 400 metres Relay, Men",
+        "400 metres, Men",
+        "High Jump, Men",
+        "200 metres, Men",
+        "1,500 metres, Men",
+        "4 × 100 metres Relay, Men",
+        "3,000 metres, Team, Men",
+        "Standing High Jump, Men",
+        "Standing Long Jump, Men",
+        "Marathon, Men",
+        "Triple Jump, Men",
+        "Decathlon, Men",
+        "100 metres, Men",
+        "800 metres, Men",
+        "110 metres Hurdles, Men",
+        "Shot Put, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Team All-Around, Free System, Men",
+        "Team All-Around, Swedish System, Men",
+        "Individual All-Around, Men",
+        "Team All-Around, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Sailing": [
+        "6 metres, Open",
+        "8 metres, Open",
+        "10 metres, Open",
+        "12 metres, Open"
+      ],
+      "Shooting": [
+        "Free Rifle, Three Positions, 300 metres, Men",
+        "Free Rifle, Three Positions, 300 metres, Team, Men",
+        "Running Target, Single Shot, Men",
+        "Running Target, Single Shot, Team, Men",
+        "Military Rifle, Any Position, 600 metres, Men",
+        "Trap, Men",
+        "Trap, Team, Men",
+        "Free Pistol, 50 metres, Men",
+        "Free Pistol, 50 metres, Team, Men",
+        "Dueling Pistol, 30 metres, Team, Men",
+        "Military Rifle, 200, 400, 500 and 600 metres, Team, Men",
+        "Small-Bore Rifle, Any Position, 50 metres, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Team, Men",
+        "Small-Bore Rifle, Disappearing Target, 25 metres, Team, Men",
+        "Military Rifle, Three Positions, 300 metres, Men",
+        "Dueling Pistol, 30 metres, Men",
+        "Small-Bore Rifle, Disappearing Target, 25 metres, Men",
+        "Running Target, Double Shot, Men"
+      ],
+      "Wrestling": [
+        "Heavyweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Middleweight A, Greco-Roman, Men",
+        "Middleweight B, Greco-Roman, Men"
+      ],
+      "Art Competitions": [
+        "Sculpturing, Open",
+        "Literature, Open",
+        "Music, Open",
+        "Painting, Open",
+        "Architecture, Open"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Diving": [
+        "Springboard, Men",
+        "Platform, Men",
+        "Plain High, Women",
+        "Plain High, Men"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "Road Race, Team, Men"
+      ],
+      "Tug-Of-War": [
+        "Tug-Of-War, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men"
+      ]
+    },
+    "1920": {
+      "Athletics": [
+        "3,000 metres Race Walk, Men",
+        "110 metres Hurdles, Men",
+        "Pole Vault, Men",
+        "Marathon, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "Cross-Country, Individual, Men",
+        "Cross-Country, Team, Men",
+        "Triple Jump, Men",
+        "Shot Put, Men",
+        "Discus Throw, Men",
+        "Javelin Throw, Men",
+        "Pentathlon, Men",
+        "4 × 100 metres Relay, Men",
+        "4 × 400 metres Relay, Men",
+        "100 metres, Men",
+        "200 metres, Men",
+        "400 metres, Men",
+        "800 metres, Men",
+        "1,500 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "3,000 metres, Team, Men",
+        "10 kilometres Race Walk, Men",
+        "Decathlon, Men",
+        "High Jump, Men",
+        "Long Jump, Men",
+        "56-pound Weight Throw, Men",
+        "Hammer Throw, Men",
+        "400 metres Hurdles, Men"
+      ],
+      "Swimming": [
+        "1,500 metres Freestyle, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "100 metres Backstroke, Men",
+        "400 metres Freestyle, Men",
+        "200 metres Breaststroke, Men",
+        "400 metres Breaststroke, Men",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Freestyle, Men",
+        "100 metres Freestyle, Women",
+        "300 metres Freestyle, Women"
+      ],
+      "Archery": [
+        "Target Archery, 28 metres, Individual, Men",
+        "Target Archery, 33 metres, Individual, Men",
+        "Target Archery, 50 metres, Individual, Men",
+        "Target Archery, 28 metres, Team, Men",
+        "Target Archery, 33 metres, Team, Men",
+        "Target Archery, 50 metres, Team, Men",
+        "Pole Archery, Small Birds, Individual, Men",
+        "Pole Archery, Large Birds, Individual, Men",
+        "Pole Archery, Small Birds, Team, Men",
+        "Pole Archery, Large Birds, Team, Men"
+      ],
+      "Art Competitions": [
+        "Literature, Open",
+        "Music, Open",
+        "Painting, Open",
+        "Sculpturing, Open",
+        "Architecture, Open"
+      ],
+      "Artistic Gymnastics": [
+        "Team All-Around, Men",
+        "Team All-Around, Swedish System, Men",
+        "Team All-Around, Free System, Men",
+        "Individual All-Around, Men"
+      ],
+      "Cycling Road": [
+        "Road Race, Team, Men",
+        "Road Race, Individual, Men"
+      ],
+      "Cycling Track": [
+        "50 kilometres, Men",
+        "Sprint, Men",
+        "Tandem Sprint, 2,000 metres, Men",
+        "Team Pursuit, 4,000 metres, Men"
+      ],
+      "Equestrian Eventing": [
+        "Team, Men",
+        "Individual, Men"
+      ],
+      "Equestrian Jumping": [
+        "Team, Men",
+        "Individual, Men"
+      ],
+      "Equestrian Vaulting": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Fencing": [
+        "Épée, Team, Men",
+        "Foil, Individual, Men",
+        "Foil, Team, Men",
+        "Épée, Individual, Men",
+        "Sabre, Team, Men",
+        "Sabre, Individual, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Hockey": [
+        "Hockey, Men"
+      ],
+      "Sailing": [
+        "6 metres, Open",
+        "8 metres, Open",
+        "6.5 metres, Open",
+        "7 metres, Open",
+        "12 foot, Open",
+        "10 metres, Open",
+        "12 metres, Open",
+        "30 metres², Open",
+        "40 metres², Open"
+      ],
+      "Shooting": [
+        "Trap, Team, Men",
+        "Free Pistol, 50 metres, Men",
+        "Free Pistol, 50 metres, Team, Men",
+        "Military Pistol, 30 metres, Men",
+        "Free Rifle, Three Positions, 300 metres, Men",
+        "Military Rifle, Standing, 300 metres, Men",
+        "Military Rifle, Standing, 300 metres, Team, Men",
+        "Military Rifle, Prone, 300 metres, Team, Men",
+        "Running Target, Single Shot, Team, Men",
+        "Running Target, Double Shot, Team, Men",
+        "Military Rifle, Prone, 300 metres, Men",
+        "Military Pistol, Team, Men",
+        "Free Rifle, Three Positions, 300 metres, Team, Men",
+        "Military Rifle, Prone, 300 and 600 metres, Team, Men",
+        "Smal-Bore Rifle, Standing, 50 metres, Team, Men",
+        "Running Target, Single Shot, Men",
+        "Running Target, Double Shot, Men",
+        "Military Rifle, Prone, 600 metres, Team, Men",
+        "Military Rifle, Prone, 600 metres, Men",
+        "Small-Bore Rifle, Standing, 50 metres, Men",
+        "Trap, Men"
+      ],
+      "Tug-Of-War": [
+        "Tug-Of-War, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Weightlifting": [
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Heavyweight, Men"
+      ],
+      "Boxing": [
+        "Bantamweight, Men",
+        "Lightweight, Men",
+        "Welterweight, Men",
+        "Middleweight, Men",
+        "Flyweight, Men",
+        "Heavyweight, Men",
+        "Featherweight, Men",
+        "Light-Heavyweight, Men"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Tennis": [
+        "Doubles, Mixed",
+        "Doubles, Men",
+        "Singles, Women",
+        "Doubles, Women",
+        "Singles, Men"
+      ],
+      "Diving": [
+        "Plain High, Women",
+        "Platform, Men",
+        "Plain High, Men",
+        "Springboard, Men",
+        "Springboard, Women"
+      ],
+      "Wrestling": [
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Lightweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men"
+      ],
+      "Figure Skating": [
+        "Pairs, Mixed",
+        "Singles, Men",
+        "Singles, Women"
+      ],
+      "Rowing": [
+        "Double Sculls, Men",
+        "Coxed Pairs, Men",
+        "Single Sculls, Men",
+        "Eights, Men",
+        "Coxed Fours, Men"
+      ],
+      "Rugby": [
+        "Rugby, Men"
+      ],
+      "Polo": [
+        "Polo, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men"
+      ]
+    },
+    "1924": {
+      "Athletics": [
+        "Triple Jump, Men",
+        "Decathlon, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "Marathon, Men",
+        "400 metres Hurdles, Men",
+        "3,000 metres Steeplechase, Men",
+        "3,000 metres, Team, Men",
+        "Cross-Country, Individual, Men",
+        "Cross-Country, Team, Men",
+        "Discus Throw, Men",
+        "Javelin Throw, Men",
+        "Pentathlon, Men",
+        "High Jump, Men",
+        "100 metres, Men",
+        "200 metres, Men",
+        "400 metres, Men",
+        "800 metres, Men",
+        "4 × 100 metres Relay, Men",
+        "4 × 400 metres Relay, Men",
+        "10 kilometres Race Walk, Men",
+        "Hammer Throw, Men",
+        "Long Jump, Men",
+        "110 metres Hurdles, Men",
+        "Pole Vault, Men",
+        "Shot Put, Men"
+      ],
+      "Boxing": [
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Welterweight, Men",
+        "Heavyweight, Men",
+        "Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Bantamweight, Men",
+        "Flyweight, Men"
+      ],
+      "Polo": [
+        "Polo, Men"
+      ],
+      "Diving": [
+        "Plain High, Men",
+        "Plain High, Women",
+        "Springboard, Men",
+        "Platform, Men",
+        "Springboard, Women"
+      ],
+      "Swimming": [
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "200 metres Breaststroke, Men",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Backstroke, Women",
+        "200 metres Breaststroke, Women",
+        "100 metres Backstroke, Men",
+        "100 metres Freestyle, Men",
+        "100 metres Freestyle, Women",
+        "400 metres Freestyle, Women"
+      ],
+      "Alpinism": [
+        "Alpinism, Open"
+      ],
+      "Weightlifting": [
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Light-Heavyweight, Men",
+        "Heavyweight, Men",
+        "Middleweight, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Singles, Women",
+        "Pairs, Mixed"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "Road Race, Team, Men"
+      ],
+      "Cycling Track": [
+        "Team Pursuit, 4,000 metres, Men",
+        "Tandem Sprint, 2,000 metres, Men",
+        "Sprint, Men",
+        "50 kilometres, Men"
+      ],
+      "Fencing": [
+        "Foil, Individual, Men",
+        "Foil, Team, Men",
+        "Épée, Individual, Men",
+        "Épée, Team, Men",
+        "Foil, Individual, Women",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men"
+      ],
+      "Sailing": [
+        "One Person Dinghy, Open",
+        "6 metres, Open",
+        "8 metres, Open"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Wrestling": [
+        "Middleweight, Freestyle, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Bantamweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men"
+      ],
+      "Bobsleigh": [
+        "Four/Five, Men"
+      ],
+      "Rowing": [
+        "Coxless Fours, Men",
+        "Eights, Men",
+        "Double Sculls, Men",
+        "Coxless Pairs, Men",
+        "Coxed Fours, Men",
+        "Single Sculls, Men",
+        "Coxed Pairs, Men"
+      ],
+      "Shooting": [
+        "Trap, Team, Men",
+        "Free Rifle, Prone, 600 metres, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Trap, Men",
+        "Free Rifle, 400, 600 and 800 metres, Team, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Men",
+        "Running Target, Single Shot, Men",
+        "Running Target, Double Shot, Men",
+        "Running Target, Double Shot, Team, Men",
+        "Running Target, Single Shot, Team, Men"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Individual All-Around, Men",
+        "Horse Vault, Men",
+        "Parallel Bars, Men",
+        "Rings, Men",
+        "Rope Climbing, Men",
+        "Team All-Around, Men",
+        "Horizontal Bar, Men",
+        "Side Horse, Men",
+        "Pommelled Horse, Men"
+      ],
+      "Art Competitions": [
+        "Literature, Open",
+        "Sculpturing, Open",
+        "Architecture, Open",
+        "Painting, Open"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Cross Country Skiing": [
+        "18 kilometres, Men",
+        "50 kilometres, Men"
+      ],
+      "Military Ski Patrol": [
+        "Military Ski Patrol, Men"
+      ],
+      "Speed Skating": [
+        "500 metres, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "Allround, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Men"
+      ],
+      "Rugby": [
+        "Rugby, Men"
+      ],
+      "Tennis": [
+        "Singles, Men",
+        "Doubles, Men",
+        "Singles, Women",
+        "Doubles, Women",
+        "Doubles, Mixed"
+      ],
+      "Curling": [
+        "Curling, Men"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Individual, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men"
+      ]
+    },
+    "1928": {
+      "Boxing": [
+        "Featherweight, Men",
+        "Welterweight, Men",
+        "Light-Heavyweight, Men",
+        "Heavyweight, Men",
+        "Middleweight, Men",
+        "Flyweight, Men",
+        "Bantamweight, Men",
+        "Lightweight, Men"
+      ],
+      "Fencing": [
+        "Foil, Team, Men",
+        "Foil, Individual, Men",
+        "Épée, Individual, Men",
+        "Épée, Team, Men",
+        "Foil, Individual, Women",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Swimming": [
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "200 metres Breaststroke, Men",
+        "200 metres Breaststroke, Women",
+        "100 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Backstroke, Women",
+        "100 metres Freestyle, Men",
+        "400 metres Freestyle, Women",
+        "100 metres Backstroke, Men"
+      ],
+      "Cycling Track": [
+        "1,000 metres Time Trial, Men",
+        "Sprint, Men",
+        "Tandem Sprint, 2,000 metres, Men",
+        "Team Pursuit, 4,000 metres, Men"
+      ],
+      "Rowing": [
+        "Single Sculls, Men",
+        "Double Sculls, Men",
+        "Coxed Pairs, Men",
+        "Eights, Men",
+        "Coxless Pairs, Men",
+        "Coxless Fours, Men",
+        "Coxed Fours, Men"
+      ],
+      "Art Competitions": [
+        "Sculpturing, Medals And Reliefs, Open",
+        "Architecture, Architectural Designs, Open",
+        "Literature, Lyric Works, Open",
+        "Music, Compositions For Orchestra, Open",
+        "Architecture, Designs For Town Planning, Open",
+        "Painting, Drawings And Water Colors, Open",
+        "Sculpturing, Statues, Open",
+        "Literature, Epic Works, Open",
+        "Painting, Graphic Arts, Open",
+        "Painting, Paintings, Open",
+        "Literature, Dramatic Works, Open"
+      ],
+      "Weightlifting": [
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Heavyweight, Men",
+        "Middleweight, Men",
+        "Light-Heavyweight, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Singles, Women",
+        "Pairs, Mixed"
+      ],
+      "Wrestling": [
+        "Bantamweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Lightweight, Freestyle, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Featherweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men"
+      ],
+      "Athletics": [
+        "100 metres, Men",
+        "200 metres, Men",
+        "400 metres, Men",
+        "4 × 400 metres Relay, Men",
+        "100 metres, Women",
+        "4 × 100 metres Relay, Women",
+        "High Jump, Women",
+        "Marathon, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "Triple Jump, Men",
+        "Discus Throw, Men",
+        "Decathlon, Men",
+        "High Jump, Men",
+        "800 metres, Men",
+        "4 × 100 metres Relay, Men",
+        "Shot Put, Men",
+        "800 metres, Women",
+        "400 metres Hurdles, Men",
+        "Long Jump, Men",
+        "Javelin Throw, Men",
+        "Hammer Throw, Men",
+        "Discus Throw, Women",
+        "110 metres Hurdles, Men",
+        "Pole Vault, Men"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Team All-Around, Men",
+        "Horse Vault, Men",
+        "Parallel Bars, Men",
+        "Rings, Men",
+        "Pommelled Horse, Men",
+        "Team All-Around, Women",
+        "Horizontal Bar, Men",
+        "Individual All-Around, Men"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Individual, Men"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "Road Race, Team, Men"
+      ],
+      "Sailing": [
+        "6 metres, Open",
+        "One Person Dinghy, Open",
+        "8 metres, Open"
+      ],
+      "Speed Skating": [
+        "500 metres, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Hockey": [
+        "Hockey, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men"
+      ],
+      "Bobsleigh": [
+        "Four/Five, Men"
+      ],
+      "Skeleton": [
+        "Skeleton, Men"
+      ],
+      "Cross Country Skiing": [
+        "18 kilometres, Men",
+        "50 kilometres, Men"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Diving": [
+        "Platform, Women",
+        "Springboard, Men",
+        "Platform, Men",
+        "Springboard, Women"
+      ]
+    },
+    "1932": {
+      "Athletics": [
+        "Marathon, Men",
+        "400 metres, Men",
+        "800 metres, Men",
+        "1,500 metres, Men",
+        "4 × 400 metres Relay, Men",
+        "High Jump, Men",
+        "100 metres, Women",
+        "4 × 100 metres Relay, Women",
+        "High Jump, Women",
+        "Shot Put, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "Hammer Throw, Men",
+        "Javelin Throw, Men",
+        "Decathlon, Men",
+        "Discus Throw, Men",
+        "100 metres, Men",
+        "4 × 100 metres Relay, Men",
+        "Javelin Throw, Women",
+        "110 metres Hurdles, Men",
+        "50 kilometres Race Walk, Men",
+        "400 metres Hurdles, Men",
+        "Pole Vault, Men",
+        "Long Jump, Men",
+        "Triple Jump, Men",
+        "Discus Throw, Women",
+        "80 metres Hurdles, Women",
+        "200 metres, Men"
+      ],
+      "Boxing": [
+        "Featherweight, Men",
+        "Middleweight, Men",
+        "Heavyweight, Men",
+        "Bantamweight, Men",
+        "Light-Heavyweight, Men",
+        "Welterweight, Men",
+        "Flyweight, Men",
+        "Lightweight, Men"
+      ],
+      "Cycling Track": [
+        "1,000 metres Time Trial, Men",
+        "Tandem Sprint, 2,000 metres, Men",
+        "Sprint, Men",
+        "Team Pursuit, 4,000 metres, Men"
+      ],
+      "Rowing": [
+        "Single Sculls, Men",
+        "Double Sculls, Men",
+        "Eights, Men",
+        "Coxed Pairs, Men",
+        "Coxless Fours, Men",
+        "Coxed Fours, Men",
+        "Coxless Pairs, Men"
+      ],
+      "Swimming": [
+        "100 metres Backstroke, Women",
+        "200 metres Breaststroke, Women",
+        "400 metres Freestyle, Men",
+        "4 × 100 metres Freestyle Relay, Women",
+        "4 × 200 metres Freestyle Relay, Men",
+        "100 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "100 metres Backstroke, Men",
+        "200 metres Breaststroke, Men",
+        "100 metres Freestyle, Women",
+        "400 metres Freestyle, Women"
+      ],
+      "Wrestling": [
+        "Light-Heavyweight, Freestyle, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Bantamweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Lightweight, Freestyle, Men"
+      ],
+      "Fencing": [
+        "Foil, Individual, Women",
+        "Foil, Team, Men",
+        "Épée, Individual, Men",
+        "Épée, Team, Men",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men",
+        "Foil, Individual, Men"
+      ],
+      "Weightlifting": [
+        "Lightweight, Men",
+        "Middleweight, Men",
+        "Heavyweight, Men",
+        "Light-Heavyweight, Men",
+        "Featherweight, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Singles, Women",
+        "Pairs, Mixed"
+      ],
+      "Art Competitions": [
+        "Architecture, Designs For Town Planning, Open",
+        "Sculpturing, Medals And Reliefs, Open",
+        "Music, Open",
+        "Sculpturing, Statues, Open",
+        "Literature, Open",
+        "Architecture, Architectural Designs, Open",
+        "Painting, Graphic Arts, Open",
+        "Painting, Drawings And Water Colors, Open",
+        "Painting, Paintings, Open"
+      ],
+      "Sailing": [
+        "6 metres, Open",
+        "8 metres, Open",
+        "One Person Dinghy, Open",
+        "Two Person Keelboat, Open"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Speed Skating": [
+        "500 metres, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men"
+      ],
+      "Cycling Road": [
+        "Road Race, Team, Men",
+        "Road Race, Individual, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Individual All-Around, Men",
+        "Team All-Around, Men",
+        "Parallel Bars, Men",
+        "Horizontal Bar, Men",
+        "Floor Exercise, Men",
+        "Pommelled Horse, Men",
+        "Horse Vault, Men",
+        "Rings, Men",
+        "Rope Climbing, Men",
+        "Club Swinging, Men",
+        "Tumbling, Men"
+      ],
+      "Cross Country Skiing": [
+        "18 kilometres, Men",
+        "50 kilometres, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Alpinism": [
+        "Alpinism, Open"
+      ],
+      "Shooting": [
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Bobsleigh": [
+        "Four, Men",
+        "Two, Men"
+      ],
+      "Hockey": [
+        "Hockey, Men"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Men"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Individual, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men"
+      ],
+      "Diving": [
+        "Springboard, Men",
+        "Platform, Men",
+        "Springboard, Women",
+        "Platform, Women"
+      ]
+    },
+    "1936": {
+      "Boxing": [
+        "Featherweight, Men",
+        "Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Heavyweight, Men",
+        "Welterweight, Men",
+        "Lightweight, Men",
+        "Flyweight, Men",
+        "Bantamweight, Men"
+      ],
+      "Polo": [
+        "Polo, Men"
+      ],
+      "Rowing": [
+        "Coxless Pairs, Men",
+        "Single Sculls, Men",
+        "Coxed Pairs, Men",
+        "Coxed Fours, Men",
+        "Double Sculls, Men",
+        "Coxless Fours, Men",
+        "Eights, Men"
+      ],
+      "Swimming": [
+        "100 metres Freestyle, Women",
+        "400 metres Freestyle, Women",
+        "200 metres Breaststroke, Women",
+        "200 metres Breaststroke, Men",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Freestyle, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "100 metres Backstroke, Men",
+        "100 metres Backstroke, Women"
+      ],
+      "Athletics": [
+        "Triple Jump, Men",
+        "800 metres, Men",
+        "400 metres Hurdles, Men",
+        "80 metres Hurdles, Women",
+        "4 × 100 metres Relay, Women",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "Shot Put, Men",
+        "Javelin Throw, Men",
+        "4 × 100 metres Relay, Men",
+        "4 × 400 metres Relay, Men",
+        "Long Jump, Men",
+        "Hammer Throw, Men",
+        "100 metres, Women",
+        "High Jump, Women",
+        "Discus Throw, Women",
+        "Javelin Throw, Women",
+        "400 metres, Men",
+        "Marathon, Men",
+        "110 metres Hurdles, Men",
+        "50 kilometres Race Walk, Men",
+        "1,500 metres, Men",
+        "Discus Throw, Men",
+        "Pole Vault, Men",
+        "100 metres, Men",
+        "200 metres, Men",
+        "High Jump, Men",
+        "Decathlon, Men"
+      ],
+      "Art Competitions": [
+        "Architecture, Architectural Designs, Open",
+        "Literature, Lyric Works, Open",
+        "Painting, Paintings, Open",
+        "Sculpturing, Medals, Open",
+        "Music, Compositions For Orchestra, Open",
+        "Literature, Epic Works, Open",
+        "Architecture, Designs For Town Planning, Open",
+        "Music, Compositions For Solo Or Chorus, Open",
+        "Painting, Applied Arts, Open",
+        "Sculpturing, Reliefs, Open",
+        "Sculpturing, Statues, Open",
+        "Painting, Drawings And Water Colors, Open"
+      ],
+      "Canoe Marathon": [
+        "Kayak Singles, 10,000 metres, Men",
+        "Kayak Doubles, 10,000 metres, Men",
+        "Canadian Doubles, 10,000 metres, Men",
+        "Folding Kayak Singles, 10,000 metres, Men",
+        "Folding Kayak Doubles, 10,000 metres, Men"
+      ],
+      "Canoe Sprint": [
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Doubles, 1,000 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Canadian Singles, 1,000 metres, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Fencing": [
+        "Foil, Individual, Women",
+        "Foil, Individual, Men",
+        "Foil, Team, Men",
+        "Épée, Team, Men",
+        "Sabre, Team, Men",
+        "Sabre, Individual, Men",
+        "Épée, Individual, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Handball": [
+        "Handball, Men"
+      ],
+      "Weightlifting": [
+        "Lightweight, Men",
+        "Heavyweight, Men",
+        "Light-Heavyweight, Men",
+        "Middleweight, Men",
+        "Featherweight, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Pairs, Mixed",
+        "Singles, Women"
+      ],
+      "Speed Skating": [
+        "10,000 metres, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "500 metres, Men"
+      ],
+      "Cycling Road": [
+        "Road Race, Team, Men",
+        "Road Race, Individual, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Basketball": [
+        "Basketball, Men"
+      ],
+      "Wrestling": [
+        "Welterweight, Freestyle, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Heavyweight, Freestyle, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Featherweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Bantamweight, Freestyle, Men"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Rings, Men",
+        "Team All-Around, Women",
+        "Team All-Around, Men",
+        "Horizontal Bar, Men",
+        "Individual All-Around, Men",
+        "Floor Exercise, Men",
+        "Horse Vault, Men",
+        "Parallel Bars, Men",
+        "Pommelled Horse, Men"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Cross Country Skiing": [
+        "18 kilometres, Men",
+        "4 × 10 kilometres Relay, Men",
+        "50 kilometres, Men"
+      ],
+      "Cycling Track": [
+        "Sprint, Men",
+        "1,000 metres Time Trial, Men",
+        "Tandem Sprint, 2,000 metres, Men",
+        "Team Pursuit, 4,000 metres, Men"
+      ],
+      "Shooting": [
+        "Free Pistol, 50 metres, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Men"
+      ],
+      "Alpine Skiing": [
+        "Combined, Men",
+        "Combined, Women"
+      ],
+      "Diving": [
+        "Platform, Men",
+        "Platform, Women",
+        "Springboard, Men",
+        "Springboard, Women"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Hockey": [
+        "Hockey, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men"
+      ],
+      "Sailing": [
+        "One Person Dinghy, Open",
+        "Two Person Keelboat, Open",
+        "8 metres, Open",
+        "6 metres, Open"
+      ],
+      "Bobsleigh": [
+        "Four, Men",
+        "Two, Men"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Individual, Men"
+      ],
+      "Aeronautics": [
+        "Aeronautics, Open"
+      ],
+      "Alpinism": [
+        "Alpinism, Open"
+      ]
+    },
+    "1948": {
+      "Athletics": [
+        "Marathon, Men",
+        "Long Jump, Women",
+        "High Jump, Men",
+        "Long Jump, Men",
+        "Triple Jump, Men",
+        "100 metres, Women",
+        "80 metres Hurdles, Women",
+        "4 × 100 metres Relay, Women",
+        "Shot Put, Women",
+        "Javelin Throw, Women",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "Pole Vault, Men",
+        "Javelin Throw, Men",
+        "800 metres, Men",
+        "4 × 400 metres Relay, Men",
+        "Decathlon, Men",
+        "High Jump, Women",
+        "Discus Throw, Women",
+        "4 × 100 metres Relay, Men",
+        "50 kilometres Race Walk, Men",
+        "200 metres, Women",
+        "Hammer Throw, Men",
+        "Discus Throw, Men",
+        "400 metres, Men",
+        "1,500 metres, Men",
+        "100 metres, Men",
+        "200 metres, Men",
+        "400 metres Hurdles, Men",
+        "3,000 metres Steeplechase, Men",
+        "10 kilometres Race Walk, Men",
+        "110 metres Hurdles, Men",
+        "Shot Put, Men"
+      ],
+      "Boxing": [
+        "Flyweight, Men",
+        "Light-Heavyweight, Men",
+        "Heavyweight, Men",
+        "Lightweight, Men",
+        "Welterweight, Men",
+        "Middleweight, Men",
+        "Bantamweight, Men",
+        "Featherweight, Men"
+      ],
+      "Sailing": [
+        "6 metres, Open",
+        "Two Person Keelboat, Open",
+        "One Person Dinghy, Open",
+        "Three Person Keelboat, Open"
+      ],
+      "Shooting": [
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Free Rifle, Three Positions, 300 metres, Men",
+        "Free Pistol, 50 metres, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Men"
+      ],
+      "Rowing": [
+        "Single Sculls, Men",
+        "Double Sculls, Men",
+        "Coxed Pairs, Men",
+        "Coxless Fours, Men",
+        "Coxed Fours, Men",
+        "Coxless Pairs, Men",
+        "Eights, Men"
+      ],
+      "Swimming": [
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "100 metres Backstroke, Women",
+        "200 metres Breaststroke, Women",
+        "100 metres Freestyle, Women",
+        "400 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "4 × 200 metres Freestyle Relay, Men",
+        "100 metres Backstroke, Men",
+        "100 metres Freestyle, Men",
+        "200 metres Breaststroke, Men"
+      ],
+      "Wrestling": [
+        "Welterweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Flyweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Flyweight, Freestyle, Men",
+        "Bantamweight, Freestyle, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Featherweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men"
+      ],
+      "Art Competitions": [
+        "Architecture, Architectural Designs, Open",
+        "Sculpturing, Medals And Plaques, Open",
+        "Music, Instrumental And Chamber, Open",
+        "Literature, Epic Works, Open",
+        "Music, Compositions For Orchestra, Open",
+        "Architecture, Designs For Town Planning, Open",
+        "Literature, Lyric Works, Open",
+        "Painting, Graphic Arts, Open",
+        "Sculpturing, Statues, Open",
+        "Painting, Paintings, Open",
+        "Sculpturing, Reliefs, Open",
+        "Music, Compositions For Solo Or Chorus, Open",
+        "Painting, Applied Arts, Open"
+      ],
+      "Canoe Sprint": [
+        "Kayak Singles, 500 metres, Women",
+        "Canadian Singles, 1,000 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Doubles, 1,000 metres, Men"
+      ],
+      "Fencing": [
+        "Foil, Individual, Women",
+        "Foil, Team, Men",
+        "Foil, Individual, Men",
+        "Épée, Team, Men",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men",
+        "Épée, Individual, Men"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Men",
+        "Downhill, Women",
+        "Slalom, Women",
+        "Combined, Women",
+        "Slalom, Men",
+        "Combined, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Singles, Women",
+        "Pairs, Mixed"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "Road Race, Team, Men"
+      ],
+      "Cycling Track": [
+        "1,000 metres Time Trial, Men",
+        "Sprint, Men",
+        "Tandem Sprint, 2,000 metres, Men",
+        "Team Pursuit, 4,000 metres, Men"
+      ],
+      "Bobsleigh": [
+        "Four, Men",
+        "Two, Men"
+      ],
+      "Basketball": [
+        "Basketball, Men"
+      ],
+      "Canoe Marathon": [
+        "Canadian Singles, 10,000 metres, Men",
+        "Canadian Doubles, 10,000 metres, Men",
+        "Kayak Singles, 10,000 metres, Men",
+        "Kayak Doubles, 10,000 metres, Men"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Floor Exercise, Men",
+        "Horse Vault, Men",
+        "Rings, Men",
+        "Team All-Around, Women",
+        "Individual All-Around, Men",
+        "Team All-Around, Men",
+        "Parallel Bars, Men",
+        "Horizontal Bar, Men",
+        "Pommelled Horse, Men"
+      ],
+      "Diving": [
+        "Platform, Women",
+        "Platform, Men",
+        "Springboard, Men",
+        "Springboard, Women"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Cross Country Skiing": [
+        "50 kilometres, Men",
+        "4 × 10 kilometres Relay, Men",
+        "18 kilometres, Men"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Speed Skating": [
+        "10,000 metres, Men",
+        "500 metres, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Hockey": [
+        "Hockey, Men"
+      ],
+      "Weightlifting": [
+        "Bantamweight, Men",
+        "Lightweight, Men",
+        "Featherweight, Men",
+        "Heavyweight, Men",
+        "Middleweight, Men",
+        "Light-Heavyweight, Men"
+      ],
+      "Skeleton": [
+        "Skeleton, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Individual, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men"
+      ]
+    },
+    "1952": {
+      "Athletics": [
+        "Marathon, Men",
+        "100 metres, Women",
+        "200 metres, Women",
+        "80 metres Hurdles, Women",
+        "High Jump, Men",
+        "Triple Jump, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "50 kilometres Race Walk, Men",
+        "Javelin Throw, Women",
+        "Javelin Throw, Men",
+        "800 metres, Men",
+        "1,500 metres, Men",
+        "4 × 400 metres Relay, Men",
+        "Hammer Throw, Men",
+        "4 × 100 metres Relay, Women",
+        "Shot Put, Women",
+        "100 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "High Jump, Women",
+        "Long Jump, Women",
+        "4 × 100 metres Relay, Men",
+        "Long Jump, Men",
+        "Discus Throw, Men",
+        "400 metres, Men",
+        "400 metres Hurdles, Men",
+        "10 kilometres Race Walk, Men",
+        "Discus Throw, Women",
+        "Pole Vault, Men",
+        "200 metres, Men",
+        "110 metres Hurdles, Men",
+        "Shot Put, Men",
+        "Decathlon, Men"
+      ],
+      "Boxing": [
+        "Light-Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Middleweight, Men",
+        "Featherweight, Men",
+        "Welterweight, Men",
+        "Bantamweight, Men",
+        "Lightweight, Men",
+        "Light-Welterweight, Men",
+        "Heavyweight, Men",
+        "Flyweight, Men"
+      ],
+      "Rowing": [
+        "Double Sculls, Men",
+        "Single Sculls, Men",
+        "Eights, Men",
+        "Coxless Pairs, Men",
+        "Coxed Fours, Men",
+        "Coxed Pairs, Men",
+        "Coxless Fours, Men"
+      ],
+      "Weightlifting": [
+        "Heavyweight, Men",
+        "Lightweight, Men",
+        "Middleweight, Men",
+        "Bantamweight, Men",
+        "Featherweight, Men",
+        "Light-Heavyweight, Men",
+        "Middle-Heavyweight, Men"
+      ],
+      "Cycling Track": [
+        "Sprint, Men",
+        "1,000 metres Time Trial, Men",
+        "Tandem Sprint, 2,000 metres, Men",
+        "Team Pursuit, 4,000 metres, Men"
+      ],
+      "Swimming": [
+        "200 metres Breaststroke, Men",
+        "1,500 metres Freestyle, Men",
+        "400 metres Freestyle, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "100 metres Backstroke, Men",
+        "200 metres Breaststroke, Women",
+        "100 metres Freestyle, Women",
+        "400 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Freestyle, Men",
+        "100 metres Backstroke, Women"
+      ],
+      "Canoe Sprint": [
+        "Kayak Doubles, 1,000 metres, Men",
+        "Kayak Singles, 500 metres, Women",
+        "Canadian Singles, 1,000 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Singles, 1,000 metres, Men"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Men",
+        "Giant Slalom, Men",
+        "Slalom, Men",
+        "Downhill, Women",
+        "Giant Slalom, Women",
+        "Slalom, Women"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Singles, Women",
+        "Pairs, Mixed"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "Road Race, Team, Men"
+      ],
+      "Canoe Marathon": [
+        "Canadian Doubles, 10,000 metres, Men",
+        "Canadian Singles, 10,000 metres, Men",
+        "Kayak Singles, 10,000 metres, Men",
+        "Kayak Doubles, 10,000 metres, Men"
+      ],
+      "Shooting": [
+        "Trap, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Men",
+        "Running Target, Single and Double Shot, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Free Pistol, 50 metres, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Men",
+        "Free Rifle, Three Positions, 300 metres, Men"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Speed Skating": [
+        "500 metres, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Team All-Around, Women",
+        "Team All-Around, Men",
+        "Horizontal Bar, Men",
+        "Individual All-Around, Women",
+        "Team Portable Apparatus, Women",
+        "Floor Exercise, Women",
+        "Uneven Bars, Women",
+        "Balance Beam, Women",
+        "Floor Exercise, Men",
+        "Horse Vault, Men",
+        "Individual All-Around, Men",
+        "Parallel Bars, Men",
+        "Rings, Men",
+        "Pommelled Horse, Men",
+        "Horse Vault, Women"
+      ],
+      "Wrestling": [
+        "Lightweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Flyweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Freestyle, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Middleweight, Freestyle, Men",
+        "Bantamweight, Freestyle, Men",
+        "Flyweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Fencing": [
+        "Foil, Individual, Women",
+        "Foil, Individual, Men",
+        "Foil, Team, Men",
+        "Sabre, Team, Men",
+        "Sabre, Individual, Men",
+        "Épée, Individual, Men",
+        "Épée, Team, Men"
+      ],
+      "Sailing": [
+        "One Person Dinghy, Open",
+        "6 metres, Open",
+        "Three Person Keelboat, Open",
+        "Two Person Keelboat, Open",
+        "5.5 metres, Open"
+      ],
+      "Modern Pentathlon": [
+        "Team, Men",
+        "Individual, Men"
+      ],
+      "Cross Country Skiing": [
+        "18 kilometres, Men",
+        "50 kilometres, Men",
+        "4 × 10 kilometres Relay, Men",
+        "10 kilometres, Women"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Diving": [
+        "Springboard, Women",
+        "Platform, Men",
+        "Springboard, Men",
+        "Platform, Women"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Bobsleigh": [
+        "Two, Men",
+        "Four, Men"
+      ],
+      "Hockey": [
+        "Hockey, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Individual, Men"
+      ],
+      "Basketball": [
+        "Basketball, Men"
+      ]
+    },
+    "1956": {
+      "Boxing": [
+        "Middleweight, Men",
+        "Welterweight, Men",
+        "Bantamweight, Men",
+        "Light-Heavyweight, Men",
+        "Featherweight, Men",
+        "Flyweight, Men",
+        "Lightweight, Men",
+        "Light-Middleweight, Men",
+        "Light-Welterweight, Men",
+        "Heavyweight, Men"
+      ],
+      "Weightlifting": [
+        "Heavyweight, Men",
+        "Middle-Heavyweight, Men",
+        "Bantamweight, Men",
+        "Middleweight, Men",
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Light-Heavyweight, Men"
+      ],
+      "Athletics": [
+        "100 metres, Men",
+        "1,500 metres, Men",
+        "10,000 metres, Men",
+        "4 × 400 metres Relay, Men",
+        "High Jump, Men",
+        "100 metres, Women",
+        "200 metres, Women",
+        "80 metres Hurdles, Women",
+        "4 × 100 metres Relay, Women",
+        "Triple Jump, Men",
+        "Javelin Throw, Women",
+        "Shot Put, Men",
+        "Discus Throw, Women",
+        "400 metres, Men",
+        "Marathon, Men",
+        "Long Jump, Men",
+        "4 × 100 metres Relay, Men",
+        "Shot Put, Women",
+        "800 metres, Men",
+        "5,000 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "High Jump, Women",
+        "Pole Vault, Men",
+        "50 kilometres Race Walk, Men",
+        "Javelin Throw, Men",
+        "Long Jump, Women",
+        "20 kilometres Race Walk, Men",
+        "Hammer Throw, Men",
+        "Decathlon, Men",
+        "200 metres, Men",
+        "110 metres Hurdles, Men",
+        "400 metres Hurdles, Men",
+        "Discus Throw, Men"
+      ],
+      "Canoe Marathon": [
+        "Kayak Doubles, 10,000 metres, Men",
+        "Canadian Doubles, 10,000 metres, Men",
+        "Kayak Singles, 10,000 metres, Men",
+        "Canadian Singles, 10,000 metres, Men"
+      ],
+      "Cycling Track": [
+        "Sprint, Men",
+        "Tandem Sprint, 2,000 metres, Men",
+        "1,000 metres Time Trial, Men",
+        "Team Pursuit, 4,000 metres, Men"
+      ],
+      "Rowing": [
+        "Single Sculls, Men",
+        "Double Sculls, Men",
+        "Eights, Men",
+        "Coxless Pairs, Men",
+        "Coxless Fours, Men",
+        "Coxed Fours, Men",
+        "Coxed Pairs, Men"
+      ],
+      "Sailing": [
+        "Two Person Heavyweight Dinghy, Open",
+        "5.5 metres, Open",
+        "One Person Dinghy, Open",
+        "Three Person Keelboat, Open",
+        "Two Person Keelboat, Open"
+      ],
+      "Swimming": [
+        "100 metres Freestyle, Men",
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "100 metres Backstroke, Men",
+        "100 metres Freestyle, Women",
+        "400 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "200 metres Breaststroke, Women",
+        "100 metres Backstroke, Women",
+        "200 metres Butterfly, Men",
+        "200 metres Breaststroke, Men",
+        "100 metres Butterfly, Women"
+      ],
+      "Canoe Sprint": [
+        "Kayak Doubles, 1,000 metres, Men",
+        "Kayak Singles, 500 metres, Women",
+        "Kayak Singles, 1,000 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Men",
+        "Giant Slalom, Men",
+        "Slalom, Men",
+        "Giant Slalom, Women",
+        "Slalom, Women",
+        "Downhill, Women"
+      ],
+      "Figure Skating": [
+        "Singles, Women",
+        "Pairs, Mixed",
+        "Singles, Men"
+      ],
+      "Wrestling": [
+        "Featherweight, Freestyle, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Middleweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Flyweight, Freestyle, Men",
+        "Bantamweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Flyweight, Greco-Roman, Men",
+        "Welterweight, Freestyle, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Welterweight, Greco-Roman, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Diving": [
+        "Springboard, Women",
+        "Springboard, Men",
+        "Platform, Men",
+        "Platform, Women"
+      ],
+      "Shooting": [
+        "Small-Bore Rifle, Prone, 50 metres, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Men",
+        "Free Pistol, 50 metres, Men",
+        "Free Rifle, Three Positions, 300 metres, Men",
+        "Trap, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Running Target, Single and Double Shot, Men"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Balance Beam, Women",
+        "Team All-Around, Men",
+        "Horse Vault, Men",
+        "Individual All-Around, Women",
+        "Team All-Around, Women",
+        "Team Portable Apparatus, Women",
+        "Floor Exercise, Women",
+        "Horse Vault, Women",
+        "Uneven Bars, Women",
+        "Individual All-Around, Men",
+        "Floor Exercise, Men",
+        "Parallel Bars, Men",
+        "Horizontal Bar, Men",
+        "Rings, Men",
+        "Pommelled Horse, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Cross Country Skiing": [
+        "30 kilometres, Men",
+        "50 kilometres, Men",
+        "4 × 10 kilometres Relay, Men",
+        "3 × 5 kilometres Relay, Women",
+        "15 kilometres, Men",
+        "10 kilometres, Women"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Individual, Men"
+      ],
+      "Speed Skating": [
+        "1,500 metres, Men",
+        "500 metres, Men",
+        "10,000 metres, Men",
+        "5,000 metres, Men"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "Road Race, Team, Men"
+      ],
+      "Fencing": [
+        "Foil, Individual, Men",
+        "Foil, Team, Men",
+        "Épée, Team, Men",
+        "Foil, Individual, Women",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men",
+        "Épée, Individual, Men"
+      ],
+      "Hockey": [
+        "Hockey, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Bobsleigh": [
+        "Two, Men",
+        "Four, Men"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Basketball": [
+        "Basketball, Men"
+      ]
+    },
+    "1960": {
+      "Boxing": [
+        "Lightweight, Men",
+        "Bantamweight, Men",
+        "Light-Heavyweight, Men",
+        "Light-Welterweight, Men",
+        "Heavyweight, Men",
+        "Featherweight, Men",
+        "Welterweight, Men",
+        "Light-Middleweight, Men",
+        "Flyweight, Men",
+        "Middleweight, Men"
+      ],
+      "Sailing": [
+        "Three Person Keelboat, Open",
+        "One Person Dinghy, Open",
+        "Two Person Heavyweight Dinghy, Open",
+        "5.5 metres, Open",
+        "Two Person Keelboat, Open"
+      ],
+      "Athletics": [
+        "1,500 metres, Men",
+        "10,000 metres, Men",
+        "20 kilometres Race Walk, Men",
+        "800 metres, Women",
+        "800 metres, Men",
+        "Decathlon, Men",
+        "Javelin Throw, Women",
+        "Marathon, Men",
+        "Pole Vault, Men",
+        "200 metres, Men",
+        "100 metres, Men",
+        "400 metres, Men",
+        "5,000 metres, Men",
+        "4 × 100 metres Relay, Men",
+        "4 × 400 metres Relay, Men",
+        "Javelin Throw, Men",
+        "200 metres, Women",
+        "80 metres Hurdles, Women",
+        "4 × 100 metres Relay, Women",
+        "Long Jump, Women",
+        "Shot Put, Women",
+        "50 kilometres Race Walk, Men",
+        "100 metres, Women",
+        "High Jump, Women",
+        "Hammer Throw, Men",
+        "3,000 metres Steeplechase, Men",
+        "Triple Jump, Men",
+        "Discus Throw, Women",
+        "High Jump, Men",
+        "Long Jump, Men",
+        "110 metres Hurdles, Men",
+        "400 metres Hurdles, Men",
+        "Shot Put, Men",
+        "Discus Throw, Men"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Swimming": [
+        "100 metres Freestyle, Men",
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "100 metres Backstroke, Men",
+        "200 metres Butterfly, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "100 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Butterfly, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "200 metres Breaststroke, Women",
+        "100 metres Backstroke, Women",
+        "200 metres Breaststroke, Men",
+        "400 metres Freestyle, Women"
+      ],
+      "Rowing": [
+        "Coxless Pairs, Men",
+        "Eights, Men",
+        "Double Sculls, Men",
+        "Coxed Fours, Men",
+        "Single Sculls, Men",
+        "Coxed Pairs, Men",
+        "Coxless Fours, Men"
+      ],
+      "Shooting": [
+        "Free Rifle, Three Positions, 300 metres, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Men",
+        "Trap, Men",
+        "Free Pistol, 50 metres, Men"
+      ],
+      "Alpine Skiing": [
+        "Giant Slalom, Men",
+        "Slalom, Men",
+        "Downhill, Women",
+        "Slalom, Women",
+        "Downhill, Men",
+        "Giant Slalom, Women"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Individual, Men"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "100 kilometres Team Time Trial, Men"
+      ],
+      "Cycling Track": [
+        "Sprint, Men",
+        "1,000 metres Time Trial, Men",
+        "Tandem Sprint, 2,000 metres, Men",
+        "Team Pursuit, 4,000 metres, Men"
+      ],
+      "Basketball": [
+        "Basketball, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Rings, Men",
+        "Team All-Around, Women",
+        "Balance Beam, Women",
+        "Pommelled Horse, Men",
+        "Team All-Around, Men",
+        "Floor Exercise, Men",
+        "Parallel Bars, Men",
+        "Individual All-Around, Men",
+        "Horse Vault, Men",
+        "Horizontal Bar, Men",
+        "Individual All-Around, Women",
+        "Floor Exercise, Women",
+        "Horse Vault, Women",
+        "Uneven Bars, Women"
+      ],
+      "Wrestling": [
+        "Bantamweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Bantamweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Heavyweight, Freestyle, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Flyweight, Greco-Roman, Men",
+        "Flyweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Middleweight, Freestyle, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Pairs, Mixed",
+        "Singles, Women"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Canoe Sprint": [
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Relay, 4 × 500 metres, Men",
+        "Kayak Singles, 500 metres, Women",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Doubles, 1,000 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Biathlon": [
+        "20 kilometres, Men"
+      ],
+      "Cross Country Skiing": [
+        "15 kilometres, Men",
+        "50 kilometres, Men",
+        "4 × 10 kilometres Relay, Men",
+        "3 × 5 kilometres Relay, Women",
+        "30 kilometres, Men",
+        "10 kilometres, Women"
+      ],
+      "Speed Skating": [
+        "3,000 metres, Women",
+        "500 metres, Women",
+        "1,000 metres, Women",
+        "5,000 metres, Men",
+        "1,500 metres, Men",
+        "10,000 metres, Men",
+        "1,500 metres, Women",
+        "500 metres, Men"
+      ],
+      "Diving": [
+        "Springboard, Women",
+        "Platform, Women",
+        "Platform, Men",
+        "Springboard, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open"
+      ],
+      "Equestrian Jumping": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Fencing": [
+        "Foil, Team, Men",
+        "Foil, Individual, Women",
+        "Épée, Individual, Men",
+        "Épée, Team, Men",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men",
+        "Foil, Team, Women",
+        "Foil, Individual, Men"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Weightlifting": [
+        "Middle-Heavyweight, Men",
+        "Middleweight, Men",
+        "Bantamweight, Men",
+        "Featherweight, Men",
+        "Light-Heavyweight, Men",
+        "Lightweight, Men",
+        "Heavyweight, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Hockey": [
+        "Hockey, Men"
+      ]
+    },
+    "1964": {
+      "Equestrian Eventing": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Athletics": [
+        "10,000 metres, Men",
+        "200 metres, Women",
+        "400 metres, Women",
+        "80 metres Hurdles, Women",
+        "High Jump, Women",
+        "3,000 metres Steeplechase, Men",
+        "100 metres, Men",
+        "800 metres, Men",
+        "1,500 metres, Men",
+        "Discus Throw, Men",
+        "Marathon, Men",
+        "Javelin Throw, Men",
+        "4 × 100 metres Relay, Men",
+        "800 metres, Women",
+        "5,000 metres, Men",
+        "20 kilometres Race Walk, Men",
+        "Pole Vault, Men",
+        "Hammer Throw, Men",
+        "Decathlon, Men",
+        "Shot Put, Women",
+        "Discus Throw, Women",
+        "400 metres Hurdles, Men",
+        "4 × 400 metres Relay, Men",
+        "50 kilometres Race Walk, Men",
+        "Long Jump, Men",
+        "4 × 100 metres Relay, Women",
+        "Long Jump, Women",
+        "Pentathlon, Women",
+        "Shot Put, Men",
+        "Javelin Throw, Women",
+        "400 metres, Men",
+        "Triple Jump, Men",
+        "100 metres, Women",
+        "110 metres Hurdles, Men",
+        "High Jump, Men",
+        "200 metres, Men"
+      ],
+      "Hockey": [
+        "Hockey, Men"
+      ],
+      "Judo": [
+        "Open Class, Men",
+        "Heavyweight, Men",
+        "Middleweight, Men",
+        "Lightweight, Men"
+      ],
+      "Sailing": [
+        "5.5 metres, Open",
+        "One Person Dinghy, Open",
+        "Three Person Keelboat, Open",
+        "Two Person Heavyweight Dinghy, Open",
+        "Two Person Keelboat, Open"
+      ],
+      "Swimming": [
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "4 × 100 metres Freestyle Relay, Men",
+        "200 metres Breaststroke, Men",
+        "200 metres Butterfly, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "100 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Backstroke, Women",
+        "100 metres Freestyle, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "400 metres Individual Medley, Men",
+        "100 metres Butterfly, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "200 metres Breaststroke, Women",
+        "200 metres Backstroke, Men",
+        "400 metres Freestyle, Women",
+        "400 metres Individual Medley, Women"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Men",
+        "Giant Slalom, Men",
+        "Slalom, Men",
+        "Downhill, Women",
+        "Giant Slalom, Women",
+        "Slalom, Women"
+      ],
+      "Bobsleigh": [
+        "Four, Men",
+        "Two, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Women",
+        "Pairs, Mixed",
+        "Singles, Men"
+      ],
+      "Luge": [
+        "Doubles, Open",
+        "Singles, Women",
+        "Singles, Men"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "100 kilometres Team Time Trial, Men"
+      ],
+      "Cycling Track": [
+        "1,000 metres Time Trial, Men",
+        "Individual Pursuit, 4,000 metres, Men",
+        "Sprint, Men",
+        "Tandem Sprint, 2,000 metres, Men",
+        "Team Pursuit, 4,000 metres, Men"
+      ],
+      "Basketball": [
+        "Basketball, Men"
+      ],
+      "Boxing": [
+        "Light-Heavyweight, Men",
+        "Welterweight, Men",
+        "Light-Middleweight, Men",
+        "Featherweight, Men",
+        "Middleweight, Men",
+        "Heavyweight, Men",
+        "Light-Welterweight, Men",
+        "Lightweight, Men",
+        "Flyweight, Men",
+        "Bantamweight, Men"
+      ],
+      "Shooting": [
+        "Small-Bore Rifle, Three Positions, 50 metres, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Free Pistol, 50 metres, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Men",
+        "Trap, Men",
+        "Free Rifle, Three Positions, 300 metres, Men"
+      ],
+      "Wrestling": [
+        "Flyweight, Greco-Roman, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Featherweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Flyweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Bantamweight, Freestyle, Men",
+        "Lightweight, Greco-Roman, Men"
+      ],
+      "Rowing": [
+        "Coxless Pairs, Men",
+        "Double Sculls, Men",
+        "Eights, Men",
+        "Coxless Fours, Men",
+        "Coxed Pairs, Men",
+        "Single Sculls, Men",
+        "Coxed Fours, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Individual All-Around, Women",
+        "Team All-Around, Women",
+        "Horse Vault, Women",
+        "Balance Beam, Women",
+        "Horse Vault, Men",
+        "Team All-Around, Men",
+        "Floor Exercise, Women",
+        "Uneven Bars, Women",
+        "Floor Exercise, Men",
+        "Parallel Bars, Men",
+        "Rings, Men",
+        "Individual All-Around, Men",
+        "Pommelled Horse, Men",
+        "Horizontal Bar, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Volleyball": [
+        "Volleyball, Men",
+        "Volleyball, Women"
+      ],
+      "Weightlifting": [
+        "Middleweight, Men",
+        "Middle-Heavyweight, Men",
+        "Bantamweight, Men",
+        "Light-Heavyweight, Men",
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Heavyweight, Men"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Canoe Sprint": [
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Doubles, 1,000 metres, Men",
+        "Kayak Fours, 1,000 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Singles, 500 metres, Women"
+      ],
+      "Cross Country Skiing": [
+        "15 kilometres, Men",
+        "30 kilometres, Men",
+        "50 kilometres, Men",
+        "4 × 10 kilometres Relay, Men",
+        "5 kilometres, Women",
+        "3 × 5 kilometres Relay, Women",
+        "10 kilometres, Women"
+      ],
+      "Ski Jumping": [
+        "Normal Hill, Individual, Men",
+        "Large Hill, Individual, Men"
+      ],
+      "Speed Skating": [
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "1,500 metres, Men",
+        "3,000 metres, Women",
+        "500 metres, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "500 metres, Women"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Fencing": [
+        "Foil, Individual, Men",
+        "Foil, Team, Men",
+        "Épée, Team, Men",
+        "Sabre, Individual, Men",
+        "Foil, Individual, Women",
+        "Foil, Team, Women",
+        "Épée, Individual, Men",
+        "Sabre, Team, Men"
+      ],
+      "Diving": [
+        "Springboard, Women",
+        "Platform, Women",
+        "Platform, Men",
+        "Springboard, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Biathlon": [
+        "20 kilometres, Men"
+      ]
+    },
+    "1968": {
+      "Boxing": [
+        "Welterweight, Men",
+        "Flyweight, Men",
+        "Featherweight, Men",
+        "Light-Heavyweight, Men",
+        "Light-Welterweight, Men",
+        "Light-Middleweight, Men",
+        "Middleweight, Men",
+        "Heavyweight, Men",
+        "Bantamweight, Men",
+        "Light-Flyweight, Men",
+        "Lightweight, Men"
+      ],
+      "Rowing": [
+        "Single Sculls, Men",
+        "Eights, Men",
+        "Coxless Pairs, Men",
+        "Coxed Pairs, Men",
+        "Coxless Fours, Men",
+        "Coxed Fours, Men",
+        "Double Sculls, Men"
+      ],
+      "Athletics": [
+        "200 metres, Men",
+        "800 metres, Men",
+        "200 metres, Women",
+        "80 metres Hurdles, Women",
+        "Javelin Throw, Women",
+        "Pentathlon, Women",
+        "Triple Jump, Men",
+        "4 × 100 metres Relay, Men",
+        "4 × 100 metres Relay, Women",
+        "Discus Throw, Men",
+        "High Jump, Women",
+        "50 kilometres Race Walk, Men",
+        "Pole Vault, Men",
+        "Long Jump, Men",
+        "Shot Put, Women",
+        "10,000 metres, Men",
+        "Marathon, Men",
+        "Javelin Throw, Men",
+        "400 metres, Women",
+        "400 metres Hurdles, Men",
+        "Long Jump, Women",
+        "Hammer Throw, Men",
+        "Discus Throw, Women",
+        "110 metres Hurdles, Men",
+        "100 metres, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "4 × 400 metres Relay, Men",
+        "20 kilometres Race Walk, Men",
+        "800 metres, Women",
+        "100 metres, Women",
+        "High Jump, Men",
+        "Shot Put, Men",
+        "400 metres, Men",
+        "Decathlon, Men"
+      ],
+      "Equestrian Eventing": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Hockey": [
+        "Hockey, Men"
+      ],
+      "Swimming": [
+        "100 metres Freestyle, Men",
+        "200 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "4 × 100 metres Freestyle Relay, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "400 metres Freestyle, Women",
+        "100 metres Butterfly, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "400 metres Freestyle, Men",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Backstroke, Women",
+        "200 metres Backstroke, Women",
+        "100 metres Backstroke, Men",
+        "200 metres Backstroke, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "200 metres Butterfly, Women",
+        "400 metres Individual Medley, Women",
+        "200 metres Butterfly, Men",
+        "200 metres Breaststroke, Men",
+        "800 metres Freestyle, Women",
+        "100 metres Breaststroke, Men",
+        "100 metres Breaststroke, Women",
+        "200 metres Breaststroke, Women",
+        "100 metres Butterfly, Men",
+        "200 metres Individual Medley, Men",
+        "400 metres Individual Medley, Men",
+        "100 metres Freestyle, Women",
+        "200 metres Freestyle, Women",
+        "200 metres Individual Medley, Women"
+      ],
+      "Canoe Sprint": [
+        "Kayak Doubles, 1,000 metres, Men",
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Fours, 1,000 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Singles, 500 metres, Women"
+      ],
+      "Sailing": [
+        "One Person Dinghy, Open",
+        "Two Person Heavyweight Dinghy, Open",
+        "Three Person Keelboat, Open",
+        "5.5 metres, Open",
+        "Two Person Keelboat, Open"
+      ],
+      "Alpine Skiing": [
+        "Giant Slalom, Men",
+        "Slalom, Men",
+        "Downhill, Women",
+        "Giant Slalom, Women",
+        "Slalom, Women",
+        "Downhill, Men"
+      ],
+      "Bobsleigh": [
+        "Four, Men",
+        "Two, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Singles, Women",
+        "Pairs, Mixed"
+      ],
+      "Luge": [
+        "Singles, Men",
+        "Doubles, Open",
+        "Singles, Women"
+      ],
+      "Ski Jumping": [
+        "Normal Hill, Individual, Men",
+        "Large Hill, Individual, Men"
+      ],
+      "Cycling Track": [
+        "Tandem Sprint, 2,000 metres, Men",
+        "1,000 metres Time Trial, Men",
+        "Individual Pursuit, 4,000 metres, Men",
+        "Team Pursuit, 4,000 metres, Men",
+        "Sprint, Men"
+      ],
+      "Weightlifting": [
+        "Heavyweight, Men",
+        "Middle-Heavyweight, Men",
+        "Bantamweight, Men",
+        "Middleweight, Men",
+        "Lightweight, Men",
+        "Featherweight, Men",
+        "Light-Heavyweight, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Wrestling": [
+        "Flyweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Featherweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Welterweight, Freestyle, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Bantamweight, Freestyle, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Flyweight, Freestyle, Men"
+      ],
+      "Equestrian Jumping": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Individual All-Around, Women",
+        "Team All-Around, Women",
+        "Floor Exercise, Women",
+        "Horse Vault, Women",
+        "Uneven Bars, Women",
+        "Balance Beam, Women",
+        "Team All-Around, Men",
+        "Pommelled Horse, Men",
+        "Individual All-Around, Men",
+        "Floor Exercise, Men",
+        "Horse Vault, Men",
+        "Parallel Bars, Men",
+        "Horizontal Bar, Men",
+        "Rings, Men"
+      ],
+      "Diving": [
+        "Platform, Women",
+        "Springboard, Men",
+        "Platform, Men",
+        "Springboard, Women"
+      ],
+      "Shooting": [
+        "Small-Bore Rifle, Prone, 50 metres, Open",
+        "Free Pistol, 50 metres, Open",
+        "Trap, Open",
+        "Skeet, Open",
+        "Rapid-Fire Pistol, 25 metres, Open",
+        "Free Rifle, Three Positions, 300 metres, Open",
+        "Small-Bore Rifle, Three Positions, 50 metres, Open"
+      ],
+      "Volleyball": [
+        "Volleyball, Men",
+        "Volleyball, Women"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "100 kilometres Team Time Trial, Men"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Cross Country Skiing": [
+        "15 kilometres, Men",
+        "30 kilometres, Men",
+        "4 × 10 kilometres Relay, Men",
+        "50 kilometres, Men",
+        "10 kilometres, Women",
+        "3 × 5 kilometres Relay, Women",
+        "5 kilometres, Women"
+      ],
+      "Speed Skating": [
+        "1,500 metres, Women",
+        "3,000 metres, Women",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "1,000 metres, Women",
+        "500 metres, Men",
+        "10,000 metres, Men",
+        "500 metres, Women"
+      ],
+      "Fencing": [
+        "Foil, Individual, Men",
+        "Foil, Team, Men",
+        "Épée, Individual, Men",
+        "Épée, Team, Men",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men",
+        "Foil, Individual, Women",
+        "Foil, Team, Women"
+      ],
+      "Modern Pentathlon": [
+        "Team, Men",
+        "Individual, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Biathlon": [
+        "20 kilometres, Men",
+        "4 × 7.5 kilometres Relay, Men"
+      ],
+      "Basketball": [
+        "Basketball, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open",
+        "Team, Open"
+      ]
+    },
+    "1972": {
+      "Rowing": [
+        "Single Sculls, Men",
+        "Coxed Pairs, Men",
+        "Coxed Fours, Men",
+        "Double Sculls, Men",
+        "Coxless Pairs, Men",
+        "Coxless Fours, Men",
+        "Eights, Men"
+      ],
+      "Athletics": [
+        "100 metres, Women",
+        "200 metres, Women",
+        "High Jump, Women",
+        "10,000 metres, Men",
+        "Marathon, Men",
+        "Triple Jump, Men",
+        "Long Jump, Women",
+        "Shot Put, Women",
+        "Discus Throw, Women",
+        "4 × 100 metres Relay, Women",
+        "Discus Throw, Men",
+        "20 kilometres Race Walk, Men",
+        "High Jump, Men",
+        "Pole Vault, Men",
+        "Shot Put, Men",
+        "Hammer Throw, Men",
+        "400 metres, Women",
+        "800 metres, Women",
+        "1,500 metres, Women",
+        "100 metres Hurdles, Women",
+        "4 × 400 metres Relay, Women",
+        "Javelin Throw, Women",
+        "Pentathlon, Women",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "110 metres Hurdles, Men",
+        "4 × 400 metres Relay, Men",
+        "400 metres Hurdles, Men",
+        "200 metres, Men",
+        "100 metres, Men",
+        "400 metres, Men",
+        "800 metres, Men",
+        "Decathlon, Men",
+        "4 × 100 metres Relay, Men",
+        "50 kilometres Race Walk, Men",
+        "Javelin Throw, Men",
+        "Long Jump, Men"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "100 kilometres Team Time Trial, Men"
+      ],
+      "Cycling Track": [
+        "Sprint, Men",
+        "1,000 metres Time Trial, Men",
+        "Tandem Sprint, 2,000 metres, Men",
+        "Team Pursuit, 4,000 metres, Men",
+        "Individual Pursuit, 4,000 metres, Men"
+      ],
+      "Sailing": [
+        "Two Person Keelboat, Open",
+        "Three Person Keelboat, Open",
+        "One Person Dinghy, Open",
+        "Two Person Heavyweight Dinghy, Open"
+      ],
+      "Swimming": [
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "100 metres Freestyle, Women",
+        "200 metres Freestyle, Women",
+        "400 metres Freestyle, Women",
+        "800 metres Freestyle, Women",
+        "100 metres Breaststroke, Women",
+        "200 metres Breaststroke, Women",
+        "200 metres Individual Medley, Women",
+        "400 metres Individual Medley, Women",
+        "100 metres Butterfly, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "200 metres Backstroke, Women",
+        "4 × 100 metres Freestyle Relay, Men",
+        "100 metres Backstroke, Men",
+        "200 metres Backstroke, Men",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Butterfly, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "200 metres Breaststroke, Men",
+        "400 metres Individual Medley, Men",
+        "100 metres Backstroke, Women",
+        "100 metres Breaststroke, Men",
+        "100 metres Freestyle, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "200 metres Individual Medley, Men",
+        "200 metres Freestyle, Men",
+        "200 metres Butterfly, Men",
+        "200 metres Butterfly, Women"
+      ],
+      "Canoe Slalom": [
+        "Kayak Singles, Slalom, Men",
+        "Canadian Singles, Slalom, Men",
+        "Canadian Doubles, Slalom, Men",
+        "Kayak Singles, Slalom, Women"
+      ],
+      "Shooting": [
+        "Free Pistol, 50 metres, Open",
+        "Running Target, 50 metres, Open",
+        "Rapid-Fire Pistol, 25 metres, Open",
+        "Small-Bore Rifle, Three Positions, 50 metres, Open",
+        "Skeet, Open",
+        "Trap, Open",
+        "Free Rifle, Three Positions, 300 metres, Open",
+        "Small-Bore Rifle, Prone, 50 metres, Open"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Men",
+        "Downhill, Women",
+        "Giant Slalom, Women",
+        "Slalom, Women",
+        "Giant Slalom, Men",
+        "Slalom, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Women",
+        "Singles, Men",
+        "Pairs, Mixed"
+      ],
+      "Judo": [
+        "Half-Heavyweight, Men",
+        "Half-Middleweight, Men",
+        "Lightweight, Men",
+        "Middleweight, Men",
+        "Open Class, Men",
+        "Heavyweight, Men"
+      ],
+      "Boxing": [
+        "Flyweight, Men",
+        "Light-Welterweight, Men",
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Bantamweight, Men",
+        "Welterweight, Men",
+        "Light-Heavyweight, Men",
+        "Heavyweight, Men",
+        "Light-Middleweight, Men",
+        "Middleweight, Men",
+        "Light-Flyweight, Men"
+      ],
+      "Canoe Sprint": [
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Doubles, 1,000 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Kayak Singles, 500 metres, Women",
+        "Kayak Fours, 1,000 metres, Men"
+      ],
+      "Weightlifting": [
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Middleweight, Men",
+        "Middle-Heavyweight, Men",
+        "Heavyweight, Men",
+        "Super-Heavyweight, Men",
+        "Flyweight, Men",
+        "Bantamweight, Men",
+        "Light-Heavyweight, Men"
+      ],
+      "Wrestling": [
+        "Light-Flyweight, Greco-Roman, Men",
+        "Flyweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Super-Heavyweight, Greco-Roman, Men",
+        "Light-Flyweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Super-Heavyweight, Freestyle, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Bantamweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men",
+        "Flyweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Middleweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men"
+      ],
+      "Basketball": [
+        "Basketball, Men"
+      ],
+      "Diving": [
+        "Platform, Women",
+        "Springboard, Women",
+        "Springboard, Men",
+        "Platform, Men"
+      ],
+      "Handball": [
+        "Handball, Men"
+      ],
+      "Cross Country Skiing": [
+        "5 kilometres, Women",
+        "10 kilometres, Women",
+        "3 × 5 kilometres Relay, Women",
+        "15 kilometres, Men",
+        "30 kilometres, Men",
+        "50 kilometres, Men",
+        "4 × 10 kilometres Relay, Men"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Team All-Around, Men",
+        "Horse Vault, Men",
+        "Individual All-Around, Women",
+        "Team All-Around, Women",
+        "Horse Vault, Women",
+        "Uneven Bars, Women",
+        "Balance Beam, Women",
+        "Individual All-Around, Men",
+        "Floor Exercise, Men",
+        "Parallel Bars, Men",
+        "Horizontal Bar, Men",
+        "Rings, Men",
+        "Pommelled Horse, Men",
+        "Floor Exercise, Women"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Volleyball": [
+        "Volleyball, Men",
+        "Volleyball, Women"
+      ],
+      "Biathlon": [
+        "20 kilometres, Men",
+        "4 × 7.5 kilometres Relay, Men"
+      ],
+      "Luge": [
+        "Singles, Men",
+        "Doubles, Open",
+        "Singles, Women"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Individual, Men",
+        "Normal Hill, Individual, Men"
+      ],
+      "Archery": [
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Modern Pentathlon": [
+        "Team, Men",
+        "Individual, Men"
+      ],
+      "Fencing": [
+        "Foil, Individual, Men",
+        "Foil, Team, Men",
+        "Épée, Individual, Men",
+        "Épée, Team, Men",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men",
+        "Foil, Individual, Women",
+        "Foil, Team, Women"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Hockey": [
+        "Hockey, Men"
+      ],
+      "Bobsleigh": [
+        "Four, Men",
+        "Two, Men"
+      ],
+      "Speed Skating": [
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "3,000 metres, Women",
+        "500 metres, Men",
+        "500 metres, Women"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open",
+        "Team, Open"
+      ]
+    },
+    "1976": {
+      "Equestrian Eventing": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Hockey": [
+        "Hockey, Men"
+      ],
+      "Sailing": [
+        "One Person Dinghy, Open",
+        "Two Person Dinghy, Open",
+        "Two Person Heavyweight Dinghy, Open",
+        "Three Person Keelboat, Open",
+        "Multihull, Open",
+        "Two Person Keelboat, Open"
+      ],
+      "Swimming": [
+        "1,500 metres Freestyle, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "400 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Backstroke, Women",
+        "200 metres Backstroke, Women",
+        "400 metres Individual Medley, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "100 metres Backstroke, Men",
+        "100 metres Freestyle, Women",
+        "200 metres Freestyle, Women",
+        "800 metres Freestyle, Women",
+        "100 metres Breaststroke, Women",
+        "100 metres Butterfly, Women",
+        "200 metres Butterfly, Women",
+        "4 × 200 metres Freestyle Relay, Men",
+        "100 metres Breaststroke, Men",
+        "200 metres Breaststroke, Men",
+        "400 metres Freestyle, Men",
+        "400 metres Individual Medley, Men",
+        "200 metres Breaststroke, Women",
+        "100 metres Freestyle, Men",
+        "200 metres Freestyle, Men",
+        "200 metres Backstroke, Men",
+        "100 metres Butterfly, Men",
+        "200 metres Butterfly, Men"
+      ],
+      "Shooting": [
+        "Free Pistol, 50 metres, Open",
+        "Skeet, Open",
+        "Rapid-Fire Pistol, 25 metres, Open",
+        "Trap, Open",
+        "Running Target, 50 metres, Open",
+        "Small-Bore Rifle, Prone, 50 metres, Open",
+        "Small-Bore Rifle, Three Positions, 50 metres, Open"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Men",
+        "Downhill, Women",
+        "Giant Slalom, Women",
+        "Slalom, Men",
+        "Slalom, Women",
+        "Giant Slalom, Men"
+      ],
+      "Luge": [
+        "Doubles, Open",
+        "Singles, Men",
+        "Singles, Women"
+      ],
+      "Ski Jumping": [
+        "Normal Hill, Individual, Men",
+        "Large Hill, Individual, Men"
+      ],
+      "Athletics": [
+        "800 metres, Men",
+        "1,500 metres, Men",
+        "Marathon, Men",
+        "Triple Jump, Men",
+        "800 metres, Women",
+        "High Jump, Women",
+        "Shot Put, Women",
+        "Discus Throw, Women",
+        "High Jump, Men",
+        "400 metres, Men",
+        "110 metres Hurdles, Men",
+        "3,000 metres Steeplechase, Men",
+        "4 × 100 metres Relay, Men",
+        "20 kilometres Race Walk, Men",
+        "Long Jump, Men",
+        "Shot Put, Men",
+        "Discus Throw, Men",
+        "100 metres, Women",
+        "200 metres, Women",
+        "400 metres, Women",
+        "1,500 metres, Women",
+        "100 metres Hurdles, Women",
+        "4 × 100 metres Relay, Women",
+        "4 × 400 metres Relay, Women",
+        "Long Jump, Women",
+        "Javelin Throw, Women",
+        "Pentathlon, Women",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "Pole Vault, Men",
+        "Javelin Throw, Men",
+        "100 metres, Men",
+        "200 metres, Men",
+        "4 × 400 metres Relay, Men",
+        "400 metres Hurdles, Men",
+        "Hammer Throw, Men",
+        "Decathlon, Men"
+      ],
+      "Cycling Track": [
+        "1,000 metres Time Trial, Men",
+        "Sprint, Men",
+        "Individual Pursuit, 4,000 metres, Men",
+        "Team Pursuit, 4,000 metres, Men"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Boxing": [
+        "Heavyweight, Men",
+        "Light-Welterweight, Men",
+        "Light-Flyweight, Men",
+        "Flyweight, Men",
+        "Featherweight, Men",
+        "Light-Middleweight, Men",
+        "Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Welterweight, Men",
+        "Bantamweight, Men",
+        "Lightweight, Men"
+      ],
+      "Basketball": [
+        "Basketball, Women",
+        "Basketball, Men"
+      ],
+      "Rowing": [
+        "Double Sculls, Women",
+        "Coxless Pairs, Women",
+        "Coxed Fours, Women",
+        "Quadruple Sculls, Men",
+        "Coxed Pairs, Men",
+        "Single Sculls, Men",
+        "Double Sculls, Men",
+        "Coxless Pairs, Men",
+        "Coxless Fours, Men",
+        "Coxed Fours, Men",
+        "Eights, Men",
+        "Single Sculls, Women",
+        "Coxed Quadruple Sculls, Women",
+        "Eights, Women"
+      ],
+      "Weightlifting": [
+        "Bantamweight, Men",
+        "Featherweight, Men",
+        "Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Middle-Heavyweight, Men",
+        "Heavyweight, Men",
+        "Super-Heavyweight, Men",
+        "Lightweight, Men",
+        "Flyweight, Men"
+      ],
+      "Wrestling": [
+        "Light-Flyweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Super-Heavyweight, Greco-Roman, Men",
+        "Light-Flyweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Bantamweight, Freestyle, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Super-Heavyweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men",
+        "Flyweight, Greco-Roman, Men",
+        "Flyweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men"
+      ],
+      "Canoe Sprint": [
+        "Canadian Singles, 500 metres, Men",
+        "Kayak Singles, 500 metres, Men",
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Doubles, 500 metres, Men",
+        "Kayak Doubles, 1,000 metres, Men",
+        "Kayak Fours, 1,000 metres, Men",
+        "Kayak Singles, 500 metres, Women",
+        "Kayak Doubles, 500 metres, Women",
+        "Canadian Singles, 1,000 metres, Men",
+        "Canadian Doubles, 500 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Singles, Women",
+        "Pairs, Mixed",
+        "Ice Dancing, Mixed"
+      ],
+      "Speed Skating": [
+        "500 metres, Women",
+        "3,000 metres, Women",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "1,000 metres, Men",
+        "500 metres, Men",
+        "1,000 metres, Women",
+        "1,500 metres, Women"
+      ],
+      "Judo": [
+        "Lightweight, Men",
+        "Half-Middleweight, Men",
+        "Half-Heavyweight, Men",
+        "Open Class, Men",
+        "Middleweight, Men",
+        "Heavyweight, Men"
+      ],
+      "Volleyball": [
+        "Volleyball, Men",
+        "Volleyball, Women"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Cycling Road": [
+        "100 kilometres Team Time Trial, Men",
+        "Road Race, Individual, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Team All-Around, Men",
+        "Pommelled Horse, Men",
+        "Team All-Around, Women",
+        "Horse Vault, Women",
+        "Horizontal Bar, Men",
+        "Uneven Bars, Women",
+        "Individual All-Around, Men",
+        "Horse Vault, Men",
+        "Parallel Bars, Men",
+        "Rings, Men",
+        "Individual All-Around, Women",
+        "Floor Exercise, Women",
+        "Balance Beam, Women",
+        "Floor Exercise, Men"
+      ],
+      "Diving": [
+        "Springboard, Women",
+        "Springboard, Men",
+        "Platform, Men",
+        "Platform, Women"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Handball": [
+        "Handball, Women",
+        "Handball, Men"
+      ],
+      "Biathlon": [
+        "4 × 7.5 kilometres Relay, Men",
+        "20 kilometres, Men"
+      ],
+      "Bobsleigh": [
+        "Two, Men",
+        "Four, Men"
+      ],
+      "Cross Country Skiing": [
+        "50 kilometres, Men",
+        "4 × 5 kilometres Relay, Women",
+        "15 kilometres, Men",
+        "4 × 10 kilometres Relay, Men",
+        "5 kilometres, Women",
+        "10 kilometres, Women",
+        "30 kilometres, Men"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Fencing": [
+        "Foil, Individual, Men",
+        "Foil, Team, Men",
+        "Foil, Team, Women",
+        "Épée, Individual, Men",
+        "Foil, Individual, Women",
+        "Sabre, Team, Men",
+        "Sabre, Individual, Men",
+        "Épée, Team, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Archery": [
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open",
+        "Team, Open"
+      ]
+    },
+    "1980": {
+      "Athletics": [
+        "400 metres, Men",
+        "Triple Jump, Men",
+        "100 metres, Men",
+        "Discus Throw, Women",
+        "110 metres Hurdles, Men",
+        "Discus Throw, Men",
+        "Javelin Throw, Women",
+        "400 metres, Women",
+        "1,500 metres, Men",
+        "Marathon, Men",
+        "400 metres Hurdles, Men",
+        "4 × 400 metres Relay, Men",
+        "20 kilometres Race Walk, Men",
+        "50 kilometres Race Walk, Men",
+        "High Jump, Men",
+        "Long Jump, Men",
+        "Shot Put, Men",
+        "Javelin Throw, Men",
+        "100 metres, Women",
+        "200 metres, Women",
+        "1,500 metres, Women",
+        "100 metres Hurdles, Women",
+        "4 × 100 metres Relay, Women",
+        "4 × 400 metres Relay, Women",
+        "High Jump, Women",
+        "Long Jump, Women",
+        "Shot Put, Women",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "4 × 100 metres Relay, Men",
+        "200 metres, Men",
+        "800 metres, Men",
+        "Decathlon, Men",
+        "Pole Vault, Men",
+        "Hammer Throw, Men",
+        "800 metres, Women",
+        "Pentathlon, Women"
+      ],
+      "Canoe Sprint": [
+        "Kayak Singles, 500 metres, Men",
+        "Kayak Fours, 1,000 metres, Men",
+        "Canadian Singles, 500 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Canadian Doubles, 500 metres, Men",
+        "Kayak Singles, 500 metres, Women",
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Doubles, 500 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Doubles, 1,000 metres, Men"
+      ],
+      "Swimming": [
+        "200 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "200 metres Backstroke, Men",
+        "100 metres Breaststroke, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "800 metres Freestyle, Women",
+        "200 metres Butterfly, Women",
+        "4 × 200 metres Freestyle Relay, Men",
+        "100 metres Breaststroke, Women",
+        "100 metres Freestyle, Men",
+        "100 metres Butterfly, Men",
+        "200 metres Butterfly, Men",
+        "100 metres Freestyle, Women",
+        "200 metres Freestyle, Women",
+        "400 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Backstroke, Women",
+        "200 metres Backstroke, Women",
+        "100 metres Butterfly, Women",
+        "400 metres Individual Medley, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "200 metres Breaststroke, Men",
+        "400 metres Individual Medley, Men",
+        "400 metres Freestyle, Men",
+        "100 metres Backstroke, Men",
+        "200 metres Breaststroke, Women"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Sailing": [
+        "One Person Dinghy, Open",
+        "Two Person Keelboat, Open",
+        "Two Person Dinghy, Open",
+        "Multihull, Open",
+        "Three Person Keelboat, Open",
+        "Two Person Heavyweight Dinghy, Open"
+      ],
+      "Shooting": [
+        "Rapid-Fire Pistol, 25 metres, Open",
+        "Free Pistol, 50 metres, Open",
+        "Small-Bore Rifle, Prone, 50 metres, Open",
+        "Skeet, Open",
+        "Small-Bore Rifle, Three Positions, 50 metres, Open",
+        "Running Target, 50 metres, Open",
+        "Trap, Open"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Men",
+        "Giant Slalom, Men",
+        "Downhill, Women",
+        "Giant Slalom, Women",
+        "Slalom, Women",
+        "Slalom, Men"
+      ],
+      "Luge": [
+        "Doubles, Open",
+        "Singles, Men",
+        "Singles, Women"
+      ],
+      "Ski Jumping": [
+        "Normal Hill, Individual, Men",
+        "Large Hill, Individual, Men"
+      ],
+      "Judo": [
+        "Half-Heavyweight, Men",
+        "Half-Lightweight, Men",
+        "Heavyweight, Men",
+        "Extra-Lightweight, Men",
+        "Half-Middleweight, Men",
+        "Middleweight, Men",
+        "Lightweight, Men",
+        "Open Class, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Individual All-Around, Men",
+        "Horizontal Bar, Men",
+        "Rings, Men",
+        "Team All-Around, Men",
+        "Floor Exercise, Men",
+        "Horse Vault, Men",
+        "Parallel Bars, Men",
+        "Pommelled Horse, Men",
+        "Individual All-Around, Women",
+        "Team All-Around, Women",
+        "Floor Exercise, Women",
+        "Horse Vault, Women",
+        "Uneven Bars, Women",
+        "Balance Beam, Women"
+      ],
+      "Basketball": [
+        "Basketball, Women",
+        "Basketball, Men"
+      ],
+      "Boxing": [
+        "Light-Flyweight, Men",
+        "Flyweight, Men",
+        "Bantamweight, Men",
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Light-Welterweight, Men",
+        "Welterweight, Men",
+        "Light-Middleweight, Men",
+        "Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Heavyweight, Men"
+      ],
+      "Rowing": [
+        "Quadruple Sculls, Men",
+        "Coxless Pairs, Women",
+        "Coxed Fours, Women",
+        "Coxed Quadruple Sculls, Women",
+        "Double Sculls, Men",
+        "Single Sculls, Men",
+        "Coxless Pairs, Men",
+        "Coxed Pairs, Men",
+        "Coxless Fours, Men",
+        "Coxed Fours, Men",
+        "Eights, Men",
+        "Single Sculls, Women",
+        "Double Sculls, Women",
+        "Eights, Women"
+      ],
+      "Volleyball": [
+        "Volleyball, Men",
+        "Volleyball, Women"
+      ],
+      "Weightlifting": [
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Middle-Heavyweight, Men",
+        "Heavyweight II, Men",
+        "Bantamweight, Men",
+        "Heavyweight I, Men",
+        "Super-Heavyweight, Men",
+        "Flyweight, Men"
+      ],
+      "Wrestling": [
+        "Flyweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Super-Heavyweight, Greco-Roman, Men",
+        "Flyweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Light-Flyweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Super-Heavyweight, Freestyle, Men",
+        "Light-Flyweight, Freestyle, Men",
+        "Bantamweight, Freestyle, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Lightweight, Greco-Roman, Men"
+      ],
+      "Cross Country Skiing": [
+        "30 kilometres, Men",
+        "5 kilometres, Women",
+        "10 kilometres, Women",
+        "4 × 5 kilometres Relay, Women",
+        "15 kilometres, Men",
+        "50 kilometres, Men",
+        "4 × 10 kilometres Relay, Men"
+      ],
+      "Speed Skating": [
+        "1,000 metres, Men",
+        "500 metres, Women",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "3,000 metres, Women",
+        "500 metres, Men",
+        "10,000 metres, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men"
+      ],
+      "Cycling Road": [
+        "100 kilometres Team Time Trial, Men",
+        "Road Race, Individual, Men"
+      ],
+      "Cycling Track": [
+        "Team Pursuit, 4,000 metres, Men",
+        "Individual Pursuit, 4,000 metres, Men",
+        "Sprint, Men",
+        "1,000 metres Time Trial, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Hockey": [
+        "Hockey, Women",
+        "Hockey, Men"
+      ],
+      "Diving": [
+        "Platform, Men",
+        "Springboard, Women",
+        "Platform, Women",
+        "Springboard, Men"
+      ],
+      "Handball": [
+        "Handball, Men",
+        "Handball, Women"
+      ],
+      "Biathlon": [
+        "10 kilometres Sprint, Men",
+        "20 kilometres, Men",
+        "4 × 7.5 kilometres Relay, Men"
+      ],
+      "Bobsleigh": [
+        "Two, Men",
+        "Four, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Singles, Women",
+        "Pairs, Mixed",
+        "Ice Dancing, Mixed"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Archery": [
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Fencing": [
+        "Foil, Individual, Men",
+        "Foil, Team, Men",
+        "Épée, Individual, Men",
+        "Épée, Team, Men",
+        "Foil, Individual, Women",
+        "Foil, Team, Women",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ]
+    },
+    "1984": {
+      "Boxing": [
+        "Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Lightweight, Men",
+        "Bantamweight, Men",
+        "Light-Middleweight, Men",
+        "Heavyweight, Men",
+        "Welterweight, Men",
+        "Super-Heavyweight, Men",
+        "Light-Flyweight, Men",
+        "Flyweight, Men",
+        "Featherweight, Men",
+        "Light-Welterweight, Men"
+      ],
+      "Athletics": [
+        "Long Jump, Men",
+        "Shot Put, Women",
+        "Heptathlon, Women",
+        "800 metres, Men",
+        "100 metres, Men",
+        "4 × 100 metres Relay, Men",
+        "3,000 metres, Women",
+        "4 × 100 metres Relay, Women",
+        "4 × 400 metres Relay, Women",
+        "High Jump, Men",
+        "400 metres, Men",
+        "110 metres Hurdles, Men",
+        "Hammer Throw, Men",
+        "Javelin Throw, Men",
+        "Javelin Throw, Women",
+        "3,000 metres Steeplechase, Men",
+        "Pole Vault, Men",
+        "100 metres Hurdles, Women",
+        "1,500 metres, Men",
+        "10,000 metres, Men",
+        "Marathon, Men",
+        "4 × 400 metres Relay, Men",
+        "Triple Jump, Men",
+        "Decathlon, Men",
+        "400 metres, Women",
+        "Long Jump, Women",
+        "20 kilometres Race Walk, Men",
+        "50 kilometres Race Walk, Men",
+        "Shot Put, Men",
+        "1,500 metres, Women",
+        "High Jump, Women",
+        "100 metres, Women",
+        "200 metres, Women",
+        "5,000 metres, Men",
+        "400 metres Hurdles, Women",
+        "Discus Throw, Women",
+        "Marathon, Women",
+        "800 metres, Women",
+        "200 metres, Men",
+        "400 metres Hurdles, Men",
+        "Discus Throw, Men"
+      ],
+      "Canoe Sprint": [
+        "Kayak Doubles, 1,000 metres, Men",
+        "Kayak Doubles, 500 metres, Men",
+        "Canadian Singles, 500 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Fours, 500 metres, Women",
+        "Kayak Singles, 500 metres, Men",
+        "Kayak Fours, 1,000 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Singles, 500 metres, Women",
+        "Kayak Singles, 1,000 metres, Men",
+        "Canadian Doubles, 500 metres, Men"
+      ],
+      "Cycling Track": [
+        "Team Pursuit, 4,000 metres, Men",
+        "Points Race, Men",
+        "1,000 metres Time Trial, Men",
+        "Sprint, Men",
+        "Individual Pursuit, 4,000 metres, Men"
+      ],
+      "Rowing": [
+        "Quadruple Sculls, Men",
+        "Eights, Men",
+        "Coxed Fours, Women",
+        "Double Sculls, Men",
+        "Single Sculls, Women",
+        "Single Sculls, Men",
+        "Double Sculls, Women",
+        "Coxless Pairs, Women",
+        "Coxless Fours, Men",
+        "Coxed Quadruple Sculls, Women",
+        "Coxed Fours, Men",
+        "Coxed Pairs, Men",
+        "Eights, Women",
+        "Coxless Pairs, Men"
+      ],
+      "Sailing": [
+        "Multihull, Open",
+        "Three Person Keelboat, Open",
+        "One Person Dinghy, Open",
+        "Two Person Heavyweight Dinghy, Open",
+        "Two Person Dinghy, Open",
+        "Two Person Keelboat, Open",
+        "Windsurfer, Men"
+      ],
+      "Shooting": [
+        "Sporting Pistol, 25 metres, Women",
+        "Air Rifle, 10 metres, Men",
+        "Free Pistol, 50 metres, Men",
+        "Running Target, 50 metres, Men",
+        "Air Rifle, 10 metres, Women",
+        "Small-Bore Rifle, Three Positions, 50 metres, Women",
+        "Skeet, Open",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Men",
+        "Trap, Open"
+      ],
+      "Swimming": [
+        "100 metres Freestyle, Men",
+        "400 metres Freestyle, Men",
+        "4 × 100 metres Freestyle Relay, Men",
+        "100 metres Breaststroke, Men",
+        "200 metres Breaststroke, Men",
+        "100 metres Butterfly, Men",
+        "200 metres Butterfly, Men",
+        "400 metres Individual Medley, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "200 metres Butterfly, Women",
+        "200 metres Individual Medley, Women",
+        "400 metres Individual Medley, Women",
+        "200 metres Breaststroke, Women",
+        "100 metres Backstroke, Men",
+        "200 metres Backstroke, Men",
+        "200 metres Individual Medley, Men",
+        "100 metres Breaststroke, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "4 × 200 metres Freestyle Relay, Men",
+        "400 metres Freestyle, Women",
+        "800 metres Freestyle, Women",
+        "100 metres Freestyle, Women",
+        "200 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Backstroke, Women",
+        "200 metres Backstroke, Women",
+        "200 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "100 metres Butterfly, Women"
+      ],
+      "Weightlifting": [
+        "Light-Heavyweight, Men",
+        "Super-Heavyweight, Men",
+        "Middleweight, Men",
+        "Flyweight, Men",
+        "Bantamweight, Men",
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Heavyweight I, Men",
+        "Middle-Heavyweight, Men",
+        "Heavyweight II, Men"
+      ],
+      "Judo": [
+        "Half-Lightweight, Men",
+        "Middleweight, Men",
+        "Lightweight, Men",
+        "Half-Heavyweight, Men",
+        "Heavyweight, Men",
+        "Half-Middleweight, Men",
+        "Extra-Lightweight, Men",
+        "Open Class, Men"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Men",
+        "Downhill, Women",
+        "Slalom, Men",
+        "Giant Slalom, Women",
+        "Slalom, Women",
+        "Giant Slalom, Men"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Volleyball": [
+        "Volleyball, Men",
+        "Volleyball, Women"
+      ],
+      "Artistic Swimming": [
+        "Solo, Women",
+        "Duet, Women"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "100 kilometres Team Time Trial, Men",
+        "Road Race, Individual, Women"
+      ],
+      "Diving": [
+        "Springboard, Women",
+        "Springboard, Men",
+        "Platform, Men",
+        "Platform, Women"
+      ],
+      "Rhythmic Gymnastics": [
+        "Individual, Women"
+      ],
+      "Wrestling": [
+        "Middleweight, Freestyle, Men",
+        "Super-Heavyweight, Freestyle, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Lightweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Light-Flyweight, Greco-Roman, Men",
+        "Flyweight, Greco-Roman, Men",
+        "Light-Flyweight, Freestyle, Men",
+        "Flyweight, Freestyle, Men",
+        "Bantamweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Super-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Freestyle, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Welterweight, Freestyle, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Singles, Women",
+        "Ice Dancing, Mixed",
+        "Pairs, Mixed"
+      ],
+      "Speed Skating": [
+        "500 metres, Men",
+        "1,000 metres, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "500 metres, Women",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "3,000 metres, Women"
+      ],
+      "Archery": [
+        "Individual, Women",
+        "Individual, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Individual All-Around, Men",
+        "Team All-Around, Men",
+        "Floor Exercise, Men",
+        "Horse Vault, Men",
+        "Horizontal Bar, Men",
+        "Rings, Men",
+        "Pommelled Horse, Men",
+        "Team All-Around, Women",
+        "Uneven Bars, Women",
+        "Parallel Bars, Men",
+        "Individual All-Around, Women",
+        "Floor Exercise, Women",
+        "Horse Vault, Women",
+        "Balance Beam, Women"
+      ],
+      "Basketball": [
+        "Basketball, Women",
+        "Basketball, Men"
+      ],
+      "Fencing": [
+        "Foil, Individual, Women",
+        "Foil, Team, Men",
+        "Épée, Individual, Men",
+        "Épée, Team, Men",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men",
+        "Foil, Team, Women",
+        "Foil, Individual, Men"
+      ],
+      "Handball": [
+        "Handball, Women",
+        "Handball, Men"
+      ],
+      "Cross Country Skiing": [
+        "5 kilometres, Women",
+        "4 × 5 kilometres Relay, Women",
+        "15 kilometres, Men",
+        "50 kilometres, Men",
+        "4 × 10 kilometres Relay, Men",
+        "10 kilometres, Women",
+        "20 kilometres, Women",
+        "30 kilometres, Men"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Individual, Men",
+        "Normal Hill, Individual, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Biathlon": [
+        "10 kilometres Sprint, Men",
+        "20 kilometres, Men",
+        "4 × 7.5 kilometres Relay, Men"
+      ],
+      "Bobsleigh": [
+        "Two, Men",
+        "Four, Men"
+      ],
+      "Luge": [
+        "Doubles, Open",
+        "Singles, Women",
+        "Singles, Men"
+      ],
+      "Nordic Combined": [
+        "Individual, Men"
+      ],
+      "Modern Pentathlon": [
+        "Team, Men",
+        "Individual, Men"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Equestrian Jumping": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Hockey": [
+        "Hockey, Men",
+        "Hockey, Women"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ]
+    },
+    "1988": {
+      "Tennis": [
+        "Singles, Women",
+        "Doubles, Women",
+        "Singles, Men",
+        "Doubles, Men"
+      ],
+      "Volleyball": [
+        "Volleyball, Men",
+        "Volleyball, Women"
+      ],
+      "Athletics": [
+        "Marathon, Women",
+        "400 metres Hurdles, Women",
+        "200 metres, Men",
+        "800 metres, Men",
+        "Triple Jump, Men",
+        "100 metres Hurdles, Women",
+        "High Jump, Women",
+        "Discus Throw, Women",
+        "Decathlon, Men",
+        "Shot Put, Women",
+        "20 kilometres Race Walk, Men",
+        "Javelin Throw, Men",
+        "Marathon, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "50 kilometres Race Walk, Men",
+        "Shot Put, Men",
+        "Discus Throw, Men",
+        "100 metres, Women",
+        "200 metres, Women",
+        "400 metres, Women",
+        "800 metres, Women",
+        "4 × 100 metres Relay, Women",
+        "4 × 400 metres Relay, Women",
+        "Long Jump, Women",
+        "Javelin Throw, Women",
+        "Heptathlon, Women",
+        "4 × 100 metres Relay, Men",
+        "100 metres, Men",
+        "110 metres Hurdles, Men",
+        "3,000 metres Steeplechase, Men",
+        "3,000 metres, Women",
+        "10,000 metres, Women",
+        "10,000 metres, Men",
+        "4 × 400 metres Relay, Men",
+        "1,500 metres, Women",
+        "400 metres Hurdles, Men",
+        "High Jump, Men",
+        "Pole Vault, Men",
+        "Hammer Throw, Men",
+        "400 metres, Men",
+        "Long Jump, Men"
+      ],
+      "Boxing": [
+        "Light-Welterweight, Men",
+        "Light-Flyweight, Men",
+        "Bantamweight, Men",
+        "Light-Middleweight, Men",
+        "Middleweight, Men",
+        "Super-Heavyweight, Men",
+        "Flyweight, Men",
+        "Lightweight, Men",
+        "Welterweight, Men",
+        "Featherweight, Men",
+        "Heavyweight, Men",
+        "Light-Heavyweight, Men"
+      ],
+      "Canoe Sprint": [
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Doubles, 1,000 metres, Men",
+        "Canadian Singles, 500 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Kayak Singles, 500 metres, Women",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Fours, 500 metres, Women",
+        "Kayak Singles, 500 metres, Men",
+        "Kayak Fours, 1,000 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Canadian Doubles, 500 metres, Men",
+        "Kayak Doubles, 500 metres, Men"
+      ],
+      "Cycling Track": [
+        "Sprint, Men",
+        "1,000 metres Time Trial, Men",
+        "Individual Pursuit, 4,000 metres, Men",
+        "Team Pursuit, 4,000 metres, Men",
+        "Points Race, Men",
+        "Sprint, Women"
+      ],
+      "Hockey": [
+        "Hockey, Women",
+        "Hockey, Men"
+      ],
+      "Swimming": [
+        "200 metres Freestyle, Men",
+        "400 metres Freestyle, Men",
+        "800 metres Freestyle, Women",
+        "100 metres Breaststroke, Women",
+        "200 metres Breaststroke, Women",
+        "4 × 100 metres Medley Relay, Men",
+        "4 × 100 metres Medley Relay, Women",
+        "50 metres Freestyle, Women",
+        "100 metres Freestyle, Women",
+        "100 metres Butterfly, Women",
+        "200 metres Freestyle, Women",
+        "200 metres Butterfly, Men",
+        "1,500 metres Freestyle, Men",
+        "4 × 100 metres Freestyle Relay, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "200 metres Backstroke, Men",
+        "200 metres Individual Medley, Men",
+        "400 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Backstroke, Women",
+        "200 metres Backstroke, Women",
+        "200 metres Butterfly, Women",
+        "200 metres Individual Medley, Women",
+        "400 metres Individual Medley, Women",
+        "100 metres Freestyle, Men",
+        "100 metres Breaststroke, Men",
+        "200 metres Breaststroke, Men",
+        "100 metres Butterfly, Men",
+        "400 metres Individual Medley, Men",
+        "100 metres Backstroke, Men",
+        "50 metres Freestyle, Men"
+      ],
+      "Judo": [
+        "Middleweight, Men",
+        "Half-Heavyweight, Men",
+        "Lightweight, Men",
+        "Half-Middleweight, Men",
+        "Heavyweight, Men",
+        "Half-Lightweight, Men",
+        "Extra-Lightweight, Men"
+      ],
+      "Alpine Skiing": [
+        "Super G, Men",
+        "Giant Slalom, Men",
+        "Combined, Men",
+        "Super G, Women",
+        "Combined, Women",
+        "Downhill, Women",
+        "Downhill, Men",
+        "Slalom, Men",
+        "Giant Slalom, Women",
+        "Slalom, Women"
+      ],
+      "Nordic Combined": [
+        "Team, Men",
+        "Individual, Men"
+      ],
+      "Speed Skating": [
+        "1,500 metres, Men",
+        "10,000 metres, Men",
+        "500 metres, Men",
+        "1,000 metres, Men",
+        "500 metres, Women",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "3,000 metres, Women",
+        "5,000 metres, Women",
+        "5,000 metres, Men"
+      ],
+      "Shooting": [
+        "Trap, Open",
+        "Air Pistol, 10 metres, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Women",
+        "Skeet, Open",
+        "Running Target, 50 metres, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Air Rifle, 10 metres, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Men",
+        "Sporting Pistol, 25 metres, Women",
+        "Free Pistol, 50 metres, Men",
+        "Air Pistol, 10 metres, Women",
+        "Air Rifle, 10 metres, Women"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Sailing": [
+        "Two Person Keelboat, Open",
+        "Multihull, Open",
+        "Two Person Heavyweight Dinghy, Open",
+        "Three Person Keelboat, Open",
+        "Two Person Dinghy, Men",
+        "Windsurfer, Open",
+        "One Person Dinghy, Open",
+        "Two Person Dinghy, Women"
+      ],
+      "Artistic Gymnastics": [
+        "Pommelled Horse, Men",
+        "Floor Exercise, Women",
+        "Floor Exercise, Men",
+        "Horse Vault, Men",
+        "Team All-Around, Men",
+        "Parallel Bars, Men",
+        "Horizontal Bar, Men",
+        "Rings, Men",
+        "Team All-Around, Women",
+        "Uneven Bars, Women",
+        "Individual All-Around, Women",
+        "Horse Vault, Women",
+        "Balance Beam, Women",
+        "Individual All-Around, Men"
+      ],
+      "Rhythmic Gymnastics": [
+        "Individual, Women"
+      ],
+      "Rowing": [
+        "Single Sculls, Women",
+        "Double Sculls, Women",
+        "Coxless Pairs, Women",
+        "Coxed Fours, Women",
+        "Eights, Women",
+        "Single Sculls, Men",
+        "Quadruple Sculls, Men",
+        "Coxed Pairs, Men",
+        "Coxless Fours, Men",
+        "Coxed Fours, Men",
+        "Quadruple Sculls, Women",
+        "Coxless Pairs, Men",
+        "Double Sculls, Men",
+        "Eights, Men"
+      ],
+      "Weightlifting": [
+        "Flyweight, Men",
+        "Featherweight, Men",
+        "Middleweight, Men",
+        "Bantamweight, Men",
+        "Lightweight, Men",
+        "Heavyweight II, Men",
+        "Light-Heavyweight, Men",
+        "Middle-Heavyweight, Men",
+        "Heavyweight I, Men",
+        "Super-Heavyweight, Men"
+      ],
+      "Wrestling": [
+        "Light-Flyweight, Greco-Roman, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Super-Heavyweight, Greco-Roman, Men",
+        "Light-Flyweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Super-Heavyweight, Freestyle, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Bantamweight, Freestyle, Men",
+        "Flyweight, Greco-Roman, Men",
+        "Flyweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men"
+      ],
+      "Artistic Swimming": [
+        "Solo, Women",
+        "Duet, Women"
+      ],
+      "Equestrian Dressage": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Singles, Women",
+        "Ice Dancing, Mixed",
+        "Pairs, Mixed"
+      ],
+      "Diving": [
+        "Springboard, Men",
+        "Platform, Men",
+        "Springboard, Women",
+        "Platform, Women"
+      ],
+      "Table Tennis": [
+        "Doubles, Men",
+        "Singles, Women",
+        "Doubles, Women",
+        "Singles, Men"
+      ],
+      "Cross Country Skiing": [
+        "4 × 10 kilometres Relay, Men",
+        "5 kilometres, Women",
+        "10 kilometres, Women",
+        "4 × 5 kilometres Relay, Women",
+        "50 kilometres, Men",
+        "15 kilometres, Men",
+        "30 kilometres, Men",
+        "20 kilometres, Women"
+      ],
+      "Ski Jumping": [
+        "Normal Hill, Individual, Men",
+        "Large Hill, Individual, Men",
+        "Large Hill, Team, Men"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "100 kilometres Team Time Trial, Men",
+        "Road Race, Individual, Women"
+      ],
+      "Fencing": [
+        "Foil, Individual, Men",
+        "Épée, Individual, Men",
+        "Épée, Team, Men",
+        "Sabre, Individual, Men",
+        "Foil, Team, Men",
+        "Sabre, Team, Men",
+        "Foil, Team, Women",
+        "Foil, Individual, Women"
+      ],
+      "Biathlon": [
+        "10 kilometres Sprint, Men",
+        "20 kilometres, Men",
+        "4 × 7.5 kilometres Relay, Men"
+      ],
+      "Bobsleigh": [
+        "Two, Men",
+        "Four, Men"
+      ],
+      "Luge": [
+        "Singles, Men",
+        "Doubles, Open",
+        "Singles, Women"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Archery": [
+        "Team, Men",
+        "Team, Women",
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Modern Pentathlon": [
+        "Team, Men",
+        "Individual, Men"
+      ],
+      "Handball": [
+        "Handball, Women",
+        "Handball, Men"
+      ],
+      "Basketball": [
+        "Basketball, Men",
+        "Basketball, Women"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ]
+    },
+    "1992": {
+      "Athletics": [
+        "1,500 metres, Women",
+        "High Jump, Men",
+        "Discus Throw, Women",
+        "100 metres Hurdles, Women",
+        "110 metres Hurdles, Men",
+        "20 kilometres Race Walk, Men",
+        "3,000 metres, Women",
+        "10 kilometres Race Walk, Women",
+        "Shot Put, Women",
+        "400 metres, Women",
+        "4 × 100 metres Relay, Men",
+        "4 × 400 metres Relay, Men",
+        "Discus Throw, Men",
+        "800 metres, Women",
+        "High Jump, Women",
+        "Javelin Throw, Men",
+        "Decathlon, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "10,000 metres, Women",
+        "Marathon, Men",
+        "50 kilometres Race Walk, Men",
+        "Long Jump, Women",
+        "Javelin Throw, Women",
+        "Heptathlon, Women",
+        "100 metres, Men",
+        "400 metres Hurdles, Men",
+        "400 metres Hurdles, Women",
+        "4 × 400 metres Relay, Women",
+        "100 metres, Women",
+        "200 metres, Women",
+        "Marathon, Women",
+        "400 metres, Men",
+        "800 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "1,500 metres, Men",
+        "200 metres, Men",
+        "4 × 100 metres Relay, Women",
+        "Pole Vault, Men",
+        "Triple Jump, Men",
+        "Long Jump, Men",
+        "Shot Put, Men"
+      ],
+      "Boxing": [
+        "Featherweight, Men",
+        "Light-Flyweight, Men",
+        "Super-Heavyweight, Men",
+        "Light-Welterweight, Men",
+        "Middleweight, Men",
+        "Flyweight, Men",
+        "Bantamweight, Men",
+        "Welterweight, Men",
+        "Light-Middleweight, Men",
+        "Heavyweight, Men",
+        "Lightweight, Men",
+        "Light-Heavyweight, Men"
+      ],
+      "Tennis": [
+        "Doubles, Men",
+        "Doubles, Women",
+        "Singles, Men",
+        "Singles, Women"
+      ],
+      "Canoe Slalom": [
+        "Kayak Singles, Slalom, Women",
+        "Canadian Singles, Slalom, Men",
+        "Canadian Doubles, Slalom, Men",
+        "Kayak Singles, Slalom, Men"
+      ],
+      "Canoe Sprint": [
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Fours, 1,000 metres, Men",
+        "Canadian Singles, 500 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Canadian Doubles, 500 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Singles, 500 metres, Men",
+        "Kayak Doubles, 500 metres, Men",
+        "Kayak Doubles, 1,000 metres, Men",
+        "Kayak Singles, 500 metres, Women",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Fours, 500 metres, Women"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Women",
+        "100 kilometres Team Time Trial, Men",
+        "Road Race, Individual, Men"
+      ],
+      "Cycling Track": [
+        "Sprint, Men",
+        "1,000 metres Time Trial, Men",
+        "Team Pursuit, 4,000 metres, Men",
+        "Individual Pursuit, Women",
+        "Points Race, Men",
+        "Sprint, Women",
+        "Individual Pursuit, 4,000 metres, Men"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Hockey": [
+        "Hockey, Men",
+        "Hockey, Women"
+      ],
+      "Rowing": [
+        "Double Sculls, Men",
+        "Coxless Fours, Men",
+        "Single Sculls, Women",
+        "Eights, Men",
+        "Coxless Pairs, Women",
+        "Coxless Fours, Women",
+        "Eights, Women",
+        "Double Sculls, Women",
+        "Single Sculls, Men",
+        "Quadruple Sculls, Men",
+        "Coxless Pairs, Men",
+        "Coxed Fours, Men",
+        "Quadruple Sculls, Women",
+        "Coxed Pairs, Men"
+      ],
+      "Sailing": [
+        "Windsurfer, Men",
+        "Multihull, Open",
+        "Two Person Keelboat, Open",
+        "Windsurfer, Women",
+        "Three Person Keelboat, Open",
+        "Two Person Heavyweight Dinghy, Open",
+        "Two Person Dinghy, Men",
+        "One Person Dinghy, Men",
+        "Two Person Dinghy, Women",
+        "One Person Dinghy, Women"
+      ],
+      "Swimming": [
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "100 metres Breaststroke, Men",
+        "400 metres Freestyle, Women",
+        "800 metres Freestyle, Women",
+        "200 metres Backstroke, Women",
+        "100 metres Breaststroke, Women",
+        "200 metres Butterfly, Women",
+        "100 metres Freestyle, Men",
+        "100 metres Backstroke, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "50 metres Freestyle, Women",
+        "100 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "200 metres Breaststroke, Women",
+        "100 metres Butterfly, Women",
+        "200 metres Individual Medley, Women",
+        "400 metres Individual Medley, Women",
+        "200 metres Freestyle, Men",
+        "200 metres Butterfly, Men",
+        "4 × 100 metres Freestyle Relay, Men",
+        "200 metres Freestyle, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "200 metres Breaststroke, Men",
+        "200 metres Individual Medley, Men",
+        "400 metres Individual Medley, Men",
+        "100 metres Backstroke, Women",
+        "200 metres Backstroke, Men",
+        "100 metres Butterfly, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "50 metres Freestyle, Men"
+      ],
+      "Equestrian Jumping": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Men",
+        "Slalom, Men",
+        "Downhill, Women",
+        "Giant Slalom, Women",
+        "Slalom, Women",
+        "Combined, Women",
+        "Super G, Women",
+        "Giant Slalom, Men",
+        "Combined, Men",
+        "Super G, Men"
+      ],
+      "Bobsleigh": [
+        "Four, Men",
+        "Two, Men"
+      ],
+      "Luge": [
+        "Singles, Men",
+        "Singles, Women",
+        "Doubles, Open"
+      ],
+      "Nordic Combined": [
+        "Team, Men",
+        "Individual, Men"
+      ],
+      "Ski Jumping": [
+        "Normal Hill, Individual, Men",
+        "Large Hill, Individual, Men",
+        "Large Hill, Team, Men"
+      ],
+      "Speed Skating": [
+        "3,000 metres, Women",
+        "500 metres, Women",
+        "1,000 metres, Women",
+        "500 metres, Men",
+        "1,000 metres, Men",
+        "1,500 metres, Women",
+        "5,000 metres, Women",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men"
+      ],
+      "Judo": [
+        "Middleweight, Women",
+        "Half-Lightweight, Men",
+        "Middleweight, Men",
+        "Half-Lightweight, Women",
+        "Half-Middleweight, Women",
+        "Heavyweight, Women",
+        "Extra-Lightweight, Women",
+        "Lightweight, Women",
+        "Half-Middleweight, Men",
+        "Heavyweight, Men",
+        "Half-Heavyweight, Women",
+        "Extra-Lightweight, Men",
+        "Half-Heavyweight, Men",
+        "Lightweight, Men"
+      ],
+      "Volleyball": [
+        "Volleyball, Men",
+        "Volleyball, Women"
+      ],
+      "Shooting": [
+        "Air Pistol, 10 metres, Women",
+        "Air Rifle, 10 metres, Women",
+        "Small-Bore Rifle, Three Positions, 50 metres, Women",
+        "Air Pistol, 10 metres, Men",
+        "Free Pistol, 50 metres, Men",
+        "Skeet, Open",
+        "Sporting Pistol, 25 metres, Women",
+        "Running Target, 10 metres, Men",
+        "Trap, Open",
+        "Air Rifle, 10 metres, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Men"
+      ],
+      "Weightlifting": [
+        "Flyweight, Men",
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Heavyweight II, Men",
+        "Bantamweight, Men",
+        "Middleweight, Men",
+        "Super-Heavyweight, Men",
+        "Light-Heavyweight, Men",
+        "Middle-Heavyweight, Men",
+        "Heavyweight I, Men"
+      ],
+      "Wrestling": [
+        "Flyweight, Freestyle, Men",
+        "Lightweight, Freestyle, Men",
+        "Super-Heavyweight, Freestyle, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Light-Flyweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Bantamweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Freestyle, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Welterweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Light-Flyweight, Freestyle, Men",
+        "Flyweight, Greco-Roman, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Super-Heavyweight, Greco-Roman, Men",
+        "Light-Heavyweight, Freestyle, Men"
+      ],
+      "Artistic Swimming": [
+        "Solo, Women",
+        "Duet, Women"
+      ],
+      "Biathlon": [
+        "15 kilometres, Women",
+        "10 kilometres Sprint, Men",
+        "3 × 7.5 kilometres Relay, Women",
+        "20 kilometres, Men",
+        "4 × 7.5 kilometres Relay, Men",
+        "7.5 kilometres Sprint, Women"
+      ],
+      "Figure Skating": [
+        "Pairs, Mixed",
+        "Singles, Men",
+        "Ice Dancing, Mixed",
+        "Singles, Women"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Short Track Speed Skating": [
+        "1,000 metres, Men",
+        "5,000 metres Relay, Men",
+        "3,000 metres Relay, Women",
+        "500 metres, Women"
+      ],
+      "Archery": [
+        "Team, Women",
+        "Team, Men",
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Artistic Gymnastics": [
+        "Team All-Around, Men",
+        "Floor Exercise, Men",
+        "Parallel Bars, Men",
+        "Rings, Men",
+        "Uneven Bars, Women",
+        "Balance Beam, Women",
+        "Horizontal Bar, Men",
+        "Pommelled Horse, Men",
+        "Floor Exercise, Women",
+        "Horse Vault, Women",
+        "Individual All-Around, Women",
+        "Team All-Around, Women",
+        "Horse Vault, Men"
+      ],
+      "Badminton": [
+        "Doubles, Men",
+        "Singles, Women",
+        "Doubles, Women",
+        "Singles, Men"
+      ],
+      "Basketball": [
+        "Basketball, Women",
+        "Basketball, Men"
+      ],
+      "Diving": [
+        "Springboard, Men",
+        "Platform, Men",
+        "Springboard, Women",
+        "Platform, Women"
+      ],
+      "Fencing": [
+        "Foil, Individual, Women",
+        "Foil, Individual, Men",
+        "Foil, Team, Men",
+        "Épée, Individual, Men",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men",
+        "Épée, Team, Men",
+        "Foil, Team, Women"
+      ],
+      "Table Tennis": [
+        "Singles, Men",
+        "Doubles, Men",
+        "Singles, Women",
+        "Doubles, Women"
+      ],
+      "Baseball": [
+        "Baseball, Men"
+      ],
+      "Cross Country Skiing": [
+        "4 × 10 kilometres Relay, Men",
+        "5 kilometres, Women",
+        "15 kilometres, Women",
+        "10 kilometres, Men",
+        "50 kilometres, Men",
+        "10/15 kilometres Pursuit, Men",
+        "30 kilometres, Women",
+        "5/10 kilometres Pursuit, Women",
+        "4 × 5 kilometres Relay, Women",
+        "30 kilometres, Men"
+      ],
+      "Handball": [
+        "Handball, Men",
+        "Handball, Women"
+      ],
+      "Freestyle Skiing": [
+        "Moguls, Men",
+        "Moguls, Women"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Football": [
+        "Football, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men",
+        "Team, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Rhythmic Gymnastics": [
+        "Individual, Women"
+      ]
+    },
+    "1994": {
+      "Short Track Speed Skating": [
+        "5,000 metres Relay, Men",
+        "1,000 metres, Men",
+        "1,000 metres, Women",
+        "3,000 metres Relay, Women",
+        "500 metres, Women",
+        "500 metres, Men"
+      ],
+      "Alpine Skiing": [
+        "Giant Slalom, Men",
+        "Slalom, Men",
+        "Slalom, Women",
+        "Downhill, Men",
+        "Super G, Men",
+        "Downhill, Women",
+        "Giant Slalom, Women",
+        "Super G, Women",
+        "Combined, Men",
+        "Combined, Women"
+      ],
+      "Luge": [
+        "Singles, Men",
+        "Singles, Women",
+        "Doubles, Open"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Individual, Men",
+        "Large Hill, Team, Men",
+        "Normal Hill, Individual, Men"
+      ],
+      "Speed Skating": [
+        "1,500 metres, Women",
+        "3,000 metres, Women",
+        "1,000 metres, Men",
+        "500 metres, Women",
+        "1,000 metres, Women",
+        "5,000 metres, Women",
+        "500 metres, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men"
+      ],
+      "Biathlon": [
+        "7.5 kilometres Sprint, Women",
+        "15 kilometres, Women",
+        "4 × 7.5 kilometres Relay, Men",
+        "4 × 7.5 kilometres Relay, Women",
+        "10 kilometres Sprint, Men",
+        "20 kilometres, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Pairs, Mixed",
+        "Singles, Women",
+        "Ice Dancing, Mixed"
+      ],
+      "Freestyle Skiing": [
+        "Moguls, Men",
+        "Aerials, Men",
+        "Moguls, Women",
+        "Aerials, Women"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men"
+      ],
+      "Cross Country Skiing": [
+        "30 kilometres, Men",
+        "50 kilometres, Men",
+        "4 × 10 kilometres Relay, Men",
+        "5 kilometres, Women",
+        "30 kilometres, Women",
+        "10 kilometres, Men",
+        "10/15 kilometres Pursuit, Men",
+        "15 kilometres, Women",
+        "5/10 kilometres Pursuit, Women",
+        "4 × 5 kilometres Relay, Women"
+      ],
+      "Bobsleigh": [
+        "Four, Men",
+        "Two, Men"
+      ],
+      "Nordic Combined": [
+        "Team, Men",
+        "Individual, Men"
+      ]
+    },
+    "1996": {
+      "Athletics": [
+        "1,500 metres, Men",
+        "400 metres, Women",
+        "Javelin Throw, Women",
+        "1,500 metres, Women",
+        "Discus Throw, Men",
+        "Discus Throw, Women",
+        "Heptathlon, Women",
+        "4 × 100 metres Relay, Men",
+        "High Jump, Women",
+        "5,000 metres, Men",
+        "100 metres, Men",
+        "5,000 metres, Women",
+        "10,000 metres, Women",
+        "10 kilometres Race Walk, Women",
+        "Shot Put, Women",
+        "Triple Jump, Men",
+        "800 metres, Women",
+        "Javelin Throw, Men",
+        "Decathlon, Men",
+        "Triple Jump, Women",
+        "20 kilometres Race Walk, Men",
+        "10,000 metres, Men",
+        "Marathon, Women",
+        "Pole Vault, Men",
+        "200 metres, Women",
+        "100 metres Hurdles, Women",
+        "110 metres Hurdles, Men",
+        "4 × 400 metres Relay, Women",
+        "400 metres, Men",
+        "4 × 400 metres Relay, Men",
+        "High Jump, Men",
+        "Hammer Throw, Men",
+        "3,000 metres Steeplechase, Men",
+        "Long Jump, Women",
+        "Long Jump, Men",
+        "100 metres, Women",
+        "400 metres Hurdles, Women",
+        "4 × 100 metres Relay, Women",
+        "800 metres, Men",
+        "Marathon, Men",
+        "200 metres, Men",
+        "50 kilometres Race Walk, Men",
+        "Shot Put, Men",
+        "400 metres Hurdles, Men"
+      ],
+      "Boxing": [
+        "Lightweight, Men",
+        "Middleweight, Men",
+        "Featherweight, Men",
+        "Light-Flyweight, Men",
+        "Heavyweight, Men",
+        "Flyweight, Men",
+        "Bantamweight, Men",
+        "Light-Welterweight, Men",
+        "Welterweight, Men",
+        "Light-Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Super-Heavyweight, Men"
+      ],
+      "Football": [
+        "Football, Men",
+        "Football, Women"
+      ],
+      "Sailing": [
+        "Windsurfer, Men",
+        "Two Person Keelboat, Open",
+        "Multihull, Open",
+        "One Person Dinghy, Men",
+        "One Person Dinghy, Open",
+        "One Person Dinghy, Women",
+        "Three Person Keelboat, Open",
+        "Two Person Dinghy, Men",
+        "Windsurfer, Women",
+        "Two Person Dinghy, Women"
+      ],
+      "Wrestling": [
+        "Flyweight, Greco-Roman, Men",
+        "Light-Flyweight, Freestyle, Men",
+        "Flyweight, Freestyle, Men",
+        "Light-Flyweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Super-Heavyweight, Freestyle, Men",
+        "Bantamweight, Freestyle, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men",
+        "Super-Heavyweight, Greco-Roman, Men",
+        "Lightweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men"
+      ],
+      "Basketball": [
+        "Basketball, Women",
+        "Basketball, Men"
+      ],
+      "Beach Volleyball": [
+        "Beach Volleyball, Women",
+        "Beach Volleyball, Men"
+      ],
+      "Canoe Sprint": [
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Doubles, 500 metres, Men",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Doubles, 1,000 metres, Men",
+        "Kayak Singles, 500 metres, Women",
+        "Canadian Singles, 500 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Kayak Fours, 1,000 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Fours, 500 metres, Women",
+        "Canadian Doubles, 500 metres, Men",
+        "Kayak Singles, 500 metres, Men"
+      ],
+      "Cycling Track": [
+        "Individual Pursuit, 4,000 metres, Men",
+        "Team Pursuit, 4,000 metres, Men",
+        "Points Race, Men",
+        "Sprint, Women",
+        "Points Race, Women",
+        "Sprint, Men",
+        "1,000 metres Time Trial, Men",
+        "Individual Pursuit, Women"
+      ],
+      "Equestrian Eventing": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Hockey": [
+        "Hockey, Men",
+        "Hockey, Women"
+      ],
+      "Rowing": [
+        "Coxless Pairs, Men",
+        "Quadruple Sculls, Men",
+        "Coxless Fours, Men",
+        "Lightweight Double Sculls, Men",
+        "Coxless Pairs, Women",
+        "Lightweight Double Sculls, Women",
+        "Single Sculls, Women",
+        "Eights, Women",
+        "Single Sculls, Men",
+        "Lightweight Coxless Fours, Men",
+        "Double Sculls, Women",
+        "Quadruple Sculls, Women",
+        "Double Sculls, Men",
+        "Eights, Men"
+      ],
+      "Shooting": [
+        "Trap, Men",
+        "Double Trap, Men",
+        "Double Trap, Women",
+        "Air Rifle, 10 metres, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Men",
+        "Free Pistol, 50 metres, Men",
+        "Air Pistol, 10 metres, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Air Pistol, 10 metres, Women",
+        "Sporting Pistol, 25 metres, Women",
+        "Running Target, 10 metres, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Men",
+        "Air Rifle, 10 metres, Women",
+        "Skeet, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Women"
+      ],
+      "Softball": [
+        "Softball, Women"
+      ],
+      "Swimming": [
+        "200 metres Freestyle, Men",
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "100 metres Butterfly, Men",
+        "200 metres Butterfly, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "4 × 200 metres Freestyle Relay, Women",
+        "100 metres Breaststroke, Women",
+        "200 metres Butterfly, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "100 metres Breaststroke, Men",
+        "50 metres Freestyle, Men",
+        "100 metres Freestyle, Men",
+        "200 metres Individual Medley, Men",
+        "400 metres Individual Medley, Men",
+        "200 metres Individual Medley, Women",
+        "50 metres Freestyle, Women",
+        "100 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Butterfly, Women",
+        "200 metres Freestyle, Women",
+        "100 metres Backstroke, Men",
+        "4 × 100 metres Freestyle Relay, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "400 metres Freestyle, Women",
+        "800 metres Freestyle, Women",
+        "200 metres Backstroke, Women",
+        "200 metres Breaststroke, Men",
+        "200 metres Breaststroke, Women",
+        "400 metres Individual Medley, Women",
+        "200 metres Backstroke, Men",
+        "100 metres Backstroke, Women"
+      ],
+      "Tennis": [
+        "Doubles, Men",
+        "Singles, Women",
+        "Doubles, Women",
+        "Singles, Men"
+      ],
+      "Weightlifting": [
+        "Super-Heavyweight, Men",
+        "Flyweight, Men",
+        "Bantamweight, Men",
+        "Middleweight, Men",
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Light-Heavyweight, Men",
+        "Middle-Heavyweight, Men",
+        "Heavyweight I, Men",
+        "Heavyweight II, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Individual All-Around, Men",
+        "Horse Vault, Men",
+        "Parallel Bars, Men",
+        "Horizontal Bar, Men",
+        "Team All-Around, Men",
+        "Floor Exercise, Men",
+        "Horse Vault, Women",
+        "Uneven Bars, Women",
+        "Rings, Men",
+        "Pommelled Horse, Men",
+        "Individual All-Around, Women",
+        "Team All-Around, Women",
+        "Floor Exercise, Women",
+        "Balance Beam, Women"
+      ],
+      "Judo": [
+        "Heavyweight, Men",
+        "Lightweight, Women",
+        "Half-Middleweight, Women",
+        "Half-Heavyweight, Women",
+        "Half-Lightweight, Men",
+        "Half-Heavyweight, Men",
+        "Middleweight, Women",
+        "Heavyweight, Women",
+        "Extra-Lightweight, Women",
+        "Half-Lightweight, Women",
+        "Lightweight, Men",
+        "Half-Middleweight, Men",
+        "Extra-Lightweight, Men",
+        "Middleweight, Men"
+      ],
+      "Equestrian Jumping": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Volleyball": [
+        "Volleyball, Women",
+        "Volleyball, Men"
+      ],
+      "Rhythmic Gymnastics": [
+        "Group, Women",
+        "Individual, Women"
+      ],
+      "Artistic Swimming": [
+        "Team, Women"
+      ],
+      "Cycling Mountain Bike": [
+        "Cross-Country, Women",
+        "Cross-Country, Men"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Women",
+        "Individual Time Trial, Women",
+        "Road Race, Individual, Men",
+        "Individual Time Trial, Men"
+      ],
+      "Diving": [
+        "Springboard, Women",
+        "Springboard, Men",
+        "Platform, Men",
+        "Platform, Women"
+      ],
+      "Archery": [
+        "Individual, Women",
+        "Team, Women",
+        "Team, Men",
+        "Individual, Men"
+      ],
+      "Badminton": [
+        "Singles, Men",
+        "Doubles, Women",
+        "Doubles, Mixed",
+        "Doubles, Men",
+        "Singles, Women"
+      ],
+      "Table Tennis": [
+        "Singles, Men",
+        "Doubles, Men",
+        "Singles, Women",
+        "Doubles, Women"
+      ],
+      "Handball": [
+        "Handball, Men",
+        "Handball, Women"
+      ],
+      "Water Polo": [
+        "Water Polo, Men"
+      ],
+      "Baseball": [
+        "Baseball, Men"
+      ],
+      "Fencing": [
+        "Foil, Team, Men",
+        "Épée, Individual, Men",
+        "Foil, Individual, Men",
+        "Épée, Team, Men",
+        "Sabre, Individual, Men",
+        "Épée, Individual, Women",
+        "Épée, Team, Women",
+        "Foil, Team, Women",
+        "Sabre, Team, Men",
+        "Foil, Individual, Women"
+      ],
+      "Canoe Slalom": [
+        "Canadian Singles, Slalom, Men",
+        "Canadian Doubles, Slalom, Men",
+        "Kayak Singles, Slalom, Women",
+        "Kayak Singles, Slalom, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men"
+      ]
+    },
+    "1998": {
+      "Alpine Skiing": [
+        "Slalom, Women",
+        "Downhill, Men",
+        "Super G, Men",
+        "Giant Slalom, Men",
+        "Slalom, Men",
+        "Combined, Men",
+        "Super G, Women",
+        "Giant Slalom, Women",
+        "Downhill, Women",
+        "Combined, Women"
+      ],
+      "Cross Country Skiing": [
+        "10 kilometres, Men",
+        "50 kilometres, Men",
+        "5 kilometres, Women",
+        "5/10 kilometres Pursuit, Women",
+        "30 kilometres, Men",
+        "4 × 10 kilometres Relay, Men",
+        "30 kilometres, Women",
+        "4 × 5 kilometres Relay, Women",
+        "10/15 kilometres Pursuit, Men",
+        "15 kilometres, Women"
+      ],
+      "Luge": [
+        "Singles, Women",
+        "Singles, Men",
+        "Doubles, Open"
+      ],
+      "Ski Jumping": [
+        "Normal Hill, Individual, Men",
+        "Large Hill, Team, Men",
+        "Large Hill, Individual, Men"
+      ],
+      "Snowboarding": [
+        "Giant Slalom, Women",
+        "Giant Slalom, Men",
+        "Halfpipe, Women",
+        "Halfpipe, Men"
+      ],
+      "Biathlon": [
+        "20 kilometres, Men",
+        "15 kilometres, Women",
+        "10 kilometres Sprint, Men",
+        "4 × 7.5 kilometres Relay, Men",
+        "7.5 kilometres Sprint, Women",
+        "4 × 7.5 kilometres Relay, Women"
+      ],
+      "Freestyle Skiing": [
+        "Aerials, Men",
+        "Aerials, Women",
+        "Moguls, Men",
+        "Moguls, Women"
+      ],
+      "Speed Skating": [
+        "5,000 metres, Men",
+        "500 metres, Men",
+        "500 metres, Women",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "3,000 metres, Women",
+        "5,000 metres, Women",
+        "1,000 metres, Men",
+        "1,500 metres, Men",
+        "10,000 metres, Men"
+      ],
+      "Bobsleigh": [
+        "Two, Men",
+        "Four, Men"
+      ],
+      "Curling": [
+        "Curling, Men",
+        "Curling, Women"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Singles, Women",
+        "Ice Dancing, Mixed",
+        "Pairs, Mixed"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Women",
+        "Ice Hockey, Men"
+      ],
+      "Short Track Speed Skating": [
+        "1,000 metres, Men",
+        "5,000 metres Relay, Men",
+        "500 metres, Women",
+        "3,000 metres Relay, Women",
+        "500 metres, Men",
+        "1,000 metres, Women"
+      ],
+      "Nordic Combined": [
+        "Team, Men",
+        "Individual, Men"
+      ]
+    },
+    "2000": {
+      "Athletics": [
+        "800 metres, Men",
+        "5,000 metres, Men",
+        "High Jump, Men",
+        "1,500 metres, Women",
+        "Long Jump, Men",
+        "400 metres, Women",
+        "Pole Vault, Women",
+        "800 metres, Women",
+        "100 metres, Men",
+        "Hammer Throw, Men",
+        "Shot Put, Women",
+        "Discus Throw, Women",
+        "Heptathlon, Women",
+        "4 × 100 metres Relay, Men",
+        "Triple Jump, Women",
+        "20 kilometres Race Walk, Women",
+        "110 metres Hurdles, Men",
+        "Triple Jump, Men",
+        "Javelin Throw, Women",
+        "Javelin Throw, Men",
+        "Decathlon, Men",
+        "10,000 metres, Men",
+        "Marathon, Men",
+        "5,000 metres, Women",
+        "10,000 metres, Women",
+        "Shot Put, Men",
+        "Discus Throw, Men",
+        "Long Jump, Women",
+        "Hammer Throw, Women",
+        "200 metres, Men",
+        "100 metres, Women",
+        "400 metres, Men",
+        "4 × 400 metres Relay, Men",
+        "200 metres, Women",
+        "400 metres Hurdles, Women",
+        "4 × 100 metres Relay, Women",
+        "4 × 400 metres Relay, Women",
+        "Marathon, Women",
+        "100 metres Hurdles, Women",
+        "1,500 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "400 metres Hurdles, Men",
+        "50 kilometres Race Walk, Men",
+        "20 kilometres Race Walk, Men",
+        "High Jump, Women",
+        "Pole Vault, Men"
+      ],
+      "Boxing": [
+        "Light-Welterweight, Men",
+        "Middleweight, Men",
+        "Light-Flyweight, Men",
+        "Bantamweight, Men",
+        "Lightweight, Men",
+        "Heavyweight, Men",
+        "Light-Heavyweight, Men",
+        "Flyweight, Men",
+        "Super-Heavyweight, Men",
+        "Featherweight, Men",
+        "Light-Middleweight, Men",
+        "Welterweight, Men"
+      ],
+      "Hockey": [
+        "Hockey, Women",
+        "Hockey, Men"
+      ],
+      "Sailing": [
+        "Windsurfer, Men",
+        "Two Person Dinghy, Men",
+        "One Person Dinghy, Women",
+        "One Person Dinghy, Open",
+        "Multihull, Open",
+        "Two Person Dinghy, Women",
+        "Two Person Keelboat, Open",
+        "Three Person Keelboat, Open",
+        "Skiff, Open",
+        "Windsurfer, Women",
+        "One Person Dinghy, Men"
+      ],
+      "Weightlifting": [
+        "Middleweight, Men",
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Heavyweight, Men",
+        "Bantamweight, Men",
+        "Featherweight, Women",
+        "Middleweight, Women",
+        "Light-Heavyweight, Women",
+        "Super-Heavyweight, Women",
+        "Heavyweight, Women",
+        "Light-Heavyweight, Men",
+        "Super-Heavyweight, Men",
+        "Middle-Heavyweight, Men",
+        "Flyweight, Women",
+        "Lightweight, Women"
+      ],
+      "Archery": [
+        "Individual, Men",
+        "Team, Women",
+        "Team, Men",
+        "Individual, Women"
+      ],
+      "Basketball": [
+        "Basketball, Women",
+        "Basketball, Men"
+      ],
+      "Beach Volleyball": [
+        "Beach Volleyball, Women",
+        "Beach Volleyball, Men"
+      ],
+      "Canoe Sprint": [
+        "Kayak Doubles, 500 metres, Men",
+        "Kayak Singles, 500 metres, Women",
+        "Kayak Singles, 500 metres, Men",
+        "Kayak Singles, 1,000 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Fours, 1,000 metres, Men",
+        "Canadian Singles, 500 metres, Men",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Fours, 500 metres, Women",
+        "Kayak Doubles, 1,000 metres, Men",
+        "Canadian Doubles, 500 metres, Men"
+      ],
+      "Cycling Track": [
+        "1,000 metres Time Trial, Men",
+        "Keirin, Men",
+        "Team Sprint, Men",
+        "Individual Pursuit, 4,000 metres, Men",
+        "Madison, Men",
+        "500 metres Time Trial, Women",
+        "Sprint, Men",
+        "Sprint, Women",
+        "Individual Pursuit, Women",
+        "Team Pursuit, 4,000 metres, Men",
+        "Points Race, Women",
+        "Points Race, Men"
+      ],
+      "Diving": [
+        "Synchronized Springboard, Men",
+        "Synchronized Platform, Women",
+        "Platform, Women",
+        "Springboard, Men",
+        "Platform, Men",
+        "Synchronized Platform, Men",
+        "Springboard, Women",
+        "Synchronized Springboard, Women"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Judo": [
+        "Lightweight, Women",
+        "Lightweight, Men",
+        "Extra-Lightweight, Women",
+        "Half-Middleweight, Women",
+        "Middleweight, Men",
+        "Half-Heavyweight, Men",
+        "Half-Lightweight, Women",
+        "Half-Heavyweight, Women",
+        "Heavyweight, Women",
+        "Extra-Lightweight, Men",
+        "Middleweight, Women",
+        "Half-Middleweight, Men",
+        "Heavyweight, Men",
+        "Half-Lightweight, Men"
+      ],
+      "Rowing": [
+        "Coxless Pairs, Men",
+        "Coxless Fours, Men",
+        "Eights, Men",
+        "Lightweight Coxless Fours, Men",
+        "Coxless Pairs, Women",
+        "Single Sculls, Women",
+        "Eights, Women",
+        "Lightweight Double Sculls, Men",
+        "Single Sculls, Men",
+        "Quadruple Sculls, Men",
+        "Double Sculls, Women",
+        "Quadruple Sculls, Women",
+        "Lightweight Double Sculls, Women",
+        "Double Sculls, Men"
+      ],
+      "Shooting": [
+        "Trap, Men",
+        "Double Trap, Men",
+        "Air Pistol, 10 metres, Women",
+        "Skeet, Women",
+        "Air Pistol, 10 metres, Men",
+        "Free Pistol, 50 metres, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Men",
+        "Sporting Pistol, 25 metres, Women",
+        "Air Rifle, 10 metres, Men",
+        "Running Target, 10 metres, Men",
+        "Air Rifle, 10 metres, Women",
+        "Trap, Women",
+        "Skeet, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Men",
+        "Double Trap, Women",
+        "Small-Bore Rifle, Three Positions, 50 metres, Women",
+        "Rapid-Fire Pistol, 25 metres, Men"
+      ],
+      "Softball": [
+        "Softball, Women"
+      ],
+      "Swimming": [
+        "200 metres Freestyle, Men",
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "4 × 100 metres Freestyle Relay, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "100 metres Backstroke, Men",
+        "200 metres Backstroke, Men",
+        "100 metres Butterfly, Men",
+        "200 metres Butterfly, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "200 metres Freestyle, Women",
+        "4 × 200 metres Freestyle Relay, Women",
+        "100 metres Breaststroke, Women",
+        "200 metres Butterfly, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "400 metres Individual Medley, Men",
+        "400 metres Freestyle, Women",
+        "200 metres Backstroke, Women",
+        "200 metres Breaststroke, Women",
+        "100 metres Breaststroke, Men",
+        "200 metres Breaststroke, Men",
+        "200 metres Individual Medley, Men",
+        "100 metres Backstroke, Women",
+        "400 metres Individual Medley, Women",
+        "50 metres Freestyle, Men",
+        "100 metres Freestyle, Men",
+        "50 metres Freestyle, Women",
+        "100 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Butterfly, Women",
+        "200 metres Individual Medley, Women",
+        "800 metres Freestyle, Women"
+      ],
+      "Taekwondo": [
+        "Heavyweight, Men",
+        "Flyweight, Women",
+        "Heavyweight, Women",
+        "Flyweight, Men",
+        "Welterweight, Men",
+        "Featherweight, Men",
+        "Welterweight, Women",
+        "Featherweight, Women"
+      ],
+      "Tennis": [
+        "Doubles, Men",
+        "Doubles, Women",
+        "Singles, Men",
+        "Singles, Women"
+      ],
+      "Trampolining": [
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Triathlon": [
+        "Olympic Distance, Women",
+        "Olympic Distance, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Women",
+        "Water Polo, Men"
+      ],
+      "Wrestling": [
+        "Bantamweight, Freestyle, Men",
+        "Super-Heavyweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Lightweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men",
+        "Bantamweight, Greco-Roman, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Super-Heavyweight, Freestyle, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Heavyweight, Greco-Roman, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Rhythmic Gymnastics": [
+        "Individual, Women",
+        "Group, Women"
+      ],
+      "Cycling Mountain Bike": [
+        "Cross-Country, Men",
+        "Cross-Country, Women"
+      ],
+      "Equestrian Jumping": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Volleyball": [
+        "Volleyball, Women",
+        "Volleyball, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Floor Exercise, Men",
+        "Rings, Men",
+        "Individual All-Around, Men",
+        "Team All-Around, Men",
+        "Parallel Bars, Men",
+        "Individual All-Around, Women",
+        "Uneven Bars, Women",
+        "Balance Beam, Women",
+        "Horizontal Bar, Men",
+        "Pommelled Horse, Men",
+        "Horse Vault, Men",
+        "Team All-Around, Women",
+        "Floor Exercise, Women",
+        "Horse Vault, Women"
+      ],
+      "Football": [
+        "Football, Men",
+        "Football, Women"
+      ],
+      "Artistic Swimming": [
+        "Team, Women",
+        "Duet, Women"
+      ],
+      "Badminton": [
+        "Singles, Men",
+        "Singles, Women",
+        "Doubles, Women",
+        "Doubles, Mixed",
+        "Doubles, Men"
+      ],
+      "Fencing": [
+        "Foil, Team, Men",
+        "Épée, Team, Women",
+        "Épée, Team, Men",
+        "Épée, Individual, Men",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men",
+        "Épée, Individual, Women",
+        "Foil, Individual, Men",
+        "Foil, Individual, Women",
+        "Foil, Team, Women"
+      ],
+      "Table Tennis": [
+        "Singles, Men",
+        "Doubles, Men",
+        "Singles, Women",
+        "Doubles, Women"
+      ],
+      "Baseball": [
+        "Baseball, Men"
+      ],
+      "Canoe Slalom": [
+        "Canadian Doubles, Slalom, Men",
+        "Kayak Singles, Slalom, Women",
+        "Canadian Singles, Slalom, Men",
+        "Kayak Singles, Slalom, Men"
+      ],
+      "Handball": [
+        "Handball, Women",
+        "Handball, Men"
+      ],
+      "Cycling Road": [
+        "Individual Time Trial, Women",
+        "Road Race, Individual, Men",
+        "Individual Time Trial, Men",
+        "Road Race, Individual, Women"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open",
+        "Team, Open"
+      ]
+    },
+    "2002": {
+      "Freestyle Skiing": [
+        "Aerials, Women",
+        "Aerials, Men",
+        "Moguls, Men",
+        "Moguls, Women"
+      ],
+      "Short Track Speed Skating": [
+        "1,000 metres, Men",
+        "500 metres, Women",
+        "1,500 metres, Women",
+        "500 metres, Men",
+        "1,500 metres, Men",
+        "5,000 metres Relay, Men",
+        "3,000 metres Relay, Women",
+        "1,000 metres, Women"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Men",
+        "Super G, Men",
+        "Giant Slalom, Men",
+        "Slalom, Men",
+        "Combined, Men",
+        "Downhill, Women",
+        "Combined, Women",
+        "Super G, Women",
+        "Giant Slalom, Women",
+        "Slalom, Women"
+      ],
+      "Biathlon": [
+        "10 kilometres Sprint, Men",
+        "10 kilometres Pursuit, Women",
+        "12.5 kilometres Pursuit, Men",
+        "4 × 7.5 kilometres Relay, Men",
+        "20 kilometres, Men",
+        "7.5 kilometres Sprint, Women",
+        "15 kilometres, Women",
+        "4 × 7.5 kilometres Relay, Women"
+      ],
+      "Cross Country Skiing": [
+        "30 kilometres, Men",
+        "5/5 kilometres Pursuit, Women",
+        "15 kilometres, Women",
+        "15 kilometres, Men",
+        "50 kilometres, Men",
+        "Sprint, Men",
+        "4 × 10 kilometres Relay, Men",
+        "Sprint, Women",
+        "4 × 5 kilometres Relay, Women",
+        "10 kilometres, Women",
+        "30 kilometres, Women",
+        "10/10 kilometres Pursuit, Men"
+      ],
+      "Luge": [
+        "Singles, Men",
+        "Doubles, Open",
+        "Singles, Women"
+      ],
+      "Nordic Combined": [
+        "Team, Men",
+        "Individual, Men",
+        "Sprint, Men"
+      ],
+      "Skeleton": [
+        "Skeleton, Men",
+        "Skeleton, Women"
+      ],
+      "Curling": [
+        "Curling, Men",
+        "Curling, Women"
+      ],
+      "Figure Skating": [
+        "Pairs, Mixed",
+        "Ice Dancing, Mixed",
+        "Singles, Men",
+        "Singles, Women"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men",
+        "Ice Hockey, Women"
+      ],
+      "Speed Skating": [
+        "500 metres, Women",
+        "3,000 metres, Women",
+        "5,000 metres, Women",
+        "5,000 metres, Men",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "500 metres, Men",
+        "1,000 metres, Men",
+        "1,500 metres, Men",
+        "10,000 metres, Men"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Individual, Men",
+        "Large Hill, Team, Men",
+        "Normal Hill, Individual, Men"
+      ],
+      "Snowboarding": [
+        "Parallel Giant Slalom, Women",
+        "Halfpipe, Women",
+        "Parallel Giant Slalom, Men",
+        "Halfpipe, Men"
+      ],
+      "Bobsleigh": [
+        "Two, Men",
+        "Four, Men",
+        "Two, Women"
+      ]
+    },
+    "2004": {
+      "Basketball": [
+        "Basketball, Men",
+        "Basketball, Women"
+      ],
+      "Football": [
+        "Football, Men",
+        "Football, Women"
+      ],
+      "Hockey": [
+        "Hockey, Women",
+        "Hockey, Men"
+      ],
+      "Sailing": [
+        "Multihull, Open",
+        "One Person Dinghy, Open",
+        "Two Person Keelboat, Men",
+        "Windsurfer, Women",
+        "One Person Dinghy, Women",
+        "Three Person Keelboat, Women",
+        "Windsurfer, Men",
+        "One Person Dinghy, Men",
+        "Two Person Dinghy, Men",
+        "Skiff, Open",
+        "Two Person Dinghy, Women"
+      ],
+      "Swimming": [
+        "400 metres Individual Medley, Women",
+        "100 metres Freestyle, Men",
+        "200 metres Freestyle, Men",
+        "400 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "50 metres Freestyle, Women",
+        "100 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "100 metres Breaststroke, Women",
+        "200 metres Breaststroke, Women",
+        "100 metres Butterfly, Women",
+        "200 metres Butterfly, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "100 metres Backstroke, Men",
+        "200 metres Backstroke, Men",
+        "4 × 200 metres Freestyle Relay, Women",
+        "50 metres Freestyle, Men",
+        "100 metres Breaststroke, Men",
+        "200 metres Freestyle, Women",
+        "400 metres Freestyle, Women",
+        "800 metres Freestyle, Women",
+        "100 metres Backstroke, Women",
+        "4 × 100 metres Medley Relay, Men",
+        "200 metres Backstroke, Women",
+        "200 metres Butterfly, Men",
+        "200 metres Breaststroke, Men",
+        "400 metres Individual Medley, Men",
+        "4 × 100 metres Freestyle Relay, Men",
+        "200 metres Individual Medley, Men",
+        "100 metres Butterfly, Men",
+        "200 metres Individual Medley, Women"
+      ],
+      "Tennis": [
+        "Doubles, Women",
+        "Singles, Women",
+        "Singles, Men",
+        "Doubles, Men"
+      ],
+      "Archery": [
+        "Individual, Men",
+        "Team, Women",
+        "Team, Men",
+        "Individual, Women"
+      ],
+      "Athletics": [
+        "4 × 400 metres Relay, Men",
+        "20 kilometres Race Walk, Men",
+        "20 kilometres Race Walk, Women",
+        "100 metres, Women",
+        "Marathon, Men",
+        "Triple Jump, Women",
+        "110 metres Hurdles, Men",
+        "10,000 metres, Women",
+        "Shot Put, Women",
+        "Hammer Throw, Women",
+        "Javelin Throw, Women",
+        "High Jump, Men",
+        "Decathlon, Men",
+        "Discus Throw, Women",
+        "800 metres, Men",
+        "Shot Put, Men",
+        "400 metres Hurdles, Men",
+        "10,000 metres, Men",
+        "Discus Throw, Men",
+        "5,000 metres, Men",
+        "5,000 metres, Women",
+        "4 × 100 metres Relay, Women",
+        "4 × 100 metres Relay, Men",
+        "800 metres, Women",
+        "1,500 metres, Women",
+        "Heptathlon, Women",
+        "400 metres Hurdles, Women",
+        "Pole Vault, Men",
+        "200 metres, Women",
+        "4 × 400 metres Relay, Women",
+        "Hammer Throw, Men",
+        "Marathon, Women",
+        "1,500 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "Javelin Throw, Men",
+        "400 metres, Women",
+        "50 kilometres Race Walk, Men",
+        "Pole Vault, Women",
+        "100 metres, Men",
+        "Triple Jump, Men",
+        "High Jump, Women",
+        "Long Jump, Women",
+        "Long Jump, Men",
+        "100 metres Hurdles, Women",
+        "200 metres, Men",
+        "400 metres, Men"
+      ],
+      "Baseball": [
+        "Baseball, Men"
+      ],
+      "Canoe Sprint": [
+        "Kayak Singles, 500 metres, Men",
+        "Kayak Doubles, 500 metres, Men",
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Singles, 500 metres, Women",
+        "Canadian Doubles, 500 metres, Men",
+        "Kayak Fours, 1,000 metres, Men",
+        "Canadian Singles, 500 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Fours, 500 metres, Women",
+        "Kayak Doubles, 1,000 metres, Men"
+      ],
+      "Cycling Road": [
+        "Individual Time Trial, Men",
+        "Road Race, Individual, Women",
+        "Road Race, Individual, Men",
+        "Individual Time Trial, Women"
+      ],
+      "Cycling Track": [
+        "Sprint, Men",
+        "Keirin, Men",
+        "Individual Pursuit, 4,000 metres, Men",
+        "Team Pursuit, 4,000 metres, Men",
+        "Madison, Men",
+        "Sprint, Women",
+        "500 metres Time Trial, Women",
+        "Individual Pursuit, Women",
+        "Points Race, Women",
+        "1,000 metres Time Trial, Men",
+        "Team Sprint, Men",
+        "Points Race, Men"
+      ],
+      "Diving": [
+        "Platform, Men",
+        "Synchronized Springboard, Men",
+        "Synchronized Platform, Men",
+        "Platform, Women",
+        "Synchronized Springboard, Women",
+        "Springboard, Men",
+        "Synchronized Platform, Women",
+        "Springboard, Women"
+      ],
+      "Rowing": [
+        "Coxless Pairs, Men",
+        "Eights, Men",
+        "Lightweight Coxless Fours, Men",
+        "Quadruple Sculls, Women",
+        "Single Sculls, Women",
+        "Coxless Pairs, Women",
+        "Single Sculls, Men",
+        "Coxless Fours, Men",
+        "Quadruple Sculls, Men",
+        "Double Sculls, Men",
+        "Lightweight Double Sculls, Men",
+        "Double Sculls, Women",
+        "Lightweight Double Sculls, Women",
+        "Eights, Women"
+      ],
+      "Shooting": [
+        "Trap, Men",
+        "Trap, Women",
+        "Small-Bore Rifle, Three Positions, 50 metres, Men",
+        "Sporting Pistol, 25 metres, Women",
+        "Skeet, Women",
+        "Small-Bore Rifle, Prone, 50 metres, Men",
+        "Air Pistol, 10 metres, Women",
+        "Air Pistol, 10 metres, Men",
+        "Air Rifle, 10 metres, Men",
+        "Double Trap, Men",
+        "Air Rifle, 10 metres, Women",
+        "Small-Bore Rifle, Three Positions, 50 metres, Women",
+        "Double Trap, Women",
+        "Skeet, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Running Target, 10 metres, Men",
+        "Free Pistol, 50 metres, Men"
+      ],
+      "Softball": [
+        "Softball, Women"
+      ],
+      "Triathlon": [
+        "Olympic Distance, Women",
+        "Olympic Distance, Men"
+      ],
+      "Judo": [
+        "Half-Middleweight, Women",
+        "Half-Heavyweight, Men",
+        "Half-Lightweight, Women",
+        "Lightweight, Men",
+        "Half-Middleweight, Men",
+        "Half-Lightweight, Men",
+        "Extra-Lightweight, Women",
+        "Middleweight, Women",
+        "Half-Heavyweight, Women",
+        "Heavyweight, Women",
+        "Lightweight, Women",
+        "Heavyweight, Men",
+        "Extra-Lightweight, Men",
+        "Middleweight, Men"
+      ],
+      "Boxing": [
+        "Flyweight, Men",
+        "Bantamweight, Men",
+        "Light-Heavyweight, Men",
+        "Heavyweight, Men",
+        "Light-Welterweight, Men",
+        "Light-Flyweight, Men",
+        "Lightweight, Men",
+        "Welterweight, Men",
+        "Super-Heavyweight, Men",
+        "Featherweight, Men",
+        "Middleweight, Men"
+      ],
+      "Wrestling": [
+        "Welterweight, Greco-Roman, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Lightweight, Freestyle, Women",
+        "Heavyweight, Freestyle, Women",
+        "Lightweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Middleweight, Freestyle, Women",
+        "Heavyweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Heavyweight, Freestyle, Men",
+        "Super-Heavyweight, Freestyle, Men",
+        "Featherweight, Freestyle, Men",
+        "Flyweight, Freestyle, Women",
+        "Super-Heavyweight, Greco-Roman, Men",
+        "Welterweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men"
+      ],
+      "Weightlifting": [
+        "Light-Heavyweight, Men",
+        "Middleweight, Women",
+        "Middle-Heavyweight, Men",
+        "Super-Heavyweight, Men",
+        "Bantamweight, Men",
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Flyweight, Women",
+        "Lightweight, Women",
+        "Light-Heavyweight, Women",
+        "Super-Heavyweight, Women",
+        "Featherweight, Women",
+        "Middleweight, Men",
+        "Heavyweight, Men",
+        "Heavyweight, Women"
+      ],
+      "Beach Volleyball": [
+        "Beach Volleyball, Men",
+        "Beach Volleyball, Women"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Volleyball": [
+        "Volleyball, Men",
+        "Volleyball, Women"
+      ],
+      "Artistic Gymnastics": [
+        "Floor Exercise, Men",
+        "Rings, Men",
+        "Parallel Bars, Men",
+        "Pommelled Horse, Men",
+        "Individual All-Around, Women",
+        "Uneven Bars, Women",
+        "Horizontal Bar, Men",
+        "Team All-Around, Men",
+        "Horse Vault, Men",
+        "Team All-Around, Women",
+        "Floor Exercise, Women",
+        "Horse Vault, Women",
+        "Balance Beam, Women",
+        "Individual All-Around, Men"
+      ],
+      "Rhythmic Gymnastics": [
+        "Group, Women",
+        "Individual, Women"
+      ],
+      "Cycling Mountain Bike": [
+        "Cross-Country, Women",
+        "Cross-Country, Men"
+      ],
+      "Trampolining": [
+        "Individual, Women",
+        "Individual, Men"
+      ],
+      "Badminton": [
+        "Singles, Women",
+        "Doubles, Women",
+        "Doubles, Mixed",
+        "Singles, Men",
+        "Doubles, Men"
+      ],
+      "Fencing": [
+        "Foil, Team, Men",
+        "Épée, Individual, Men",
+        "Sabre, Individual, Women",
+        "Foil, Individual, Men",
+        "Épée, Team, Men",
+        "Sabre, Team, Men",
+        "Épée, Individual, Women",
+        "Épée, Team, Women",
+        "Sabre, Individual, Men",
+        "Foil, Individual, Women"
+      ],
+      "Table Tennis": [
+        "Singles, Men",
+        "Doubles, Men",
+        "Singles, Women",
+        "Doubles, Women"
+      ],
+      "Taekwondo": [
+        "Welterweight, Women",
+        "Heavyweight, Women",
+        "Flyweight, Men",
+        "Featherweight, Men",
+        "Flyweight, Women",
+        "Heavyweight, Men",
+        "Welterweight, Men",
+        "Featherweight, Women"
+      ],
+      "Handball": [
+        "Handball, Men",
+        "Handball, Women"
+      ],
+      "Canoe Slalom": [
+        "Canadian Doubles, Slalom, Men",
+        "Kayak Singles, Slalom, Men",
+        "Canadian Singles, Slalom, Men",
+        "Kayak Singles, Slalom, Women"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Equestrian Eventing": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Water Polo": [
+        "Water Polo, Women",
+        "Water Polo, Men"
+      ],
+      "Artistic Swimming": [
+        "Duet, Women",
+        "Team, Women"
+      ]
+    },
+    "2006": {
+      "Freestyle Skiing": [
+        "Moguls, Men",
+        "Aerials, Women",
+        "Aerials, Men",
+        "Moguls, Women"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Men",
+        "Super G, Men",
+        "Giant Slalom, Men",
+        "Slalom, Men",
+        "Combined, Men",
+        "Downhill, Women",
+        "Super G, Women",
+        "Slalom, Women",
+        "Combined, Women",
+        "Giant Slalom, Women"
+      ],
+      "Cross Country Skiing": [
+        "50 kilometres, Men",
+        "Sprint, Women",
+        "Team Sprint, Women",
+        "15 kilometres, Men",
+        "30 kilometres, Women",
+        "15 kilometres Skiathlon, Women",
+        "10 kilometres, Women",
+        "Sprint, Men",
+        "4 × 10 kilometres Relay, Men",
+        "4 × 5 kilometres Relay, Women",
+        "30 kilometres Skiathlon, Men",
+        "Team Sprint, Men"
+      ],
+      "Luge": [
+        "Doubles, Open",
+        "Singles, Women",
+        "Singles, Men"
+      ],
+      "Nordic Combined": [
+        "Team, Men",
+        "Individual, Men",
+        "Sprint, Men"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Individual, Men",
+        "Large Hill, Team, Men",
+        "Normal Hill, Individual, Men"
+      ],
+      "Snowboarding": [
+        "Parallel Giant Slalom, Men",
+        "Cross, Women",
+        "Halfpipe, Men",
+        "Cross, Men",
+        "Parallel Giant Slalom, Women",
+        "Halfpipe, Women"
+      ],
+      "Short Track Speed Skating": [
+        "500 metres, Women",
+        "500 metres, Men",
+        "5,000 metres Relay, Men",
+        "3,000 metres Relay, Women",
+        "1,500 metres, Men",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "1,000 metres, Men"
+      ],
+      "Bobsleigh": [
+        "Two, Men",
+        "Four, Men",
+        "Two, Women"
+      ],
+      "Curling": [
+        "Curling, Men",
+        "Curling, Women"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Pairs, Mixed",
+        "Singles, Women",
+        "Ice Dancing, Mixed"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Women",
+        "Ice Hockey, Men"
+      ],
+      "Skeleton": [
+        "Skeleton, Men",
+        "Skeleton, Women"
+      ],
+      "Speed Skating": [
+        "Team Pursuit (8 laps), Men",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "3,000 metres, Women",
+        "5,000 metres, Women",
+        "Team Pursuit (6 laps), Women",
+        "500 metres, Women",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "1,000 metres, Men",
+        "10,000 metres, Men",
+        "500 metres, Men"
+      ],
+      "Biathlon": [
+        "12.5 kilometres Pursuit, Men",
+        "4 × 7.5 kilometres Relay, Men",
+        "7.5 kilometres Sprint, Women",
+        "4 × 6 kilometres Relay, Women",
+        "10 kilometres Sprint, Men",
+        "15 kilometres Mass Start, Men",
+        "20 kilometres, Men",
+        "10 kilometres Pursuit, Women",
+        "12.5 kilometres Mass Start, Women",
+        "15 kilometres, Women"
+      ]
+    },
+    "2008": {
+      "Taekwondo": [
+        "Flyweight, Men",
+        "Heavyweight, Women",
+        "Welterweight, Women",
+        "Welterweight, Men",
+        "Flyweight, Women",
+        "Featherweight, Men",
+        "Featherweight, Women",
+        "Heavyweight, Men"
+      ],
+      "Judo": [
+        "Middleweight, Men",
+        "Half-Lightweight, Women",
+        "Extra-Lightweight, Women",
+        "Extra-Lightweight, Men",
+        "Lightweight, Men",
+        "Half-Heavyweight, Men",
+        "Half-Middleweight, Men",
+        "Lightweight, Women",
+        "Half-Heavyweight, Women",
+        "Heavyweight, Women",
+        "Half-Lightweight, Men",
+        "Heavyweight, Men",
+        "Middleweight, Women",
+        "Half-Middleweight, Women"
+      ],
+      "Basketball": [
+        "Basketball, Men",
+        "Basketball, Women"
+      ],
+      "Cycling Track": [
+        "Madison, Men",
+        "Sprint, Women",
+        "Points Race, Women",
+        "Team Pursuit, 4,000 metres, Men",
+        "Sprint, Men",
+        "Team Sprint, Men",
+        "Points Race, Men",
+        "Keirin, Men",
+        "Individual Pursuit, 4,000 metres, Men",
+        "Individual Pursuit, Women"
+      ],
+      "Football": [
+        "Football, Men",
+        "Football, Women"
+      ],
+      "Hockey": [
+        "Hockey, Women",
+        "Hockey, Men"
+      ],
+      "Sailing": [
+        "Multihull, Open",
+        "Two Person Dinghy, Men",
+        "Two Person Dinghy, Women",
+        "Two Person Keelboat, Men",
+        "Windsurfer, Women",
+        "One Person Dinghy, Women",
+        "Skiff, Open",
+        "Windsurfer, Men",
+        "One Person Dinghy, Open",
+        "One Person Dinghy, Men",
+        "Three Person Keelboat, Women"
+      ],
+      "Boxing": [
+        "Lightweight, Men",
+        "Featherweight, Men",
+        "Light-Flyweight, Men",
+        "Welterweight, Men",
+        "Light-Heavyweight, Men",
+        "Super-Heavyweight, Men",
+        "Flyweight, Men",
+        "Bantamweight, Men",
+        "Light-Welterweight, Men",
+        "Middleweight, Men",
+        "Heavyweight, Men"
+      ],
+      "Weightlifting": [
+        "Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Heavyweight, Men",
+        "Middleweight, Women",
+        "Bantamweight, Men",
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Lightweight, Women",
+        "Flyweight, Women",
+        "Light-Heavyweight, Women",
+        "Middle-Heavyweight, Men",
+        "Super-Heavyweight, Men",
+        "Featherweight, Women",
+        "Heavyweight, Women",
+        "Super-Heavyweight, Women"
+      ],
+      "Wrestling": [
+        "Featherweight, Greco-Roman, Men",
+        "Super-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Freestyle, Men",
+        "Flyweight, Freestyle, Women",
+        "Welterweight, Greco-Roman, Men",
+        "Middleweight, Freestyle, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Featherweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Women",
+        "Lightweight, Freestyle, Women",
+        "Lightweight, Greco-Roman, Men",
+        "Super-Heavyweight, Freestyle, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Welterweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Lightweight, Freestyle, Men",
+        "Middleweight, Freestyle, Women"
+      ],
+      "Athletics": [
+        "20 kilometres Race Walk, Men",
+        "50 kilometres Race Walk, Men",
+        "Pole Vault, Men",
+        "100 metres Hurdles, Women",
+        "Hammer Throw, Men",
+        "Decathlon, Men",
+        "4 × 100 metres Relay, Women",
+        "High Jump, Women",
+        "4 × 100 metres Relay, Men",
+        "Long Jump, Women",
+        "Triple Jump, Women",
+        "Shot Put, Men",
+        "Marathon, Women",
+        "Shot Put, Women",
+        "Discus Throw, Women",
+        "Hammer Throw, Women",
+        "110 metres Hurdles, Men",
+        "Long Jump, Men",
+        "Javelin Throw, Women",
+        "Discus Throw, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "Marathon, Men",
+        "5,000 metres, Women",
+        "10,000 metres, Women",
+        "Javelin Throw, Men",
+        "1,500 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "4 × 400 metres Relay, Men",
+        "High Jump, Men",
+        "Triple Jump, Men",
+        "400 metres, Women",
+        "400 metres Hurdles, Women",
+        "4 × 400 metres Relay, Women",
+        "Heptathlon, Women",
+        "20 kilometres Race Walk, Women",
+        "100 metres, Men",
+        "200 metres, Men",
+        "100 metres, Women",
+        "200 metres, Women",
+        "800 metres, Men",
+        "800 metres, Women",
+        "1,500 metres, Women",
+        "3,000 metres Steeplechase, Women",
+        "Pole Vault, Women",
+        "400 metres, Men",
+        "400 metres Hurdles, Men"
+      ],
+      "Canoe Slalom": [
+        "Canadian Singles, Slalom, Men",
+        "Kayak Singles, Slalom, Women",
+        "Canadian Doubles, Slalom, Men",
+        "Kayak Singles, Slalom, Men"
+      ],
+      "Canoe Sprint": [
+        "Kayak Singles, 500 metres, Men",
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Fours, 500 metres, Women",
+        "Kayak Doubles, 500 metres, Men",
+        "Kayak Fours, 1,000 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Canadian Doubles, 500 metres, Men",
+        "Kayak Doubles, 1,000 metres, Men",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Singles, 500 metres, Women",
+        "Canadian Singles, 500 metres, Men"
+      ],
+      "Diving": [
+        "Platform, Men",
+        "Synchronized Platform, Women",
+        "Springboard, Men",
+        "Platform, Women",
+        "Synchronized Springboard, Men",
+        "Synchronized Platform, Men",
+        "Springboard, Women",
+        "Synchronized Springboard, Women"
+      ],
+      "Equestrian Eventing": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Rowing": [
+        "Double Sculls, Men",
+        "Coxless Pairs, Men",
+        "Coxless Fours, Men",
+        "Single Sculls, Women",
+        "Coxless Pairs, Women",
+        "Eights, Men",
+        "Lightweight Coxless Fours, Men",
+        "Lightweight Double Sculls, Women",
+        "Quadruple Sculls, Women",
+        "Single Sculls, Men",
+        "Lightweight Double Sculls, Men",
+        "Quadruple Sculls, Men",
+        "Double Sculls, Women",
+        "Eights, Women"
+      ],
+      "Shooting": [
+        "Small-Bore Rifle, Prone, 50 metres, Men",
+        "Air Pistol, 10 metres, Men",
+        "Free Pistol, 50 metres, Men",
+        "Air Rifle, 10 metres, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Men",
+        "Double Trap, Men",
+        "Air Pistol, 10 metres, Women",
+        "Sporting Pistol, 25 metres, Women",
+        "Small-Bore Rifle, Three Positions, 50 metres, Women",
+        "Air Rifle, 10 metres, Women",
+        "Trap, Men",
+        "Trap, Women",
+        "Skeet, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Skeet, Women"
+      ],
+      "Softball": [
+        "Softball, Women"
+      ],
+      "Swimming": [
+        "100 metres Freestyle, Men",
+        "1,500 metres Freestyle, Men",
+        "4 × 100 metres Freestyle Relay, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "100 metres Backstroke, Men",
+        "200 metres Breaststroke, Men",
+        "100 metres Butterfly, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "50 metres Freestyle, Women",
+        "100 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "4 × 200 metres Freestyle Relay, Women",
+        "100 metres Breaststroke, Women",
+        "200 metres Breaststroke, Women",
+        "100 metres Butterfly, Women",
+        "200 metres Butterfly, Women",
+        "200 metres Individual Medley, Women",
+        "400 metres Individual Medley, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "50 metres Freestyle, Men",
+        "400 metres Freestyle, Men",
+        "200 metres Freestyle, Women",
+        "800 metres Freestyle, Women",
+        "100 metres Breaststroke, Men",
+        "400 metres Freestyle, Women",
+        "200 metres Butterfly, Men",
+        "200 metres Individual Medley, Men",
+        "400 metres Individual Medley, Men",
+        "200 metres Backstroke, Women",
+        "200 metres Backstroke, Men",
+        "200 metres Freestyle, Men",
+        "100 metres Backstroke, Women"
+      ],
+      "Triathlon": [
+        "Olympic Distance, Women",
+        "Olympic Distance, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Women",
+        "Water Polo, Men"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Women",
+        "Individual, Men"
+      ],
+      "Rhythmic Gymnastics": [
+        "Individual, Women",
+        "Group, Women"
+      ],
+      "Beach Volleyball": [
+        "Beach Volleyball, Men",
+        "Beach Volleyball, Women"
+      ],
+      "Volleyball": [
+        "Volleyball, Men",
+        "Volleyball, Women"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Trampolining": [
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Tennis": [
+        "Singles, Men",
+        "Doubles, Women",
+        "Singles, Women",
+        "Doubles, Men"
+      ],
+      "Archery": [
+        "Team, Men",
+        "Individual, Women",
+        "Team, Women",
+        "Individual, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Individual All-Around, Men",
+        "Team All-Around, Men",
+        "Floor Exercise, Men",
+        "Parallel Bars, Men",
+        "Horizontal Bar, Men",
+        "Rings, Men",
+        "Pommelled Horse, Men",
+        "Individual All-Around, Women",
+        "Team All-Around, Women",
+        "Horse Vault, Women",
+        "Uneven Bars, Women",
+        "Balance Beam, Women",
+        "Horse Vault, Men",
+        "Floor Exercise, Women"
+      ],
+      "Artistic Swimming": [
+        "Team, Women",
+        "Duet, Women"
+      ],
+      "Badminton": [
+        "Singles, Men",
+        "Doubles, Men",
+        "Singles, Women",
+        "Doubles, Women",
+        "Doubles, Mixed"
+      ],
+      "Fencing": [
+        "Sabre, Individual, Men",
+        "Sabre, Team, Women",
+        "Épée, Individual, Men",
+        "Épée, Team, Men",
+        "Sabre, Team, Men",
+        "Foil, Individual, Men",
+        "Épée, Individual, Women",
+        "Foil, Individual, Women",
+        "Foil, Team, Women",
+        "Sabre, Individual, Women"
+      ],
+      "Table Tennis": [
+        "Singles, Men",
+        "Team, Men",
+        "Singles, Women",
+        "Team, Women"
+      ],
+      "Baseball": [
+        "Baseball, Men"
+      ],
+      "Equestrian Dressage": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Cycling BMX Racing": [
+        "BMX, Women",
+        "BMX, Men"
+      ],
+      "Cycling Mountain Bike": [
+        "Cross-Country, Men",
+        "Cross-Country, Women"
+      ],
+      "Handball": [
+        "Handball, Men",
+        "Handball, Women"
+      ],
+      "Marathon Swimming": [
+        "10 kilometres Open Water, Men",
+        "10 kilometres Open Water, Women"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Women",
+        "Individual Time Trial, Women",
+        "Road Race, Individual, Men",
+        "Individual Time Trial, Men"
+      ]
+    },
+    "2010": {
+      "Freestyle Skiing": [
+        "Moguls, Men",
+        "Aerials, Women",
+        "Ski Cross, Men",
+        "Aerials, Men",
+        "Moguls, Women",
+        "Ski Cross, Women"
+      ],
+      "Snowboarding": [
+        "Halfpipe, Women",
+        "Parallel Giant Slalom, Men",
+        "Parallel Giant Slalom, Women",
+        "Cross, Men",
+        "Cross, Women",
+        "Halfpipe, Men"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Women",
+        "Super G, Women",
+        "Giant Slalom, Women",
+        "Slalom, Women",
+        "Slalom, Men",
+        "Combined, Men",
+        "Combined, Women",
+        "Downhill, Men",
+        "Super G, Men",
+        "Giant Slalom, Men"
+      ],
+      "Biathlon": [
+        "12.5 kilometres Pursuit, Men",
+        "4 × 7.5 kilometres Relay, Men",
+        "20 kilometres, Men",
+        "15 kilometres, Women",
+        "10 kilometres Sprint, Men",
+        "15 kilometres Mass Start, Men",
+        "7.5 kilometres Sprint, Women",
+        "10 kilometres Pursuit, Women",
+        "4 × 6 kilometres Relay, Women",
+        "12.5 kilometres Mass Start, Women"
+      ],
+      "Luge": [
+        "Doubles, Open",
+        "Singles, Women",
+        "Singles, Men"
+      ],
+      "Nordic Combined": [
+        "Large Hill / 10 km, Individual, Men",
+        "Team, Men",
+        "Normal Hill / 10 km, Individual, Men"
+      ],
+      "Ski Jumping": [
+        "Normal Hill, Individual, Men",
+        "Large Hill, Individual, Men",
+        "Large Hill, Team, Men"
+      ],
+      "Bobsleigh": [
+        "Four, Men",
+        "Two, Women",
+        "Two, Men"
+      ],
+      "Curling": [
+        "Curling, Men",
+        "Curling, Women"
+      ],
+      "Figure Skating": [
+        "Singles, Women",
+        "Ice Dancing, Mixed",
+        "Pairs, Mixed",
+        "Singles, Men"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men",
+        "Ice Hockey, Women"
+      ],
+      "Short Track Speed Skating": [
+        "500 metres, Men",
+        "5,000 metres Relay, Men",
+        "500 metres, Women",
+        "3,000 metres Relay, Women",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "1,000 metres, Men",
+        "1,500 metres, Men"
+      ],
+      "Skeleton": [
+        "Skeleton, Men",
+        "Skeleton, Women"
+      ],
+      "Speed Skating": [
+        "Team Pursuit (8 laps), Men",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "3,000 metres, Women",
+        "5,000 metres, Women",
+        "500 metres, Women",
+        "Team Pursuit (6 laps), Women",
+        "500 metres, Men",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "1,000 metres, Men"
+      ],
+      "Cross Country Skiing": [
+        "15 kilometres, Men",
+        "4 × 10 kilometres Relay, Men",
+        "10 kilometres, Women",
+        "30 kilometres, Women",
+        "4 × 5 kilometres Relay, Women",
+        "50 kilometres, Men",
+        "30 kilometres Skiathlon, Men",
+        "Team Sprint, Men",
+        "Team Sprint, Women",
+        "Sprint, Men",
+        "Sprint, Women",
+        "15 kilometres Skiathlon, Women"
+      ]
+    },
+    "2012": {
+      "Taekwondo": [
+        "Featherweight, Men",
+        "Welterweight, Men",
+        "Heavyweight, Men",
+        "Flyweight, Women",
+        "Featherweight, Women",
+        "Flyweight, Men",
+        "Heavyweight, Women",
+        "Welterweight, Women"
+      ],
+      "Athletics": [
+        "1,500 metres, Men",
+        "50 kilometres Race Walk, Men",
+        "Long Jump, Men",
+        "100 metres Hurdles, Women",
+        "1,500 metres, Women",
+        "800 metres, Men",
+        "High Jump, Men",
+        "20 kilometres Race Walk, Men",
+        "20 kilometres Race Walk, Women",
+        "Shot Put, Women",
+        "Discus Throw, Women",
+        "Hammer Throw, Women",
+        "Triple Jump, Women",
+        "Decathlon, Men",
+        "Pole Vault, Women",
+        "Javelin Throw, Men",
+        "400 metres Hurdles, Women",
+        "Javelin Throw, Women",
+        "400 metres, Men",
+        "400 metres Hurdles, Men",
+        "Discus Throw, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "5,000 metres, Women",
+        "10,000 metres, Women",
+        "Marathon, Women",
+        "3,000 metres Steeplechase, Women",
+        "3,000 metres Steeplechase, Men",
+        "4 × 100 metres Relay, Men",
+        "Pole Vault, Men",
+        "Shot Put, Men",
+        "Heptathlon, Women",
+        "400 metres, Women",
+        "Hammer Throw, Men",
+        "Triple Jump, Men",
+        "100 metres, Men",
+        "200 metres, Men",
+        "110 metres Hurdles, Men",
+        "100 metres, Women",
+        "200 metres, Women",
+        "4 × 100 metres Relay, Women",
+        "4 × 400 metres Relay, Women",
+        "Marathon, Men",
+        "800 metres, Women",
+        "High Jump, Women",
+        "Long Jump, Women",
+        "4 × 400 metres Relay, Men"
+      ],
+      "Hockey": [
+        "Hockey, Women",
+        "Hockey, Men"
+      ],
+      "Sailing": [
+        "Two Person Dinghy, Men",
+        "One Person Dinghy, Men",
+        "Skiff, Men",
+        "Three Person Keelboat, Women",
+        "One Person Dinghy, Women",
+        "Two Person Keelboat, Men",
+        "One Person Heavyweight Dinghy, Men",
+        "Windsurfer, Women",
+        "Windsurfer, Men",
+        "Two Person Dinghy, Women"
+      ],
+      "Tennis": [
+        "Singles, Men",
+        "Singles, Women",
+        "Doubles, Mixed",
+        "Doubles, Women",
+        "Doubles, Men"
+      ],
+      "Wrestling": [
+        "Middleweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Featherweight, Greco-Roman, Men",
+        "Lightweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men",
+        "Flyweight, Freestyle, Women",
+        "Lightweight, Freestyle, Women",
+        "Heavyweight, Freestyle, Women",
+        "Middleweight, Freestyle, Women",
+        "Super-Heavyweight, Greco-Roman, Men",
+        "Welterweight, Freestyle, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Lightweight, Greco-Roman, Men",
+        "Featherweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Super-Heavyweight, Freestyle, Men",
+        "Light-Heavyweight, Greco-Roman, Men"
+      ],
+      "Basketball": [
+        "Basketball, Women",
+        "Basketball, Men"
+      ],
+      "Canoe Slalom": [
+        "Kayak Singles, Slalom, Women",
+        "Kayak Singles, Slalom, Men",
+        "Canadian Singles, Slalom, Men",
+        "Canadian Doubles, Slalom, Men"
+      ],
+      "Canoe Sprint": [
+        "Kayak Fours, 1,000 metres, Men",
+        "Kayak Doubles, 200 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Fours, 500 metres, Women",
+        "Kayak Singles, 200 metres, Men",
+        "Kayak Singles, 1,000 metres, Men",
+        "Canadian Singles, 1,000 metres, Men",
+        "Kayak Doubles, 1,000 metres, Men",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Singles, 200 metres, Women",
+        "Kayak Singles, 500 metres, Women",
+        "Canadian Singles, 200 metres, Men"
+      ],
+      "Cycling BMX Racing": [
+        "BMX, Men",
+        "BMX, Women"
+      ],
+      "Cycling Track": [
+        "Sprint, Men",
+        "Team Pursuit, 4,000 metres, Men",
+        "Sprint, Women",
+        "Team Sprint, Women",
+        "Omnium, Women",
+        "Team Pursuit, Women",
+        "Keirin, Women",
+        "Omnium, Men",
+        "Team Sprint, Men",
+        "Keirin, Men"
+      ],
+      "Diving": [
+        "Platform, Women",
+        "Synchronized Springboard, Women",
+        "Synchronized Platform, Women",
+        "Springboard, Men",
+        "Platform, Men",
+        "Synchronized Springboard, Men",
+        "Synchronized Platform, Men",
+        "Springboard, Women"
+      ],
+      "Rowing": [
+        "Quadruple Sculls, Men",
+        "Coxless Fours, Men",
+        "Single Sculls, Women",
+        "Double Sculls, Women",
+        "Coxless Pairs, Women",
+        "Eights, Men",
+        "Eights, Women",
+        "Lightweight Double Sculls, Women",
+        "Single Sculls, Men",
+        "Lightweight Double Sculls, Men",
+        "Lightweight Coxless Fours, Men",
+        "Coxless Pairs, Men",
+        "Quadruple Sculls, Women",
+        "Double Sculls, Men"
+      ],
+      "Swimming": [
+        "100 metres Freestyle, Men",
+        "100 metres Breaststroke, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "200 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "4 × 200 metres Freestyle Relay, Women",
+        "100 metres Backstroke, Women",
+        "100 metres Butterfly, Women",
+        "200 metres Individual Medley, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "50 metres Freestyle, Women",
+        "100 metres Freestyle, Women",
+        "50 metres Freestyle, Men",
+        "400 metres Individual Medley, Men",
+        "1,500 metres Freestyle, Men",
+        "200 metres Freestyle, Men",
+        "400 metres Freestyle, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "200 metres Butterfly, Women",
+        "400 metres Individual Medley, Women",
+        "4 × 100 metres Freestyle Relay, Men",
+        "400 metres Freestyle, Women",
+        "200 metres Breaststroke, Men",
+        "800 metres Freestyle, Women",
+        "200 metres Individual Medley, Men",
+        "100 metres Backstroke, Men",
+        "200 metres Backstroke, Men",
+        "200 metres Butterfly, Men",
+        "100 metres Breaststroke, Women",
+        "200 metres Breaststroke, Women",
+        "100 metres Butterfly, Men",
+        "200 metres Backstroke, Women"
+      ],
+      "Triathlon": [
+        "Olympic Distance, Women",
+        "Olympic Distance, Men"
+      ],
+      "Water Polo": [
+        "Water Polo, Women",
+        "Water Polo, Men"
+      ],
+      "Boxing": [
+        "Heavyweight, Men",
+        "Super-Heavyweight, Men",
+        "Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Lightweight, Women",
+        "Light-Flyweight, Men",
+        "Flyweight, Women",
+        "Middleweight, Women",
+        "Flyweight, Men",
+        "Bantamweight, Men",
+        "Lightweight, Men",
+        "Light-Welterweight, Men",
+        "Welterweight, Men"
+      ],
+      "Rhythmic Gymnastics": [
+        "Individual, Women",
+        "Group, Women"
+      ],
+      "Shooting": [
+        "Small-Bore Rifle, Prone, 50 metres, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Free Pistol, 50 metres, Men",
+        "Air Pistol, 10 metres, Women",
+        "Sporting Pistol, 25 metres, Women",
+        "Air Rifle, 10 metres, Women",
+        "Skeet, Women",
+        "Trap, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Women",
+        "Skeet, Men",
+        "Trap, Women",
+        "Double Trap, Men",
+        "Air Rifle, 10 metres, Men",
+        "Air Pistol, 10 metres, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Men"
+      ],
+      "Judo": [
+        "Extra-Lightweight, Women",
+        "Extra-Lightweight, Men",
+        "Heavyweight, Men",
+        "Half-Heavyweight, Women",
+        "Half-Middleweight, Men",
+        "Half-Middleweight, Women",
+        "Heavyweight, Women",
+        "Middleweight, Women",
+        "Middleweight, Men",
+        "Half-Lightweight, Women",
+        "Lightweight, Men",
+        "Lightweight, Women",
+        "Half-Lightweight, Men",
+        "Half-Heavyweight, Men"
+      ],
+      "Artistic Gymnastics": [
+        "Rings, Men",
+        "Team All-Around, Men",
+        "Floor Exercise, Men",
+        "Parallel Bars, Men",
+        "Horizontal Bar, Men",
+        "Uneven Bars, Women",
+        "Balance Beam, Women",
+        "Individual All-Around, Men",
+        "Pommelled Horse, Men",
+        "Team All-Around, Women",
+        "Floor Exercise, Women",
+        "Horse Vault, Women",
+        "Horse Vault, Men",
+        "Individual All-Around, Women"
+      ],
+      "Beach Volleyball": [
+        "Beach Volleyball, Men",
+        "Beach Volleyball, Women"
+      ],
+      "Football": [
+        "Football, Men",
+        "Football, Women"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Women",
+        "Individual, Men"
+      ],
+      "Volleyball": [
+        "Volleyball, Men",
+        "Volleyball, Women"
+      ],
+      "Weightlifting": [
+        "Middleweight, Women",
+        "Heavyweight, Women",
+        "Bantamweight, Men",
+        "Lightweight, Men",
+        "Middleweight, Men",
+        "Flyweight, Women",
+        "Lightweight, Women",
+        "Super-Heavyweight, Women",
+        "Featherweight, Women",
+        "Featherweight, Men",
+        "Light-Heavyweight, Women",
+        "Light-Heavyweight, Men",
+        "Middle-Heavyweight, Men",
+        "Heavyweight, Men",
+        "Super-Heavyweight, Men"
+      ],
+      "Marathon Swimming": [
+        "10 kilometres Open Water, Men",
+        "10 kilometres Open Water, Women"
+      ],
+      "Trampolining": [
+        "Individual, Women",
+        "Individual, Men"
+      ],
+      "Archery": [
+        "Individual, Men",
+        "Team, Women",
+        "Team, Men",
+        "Individual, Women"
+      ],
+      "Artistic Swimming": [
+        "Duet, Women",
+        "Team, Women"
+      ],
+      "Badminton": [
+        "Singles, Men",
+        "Doubles, Men",
+        "Singles, Women",
+        "Doubles, Women",
+        "Doubles, Mixed"
+      ],
+      "Fencing": [
+        "Foil, Individual, Men",
+        "Épée, Individual, Women",
+        "Épée, Team, Women",
+        "Foil, Team, Men",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men",
+        "Foil, Individual, Women",
+        "Foil, Team, Women",
+        "Épée, Individual, Men",
+        "Sabre, Individual, Women"
+      ],
+      "Table Tennis": [
+        "Singles, Men",
+        "Team, Men",
+        "Singles, Women",
+        "Team, Women"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "Individual Time Trial, Men",
+        "Individual Time Trial, Women",
+        "Road Race, Individual, Women"
+      ],
+      "Handball": [
+        "Handball, Men",
+        "Handball, Women"
+      ],
+      "Cycling Mountain Bike": [
+        "Cross-Country, Men",
+        "Cross-Country, Women"
+      ],
+      "Equestrian Dressage": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Equestrian Jumping": [
+        "Team, Open",
+        "Individual, Open"
+      ]
+    },
+    "2014": {
+      "Freestyle Skiing": [
+        "Aerials, Men",
+        "Aerials, Women",
+        "Moguls, Men",
+        "Halfpipe, Men",
+        "Moguls, Women",
+        "Ski Cross, Women",
+        "Slopestyle, Women",
+        "Ski Cross, Men",
+        "Halfpipe, Women",
+        "Slopestyle, Men"
+      ],
+      "Snowboarding": [
+        "Halfpipe, Women",
+        "Parallel Slalom, Men",
+        "Parallel Slalom, Women",
+        "Slopestyle, Men",
+        "Cross, Women",
+        "Slopestyle, Women",
+        "Cross, Men",
+        "Halfpipe, Men",
+        "Parallel Giant Slalom, Women",
+        "Parallel Giant Slalom, Men"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Men",
+        "Slalom, Men",
+        "Super G, Women",
+        "Giant Slalom, Women",
+        "Slalom, Women",
+        "Combined, Women",
+        "Super G, Men",
+        "Combined, Men",
+        "Giant Slalom, Men",
+        "Downhill, Women"
+      ],
+      "Biathlon": [
+        "10 kilometres Sprint, Men",
+        "4 × 7.5 kilometres Relay, Men",
+        "10 kilometres Pursuit, Women",
+        "12.5 kilometres Mass Start, Women",
+        "15 kilometres, Women",
+        "12.5 kilometres Pursuit, Men",
+        "15 kilometres Mass Start, Men",
+        "4 × 6 kilometres Relay, Women",
+        "2 × 6 kilometres and 2 × 7.5 kilometres Relay, Mixed",
+        "20 kilometres, Men",
+        "7.5 kilometres Sprint, Women"
+      ],
+      "Luge": [
+        "Doubles, Open",
+        "Singles, Men",
+        "Singles, Women",
+        "Team Relay, Mixed"
+      ],
+      "Nordic Combined": [
+        "Team, Men",
+        "Normal Hill / 10 km, Individual, Men",
+        "Large Hill / 10 km, Individual, Men"
+      ],
+      "Ski Jumping": [
+        "Large Hill, Team, Men",
+        "Normal Hill, Individual, Women",
+        "Large Hill, Individual, Men",
+        "Normal Hill, Individual, Men"
+      ],
+      "Bobsleigh": [
+        "Two, Women",
+        "Four, Men",
+        "Two, Men"
+      ],
+      "Curling": [
+        "Curling, Men",
+        "Curling, Women"
+      ],
+      "Figure Skating": [
+        "Singles, Men",
+        "Ice Dancing, Mixed",
+        "Team, Mixed",
+        "Pairs, Mixed",
+        "Singles, Women"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men",
+        "Ice Hockey, Women"
+      ],
+      "Short Track Speed Skating": [
+        "500 metres, Men",
+        "1,500 metres, Men",
+        "3,000 metres Relay, Women",
+        "5,000 metres Relay, Men",
+        "500 metres, Women",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "1,000 metres, Men"
+      ],
+      "Speed Skating": [
+        "1,000 metres, Men",
+        "1,500 metres, Men",
+        "1,000 metres, Women",
+        "3,000 metres, Women",
+        "5,000 metres, Women",
+        "500 metres, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "Team Pursuit (8 laps), Men",
+        "500 metres, Women",
+        "1,500 metres, Women",
+        "Team Pursuit (6 laps), Women"
+      ],
+      "Cross Country Skiing": [
+        "Team Sprint, Men",
+        "4 × 5 kilometres Relay, Women",
+        "Team Sprint, Women",
+        "4 × 10 kilometres Relay, Men",
+        "Sprint, Men",
+        "30 kilometres Skiathlon, Men",
+        "Sprint, Women",
+        "10 kilometres, Women",
+        "30 kilometres, Women",
+        "15 kilometres Skiathlon, Women",
+        "50 kilometres, Men",
+        "15 kilometres, Men"
+      ],
+      "Skeleton": [
+        "Skeleton, Women",
+        "Skeleton, Men"
+      ]
+    },
+    "2016": {
+      "Athletics": [
+        "800 metres, Men",
+        "1,500 metres, Men",
+        "20 kilometres Race Walk, Men",
+        "50 kilometres Race Walk, Men",
+        "Marathon, Women",
+        "3,000 metres Steeplechase, Women",
+        "Hammer Throw, Men",
+        "Heptathlon, Women",
+        "Pole Vault, Men",
+        "High Jump, Women",
+        "800 metres, Women",
+        "100 metres, Men",
+        "200 metres, Men",
+        "4 × 100 metres Relay, Men",
+        "High Jump, Men",
+        "Decathlon, Men",
+        "Triple Jump, Men",
+        "20 kilometres Race Walk, Women",
+        "Hammer Throw, Women",
+        "Triple Jump, Women",
+        "Discus Throw, Women",
+        "Javelin Throw, Women",
+        "400 metres Hurdles, Women",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "Marathon, Men",
+        "1,500 metres, Women",
+        "5,000 metres, Women",
+        "10,000 metres, Women",
+        "110 metres Hurdles, Men",
+        "3,000 metres Steeplechase, Men",
+        "Discus Throw, Men",
+        "Javelin Throw, Men",
+        "Long Jump, Men",
+        "4 × 100 metres Relay, Women",
+        "4 × 400 metres Relay, Women",
+        "Pole Vault, Women",
+        "400 metres, Men",
+        "Shot Put, Women",
+        "4 × 400 metres Relay, Men",
+        "100 metres, Women",
+        "200 metres, Women",
+        "400 metres, Women",
+        "400 metres Hurdles, Men",
+        "Shot Put, Men",
+        "Long Jump, Women",
+        "100 metres Hurdles, Women"
+      ],
+      "Hockey": [
+        "Hockey, Men",
+        "Hockey, Women"
+      ],
+      "Judo": [
+        "Extra-Lightweight, Women",
+        "Lightweight, Men",
+        "Half-Heavyweight, Men",
+        "Heavyweight, Men",
+        "Lightweight, Women",
+        "Half-Heavyweight, Women",
+        "Middleweight, Men",
+        "Heavyweight, Women",
+        "Middleweight, Women",
+        "Half-Middleweight, Women",
+        "Half-Lightweight, Men",
+        "Half-Lightweight, Women",
+        "Extra-Lightweight, Men",
+        "Half-Middleweight, Men"
+      ],
+      "Sailing": [
+        "Multihull, Mixed",
+        "One Person Dinghy, Men",
+        "Two Person Dinghy, Men",
+        "Skiff, Men",
+        "Skiff, Women",
+        "Windsurfer, Women",
+        "One Person Dinghy, Women",
+        "Windsurfer, Men",
+        "Two Person Dinghy, Women",
+        "One Person Heavyweight Dinghy, Men"
+      ],
+      "Tennis": [
+        "Singles, Men",
+        "Singles, Women",
+        "Doubles, Women",
+        "Doubles, Mixed",
+        "Doubles, Men"
+      ],
+      "Weightlifting": [
+        "Heavyweight, Men",
+        "Super-Heavyweight, Men",
+        "Middle-Heavyweight, Men",
+        "Heavyweight, Women",
+        "Bantamweight, Men",
+        "Lightweight, Men",
+        "Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Middleweight, Women",
+        "Light-Heavyweight, Women",
+        "Super-Heavyweight, Women",
+        "Featherweight, Women",
+        "Lightweight, Women",
+        "Featherweight, Men",
+        "Flyweight, Women"
+      ],
+      "Wrestling": [
+        "Welterweight, Greco-Roman, Men",
+        "Heavyweight, Greco-Roman, Men",
+        "Super-Heavyweight, Greco-Roman, Men",
+        "Featherweight, Freestyle, Men",
+        "Welterweight, Freestyle, Men",
+        "Middleweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Heavyweight, Freestyle, Men",
+        "Flyweight, Freestyle, Women",
+        "Featherweight, Freestyle, Women",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Super-Heavyweight, Freestyle, Men",
+        "Middleweight, Freestyle, Women",
+        "Heavyweight, Freestyle, Women",
+        "Featherweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Lightweight, Freestyle, Women",
+        "Light-Heavyweight, Freestyle, Women"
+      ],
+      "Archery": [
+        "Team, Men",
+        "Team, Women",
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Canoe Slalom": [
+        "Kayak Singles, Slalom, Women",
+        "Kayak Singles, Slalom, Men",
+        "Canadian Singles, Slalom, Men",
+        "Canadian Doubles, Slalom, Men"
+      ],
+      "Canoe Sprint": [
+        "Kayak Doubles, 1,000 metres, Men",
+        "Canadian Singles, 200 metres, Men",
+        "Kayak Singles, 200 metres, Women",
+        "Kayak Fours, 500 metres, Women",
+        "Canadian Singles, 1,000 metres, Men",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Fours, 1,000 metres, Men",
+        "Kayak Singles, 500 metres, Women",
+        "Kayak Singles, 200 metres, Men",
+        "Kayak Doubles, 500 metres, Women",
+        "Kayak Doubles, 200 metres, Men"
+      ],
+      "Cycling Track": [
+        "Team Pursuit, 4,000 metres, Men",
+        "Keirin, Women",
+        "Omnium, Women",
+        "Team Pursuit, Women",
+        "Team Sprint, Women",
+        "Omnium, Men",
+        "Team Sprint, Men",
+        "Sprint, Women",
+        "Sprint, Men",
+        "Keirin, Men"
+      ],
+      "Diving": [
+        "Synchronized Springboard, Women",
+        "Platform, Women",
+        "Synchronized Platform, Women",
+        "Springboard, Men",
+        "Platform, Men",
+        "Synchronized Springboard, Men",
+        "Synchronized Platform, Men",
+        "Springboard, Women"
+      ],
+      "Equestrian Eventing": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Women",
+        "Individual, Men"
+      ],
+      "Rowing": [
+        "Quadruple Sculls, Men",
+        "Coxless Fours, Men",
+        "Single Sculls, Women",
+        "Lightweight Double Sculls, Women",
+        "Single Sculls, Men",
+        "Double Sculls, Men",
+        "Lightweight Coxless Fours, Men",
+        "Coxless Pairs, Women",
+        "Lightweight Double Sculls, Men",
+        "Eights, Men",
+        "Quadruple Sculls, Women",
+        "Double Sculls, Women",
+        "Eights, Women",
+        "Coxless Pairs, Men"
+      ],
+      "Rugby Sevens": [
+        "Rugby Sevens, Women",
+        "Rugby Sevens, Men"
+      ],
+      "Shooting": [
+        "Trap, Women",
+        "Air Pistol, 10 metres, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Air Pistol, 10 metres, Women",
+        "Air Rifle, 10 metres, Women",
+        "Small-Bore Rifle, Three Positions, 50 metres, Women",
+        "Trap, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Men",
+        "Small-Bore Rifle, Prone, 50 metres, Men",
+        "Sporting Pistol, 25 metres, Women",
+        "Double Trap, Men",
+        "Air Rifle, 10 metres, Men",
+        "Skeet, Men",
+        "Skeet, Women",
+        "Free Pistol, 50 metres, Men"
+      ],
+      "Swimming": [
+        "100 metres Freestyle, Men",
+        "400 metres Freestyle, Men",
+        "4 × 100 metres Freestyle Relay, Men",
+        "200 metres Backstroke, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "200 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "4 × 200 metres Freestyle Relay, Women",
+        "200 metres Butterfly, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "50 metres Freestyle, Women",
+        "100 metres Freestyle, Women",
+        "100 metres Backstroke, Women",
+        "200 metres Backstroke, Women",
+        "100 metres Butterfly, Women",
+        "200 metres Freestyle, Men",
+        "100 metres Backstroke, Men",
+        "200 metres Individual Medley, Men",
+        "200 metres Breaststroke, Women",
+        "50 metres Freestyle, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "100 metres Breaststroke, Men",
+        "400 metres Freestyle, Women",
+        "800 metres Freestyle, Women",
+        "200 metres Individual Medley, Women",
+        "100 metres Butterfly, Men",
+        "200 metres Butterfly, Men",
+        "400 metres Individual Medley, Women",
+        "1,500 metres Freestyle, Men",
+        "400 metres Individual Medley, Men",
+        "200 metres Breaststroke, Men",
+        "100 metres Breaststroke, Women"
+      ],
+      "Boxing": [
+        "Light-Welterweight, Men",
+        "Middleweight, Men",
+        "Lightweight, Men",
+        "Flyweight, Men",
+        "Flyweight, Women",
+        "Lightweight, Women",
+        "Middleweight, Women",
+        "Light-Flyweight, Men",
+        "Super-Heavyweight, Men",
+        "Bantamweight, Men",
+        "Light-Heavyweight, Men",
+        "Heavyweight, Men",
+        "Welterweight, Men"
+      ],
+      "Taekwondo": [
+        "Welterweight, Men",
+        "Heavyweight, Men",
+        "Flyweight, Women",
+        "Flyweight, Men",
+        "Heavyweight, Women",
+        "Welterweight, Women",
+        "Featherweight, Women",
+        "Featherweight, Men"
+      ],
+      "Trampolining": [
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Cycling Road": [
+        "Road Race, Individual, Men",
+        "Individual Time Trial, Men",
+        "Road Race, Individual, Women",
+        "Individual Time Trial, Women"
+      ],
+      "Artistic Gymnastics": [
+        "Floor Exercise, Men",
+        "Rings, Men",
+        "Team All-Around, Men",
+        "Team All-Around, Women",
+        "Horizontal Bar, Men",
+        "Uneven Bars, Women",
+        "Individual All-Around, Men",
+        "Pommelled Horse, Men",
+        "Floor Exercise, Women",
+        "Horse Vault, Men",
+        "Balance Beam, Women",
+        "Parallel Bars, Men",
+        "Individual All-Around, Women",
+        "Horse Vault, Women"
+      ],
+      "Beach Volleyball": [
+        "Beach Volleyball, Men",
+        "Beach Volleyball, Women"
+      ],
+      "Football": [
+        "Football, Men",
+        "Football, Women"
+      ],
+      "Marathon Swimming": [
+        "10 kilometres Open Water, Women",
+        "10 kilometres Open Water, Men"
+      ],
+      "Volleyball": [
+        "Volleyball, Men",
+        "Volleyball, Women"
+      ],
+      "Rhythmic Gymnastics": [
+        "Group, Women",
+        "Individual, Women"
+      ],
+      "Cycling Mountain Bike": [
+        "Cross-Country, Women",
+        "Cross-Country, Men"
+      ],
+      "Equestrian Jumping": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Artistic Swimming": [
+        "Duet, Women",
+        "Team, Women"
+      ],
+      "Badminton": [
+        "Singles, Men",
+        "Doubles, Men",
+        "Doubles, Mixed",
+        "Doubles, Women",
+        "Singles, Women"
+      ],
+      "Fencing": [
+        "Épée, Individual, Women",
+        "Épée, Team, Women",
+        "Foil, Team, Men",
+        "Épée, Individual, Men",
+        "Épée, Team, Men",
+        "Sabre, Individual, Men",
+        "Foil, Individual, Men",
+        "Foil, Individual, Women",
+        "Sabre, Individual, Women",
+        "Sabre, Team, Women"
+      ],
+      "Golf": [
+        "Individual, Women",
+        "Individual, Men"
+      ],
+      "Table Tennis": [
+        "Singles, Men",
+        "Team, Men",
+        "Singles, Women",
+        "Team, Women"
+      ],
+      "Cycling BMX Racing": [
+        "BMX, Men",
+        "BMX, Women"
+      ],
+      "Water Polo": [
+        "Water Polo, Men",
+        "Water Polo, Women"
+      ],
+      "Handball": [
+        "Handball, Men",
+        "Handball, Women"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Triathlon": [
+        "Olympic Distance, Men",
+        "Olympic Distance, Women"
+      ],
+      "Basketball": [
+        "Basketball, Men",
+        "Basketball, Women"
+      ]
+    },
+    "2018": {
+      "Freestyle Skiing": [
+        "Moguls, Men",
+        "Aerials, Women",
+        "Ski Cross, Men",
+        "Slopestyle, Men",
+        "Moguls, Women",
+        "Ski Cross, Women",
+        "Halfpipe, Women",
+        "Aerials, Men",
+        "Slopestyle, Women",
+        "Halfpipe, Men"
+      ],
+      "Snowboarding": [
+        "Halfpipe, Men",
+        "Cross, Men",
+        "Big Air, Women",
+        "Slopestyle, Men",
+        "Big Air, Men",
+        "Slopestyle, Women",
+        "Halfpipe, Women",
+        "Parallel Giant Slalom, Women",
+        "Cross, Women",
+        "Parallel Giant Slalom, Men"
+      ],
+      "Alpine Skiing": [
+        "Super G, Men",
+        "Giant Slalom, Men",
+        "Slalom, Men",
+        "Combined, Men",
+        "Super G, Women",
+        "Slalom, Women",
+        "Team, Mixed",
+        "Downhill, Women",
+        "Giant Slalom, Women",
+        "Downhill, Men",
+        "Combined, Women"
+      ],
+      "Biathlon": [
+        "20 kilometres, Men",
+        "12.5 kilometres Mass Start, Women",
+        "4 × 6 kilometres Relay, Women",
+        "10 kilometres Sprint, Men",
+        "7.5 kilometres Sprint, Women",
+        "12.5 kilometres Pursuit, Men",
+        "15 kilometres Mass Start, Men",
+        "10 kilometres Pursuit, Women",
+        "2 × 6 kilometres and 2 × 7.5 kilometres Relay, Mixed",
+        "4 × 7.5 kilometres Relay, Men",
+        "15 kilometres, Women"
+      ],
+      "Luge": [
+        "Singles, Men",
+        "Doubles, Open",
+        "Team Relay, Mixed",
+        "Singles, Women"
+      ],
+      "Nordic Combined": [
+        "Normal Hill / 10 km, Individual, Men",
+        "Team, Men",
+        "Large Hill / 10 km, Individual, Men"
+      ],
+      "Speed Skating": [
+        "Mass Start, Men",
+        "5,000 metres, Men",
+        "10,000 metres, Men",
+        "500 metres, Men",
+        "500 metres, Women",
+        "5,000 metres, Women",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "Mass Start, Women",
+        "Team Pursuit (6 laps), Women",
+        "1,000 metres, Men",
+        "1,500 metres, Men",
+        "Team Pursuit (8 laps), Men",
+        "3,000 metres, Women"
+      ],
+      "Bobsleigh": [
+        "Two, Men",
+        "Two, Women",
+        "Four, Open"
+      ],
+      "Curling": [
+        "Mixed Doubles, Mixed",
+        "Curling, Women",
+        "Curling, Men"
+      ],
+      "Figure Skating": [
+        "Singles, Women",
+        "Pairs, Mixed",
+        "Ice Dancing, Mixed",
+        "Team, Mixed",
+        "Singles, Men"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Men",
+        "Ice Hockey, Women"
+      ],
+      "Short Track Speed Skating": [
+        "1,000 metres, Men",
+        "5,000 metres Relay, Men",
+        "500 metres, Women",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "500 metres, Men",
+        "3,000 metres Relay, Women",
+        "1,500 metres, Men"
+      ],
+      "Cross Country Skiing": [
+        "50 kilometres, Men",
+        "10 kilometres, Women",
+        "30 kilometres, Women",
+        "15 kilometres Skiathlon, Women",
+        "4 × 10 kilometres Relay, Men",
+        "Team Sprint, Men",
+        "Sprint, Men",
+        "15 kilometres, Men",
+        "30 kilometres Skiathlon, Men",
+        "Sprint, Women",
+        "4 × 5 kilometres Relay, Women",
+        "Team Sprint, Women"
+      ],
+      "Skeleton": [
+        "Skeleton, Women",
+        "Skeleton, Men"
+      ],
+      "Ski Jumping": [
+        "Normal Hill, Individual, Men",
+        "Large Hill, Individual, Men",
+        "Large Hill, Team, Men",
+        "Normal Hill, Individual, Women"
+      ]
+    },
+    "2020": {
+      "Hockey": [
+        "Hockey, Women",
+        "Hockey, Men"
+      ],
+      "Rugby Sevens": [
+        "Rugby Sevens, Men",
+        "Rugby Sevens, Women"
+      ],
+      "Volleyball": [
+        "Volleyball, Men",
+        "Volleyball, Women"
+      ],
+      "Artistic Gymnastics": [
+        "Horse Vault, Men",
+        "Uneven Bars, Women",
+        "Individual All-Around, Women",
+        "Horse Vault, Women",
+        "Individual All-Around, Men",
+        "Team All-Around, Men",
+        "Floor Exercise, Men",
+        "Parallel Bars, Men",
+        "Rings, Men",
+        "Balance Beam, Women",
+        "Pommelled Horse, Men",
+        "Horizontal Bar, Men",
+        "Team All-Around, Women",
+        "Floor Exercise, Women"
+      ],
+      "Boxing": [
+        "Lightweight, Men",
+        "Light-Heavyweight, Men",
+        "Middleweight, Men",
+        "Heavyweight, Men",
+        "Lightweight, Women",
+        "Flyweight, Women",
+        "Welterweight, Women",
+        "Middleweight, Women",
+        "Featherweight, Men",
+        "Welterweight, Men",
+        "Flyweight, Men",
+        "Super-Heavyweight, Men",
+        "Featherweight, Women"
+      ],
+      "Weightlifting": [
+        "Heavyweight, Men",
+        "Middleweight, Women",
+        "Featherweight, Men",
+        "Lightweight, Men",
+        "Middleweight, Men",
+        "Light-Heavyweight, Men",
+        "Flyweight, Women",
+        "Featherweight, Women",
+        "Heavyweight, Women",
+        "Super-Heavyweight, Women",
+        "Lightweight, Women",
+        "Light-Heavyweight, Women",
+        "Middle-Heavyweight, Men",
+        "Super-Heavyweight, Men"
+      ],
+      "Wrestling": [
+        "Heavyweight, Greco-Roman, Men",
+        "Middleweight, Greco-Roman, Men",
+        "Welterweight, Freestyle, Men",
+        "Flyweight, Freestyle, Women",
+        "Middleweight, Freestyle, Men",
+        "Featherweight, Freestyle, Women",
+        "Lightweight, Freestyle, Women",
+        "Middleweight, Freestyle, Women",
+        "Featherweight, Greco-Roman, Men",
+        "Heavyweight, Freestyle, Women",
+        "Super-Heavyweight, Greco-Roman, Men",
+        "Heavyweight, Freestyle, Men",
+        "Super-Heavyweight, Freestyle, Men",
+        "Light-Heavyweight, Greco-Roman, Men",
+        "Featherweight, Freestyle, Men",
+        "Welterweight, Greco-Roman, Men",
+        "Light-Heavyweight, Freestyle, Men",
+        "Light-Heavyweight, Freestyle, Women"
+      ],
+      "Athletics": [
+        "Decathlon, Men",
+        "High Jump, Women",
+        "Javelin Throw, Women",
+        "Discus Throw, Men",
+        "10,000 metres, Women",
+        "High Jump, Men",
+        "Marathon, Men",
+        "Heptathlon, Women",
+        "4 × 400 metres Relay, Men",
+        "400 metres Hurdles, Men",
+        "Pole Vault, Men",
+        "Triple Jump, Men",
+        "100 metres, Men",
+        "200 metres, Men",
+        "5,000 metres, Men",
+        "4 × 100 metres Relay, Men",
+        "50 kilometres Race Walk, Men",
+        "20 kilometres Race Walk, Women",
+        "Shot Put, Women",
+        "Hammer Throw, Women",
+        "400 metres, Men",
+        "Long Jump, Men",
+        "Discus Throw, Women",
+        "Javelin Throw, Men",
+        "400 metres, Women",
+        "4 × 400 metres Relay, Mixed",
+        "10,000 metres, Men",
+        "3,000 metres Steeplechase, Men",
+        "5,000 metres, Women",
+        "Long Jump, Women",
+        "1,500 metres, Men",
+        "800 metres, Women",
+        "1,500 metres, Women",
+        "4 × 100 metres Relay, Women",
+        "Pole Vault, Women",
+        "20 kilometres Race Walk, Men",
+        "110 metres Hurdles, Men",
+        "100 metres, Women",
+        "200 metres, Women",
+        "100 metres Hurdles, Women",
+        "4 × 400 metres Relay, Women",
+        "800 metres, Men",
+        "Marathon, Women",
+        "3,000 metres Steeplechase, Women",
+        "400 metres Hurdles, Women",
+        "Shot Put, Men",
+        "Hammer Throw, Men",
+        "Triple Jump, Women"
+      ],
+      "Basketball": [
+        "Basketball, Men",
+        "Basketball, Women"
+      ],
+      "Beach Volleyball": [
+        "Beach Volleyball, Women",
+        "Beach Volleyball, Men"
+      ],
+      "Canoe Slalom": [
+        "Kayak Singles, Slalom, Women",
+        "Canadian Singles, Slalom, Women",
+        "Kayak Singles, Slalom, Men",
+        "Canadian Singles, Slalom, Men"
+      ],
+      "Canoe Sprint": [
+        "Kayak Doubles, 1,000 metres, Men",
+        "Kayak Fours, 500 metres, Women",
+        "Canadian Singles, 1,000 metres, Men",
+        "Canadian Singles, 200 metres, Women",
+        "Canadian Doubles, 500 metres, Women",
+        "Canadian Doubles, 1,000 metres, Men",
+        "Kayak Singles, 200 metres, Women",
+        "Kayak Singles, 500 metres, Women",
+        "Kayak Fours, 500 metres, Men",
+        "Kayak Singles, 200 metres, Men",
+        "Kayak Singles, 1,000 metres, Men",
+        "Kayak Doubles, 500 metres, Women"
+      ],
+      "Cycling BMX Freestyle": [
+        "Park, Men",
+        "Park, Women"
+      ],
+      "Cycling Road": [
+        "Individual Time Trial, Men",
+        "Road Race, Individual, Women",
+        "Road Race, Individual, Men",
+        "Individual Time Trial, Women"
+      ],
+      "Cycling Track": [
+        "Team Pursuit, 4,000 metres, Men",
+        "Sprint, Women",
+        "Keirin, Women",
+        "Team Sprint, Women",
+        "Madison, Men",
+        "Madison, Women",
+        "Team Sprint, Men",
+        "Team Pursuit, Women",
+        "Sprint, Men",
+        "Keirin, Men",
+        "Omnium, Men",
+        "Omnium, Women"
+      ],
+      "Diving": [
+        "Platform, Women",
+        "Synchronized Springboard, Women",
+        "Springboard, Men",
+        "Platform, Men",
+        "Synchronized Springboard, Men",
+        "Synchronized Platform, Men",
+        "Springboard, Women",
+        "Synchronized Platform, Women"
+      ],
+      "Equestrian Eventing": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Marathon Swimming": [
+        "10 kilometres Open Water, Women",
+        "10 kilometres Open Water, Men"
+      ],
+      "Rowing": [
+        "Quadruple Sculls, Men",
+        "Coxless Fours, Men",
+        "Quadruple Sculls, Women",
+        "Coxless Fours, Women",
+        "Single Sculls, Women",
+        "Coxless Pairs, Women",
+        "Eights, Women",
+        "Double Sculls, Men",
+        "Single Sculls, Men",
+        "Coxless Pairs, Men",
+        "Lightweight Double Sculls, Women",
+        "Eights, Men",
+        "Lightweight Double Sculls, Men",
+        "Double Sculls, Women"
+      ],
+      "Sailing": [
+        "One Person Dinghy, Men",
+        "Two Person Dinghy, Men",
+        "Skiff, Women",
+        "Windsurfer, Men",
+        "Windsurfer, Women",
+        "One Person Dinghy, Women",
+        "Two Person Dinghy, Women",
+        "Skiff, Men",
+        "One Person Heavyweight Dinghy, Men",
+        "Multihull, Mixed"
+      ],
+      "Skateboarding": [
+        "Park, Men",
+        "Street, Men",
+        "Street, Women",
+        "Park, Women"
+      ],
+      "Surfing": [
+        "Shortboard, Men",
+        "Shortboard, Women"
+      ],
+      "Swimming": [
+        "100 metres Freestyle, Men",
+        "400 metres Freestyle, Men",
+        "4 × 100 metres Freestyle Relay, Men",
+        "4 × 200 metres Freestyle Relay, Men",
+        "200 metres Breaststroke, Men",
+        "400 metres Individual Medley, Men",
+        "50 metres Freestyle, Women",
+        "100 metres Freestyle, Women",
+        "200 metres Freestyle, Women",
+        "400 metres Freestyle, Women",
+        "800 metres Freestyle, Women",
+        "4 × 100 metres Freestyle Relay, Women",
+        "4 × 200 metres Freestyle Relay, Women",
+        "100 metres Backstroke, Women",
+        "200 metres Backstroke, Women",
+        "100 metres Butterfly, Women",
+        "4 × 100 metres Medley Relay, Women",
+        "4 × 100 metres Medley Relay, Mixed",
+        "50 metres Freestyle, Men",
+        "200 metres Freestyle, Men",
+        "200 metres Individual Medley, Men",
+        "200 metres Butterfly, Women",
+        "200 metres Backstroke, Men",
+        "100 metres Breaststroke, Men",
+        "4 × 100 metres Medley Relay, Men",
+        "100 metres Butterfly, Men",
+        "200 metres Butterfly, Men",
+        "800 metres Freestyle, Men",
+        "200 metres Individual Medley, Women",
+        "400 metres Individual Medley, Women",
+        "100 metres Backstroke, Men",
+        "100 metres Breaststroke, Women",
+        "200 metres Breaststroke, Women",
+        "1,500 metres Freestyle, Men",
+        "1,500 metres Freestyle, Women"
+      ],
+      "Tennis": [
+        "Doubles, Mixed",
+        "Doubles, Women",
+        "Doubles, Men",
+        "Singles, Women",
+        "Singles, Men"
+      ],
+      "Judo": [
+        "Half-Middleweight, Men",
+        "Middleweight, Women",
+        "Heavyweight, Women",
+        "Half-Lightweight, Men",
+        "Half-Heavyweight, Women",
+        "Lightweight, Women",
+        "Half-Middleweight, Women",
+        "Extra-Lightweight, Men",
+        "Heavyweight, Men",
+        "Half-Lightweight, Women",
+        "Team, Mixed",
+        "Lightweight, Men",
+        "Middleweight, Men",
+        "Half-Heavyweight, Men",
+        "Extra-Lightweight, Women"
+      ],
+      "Karate": [
+        "Kumite, ≤55 kg, Women",
+        "Kumite, ≤75 kg, Men",
+        "Kumite, >61 kg, Women",
+        "Kumite, ≤61 kg, Women",
+        "Kumite, ≤67 kg, Men",
+        "Kata, Women",
+        "Kumite, >75 kg, Men",
+        "Kata, Men"
+      ],
+      "Sport Climbing": [
+        "Combined, Men",
+        "Combined, Women"
+      ],
+      "Rhythmic Gymnastics": [
+        "Individual, Women",
+        "Group, Women"
+      ],
+      "Trampolining": [
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Equestrian Jumping": [
+        "Team, Open",
+        "Individual, Open"
+      ],
+      "Triathlon": [
+        "Olympic Distance, Women",
+        "Relay, Mixed",
+        "Olympic Distance, Men"
+      ],
+      "Football": [
+        "Football, Men",
+        "Football, Women"
+      ],
+      "Shooting": [
+        "Air Pistol, 10 metres, Women",
+        "Air Pistol, 10 metres, Men",
+        "Rapid-Fire Pistol, 25 metres, Men",
+        "Air Rifle, 10 metres, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Men",
+        "Sporting Pistol, 25 metres, Women",
+        "Air Rifle, 10 metres, Women",
+        "Skeet, Women",
+        "Air Pistol, 10 metres, Team, Mixed",
+        "Air Rifle, 10 metres, Team, Mixed",
+        "Trap, Men",
+        "Skeet, Men",
+        "Small-Bore Rifle, Three Positions, 50 metres, Women",
+        "Trap, Women",
+        "Trap, Team, Mixed"
+      ],
+      "Softball": [
+        "Softball, Women"
+      ],
+      "3x3 Basketball": [
+        "3x3 Basketball, Women",
+        "3x3 Basketball, Men"
+      ],
+      "Artistic Swimming": [
+        "Duet, Women",
+        "Team, Women"
+      ],
+      "Badminton": [
+        "Singles, Men",
+        "Doubles, Men",
+        "Singles, Women",
+        "Doubles, Women",
+        "Doubles, Mixed"
+      ],
+      "Fencing": [
+        "Épée, Individual, Women",
+        "Foil, Individual, Men",
+        "Épée, Team, Women",
+        "Foil, Team, Men",
+        "Épée, Individual, Men",
+        "Foil, Team, Women",
+        "Sabre, Individual, Women",
+        "Sabre, Team, Women",
+        "Sabre, Individual, Men",
+        "Sabre, Team, Men",
+        "Épée, Team, Men",
+        "Foil, Individual, Women"
+      ],
+      "Table Tennis": [
+        "Singles, Men",
+        "Team, Men",
+        "Singles, Women",
+        "Team, Women",
+        "Doubles, Mixed"
+      ],
+      "Taekwondo": [
+        "Featherweight, Men",
+        "Featherweight, Women",
+        "Welterweight, Women",
+        "Welterweight, Men",
+        "Heavyweight, Men",
+        "Heavyweight, Women",
+        "Flyweight, Women",
+        "Flyweight, Men"
+      ],
+      "Archery": [
+        "Team, Men",
+        "Team, Women",
+        "Individual, Men",
+        "Individual, Women",
+        "Team, Mixed"
+      ],
+      "Golf": [
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Cycling BMX Racing": [
+        "BMX, Men",
+        "BMX, Women"
+      ],
+      "Handball": [
+        "Handball, Men",
+        "Handball, Women"
+      ],
+      "Baseball": [
+        "Baseball, Men"
+      ],
+      "Equestrian Dressage": [
+        "Individual, Open",
+        "Team, Open"
+      ],
+      "Cycling Mountain Bike": [
+        "Cross-Country, Men",
+        "Cross-Country, Women"
+      ],
+      "Modern Pentathlon": [
+        "Individual, Men",
+        "Individual, Women"
+      ],
+      "Water Polo": [
+        "Water Polo, Men",
+        "Water Polo, Women"
+      ]
+    },
+    "2022": {
+      "Freestyle Skiing": [
+        "Moguls, Women",
+        "Aerials, Women",
+        "Moguls, Men",
+        "Ski Cross, Women",
+        "Halfpipe, Women",
+        "Team Aerials, Mixed",
+        "Aerials, Men",
+        "Slopestyle, Women",
+        "Big Air, Women",
+        "Halfpipe, Men",
+        "Big Air, Men",
+        "Ski Cross, Men",
+        "Slopestyle, Men"
+      ],
+      "Skeleton": [
+        "Skeleton, Women",
+        "Skeleton, Men"
+      ],
+      "Snowboarding": [
+        "Halfpipe, Men",
+        "Slopestyle, Women",
+        "Parallel Giant Slalom, Men",
+        "Cross, Men",
+        "Parallel Giant Slalom, Women",
+        "Big Air, Women",
+        "Slopestyle, Men",
+        "Big Air, Men",
+        "Cross, Women",
+        "Team Cross, Mixed",
+        "Halfpipe, Women"
+      ],
+      "Alpine Skiing": [
+        "Downhill, Men",
+        "Super G, Men",
+        "Slalom, Men",
+        "Combined, Men",
+        "Super G, Women",
+        "Slalom, Women",
+        "Team, Mixed",
+        "Giant Slalom, Men",
+        "Downhill, Women",
+        "Giant Slalom, Women",
+        "Combined, Women"
+      ],
+      "Cross Country Skiing": [
+        "15 kilometres Skiathlon, Women",
+        "15 kilometres, Men",
+        "30 kilometres Skiathlon, Men",
+        "Team Sprint, Men",
+        "10 kilometres, Women",
+        "30 kilometres, Women",
+        "4 × 10 kilometres Relay, Men",
+        "Sprint, Men",
+        "50 kilometres, Men",
+        "4 × 5 kilometres Relay, Women",
+        "Team Sprint, Women",
+        "Sprint, Women"
+      ],
+      "Luge": [
+        "Singles, Men",
+        "Doubles, Open",
+        "Team Relay, Mixed",
+        "Singles, Women"
+      ],
+      "Nordic Combined": [
+        "Normal Hill / 10 km, Individual, Men",
+        "Large Hill / 10 km, Individual, Men",
+        "Team, Men"
+      ],
+      "Ski Jumping": [
+        "Normal Hill, Individual, Men",
+        "Large Hill, Team, Men",
+        "Normal Hill, Team, Mixed",
+        "Large Hill, Individual, Men",
+        "Normal Hill, Individual, Women"
+      ],
+      "Biathlon": [
+        "20 kilometres, Men",
+        "10 kilometres Sprint, Men",
+        "12.5 kilometres Pursuit, Men",
+        "4 × 7.5 kilometres Relay, Men",
+        "12.5 kilometres Mass Start, Women",
+        "15 kilometres, Women",
+        "2 × 6 kilometres and 2 × 7.5 kilometres Relay, Mixed",
+        "7.5 kilometres Sprint, Women",
+        "15 kilometres Mass Start, Men",
+        "10 kilometres Pursuit, Women",
+        "4 × 6 kilometres Relay, Women"
+      ],
+      "Short Track Speed Skating": [
+        "1,000 metres, Women",
+        "500 metres, Men",
+        "1,500 metres, Men",
+        "5,000 metres Relay, Men",
+        "500 metres, Women",
+        "1,000 metres, Men",
+        "3,000 metres Relay, Women",
+        "2,000 metres Relay, Mixed",
+        "1,500 metres, Women"
+      ],
+      "Speed Skating": [
+        "Mass Start, Men",
+        "1,000 metres, Men",
+        "3,000 metres, Women",
+        "5,000 metres, Women",
+        "Mass Start, Women",
+        "Team Pursuit (6 laps), Women",
+        "500 metres, Men",
+        "10,000 metres, Men",
+        "500 metres, Women",
+        "1,000 metres, Women",
+        "1,500 metres, Women",
+        "1,500 metres, Men",
+        "5,000 metres, Men",
+        "Team Pursuit (8 laps), Men"
+      ],
+      "Bobsleigh": [
+        "Four, Open",
+        "Monobob, Women",
+        "Two, Women"
+      ],
+      "Curling": [
+        "Curling, Men",
+        "Curling, Women",
+        "Mixed Doubles, Mixed"
+      ],
+      "Ice Hockey": [
+        "Ice Hockey, Women",
+        "Ice Hockey, Men"
+      ],
+      "Figure Skating": [
+        "Pairs, Mixed",
+        "Ice Dancing, Mixed",
+        "Singles, Men",
+        "Singles, Women",
+        "Team, Mixed"
+      ]
+    },
+    "year": {
+      "sport": [
+        "event"
+      ]
+    }
+  }

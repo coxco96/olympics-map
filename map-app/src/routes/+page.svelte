@@ -3,15 +3,11 @@
     import Map from '$lib/components/Map.svelte';
     import {sportsArray, eventsArray, convertData} from '../lib/utils/exports.js';
     import { Container, Col, Row, InputGroup, Input} from "@sveltestrap/sveltestrap";
-    import YearsFilter from '$lib/components/YearsFilter.svelte';
-    import SportsFilter from '$lib/components/SportsFilter.svelte';
+    import Filters from '$lib/components/Filters.svelte';
     $: selectedYear = "All years (1896-2024)";
     $: selectedSport = 'All sports';
     $: selectedEvent = 'All events';
 
-    import {makeSportEventObj} from '$lib/utils/sportEvents.js';
-
-    makeSportEventObj(data);
 
     const dataObj = convertData(data);
     
@@ -30,13 +26,9 @@
             <!-- TODO: check form accessibility here -->
             <InputGroup>
                 <Col>
-                    <!-- TODO: make this a scroll bar instead of dropdown -->
-                    <YearsFilter {selectedYear}/>
+                <Filters/>
                 </Col>
-                <Col>
-                    <SportsFilter {selectedSport} {selectedYear}/>
-                    
-                </Col>
+                
             </InputGroup>
         </Row>
         <Row>

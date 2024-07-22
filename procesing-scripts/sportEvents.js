@@ -29,3 +29,31 @@ export function makeSportEventObj(data) {
     return sportObj;
 
 }
+
+// this one is by year first, then sport with array holding events
+export function makeSportEventObj(data) {
+    data = data.post;
+    
+    let sportObj = {};
+
+    data.forEach(([country,medal,year,sport,sportEvent,athlete,source]) => {
+        
+        // initialize year if not present in sportObj
+        if (!sportObj[year]) {
+            sportObj[year] = {};
+        }
+
+        // initialize sport if not present for current year
+        if (!sportObj[year][sport]) {
+            sportObj[year][sport] = []
+        }
+
+        // if year is not present under this sportEvent, add it
+        if (!sportObj[year][sport].includes(sportEvent)) {
+            sportObj[year][sport].push(sportEvent)
+        }
+    })
+    console.log(sportObj);
+    return sportObj;
+
+}
