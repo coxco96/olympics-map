@@ -13,21 +13,16 @@
 
 </script>
 
-<select bind:value={year} on:change={handleChange} class="form-select" name="Year">
-    {#each yearsArray.reverse() as year}
-        {#if year == "1906 (intercalary games)" || year == "1916 (not held)" || year == "1940 (not held)" || year == "1944 (not held)"}
-            <option
-                class="s-y_bCXRrkrYfP"
-                disabled="True"
-                value={year}>{year}</option
-            >
-        {:else}
-            <option value={year}
-                >
-            <!-- TODO: add sun or snow icon here based on whether summer or winter -->
-                {year}
-                </option
-            >
-        {/if}
-    {/each}
-</select>
+<div>
+    <label for="year-slider">Select Year: {year}</label>
+    <input
+        id="year-slider"
+        type="range"
+        min={1896}
+        max={2024}
+        step="1"
+        value={year}
+        on:input={handleChange}
+        class="form-range"
+    />
+</div>
