@@ -1,10 +1,20 @@
 <script>
-    export let selectedYear;
+    // full dataset imported by sheet
     export let dataObj;
+    
+    // variables to filter map by
+    export let selectedYear;
+    export let selectedSport;
+    export let selectedEvent;
+
+    // historic base maps
     import { geojsons } from "$lib/geojsons/basemaps.js";
+
+    // dev stuff
     import { onMount } from "svelte";
     import maplibregl from "maplibre-gl";
     import "maplibre-gl/dist/maplibre-gl.css";
+    
     import { baseMapYears } from "$lib/utils/exports.js";
 
     console.log(dataObj);
@@ -21,16 +31,17 @@
     // get numeric form of selectedYear
     $: numericSelectedYear = Number(selectedYear.substring(0, 4));
 
-    $: console.log("selectedYear: ", selectedYear);
-    $: console.log("numericSelectedYear: ", numericSelectedYear);
+    // if all years are selected, use basemap from year 2000
+    // otherwise, get the right baseMapYear
     $: baseMapYear = isNaN(numericSelectedYear)
         ? 2000
         : getBaseMapYear(numericSelectedYear);
-    $: console.log("baseMapYear: ", baseMapYear);
 
     let container; // to bind to
     let map; // initialize so can be used in or out of onMount
     let geojsonLayerId = "geojson-layer";
+    let hoverLayerId = "hover-layer";
+    
     onMount(async () => {
         map = new maplibregl.Map({
             container: container,
@@ -44,7 +55,7 @@
 
         // add hover effect layer
         map.addLayer({
-            id: "hover-layer",
+            id: hoverLayerId,
             type: "fill",
             source: geojsonLayerId,
             layout: {},
@@ -66,40 +77,26 @@
             map.getCanvas().style.cursor = "pointer";
 
             let coords = e.features[0].geometry.coordinates.slice();
-            let country = e.features[0].properties.NAME;
-            let countryData = dataObj[country];
+            if (e.features && e.features[0]) {
+                let country = e.features[0].properties.NAME;
+                let countryData = dataObj[country];
 
-            // if map is zoomed out so multiple copies of feature are visible, tooltip
-            // only will appear over the one being hovered over
-            while (Math.abs(e.lngLat.lng - coords[0]) > 180) {
-                coords[0] += e.lngLat.lng > coords[0] ? 360 : -360;
-            }
-            let tooltipContent;
-            // get tooltip content for the country being hovered over
-            // if (countryData) {
-            //     tooltipContent = `<strong>${country}</strong>`;
-            //     countryData.forEach((d) => {
-            //         tooltipContent += `
-            //         <p>
-            //                     Medal: ${d.medal}<br>
-            //                     Year: ${d.year}<br>
-            //                     Sport: ${d.sport}<br>
-            //                     Event: ${d.sportEvent}<br>
-            //                     Athlete: ${d.athlete}<br>
-            //         `;
-            //     });
-            // }
+                // if map is zoomed out so multiple copies of feature are visible, tooltip
+                // only will appear over the one being hovered over
+                while (Math.abs(e.lngLat.lng - coords[0]) > 180) {
+                    coords[0] += e.lngLat.lng > coords[0] ? 360 : -360;
+                }
+                let tooltipContent;
 
-            // add tooltip
-            if (countryData) {
-                // only show data for currently selected year
-                let filteredData = countryData.filter(
-                    (d) => d.year === selectedYear,
-                );
-                if (filteredData.length > 0) {
-                    tooltipContent = `<strong>${country}</strong>`;
-                    filteredData.forEach((d) => {
-                        tooltipContent += `
+                if (countryData) {
+                    // only show data for currently selected year
+                    let filteredData = countryData.filter(
+                        (d) => d.year === selectedYear,
+                    );
+                    if (filteredData.length > 0) {
+                        tooltipContent = `<strong>${country}</strong>`;
+                        filteredData.forEach((d) => {
+                            tooltipContent += `
                     <p>
                                 Medal: ${d.medal}<br>
                                 Year: ${d.year}<br>
@@ -108,24 +105,33 @@
                                 Athlete: ${d.athlete}<br>
                     </p>
                     `;
-                    });
-                }
+                        });
+                        tooltip
+                            .setLngLat([e.lngLat.lng, e.lngLat.lat])
+                            .setHTML(tooltipContent)
+                            .addTo(map);
 
-                tooltip
-                    .setLngLat([e.lngLat.lng, e.lngLat.lat])
-                    .setHTML(tooltipContent)
-                    .addTo(map);
+
+                    } else {
+                        tooltip.remove();
+                    }
+                } else {
+                    tooltip.remove();
+                }
 
                 map.setFilter("hover-layer", ["==", "NAME", country]);
             } else {
                 tooltip.remove();
                 map.setFilter("hover-layer", ["==", "NAME", ""]);
             }
+
+            // add tooltip only if this country is defined
         });
 
         map.on("mouseleave", geojsonLayerId, () => {
             map.getCanvas().style.cursor = "";
             tooltip.remove();
+            map.setFilter("hover-layer", ["==", "NAME", ""]);
         });
     });
 
@@ -141,6 +147,7 @@
                 type: "geojson",
                 data: geojsons[year],
             });
+            
             map.addLayer({
                 id: geojsonLayerId,
                 type: "fill",
@@ -163,7 +170,6 @@
     }
 </script>
 
-<p>Basemap year (most recent): {baseMapYear}</p>
 <div bind:this={container} id="map" />
 
 <style>

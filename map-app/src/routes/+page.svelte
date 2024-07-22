@@ -1,10 +1,17 @@
 <script>
     export let data;
-    import Map from '$lib/Map.svelte';
-    import {yearsArray} from '../lib/utils/exports.js';
+    import Map from '$lib/components/Map.svelte';
+    import {sportsArray, eventsArray, convertData} from '../lib/utils/exports.js';
     import { Container, Col, Row, InputGroup, Input} from "@sveltestrap/sveltestrap";
-    import {convertData} from '../lib/utils/exports.js';
+    import YearsFilter from '$lib/components/YearsFilter.svelte';
+    import SportsFilter from '$lib/components/SportsFilter.svelte';
     $: selectedYear = "All years (1896-2024)";
+    $: selectedSport = 'All sports';
+    $: selectedEvent = 'All events';
+
+    import {makeSportEventObj} from '$lib/utils/sportEvents.js';
+
+    makeSportEventObj(data);
 
     const dataObj = convertData(data);
     
@@ -20,36 +27,15 @@
             </Col>
         </Row>
         <Row class="mb-3">
+            <!-- TODO: check form accessibility here -->
             <InputGroup>
                 <Col>
-                    <!-- TODO: check form accessibility here -->
-
-                    <!-- include size="2" in select node for scroll box instead of dropdown -->
-                    <select bind:value={selectedYear} class="form-select" name="Year">
-                        {#each yearsArray.reverse() as year}
-                            {#if year == "1906 (intercalary games)" || year == "1916 (not held)" || year == "1940 (not held)" || year == "1944 (not held)"}
-                                <option
-                                    class="s-y_bCXRrkrYfP"
-                                    disabled="True"
-                                    value={year}>{year}</option
-                                >
-                            {:else}
-                                <option value={year}
-                                    >{year}</option
-                                >
-                            {/if}
-                        {/each}
-                    </select>
+                    <!-- TODO: make this a scroll bar instead of dropdown -->
+                    <YearsFilter {selectedYear}/>
                 </Col>
                 <Col>
-                    <select class="form-select" name="Sport">
-                        {#each yearsArray.reverse() as year}
-                            <option
-                                disabled="True"
-                                value={year}>{year}</option
-                            >
-                        {/each}
-                    </select>
+                    <SportsFilter {selectedSport} {selectedYear}/>
+                    
                 </Col>
             </InputGroup>
         </Row>
