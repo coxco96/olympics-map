@@ -29,11 +29,8 @@
         }
     }
 
-    $: console.log(`year from EventsFilter: ${year}`);
-    $: console.log(`sport from EventsFilter: ${sport}`);
-    $: console.log(`sportEvent from EventsFilter: ${sportEvent}`);
-    // $: console.log(relevantSports);
-    // $: console.log(relevantEvents);
+    $: relevantSports;
+    $: relevantEvents;
 </script>
 
 <select

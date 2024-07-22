@@ -1,6 +1,6 @@
 <script>
     import {selectedSport, selectedYear, selectedEvent} from '$lib/stores/filters.js';
-    import {sportsArray, eventsByYear} from '$lib/utils/exports.js';
+    import {eventsByYear} from '$lib/utils/exports.js';
 
 
     let sport, year, sportEvent;
@@ -12,16 +12,22 @@
         selectedSport.set(event.target.value);
     }
     
+    let relevantSports;
 
-    $: console.log(`year from SportsFilter: ${year}`)
-    $: console.log(`sport from SportsFilter: ${sport}`)
-    $: console.log(`sportEvent from SportsFilter: ${sportEvent}`)
+    $: {
+        if (year) {
+            relevantSports = Object.keys(eventsByYear[year] || {}).sort();
+        
+        } else {
+            relevantSports = [];
+        }
+    }
 
 </script>
 
 <!-- TODO: show only sports relevant to selectedYear -->
 <select bind:value={sport} on:change={handleChange} class="form-select" name="Sport">
-    {#each sportsArray as sport}
+    {#each relevantSports as sport}
             <option value={sport}
                 >{sport}</option
             >

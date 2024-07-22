@@ -4,9 +4,9 @@
     import {convertData} from '../lib/utils/exports.js';
     import { Container, Col, Row, InputGroup, Input} from "@sveltestrap/sveltestrap";
     import Filters from '$lib/components/Filters.svelte';
-    $: selectedYear = "All years (1896-2024)";
-    $: selectedSport = 'All sports';
-    $: selectedEvent = 'All events';
+    // $: selectedYear = "All years (1896-2024)";
+    // $: selectedSport = 'All sports';
+    // $: selectedEvent = 'All events';
 
 
     const dataObj = convertData(data);

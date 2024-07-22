@@ -26,7 +26,10 @@
             >
         {:else}
             <option value={year}
-                >{year}</option
+                >
+            <!-- TODO: add sun or snow icon here based on whether summer or winter -->
+                {year}
+                </option
             >
         {/if}
     {/each}
