@@ -7,22 +7,43 @@
     $: selectedSport.subscribe(value => sport = value)
     $: selectedEvent.subscribe(value => sportEvent = value)
 
+    // Convert yearsArray to numbers and find the minimum
+    let minYear = 1896;
+    let maxYear = 2024;
+
+
+    let steps = yearsArray
+        .map(y => +y) // convert to numbers
+        .filter(y => !isNaN(y)) // remove any non-numeric values
+        .sort((a, b) => a - b); // sort in ascending order
+
+
+
     function handleChange(event) {
         selectedYear.set(event.target.value);
     }
 
 </script>
 
-<div>
-    <label for="year-slider">Select Year: {year}</label>
+
+
+<div class="slider-container">
+    <label for="year-slider">Selected Year: {year}</label>
     <input
-        id="year-slider"
         type="range"
-        min={1896}
-        max={2024}
-        step="1"
+        min={minYear}
+        max={maxYear}
+        step={1}
         value={year}
         on:input={handleChange}
         class="form-range"
+        list="tickmarks"
     />
+
+    <datalist id="tickmarks">
+        {#each steps as step}
+            <option value={step}>{step}</option>
+        {/each}
+    </datalist>
 </div>
+
