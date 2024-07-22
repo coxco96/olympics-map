@@ -11,9 +11,6 @@
         selectedYear.set(event.target.value);
     }
 
-    $: console.log(`year from YearsFilter: ${year}`)
-    $: console.log(`sport from YearsFilter: ${sport}`)
-
 </script>
 
 <select bind:value={year} on:change={handleChange} class="form-select" name="Year">
