@@ -25,7 +25,6 @@
 
 </script>
 
-<!-- TODO: show only sports relevant to selectedYear -->
 <select bind:value={sport} on:change={handleChange} class="form-select" name="Sport">
     {#each relevantSports as sport}
             <option value={sport}

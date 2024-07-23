@@ -65,10 +65,6 @@
         /* ADD INITIAL GEOJSON LAYER */
         addGeoJsonLayer(baseMapYear);
 
-        // setPaint();
-
-        // let featureStateId = null;
-
         map.setFeatureState({
             source: geojsonLayerId,
             id: featureStateId,
@@ -201,21 +197,50 @@
                 id: geojsonLayerId,
                 type: "fill",
                 source: geojsonLayerId,
+                // paint: {
+                //     "fill-color": [
+                //         "case",
+                //         ["==", ["feature-state", "color"], "high"],
+                //         "#00f", // blue for high
+                //         ["==", ["feature-state", "color"], "low"],
+                //         "#ccc", // gray for low
+                //         "#000", // default black
+                //     ],
+                //     "fill-opacity": 0.8,
+                // },
                 paint: {
                     "fill-color": [
                         "case",
-                        ["==", ["feature-state", "color"], "high"],
-                        "#00f", // blue for high
-                        ["==", ["feature-state", "color"], "low"],
-                        "#ccc", // gray for low 
-                        "#000", // default black
+                        // Check if pointsTotal is undefined or 0
+                        ["==", ["feature-state", "pointsTotal"], null],
+                        "black", // black for undefined pointsTotal
+                        ["==", ["feature-state", "pointsTotal"], 0],
+                        "#ccc", // gray for pointsTotal = 0
+                        // Apply gradient based on pointsTotal,
+                        
+                        [
+                            "interpolate",
+                            ["linear"],
+                            ["feature-state", "pointsTotal"],
+                            1,
+                            "#add8e6", // light blue for the minimum value
+                            200, // TODO: adjust this to your actual max pointsTotal
+                            "#00008b", // dark blue for the maximum value
+                        ],
                     ],
-                    "fill-opacity": 0.8,
+                    "fill-opacity": ["case",
+                        ["==", ["feature-state", "pointsTotal"], null],
+                        .2,
+                        ["==", ["feature-state", "pointsTotal"], 0],
+                        .9,
+                        1
+                    ]
                 },
             });
         }
     }
 
+    // change map colors based on data
     function updateFeatureStates(map) {
         let features = map.querySourceFeatures(geojsonLayerId);
         features.forEach((feature) => {
@@ -247,18 +272,18 @@
                                     ? 3
                                     : 0;
                     });
-                    console.log(country, pointsTotal)
+                    console.log(country, pointsTotal);
                 }
             }
-            if (pointsTotal == 0) {
-                opacityLevel = "low";
-            } else {
-                opacityLevel = "high";
-            }
+            // if (pointsTotal == 0) {
+            //     opacityLevel = "low";
+            // } else {
+            //     opacityLevel = "high";
+            // }
 
             map.setFeatureState(
                 { source: geojsonLayerId, id: featureId },
-                { color: opacityLevel },
+                { pointsTotal: pointsTotal },
             );
         });
     }

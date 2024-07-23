@@ -27,7 +27,7 @@
 
 
 
-<div class="slider-container">
+<!-- <div class="slider-container">
     <label for="year-slider">Selected Year: {year}</label>
     <input
         type="range"
@@ -45,5 +45,13 @@
             <option value={step}>{step}</option>
         {/each}
     </datalist>
-</div>
+</div> -->
+
+<select bind:value={sport} on:change={handleChange} class="form-select" name="Sport">
+    {#each yearsArray.reverse() as year}
+            <option value={year}
+                >{year}</option
+            >
+    {/each}
+</select>
 
