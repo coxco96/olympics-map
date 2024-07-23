@@ -1,17 +1,20 @@
 <script>
     export let data;
     import Map from '$lib/components/Map.svelte';
+    import Table from '$lib/components/Table.svelte';
     import {convertData} from '../lib/utils/exports.js';
     import { Container, Col, Row, InputGroup, Input} from "@sveltestrap/sveltestrap";
     import Filters from '$lib/components/Filters.svelte';
-    // $: selectedYear = "All years (1896-2024)";
-    // $: selectedSport = 'All sports';
-    // $: selectedEvent = 'All events';
-
 
     const dataObj = convertData(data);
+
+    let tableView = false; // default to map instead of table
+
+    function toggleView() {
+        tableView = !tableView;
+    }
     
-    // need to convert this data into something that can filter only to the year
+
 </script>
 
 <main>
@@ -30,10 +33,20 @@
                 </Col>
                 
             </InputGroup>
+            <Col>
+            <button on:click={toggleView}>
+            {tableView ? 'Switch to Map View' : 'Switch to Table View'}
+            </button>
+            </Col>
         </Row>
+
         <Row>
             <Col>
+                {#if tableView}
+                <Table {dataObj}/>
+                {:else}
                 <Map {dataObj}/>
+            {/if}
             </Col>
         </Row>
         <Row>

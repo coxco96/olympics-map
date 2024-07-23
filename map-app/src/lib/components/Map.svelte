@@ -52,7 +52,7 @@
 
     // if all years are selected, use basemap from year 2000
     // otherwise, get the right baseMapYear
-    $: baseMapYear = isNaN(numericyear) ? 2000 : getBaseMapYear(numericyear);
+    $: baseMapYear = isNaN(numericyear) ? "2000" : getBaseMapYear(numericyear);
 
     onMount(async () => {
         /* INITIALIZE MAP */
@@ -65,31 +65,27 @@
         /* ADD INITIAL GEOJSON LAYER */
         addGeoJsonLayer(baseMapYear);
 
-        map.setFeatureState({
-            source: geojsonLayerId,
-            id: featureStateId,
-        });
 
         /* HOVER EFFECT LAYER */
-        // map.addLayer({
-        //     id: hoverLayerId,
-        //     type: "fill",
-        //     source: geojsonLayerId,
-        //     layout: {},
-        //     paint: {
-        //         "fill-color": "#627BC1",
-        //         "fill-opacity": 0.75,
-        //     },
-        //     filter: ["==", "NAME", ""], // initially set to no country
-        // });
+        map.addLayer({
+            id: hoverLayerId,
+            type: "line",
+            source: geojsonLayerId,
+            layout: {},
+            paint: {
+                "line-color": "white",
+                "line-width": 2
+            },
+            filter: ["==", "NAME", ""], // initially set to no country
+        });
 
         /* TOOLTIP */
 
         // initialize
-        // const tooltip = new maplibregl.Popup({
-        //     closeButton: false,
-        //     closeOnClick: false,
-        // });
+        const tooltip = new maplibregl.Popup({
+            closeButton: false,
+            closeOnClick: false,
+        });
 
         // on mousemove, display tooltip
         map.on("mousemove", geojsonLayerId, (e) => {
@@ -100,7 +96,7 @@
             if (e.features && e.features[0]) {
                 let country = e.features[0].properties.NAME;
                 // get filtered data only
-                // let countryData = getRelevantCountryData(dataObj[country]);
+                let countryData = getRelevantCountryData(dataObj[country]);
 
                 // if map is zoomed out so multiple copies of feature are visible, only show tooltip once
                 let coords = e.features[0].geometry.coordinates.slice();
@@ -108,46 +104,46 @@
                     coords[0] += e.lngLat.lng > coords[0] ? 360 : -360;
                 }
 
-                // if (country) {
-                //     // only show data for currently selected year
-                //     let filteredData = countryData.filter(
-                //         (d) => d.year === year,
-                //     );
-                //     if (filteredData.length > 0) {
-                //         tooltipContent = `<strong>${country}</strong>`;
-                //         filteredData.forEach((d) => {
-                //             tooltipContent += `
-                //     <p>
-                //                 Medal: ${d.medal}<br>
-                //                 Year: ${d.year}<br>
-                //                 Sport: ${d.sport}<br>
-                //                 Event: ${d.sportEvent}<br>
-                //                 Athlete: ${d.athlete}<br>
-                //     </p>
-                //     `;
-                //         });
-                //         tooltip
-                //             .setLngLat([e.lngLat.lng, e.lngLat.lat])
-                //             .setHTML(tooltipContent)
-                //             .addTo(map);
-                //     } else {
-                //         tooltip.remove();
-                //     }
-                // } else {
-                //     tooltip.remove();
-                // }
+                if (country) {
+                    // only show data for currently selected year
+                    let filteredData = countryData.filter(
+                        (d) => d.year === year,
+                    );
+                    if (filteredData.length > 0) {
+                        tooltipContent = `<strong>${country}</strong>`;
+                        filteredData.forEach((d) => {
+                            tooltipContent += `
+                    <p>
+                                Medal: ${d.medal}<br>
+                                Year: ${d.year}<br>
+                                Sport: ${d.sport}<br>
+                                Event: ${d.sportEvent}<br>
+                                Athlete: ${d.athlete}<br>
+                    </p>
+                    `;
+                        });
+                        tooltip
+                            .setLngLat([e.lngLat.lng, e.lngLat.lat])
+                            .setHTML(tooltipContent)
+                            .addTo(map);
+                    } else {
+                        tooltip.remove();
+                    }
+                } else {
+                    tooltip.remove();
+                }
 
-                // map.setFilter("hover-layer", ["==", "NAME", country]);
+                map.setFilter("hover-layer", ["==", "NAME", country]);
             } else {
-                // tooltip.remove();
-                // map.setFilter("hover-layer", ["==", "NAME", ""]);
+                tooltip.remove();
+                map.setFilter("hover-layer", ["==", "NAME", ""]);
             }
         });
 
         map.on("mouseleave", geojsonLayerId, () => {
             map.getCanvas().style.cursor = "";
-            // tooltip.remove();
-            // map.setFilter("hover-layer", ["==", "NAME", ""]);
+            tooltip.remove();
+            map.setFilter("hover-layer", ["==", "NAME", ""]);
         });
     });
 
@@ -160,15 +156,8 @@
         ((year && sport && sportEvent) || (year && sport) || year)
     ) {
         updateGeoJsonLayer(baseMapYear);
-        // updatePaint();
         updateFeatureStates(map);
     }
-
-    // $: if (map && map.isStyleLoaded() && year && dataObj) {
-    //     // updateDataLayer(relevantData);
-    //     map.triggerRepaint();
-    //     console.log(year);
-    // }
 
     /* FUNCTIONS */
 
@@ -193,31 +182,24 @@
                 generateId: true, // in order to use feature states
             });
 
+            map.setFeatureState({
+            source: geojsonLayerId,
+            id: featureStateId,
+        });
+
             map.addLayer({
                 id: geojsonLayerId,
                 type: "fill",
                 source: geojsonLayerId,
-                // paint: {
-                //     "fill-color": [
-                //         "case",
-                //         ["==", ["feature-state", "color"], "high"],
-                //         "#00f", // blue for high
-                //         ["==", ["feature-state", "color"], "low"],
-                //         "#ccc", // gray for low
-                //         "#000", // default black
-                //     ],
-                //     "fill-opacity": 0.8,
-                // },
                 paint: {
                     "fill-color": [
                         "case",
-                        // Check if pointsTotal is undefined or 0
                         ["==", ["feature-state", "pointsTotal"], null],
                         "black", // black for undefined pointsTotal
                         ["==", ["feature-state", "pointsTotal"], 0],
                         "#ccc", // gray for pointsTotal = 0
-                        // Apply gradient based on pointsTotal,
-                        
+
+                        // apply gradient based on pointsTotal
                         [
                             "interpolate",
                             ["linear"],
@@ -228,13 +210,14 @@
                             "#00008b", // dark blue for the maximum value
                         ],
                     ],
-                    "fill-opacity": ["case",
+                    "fill-opacity": [
+                        "case",
                         ["==", ["feature-state", "pointsTotal"], null],
-                        .2,
+                        0.2,
                         ["==", ["feature-state", "pointsTotal"], 0],
-                        .9,
-                        1
-                    ]
+                        0.9,
+                        1,
+                    ],
                 },
             });
         }
@@ -247,7 +230,6 @@
             let pointsTotal = 0; // to get points totals based on medal type and count
             let medalType;
             let featureId = feature.id;
-            let opacityLevel;
             let country;
             if (feature.properties.NAME) {
                 country = feature.properties.NAME;
@@ -272,15 +254,9 @@
                                     ? 3
                                     : 0;
                     });
-                    console.log(country, pointsTotal);
+                    
                 }
             }
-            // if (pointsTotal == 0) {
-            //     opacityLevel = "low";
-            // } else {
-            //     opacityLevel = "high";
-            // }
-
             map.setFeatureState(
                 { source: geojsonLayerId, id: featureId },
                 { pointsTotal: pointsTotal },
@@ -295,6 +271,7 @@
         } else {
             addGeoJsonLayer(year);
         }
+        updateFeatureStates(map);
     }
 </script>
 

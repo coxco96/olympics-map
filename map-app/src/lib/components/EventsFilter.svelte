@@ -18,6 +18,7 @@
     let relevantSports, relevantEvents;
 
     $: {
+        
         if (year) {
             relevantSports = Object.keys(eventsByYear[year] || {}).sort();
         }

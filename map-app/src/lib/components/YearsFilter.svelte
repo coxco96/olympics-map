@@ -7,15 +7,17 @@
     $: selectedSport.subscribe(value => sport = value)
     $: selectedEvent.subscribe(value => sportEvent = value)
 
+    $: console.log(`${year} from YearsFilter`)
+
     // Convert yearsArray to numbers and find the minimum
-    let minYear = 1896;
-    let maxYear = 2024;
+    // let minYear = 1896;
+    // let maxYear = 2024;
 
 
-    let steps = yearsArray
-        .map(y => +y) // convert to numbers
-        .filter(y => !isNaN(y)) // remove any non-numeric values
-        .sort((a, b) => a - b); // sort in ascending order
+    // let steps = yearsArray
+    //     .map(y => +y) // convert to numbers
+    //     .filter(y => !isNaN(y)) // remove any non-numeric values
+    //     .sort((a, b) => a - b); // sort in ascending order
 
 
 
@@ -47,7 +49,7 @@
     </datalist>
 </div> -->
 
-<select bind:value={sport} on:change={handleChange} class="form-select" name="Sport">
+<select bind:value={year} on:change={handleChange} class="form-select" name="Year">
     {#each yearsArray.reverse() as year}
             <option value={year}
                 >{year}</option
