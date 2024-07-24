@@ -1,13 +1,16 @@
 <script>
     import {Table} from '@sveltestrap/sveltestrap'
     import { filteredDataStore } from '$lib/utils/stores.js';
-    // import { onDestroy, onMount } from 'svelte';
+
+
+    // TODO: fix the buggy thing where the button doesn't hit the right state when filterData changes
+    // button toggle state
+    let sortBy = 'pointsTotal'; // default sorting option
 
     // subscribe to filterDataStore
     let filteredData;
     $: filteredDataStore.subscribe(value => filteredData = value);
 
-    let sortBy = 'pointsTotal'; // default sorting option
 
     function makeTableArr (filteredData, sortBy) {
         let tableArr = [];
@@ -17,9 +20,7 @@
             let silverCount = 0;
             let bronzeCount = 0;
             let pointsTotal = 0;
-            // let medalCounts = {gold: 0, silver: 0, bronze: 0};
             countryData = filteredData[country];
-            let countryArr = [];
             countryData.forEach(row => {
                 // destructure row object to access medal
                 const { medal } = row;
@@ -42,31 +43,27 @@
         // determine how to sort
         if (sortBy === 'pointsTotal') {
             tableArr.sort((a,b) => b[4] - a[4]) // sort by points
-        } else if (sortBy == 'country') {
+        } else if (sortBy === 'country') {
             tableArr.sort((a,b) => a[0].localeCompare(b[0])); // sort alphabetically by country
         }
-            // // sort based on pointsTotal
-            // tableArr.sort((a,b) => b[4] - a[4])
             return tableArr;
     }
 
-    function handleSortChange(event) {
-        sortBy = event.target.value;
-        tableData = makeTableArr(filteredData, sortBy)
+    function toggleSort() {
+        sortBy = sortBy === 'pointsTotal' ? 'country' : 'pointsTotal';
+        // tableData = makeTableArr(filteredData, sortBy);
     }
+
+    $: buttonText = sortBy === 'pointsTotal' ? 'Sort by country' : 'Sort by results';
 
     $: tableData = makeTableArr(filteredData);
 
 </script>
 
-<!-- Dropdown for sorting options -->
 <div>
-    <label for="sortOptions">Sort by:</label>
-    <select id="sortOptions" on:change={handleSortChange}>
-        <option value="pointsTotal">Results</option>
-        <option value="country">Country (Alphabetically)</option>
-    </select>
+    <button on:click={toggleSort}>{buttonText}</button>
 </div>
+
 
 <!-- this is the sveltestrap Table component, not a self-reference -->
 <Table>
