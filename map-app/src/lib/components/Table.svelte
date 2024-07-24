@@ -8,8 +8,9 @@
     $: filteredDataStore.subscribe(value => filteredData = value);
     $: console.log(filteredData);
 
+    let sortBy = 'pointsTotal'; // default sorting option
 
-    function makeTableArr (filteredData) {
+    function makeTableArr (filteredData, sortBy) {
         let tableArr = [];
         let countryData;
         for (let country in filteredData) {
@@ -39,7 +40,20 @@
             })
             tableArr.push([country, goldCount, silverCount, bronzeCount, pointsTotal])
         }
+        // determine how to sort
+        if (sortBy === 'pointsTotal') {
+            tableArr.sort((a,b) => b[4] - a[4]) // sort by points
+        } else if (sortBy == 'country') {
+            tableArr.sort((a,b) => a[0].localeCompare(b[0])); // sort alphabetically by country
+        }
+            // // sort based on pointsTotal
+            // tableArr.sort((a,b) => b[4] - a[4])
             return tableArr;
+    }
+
+    function handleSortChange(event) {
+        sortBy = event.target.value;
+        tableData = makeTableArr(filteredData, sortBy)
     }
 
     $: tableData = makeTableArr(filteredData);
@@ -48,6 +62,15 @@
 </script>
 
 <!-- this is the sveltestrap Table component, not a self-reference -->
+<!-- Dropdown for sorting options -->
+<div>
+    <label for="sortOptions">Sort by:</label>
+    <select id="sortOptions" on:change={handleSortChange}>
+        <option value="pointsTotal">Results</option>
+        <option value="country">Country (Alphabetically)</option>
+    </select>
+</div>
+
 <Table>
     <thead>
         <tr>
@@ -60,7 +83,7 @@
     <tbody>
         {#each tableData as arr}
         <tr>
-            {#each arr as x}
+            {#each arr.slice(0,4) as x}
             <td>{x}</td>
             {/each}
         </tr>
