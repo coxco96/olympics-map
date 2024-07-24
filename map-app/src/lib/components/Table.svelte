@@ -6,7 +6,6 @@
     // subscribe to filterDataStore
     let filteredData;
     $: filteredDataStore.subscribe(value => filteredData = value);
-    $: console.log(filteredData);
 
     let sortBy = 'pointsTotal'; // default sorting option
 
@@ -57,11 +56,9 @@
     }
 
     $: tableData = makeTableArr(filteredData);
-    $: console.log(tableData);
 
 </script>
 
-<!-- this is the sveltestrap Table component, not a self-reference -->
 <!-- Dropdown for sorting options -->
 <div>
     <label for="sortOptions">Sort by:</label>
@@ -71,6 +68,7 @@
     </select>
 </div>
 
+<!-- this is the sveltestrap Table component, not a self-reference -->
 <Table>
     <thead>
         <tr>
