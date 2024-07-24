@@ -7,18 +7,6 @@
     import SportsFilter from "$lib/components/SportsFilter.svelte";
     import EventsFilter from "$lib/components/EventsFilter.svelte";
 
-    // use stores for filters
-    import {
-        selectedYear,
-        selectedSport,
-        selectedEvent,
-    } from "$lib/utils/stores.js";
-
-    // subscribe to the stores
-    let year, sport, sportEvent;
-    $: selectedYear.subscribe((value) => (year = value));
-    $: selectedSport.subscribe((value) => (sport = value));
-    $: selectedEvent.subscribe((value) => (sportEvent = value));
 </script>
 
 <Col>

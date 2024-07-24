@@ -12,78 +12,76 @@
     import { convertData } from "../lib/utils/exports.js";
     
     // stores, context and lifecycle
-    import { onDestroy, setContext } from "svelte";
     import { filteredDataStore, selectedYear, selectedSport, selectedEvent } from "$lib/utils/stores.js";
     import { initialDataContext } from "$lib/utils/context.js";
+    import { onDestroy, setContext } from "svelte";
 
     // predeclared vars
     let initialData;
     let filtered = [];
 
 
-    // once data is imported, convert it to object by country, then 
-    // set intialDataContext with that object
+   /* SET CONTEXT WITH INITIAL DATA AND ALSO AS THE INITIAL STORE */
     $: {
         if (data) {
-            initialData = convertData(data);
+            initialData = convertData(data); // convert to object by country
             setContext(initialDataContext, initialData);
         }
     }
 
 
-
-
-    // $: {
-    //     if (initialData) {
-    //         filtered = filterData(initialData)
-    //         filteredDataStore.set(filtered)
-    //     }
-    // }
-
-    // $: {
-    //     if (initialData) {
-    //         filtered = initialData.filter((item) => {
-    //             return item;
-    //         });
-    //         filteredDataStore.set(filtered);
-    //     }
-    // }
-
-    function filterData(d) {
-        if (initialData) {
-            return initialData;
-        }
-    }
-
-    // subscribe to initialDataContext
-    // const unsubscribeContext = initialDataContext.subscribe((value) => {
-    //     console.log(value);
-    //     initialData = convertData(value);
-    // });
-
-    // // subscribe to filter stores
+    /* SUBSCRIBE TO THE FILTER STORES */
     // const unsubscribeYear = selectedYear.subscribe(() => filterData());
     // const unsubscribeSport = selectedSport.subscribe(() => filterData());
     // const unsubscribeEvent = selectedEvent.subscribe(() => filterData());
 
-  
+    let sport, year, sportEvent, filteredData;
+    $: selectedYear.subscribe(value => year = value);
+    $: selectedSport.subscribe(value => sport = value);
+    $: selectedEvent.subscribe(value => sportEvent = value);
+    $: filteredDataStore.subscribe(value => {
+        let filtered = filterData(year, sport, sportEvent);
+        filtered = value;
+    });
 
-    // clean up subscriptions on destroy
+
+
+    let filteredArr = [];
+    let filteredObj = {}
+    function filterData(year, sport, sportEvent) {
+        for (let country in initialData) {
+            let countryData = initialData[country];
+            let filteredCountryData = countryData.filter(x => {
+                return (
+                    x['year'] === year || x['year'] === ''
+                    && x['sport'] === sport || x['sport'] === ''
+                    && x['sportEvent'] == sportEvent || x['sportEvent'] === ''
+                );
+            })
+            if (filteredCountryData.length > 0) {
+                filteredArr.push(filteredCountryData)
+            }
+            filteredObj[country] = filteredArr;
+        }
+        console.log(filteredObj);
+        return filteredObj;
+    }
+    
+    
+
+
+  
+    // /* CLEAN UP SUBSCRIPTIONS ON DESTROY */
     // onDestroy(() => {
-    //     unsubscribeContext();
     //     unsubscribeYear();
     //     unsubscribeSport();
     //     unsubscribeEvent();
     // });
-
-    //     onMount(() => {
-    //         // convert the data to an object by country
-    //         const convertedData = convertData(data)
-    //         // set the context with this converted data so it is always accessible
-    //         initialDataContext.set(convertedData);
-
-    // ;
-    //     });
+    // function filterData(d) {
+    //     if (initialData) {
+    //         return initialData;
+    //     }
+    // }
 
     const dataObj = convertData(data);
     // console.log(dataObj);

@@ -1,16 +1,18 @@
 <script>
     import {getContext} from 'svelte';
-    import {selectedYear, selectedSport, selectedEvent} from '$lib/utils/stores.js';
+    import {selectedYear, selectedSport, selectedEvent, filteredDataStore} from '$lib/utils/stores.js';
     import {yearsArray} from '$lib/utils/exports.js';
     import {initialDataContext} from '$lib/utils/context.js';
 
     // access unfiltered data
     const initialData = getContext(initialDataContext);
 
-    let sport, year, sportEvent;
+
+
+    let sport, year, sportEvent, filteredData;
     $: selectedYear.subscribe(value => year = value);
-    $: selectedSport.subscribe(value => sport = value)
-    $: selectedEvent.subscribe(value => sportEvent = value)
+    $: selectedSport.subscribe(value => sport = value);
+    $: selectedEvent.subscribe(value => sportEvent = value);
 
     $: console.log(`${year} from YearsFilter`)
 
