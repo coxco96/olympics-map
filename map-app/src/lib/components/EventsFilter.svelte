@@ -3,7 +3,7 @@
         selectedSport,
         selectedYear,
         selectedEvent,
-    } from "$lib/stores/filters.js";
+    } from "$lib/utils/stores.js";
     import { eventsByYear } from "$lib/utils/exports.js";
 
     let sport, year, sportEvent;

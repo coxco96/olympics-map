@@ -1,5 +1,5 @@
 <script>
-    import {selectedSport, selectedYear, selectedEvent} from '$lib/stores/filters.js';
+    import {selectedSport, selectedYear, selectedEvent} from '$lib/utils/stores.js';
     import {eventsByYear} from '$lib/utils/exports.js';
 
 

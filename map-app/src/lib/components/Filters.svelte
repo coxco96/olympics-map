@@ -12,7 +12,7 @@
         selectedYear,
         selectedSport,
         selectedEvent,
-    } from "$lib/stores/filters.js";
+    } from "$lib/utils/stores.js";
 
     // subscribe to the stores
     let year, sport, sportEvent;

@@ -1,20 +1,25 @@
 <script>
     export let data;
-    import Map from '$lib/components/Map.svelte';
-    import Table from '$lib/components/Table.svelte';
-    import {convertData} from '../lib/utils/exports.js';
-    import { Container, Col, Row, InputGroup, Input} from "@sveltestrap/sveltestrap";
-    import Filters from '$lib/components/Filters.svelte';
-    import { onMount } from 'svelte';
-    import { dataStore } from '$lib/stores/filters.js';
+    import Map from "$lib/components/Map.svelte";
+    import Table from "$lib/components/Table.svelte";
+    import { convertData } from "../lib/utils/exports.js";
+    import {
+        Container,
+        Col,
+        Row,
+        InputGroup,
+        Input,
+    } from "@sveltestrap/sveltestrap";
+    import Filters from "$lib/components/Filters.svelte";
+    import { onMount } from "svelte";
+    import { initialDataStore } from "$lib/utils/stores.js";
 
     onMount(() => {
         // initialize the dataStore with imported data
-        dataStore.set(convertData(data));
-        console.log('data');
+        initialDataStore.set(convertData(data));
+        console.log("data");
         console.log(convertData(data));
-
-    })
+    });
 
     const dataObj = convertData(data);
     // console.log(dataObj);
@@ -24,8 +29,6 @@
     function toggleView() {
         tableView = !tableView;
     }
-    
-
 </script>
 
 <main>
@@ -40,24 +43,23 @@
             <!-- TODO: check form accessibility here -->
             <InputGroup>
                 <Col>
-                <Filters/>
+                    <Filters />
                 </Col>
-                
             </InputGroup>
             <Col>
-            <button on:click={toggleView}>
-            {tableView ? 'Switch to Map View' : 'Switch to Table View'}
-            </button>
+                <button on:click={toggleView}>
+                    {tableView ? "Switch to Map View" : "Switch to Table View"}
+                </button>
             </Col>
         </Row>
 
         <Row>
             <Col>
                 {#if tableView}
-                <Table/>
+                    <Table />
                 {:else}
-                <Map {dataObj}/>
-            {/if}
+                    <Map {dataObj} />
+                {/if}
             </Col>
         </Row>
         <Row>

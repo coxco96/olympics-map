@@ -21,7 +21,7 @@
         selectedYear,
         selectedSport,
         selectedEvent,
-    } from "$lib/stores/filters.js";
+    } from "$lib/utils/stores.js";
 
     /* PREDECLARE NECESSARY VARIABLES */
 

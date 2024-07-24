@@ -4,12 +4,12 @@
     import {getRelevantCountryData} from '$lib/utils/exports.js';
     // console.log(dataObj);
     // console.log(getRelevantCountryData(dataObj));
-    import { dataStore } from '$lib/stores/filters.js';
+    import { initialDataStore } from '$lib/utils/stores.js';
     import { onDestroy, onMount } from 'svelte';
 
     let data = [];
     let columns = [];
-    const unsubscribe = dataStore.subscribe(value => {
+    const unsubscribe = initialDataStore.subscribe(value => {
         data = value
         if (data.length > 0) {
             columns = Object.keys(data[0]);
