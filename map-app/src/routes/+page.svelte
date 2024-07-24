@@ -47,9 +47,6 @@
         filteredData = filterData(year, sport, sportEvent);
         filteredDataStore.set(filteredData);
     }
-    // $: filteredDataStore.set(filteredData);
-
- 
 
     // filter data based on filter selections
     let filteredArr;
@@ -88,10 +85,7 @@
             if (filteredCountryData.length > 0) {
                 filteredObj[country] = filteredCountryData;
             }
-            
         }
-        console.log('from inside the function:')
-        console.log(filteredObj);
         return filteredObj;
     }
     
