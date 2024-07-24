@@ -9,9 +9,9 @@
     // historic base maps
     import { geojsons } from "$lib/geojsons/basemaps.js";
 
-    // array of basemap years included in geojsons
+    // array of basemap years included in geojsons and function to filter data
     // TODO: get rid of this and just make a list of geojsons keys
-    import { baseMapYears } from "$lib/utils/exports.js";
+    import { baseMapYears, getRelevantCountryData } from "$lib/utils/exports.js";
 
     // full dataset by country
     export let dataObj;
@@ -93,58 +93,71 @@
             map.getCanvas().style.cursor = "pointer";
 
             // if mouse is on a feature, get & display its data
-            if (e.features && e.features[0]) {
+            if (e.features && e.features[0].properties.NAME) {
                 let country = e.features[0].properties.NAME;
                 // get filtered data only
-                let countryData = getRelevantCountryData(dataObj[country]);
+                // let countryData
+                // if (dataObj[country]) {
+                //     countryData = getRelevantCountryData(dataObj[country]);
+                // }
+               
 
                 // if map is zoomed out so multiple copies of feature are visible, only show tooltip once
-                let coords = e.features[0].geometry.coordinates.slice();
-                while (Math.abs(e.lngLat.lng - coords[0]) > 180) {
-                    coords[0] += e.lngLat.lng > coords[0] ? 360 : -360;
-                }
+                // let coords = e.features[0].geometry.coordinates.slice();
+                // while (Math.abs(e.lngLat.lng - coords[0]) > 180) {
+                //     coords[0] += e.lngLat.lng > coords[0] ? 360 : -360;
+                // }
 
-                if (country) {
-                    // only show data for currently selected year
-                    let filteredData = countryData.filter(
-                        (d) => d.year === year,
-                    );
-                    if (filteredData.length > 0) {
-                        tooltipContent = `<strong>${country}</strong>`;
-                        filteredData.forEach((d) => {
-                            tooltipContent += `
-                    <p>
-                                Medal: ${d.medal}<br>
-                                Year: ${d.year}<br>
-                                Sport: ${d.sport}<br>
-                                Event: ${d.sportEvent}<br>
-                                Athlete: ${d.athlete}<br>
-                    </p>
-                    `;
-                        });
-                        tooltip
-                            .setLngLat([e.lngLat.lng, e.lngLat.lat])
-                            .setHTML(tooltipContent)
-                            .addTo(map);
-                    } else {
-                        tooltip.remove();
-                    }
-                } else {
-                    tooltip.remove();
-                }
+                // if (country) {
+                //     // only show data for currently selected year
+                //     let filteredData = countryData.filter(
+                //         (d) => d.year === year,
+                //     );
+                //     if (filteredData.length > 0) {
+                //         tooltipContent = `<strong>${country}</strong>`;
+                //         filteredData.forEach((d) => {
+                //             tooltipContent += `
+                //     <p>
+                //                 Medal: ${d.medal}<br>
+                //                 Year: ${d.year}<br>
+                //                 Sport: ${d.sport}<br>
+                //                 Event: ${d.sportEvent}<br>
+                //                 Athlete: ${d.athlete}<br>
+                //     </p>
+                //     `;
+                //         });
+                //         tooltip
+                //             .setLngLat([e.lngLat.lng, e.lngLat.lat])
+                //             .setHTML(tooltipContent)
+                //             .addTo(map);
+                //     } else {
+                //         tooltip.remove();
+                //     }
+                // } else {
+                //     tooltip.remove();
+                // }
 
                 map.setFilter("hover-layer", ["==", "NAME", country]);
             } else {
-                tooltip.remove();
+                // tooltip.remove();
                 map.setFilter("hover-layer", ["==", "NAME", ""]);
             }
         });
 
         map.on("mouseleave", geojsonLayerId, () => {
             map.getCanvas().style.cursor = "";
-            tooltip.remove();
+            // tooltip.remove();
             map.setFilter("hover-layer", ["==", "NAME", ""]);
         });
+
+        // ensure pointsTotal is updated on initial load
+        // if (map.isStyleLoaded()) {
+        //     updateFeatureStates(map);
+        // } else {
+        //     map.on('style.load', () => {
+        //         updateFeatureStates(map);
+        //     });
+        // }
     });
 
     // if map already is all initialized etc, and baseMapYear updates,
@@ -156,23 +169,10 @@
         ((year && sport && sportEvent) || (year && sport) || year)
     ) {
         updateGeoJsonLayer(baseMapYear);
-        updateFeatureStates(map);
+        // updateFeatureStates(map);
     }
 
     /* FUNCTIONS */
-
-    function getRelevantCountryData(data) {
-        // filter data by year, sport and event
-        let filteredData = data.filter((row) => {
-            let matchesYear = year ? row["year"] === year : true;
-            let matchesSport = sport ? row["sport"] === sport : true;
-            let matchestEvent = sportEvent
-                ? row["sportEvent"] === sportEvent
-                : true;
-            return matchesYear && matchesSport && matchestEvent;
-        });
-        return filteredData;
-    }
 
     function addGeoJsonLayer(year) {
         if (geojsons[year]) {
@@ -238,7 +238,7 @@
             // if the country exists in the data, filter it to what's relevant to the year, sport and event
             let relevant;
             if (dataObj[country]) {
-                relevant = getRelevantCountryData(dataObj[country]);
+                relevant = getRelevantCountryData(dataObj[country], year, sport, sportEvent);
                 if (relevant.length > 0) {
                     relevant.forEach((win) => {
                         // console.log(win.medal);

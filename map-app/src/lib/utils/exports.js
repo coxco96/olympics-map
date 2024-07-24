@@ -22,6 +22,19 @@ export function convertData(data) {
     return dataObj;
 }
 
+export function getRelevantCountryData(data, year, sport, sportEvent) {
+  // filter data by year, sport and event
+  let filteredData = data.filter((row) => {
+      let matchesYear = year ? row["year"] === year : true;
+      let matchesSport = sport ? row["sport"] === sport : true;
+      let matchestEvent = sportEvent
+          ? row["sportEvent"] === sportEvent
+          : true;
+      return matchesYear && matchesSport && matchestEvent;
+  });
+  return filteredData;
+}
+
 export const baseMapYears = [1880, 1900, 1914, 1920, 1938, 1945, 1960, 1994, 2000];
 
 export const sportsArray = [

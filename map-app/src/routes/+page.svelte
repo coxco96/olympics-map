@@ -5,8 +5,19 @@
     import {convertData} from '../lib/utils/exports.js';
     import { Container, Col, Row, InputGroup, Input} from "@sveltestrap/sveltestrap";
     import Filters from '$lib/components/Filters.svelte';
+    import { onMount } from 'svelte';
+    import { dataStore } from '$lib/stores/filters.js';
+
+    onMount(() => {
+        // initialize the dataStore with imported data
+        dataStore.set(convertData(data));
+        console.log('data');
+        console.log(convertData(data));
+
+    })
 
     const dataObj = convertData(data);
+    // console.log(dataObj);
 
     let tableView = false; // default to map instead of table
 
@@ -43,7 +54,7 @@
         <Row>
             <Col>
                 {#if tableView}
-                <Table {dataObj}/>
+                <Table/>
                 {:else}
                 <Map {dataObj}/>
             {/if}
