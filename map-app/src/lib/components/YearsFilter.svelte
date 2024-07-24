@@ -1,6 +1,11 @@
 <script>
+    import {getContext} from 'svelte';
     import {selectedYear, selectedSport, selectedEvent} from '$lib/utils/stores.js';
     import {yearsArray} from '$lib/utils/exports.js';
+    import {initialDataContext} from '$lib/utils/context.js';
+
+    // access unfiltered data
+    const initialData = getContext(initialDataContext);
 
     let sport, year, sportEvent;
     $: selectedYear.subscribe(value => year = value);
