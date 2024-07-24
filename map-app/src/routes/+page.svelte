@@ -30,39 +30,67 @@
     }
 
 
-    /* SUBSCRIBE TO THE FILTER STORES */
-    // const unsubscribeYear = selectedYear.subscribe(() => filterData());
-    // const unsubscribeSport = selectedSport.subscribe(() => filterData());
-    // const unsubscribeEvent = selectedEvent.subscribe(() => filterData());
 
-    let sport, year, sportEvent, filteredData;
+    let sport, year, sportEvent;
     $: selectedYear.subscribe(value => year = value);
     $: selectedSport.subscribe(value => sport = value);
     $: selectedEvent.subscribe(value => sportEvent = value);
-    $: filteredDataStore.subscribe(value => {
-        let filtered = filterData(year, sport, sportEvent);
-        filtered = value;
-    });
 
+    // Reactive declarations to update local variables from stores
+    $: year = $selectedYear;
+    $: sport = $selectedSport;
+    $: sportEvent = $selectedEvent;
+    // filter the data and write it to the store
+    let filteredData;
+    $: {
+        console.log('reactive thingy is running!')
+        filteredData = filterData(year, sport, sportEvent);
+        filteredDataStore.set(filteredData);
+    }
+    // $: filteredDataStore.set(filteredData);
 
+ 
 
-    let filteredArr = [];
-    let filteredObj = {}
+    // filter data based on filter selections
+    let filteredArr;
+    let filteredObj;
     function filterData(year, sport, sportEvent) {
+        console.log(year, sport, sportEvent)
+        filteredObj = {};
+        filteredArr = []
         for (let country in initialData) {
             let countryData = initialData[country];
             let filteredCountryData = countryData.filter(x => {
-                return (
-                    x['year'] === year || x['year'] === ''
-                    && x['sport'] === sport || x['sport'] === ''
-                    && x['sportEvent'] == sportEvent || x['sportEvent'] === ''
-                );
+                console.log(year, sport, sportEvent);
+                // if no filters set, return all data
+                if (year === '' && sport === '' && sportEvent === '') {
+                    return x
+                // if year is only filter, return all data with that year
+                } else if (year != '' && sport === '' && sportEvent === '') {
+                    return x['year'] === year
+                // if year and sport are only filters, return all data with those
+                } else if (year != '' && sport != '' && sportEvent === '') {
+                    return (
+                        x['year'] === year && x['sport'] === sport
+                    )
+                // if all filters are set, return only what matches all three
+                } else if (year != '' && sport != '' && sportEvent != '') {
+                    return (
+                        x['year'] === year &&
+                        x['sport'] === sport &&
+                        x['sportEvent'] === sportEvent
+                )
+                } else {
+                    console.log('filters selected out of order!')
+                }
+                
             })
             if (filteredCountryData.length > 0) {
-                filteredArr.push(filteredCountryData)
+                filteredObj[country] = filteredCountryData;
             }
-            filteredObj[country] = filteredArr;
+            
         }
+        console.log('from inside the function:')
         console.log(filteredObj);
         return filteredObj;
     }
@@ -77,14 +105,9 @@
     //     unsubscribeSport();
     //     unsubscribeEvent();
     // });
-    // function filterData(d) {
-    //     if (initialData) {
-    //         return initialData;
-    //     }
-    // }
+   
 
     const dataObj = convertData(data);
-    // console.log(dataObj);
 
     let tableView = false; // default to map instead of table
 

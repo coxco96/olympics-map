@@ -13,8 +13,10 @@
     $: selectedYear.subscribe(value => year = value);
     $: selectedSport.subscribe(value => sport = value);
     $: selectedEvent.subscribe(value => sportEvent = value);
+    $: filteredDataStore.subscribe(value => filteredData = value);
 
-    $: console.log(`${year} from YearsFilter`)
+    // $: console.log(`${year} from YearsFilter`)
+    // $: console.log(filteredData);
 
     // Convert yearsArray to numbers and find the minimum
     // let minYear = 1896;
