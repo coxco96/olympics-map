@@ -11,7 +11,7 @@
     import { geojsons } from "$lib/geojsons/basemaps.js";
 
     // function to get baseMapYear and paint obj for data styling
-    import { getBaseMapYear, paint } from "$lib/utils/exports.js";
+    import { getBaseMapYear, paint, makeTooltipString } from "$lib/utils/exports.js";
 
     // import stores
     import {
@@ -27,7 +27,7 @@
     let sourceIsLoaded = false;
     // to avoid running reactive statements on initial load
     let isFeatureStateFirstRun = true;
-    let isBaseMapFirstRun = true; 
+    let isBaseMapFirstRun = true;
     let geojsonLayerId = "geojson-layer";
     let hoverLayerId = "hover-layer";
     // let featureStateId = "feature-state-layer";
@@ -51,7 +51,7 @@
     $: console.log(`does the map exist? ${mapExists}`);
 
     // update baseMap after initial load if year if changed
-    // TODO: make this only run if the baseMapYear changes in a way that 
+    // TODO: make this only run if the baseMapYear changes in a way that
     // will actually change the base map
     $: if (mapExists && geojsons[baseMapYear]) {
         if (!isBaseMapFirstRun) {
@@ -66,6 +66,7 @@
     $: if (mapExists && filteredData) {
         if (!isFeatureStateFirstRun) {
             setFeatureStates();
+            console.log(filteredData);
         }
         isFeatureStateFirstRun = false;
     }
@@ -90,6 +91,19 @@
             console.log("error. no filteredData");
         }
 
+        // add hover effect layer
+        map.addLayer({
+            id: hoverLayerId,
+            type: "line",
+            source: geojsonLayerId,
+            layout: {},
+            paint: {
+                "line-color": "white",
+                "line-width": 2,
+            },
+            filter: ["==", "NAME", ""], // initially set to no country
+        });
+
         // once source and layer have been added:
         map.on("load", () => {
             console.log("map loaded");
@@ -103,102 +117,54 @@
             }
         }); // end of map.on("load" ... )
 
-        /* HOVER EFFECT LAYER */
-        // map.addLayer({
-        //     id: hoverLayerId,
-        //     type: "line",
-        //     source: geojsonLayerId,
-        //     layout: {},
-        //     paint: {
-        //         "line-color": "white",
-        //         "line-width": 2,
-        //     },
-        //     filter: ["==", "NAME", ""], // initially set to no country
-        // });
-
-        /* TOOLTIP */
-
-        // initialize
-        // const tooltip = new maplibregl.Popup({
-        //     closeButton: false,
-        //     closeOnClick: false,
-        // });
+        // initialize tooltip
+        const tooltip = new maplibregl.Popup({
+            closeButton: false,
+            closeOnClick: false,
+        });
 
         // on mousemove, display tooltip
-        // map.on("mousemove", geojsonLayerId, (e) => {
-        //     // change cursor type as ui indicator
-        //     map.getCanvas().style.cursor = "pointer";
+        map.on("mousemove", geojsonLayerId, (e) => {
+            // if map is zoomed out so multiple copies of feature are visible, only show tooltip once
+            let coords = e.features[0].geometry.coordinates.slice();
+            while (Math.abs(e.lngLat.lng - coords[0]) > 180) {
+                coords[0] += e.lngLat.lng > coords[0] ? 360 : -360;
+            }
 
-        //     // if mouse is on a feature, get & display its data
-        //     if (e.features && e.features[0].properties.NAME) {
-        //         let country = e.features[0].properties.NAME;
-        //         // get filtered data only
-        //         // let countryData
-        //         // if (dataObj[country]) {
-        //         //     countryData = getRelevantCountryData(dataObj[country]);
-        //         // }
+            // change cursor type as ui indicator
+            map.getCanvas().style.cursor = "pointer";
 
-        //         // if map is zoomed out so multiple copies of feature are visible, only show tooltip once
-        //         // let coords = e.features[0].geometry.coordinates.slice();
-        //         // while (Math.abs(e.lngLat.lng - coords[0]) > 180) {
-        //         //     coords[0] += e.lngLat.lng > coords[0] ? 360 : -360;
-        //         // }
+            // if mouse is on a named feature, get & display its data
+            if (e.features && e.features[0].properties.NAME) {
+                let country = e.features[0].properties.NAME;
+                console.log(filteredData[country]);
+                if (filteredData[country]) {
+                    tooltipContent = makeTooltipString(
+                        country,
+                        filteredData[country],
+                    );
+                } else {
+                    tooltipContent = country;
+                }
 
-        //         // if (country) {
-        //         //     // only show data for currently selected year
-        //         //     let filteredData = countryData.filter(
-        //         //         (d) => d.year === year,
-        //         //     );
-        //         //     if (filteredData.length > 0) {
-        //         //         tooltipContent = `<strong>${country}</strong>`;
-        //         //         filteredData.forEach((d) => {
-        //         //             tooltipContent += `
-        //         //     <p>
-        //         //                 Medal: ${d.medal}<br>
-        //         //                 Year: ${d.year}<br>
-        //         //                 Sport: ${d.sport}<br>
-        //         //                 Event: ${d.sportEvent}<br>
-        //         //                 Athlete: ${d.athlete}<br>
-        //         //     </p>
-        //         //     `;
-        //         //         });
-        //         //         tooltip
-        //         //             .setLngLat([e.lngLat.lng, e.lngLat.lat])
-        //         //             .setHTML(tooltipContent)
-        //         //             .addTo(map);
-        //         //     } else {
-        //         //         tooltip.remove();
-        //         //     }
-        //         // } else {
-        //         //     tooltip.remove();
-        //         // }
+                tooltip
+                    .setLngLat([e.lngLat.lng, e.lngLat.lat])
+                    .setHTML(tooltipContent)
+                    .addTo(map);
+                map.setFilter("hover-layer", ["==", "NAME", country]);
+            } else {
+                tooltip.remove();
+                map.setFilter("hover-layer", ["==", "NAME", ""]);
+            }
+        });
 
-        //         // map.setFilter("hover-layer", ["==", "NAME", country]);
-        //     } else {
-        //         // tooltip.remove();
-        //         // map.setFilter("hover-layer", ["==", "NAME", ""]);
-        //     }
-        // });
-
-        // map.on("mouseleave", geojsonLayerId, () => {
-        //     map.getCanvas().style.cursor = "";
-        //     // tooltip.remove();
-        //     map.setFilter("hover-layer", ["==", "NAME", ""]);
-        // });
+        map.on("mouseleave", geojsonLayerId, () => {
+            map.getCanvas().style.cursor = "";
+            tooltip.remove();
+            map.setFilter("hover-layer", ["==", "NAME", ""]);
+        });
         console.log("end of onMount");
     }); // end onMOunt
-
-    // if map already is all initialized etc, and baseMapYear updates,
-    // update the map to that basemap
-    // $: if (
-    //     map &&
-    //     map.isStyleLoaded() &&
-    //     geojsons[baseMapYear] &&
-    //     ((year && sport && sportEvent) || (year && sport) || year)
-    // ) {
-    //     updategeojsonLayer(baseMapYear);
-    //     // updateFeatureStates(map);
-    // }
 
     /* FUNCTIONS */
 

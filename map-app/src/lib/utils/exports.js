@@ -22,34 +22,44 @@ export function convertData(data) {
   return dataObj;
 }
 
+export function makeTooltipString(country, data) {
+  return `
+              <strong>${country}</strong> <br>
+              Gold Medals: <br>
+              Silver Medals: <br>
+              Bronze Medals: <br>
+              Athletes: 
+              `;
+}
+
 export const paint = {
   "fill-color": [
-      "case",
-      ["==", ["feature-state", "pointsTotal"], null],
-      "black", // black for undefined pointsTotal
-      ["==", ["feature-state", "pointsTotal"], 0],
-      "#ccc", // gray for pointsTotal = 0
+    "case",
+    ["==", ["feature-state", "pointsTotal"], null],
+    "black", // black for undefined pointsTotal
+    ["==", ["feature-state", "pointsTotal"], 0],
+    "#ccc", // gray for pointsTotal = 0
 
-      // apply gradient based on pointsTotal
-      [
-          "interpolate",
-          ["linear"],
-          ["feature-state", "pointsTotal"],
-          1,
-          "#add8e6", // light blue for the minimum value
-          200, // TODO: adjust this to your actual max pointsTotal
-          "#00008b", // dark blue for the maximum value
-      ],
+    // apply gradient based on pointsTotal
+    [
+      "interpolate",
+      ["linear"],
+      ["feature-state", "pointsTotal"],
+      1,
+      "#add8e6", // light blue for the minimum value
+      200, // TODO: adjust this to your actual max pointsTotal
+      "#00008b", // dark blue for the maximum value
+    ],
   ],
   "fill-opacity": [
-      "case",
-      ["==", ["feature-state", "pointsTotal"], null],
-      0.2,
-      ["==", ["feature-state", "pointsTotal"], 0],
-      0.9,
-      1,
+    "case",
+    ["==", ["feature-state", "pointsTotal"], null],
+    0.2,
+    ["==", ["feature-state", "pointsTotal"], 0],
+    0.9,
+    1,
   ],
-}
+};
 
 // return the most recent basemap year
 export const getBaseMapYear = (selection) => {
