@@ -48,7 +48,6 @@
     // otherwise, get the right baseMapYear
     $: baseMapYear = isNaN(numericyear) ? "2000" : getBaseMapYear(numericyear);
     $: mapExists = map ? true : false;
-    $: console.log(`does the map exist? ${mapExists}`);
 
     // update baseMap after initial load if year if changed
     // TODO: make this only run if the baseMapYear changes in a way that
@@ -66,7 +65,6 @@
     $: if (mapExists && filteredData) {
         if (!isFeatureStateFirstRun) {
             setFeatureStates();
-            console.log(filteredData);
         }
         isFeatureStateFirstRun = false;
     }
@@ -74,7 +72,6 @@
     /* INITIALIZE MAP, SOURCE, LAYER AND FEATURE-STATES ON INITIAL COMPONENT MOUNT */
 
     onMount(async () => {
-        console.log("in onMount");
 
         /* INITIALIZE MAP */
         map = new maplibregl.Map({
@@ -106,11 +103,9 @@
 
         // once source and layer have been added:
         map.on("load", () => {
-            console.log("map loaded");
             // if source is loaded, loop through each feature to setFeatureStates
             sourceIsLoaded = isSourceLoaded() ? true : false;
             if (sourceIsLoaded) {
-                console.log("source is loaded");
                 setFeatureStates(); // set feature states for styling
             } else {
                 console.log("error. source is not loaded.");
@@ -137,7 +132,6 @@
             // if mouse is on a named feature, get & display its data
             if (e.features && e.features[0].properties.NAME) {
                 let country = e.features[0].properties.NAME;
-                console.log(filteredData[country]);
                 if (filteredData[country]) {
                     tooltipContent = makeTooltipString(
                         country,
@@ -163,7 +157,6 @@
             tooltip.remove();
             map.setFilter("hover-layer", ["==", "NAME", ""]);
         });
-        console.log("end of onMount");
     }); // end onMOunt
 
     /* FUNCTIONS */
@@ -178,18 +171,13 @@
         } else {
             console.log("error. no geojsons[baseMapYear]");
         }
-        console.log("end of addGeojsonSource()");
     }
 
     function updateGeojsonSource() {
         // if source already exists, set with correct basemap
         if (map.getSource(geojsonLayerId)) {
-            console.log(
-                "source already exists. resetting data with new baseMapYear.",
-            );
             map.getSource(geojsonLayerId).setData(geojsons[baseMapYear]);
         } else {
-            console.log("source did not exist. adding now. (line 219)");
             addGeojsonSource();
         }
     }
@@ -205,7 +193,6 @@
         } else {
             console.log("error. no geojsons[year]");
         }
-        console.log("end of addGeojsonLayer");
     }
 
     function setFeatureStates() {
