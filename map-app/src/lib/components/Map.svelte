@@ -89,6 +89,7 @@
                     // TODO: just get rid of undefined features in the geojsons via preprocessing
                     if (countryName) {
                         let pointsTotal = getPointsTotal(countryName);
+                        setFeatureState(featureId, pointsTotal)
                         map.setFeatureState(
                             { source: geojsonLayerId, id: featureId },
                             { pointsTotal: pointsTotal },

@@ -8,6 +8,7 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
+		"@rollup/rollup-darwin-arm64": "^4.19.0",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/kit": "^2.0.0",
 		"@sveltejs/vite-plugin-svelte": "^3.0.0",
@@ -16,7 +17,6 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@rollup/rollup-darwin-arm64": "^4.19.0",
 		"@sveltestrap/sveltestrap": "^6.2.7",
 		"dotenv": "^16.4.5",
 		"googleapis": "^140.0.1",
