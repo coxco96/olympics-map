@@ -77,25 +77,40 @@
             // if source is loaded, loop through each feature to setFeatureState
             sourceIsLoaded = isSourceLoaded() ? true : false;
             if (sourceIsLoaded) {
-                // must use querySourceFeatures to access generated id,
-                // NOT map.getSource(sourceId).getData()
+                let pointsTotal, countryName, featureId;
+                console.log("source is loaded");
 
+                // access geojson data with id generated on addSource
                 let features = map.querySourceFeatures(geojsonLayerId);
 
                 features.forEach((feature) => {
-                    let countryName = feature.properties.NAME;
-                    let featureId = feature.id;
-
-                    // TODO: just get rid of undefined features in the geojsons via preprocessing
-                    if (countryName) {
-                        let pointsTotal = getPointsTotal(countryName);
-                        setFeatureState(featureId, pointsTotal)
-                        map.setFeatureState(
-                            { source: geojsonLayerId, id: featureId },
-                            { pointsTotal: pointsTotal },
-                        );
-                    }
+                    featureId = feature.id;
+                    countryName = feature.properties.NAME;
+                    pointsTotal = getPointsTotal(countryName);
+                    setFeatureState(featureId, pointsTotal)
                 });
+
+                // features.forEach((feature) => {
+                //     console.log(feature);
+                //     featureId = feature.id;
+                //     pointsTotal = getPointsTotal(feature.properties.NAME);
+                //     console.log(pointsTotal, feature.properties.NAME)
+                //     // if feature name is defined (TODO: preprocess geojsons so there are not undefined names):
+                //     // if (feature.properties.NAME) {
+                //     //     countryName = feature.properties.NAME;
+                //     //     featureId = feature.id;
+                //     //     // if there is olympics country data for this country...
+                //     //     if (filteredData[countryName]) {
+                //     //         pointsTotal = getPointsTotal(countryName) ? getPointsTotal(countryName) : 0;
+                //     //         setFeatureState(featureId, pointsTotal);
+                //     //         map.setFeatureState(
+                //     //             { source: geojsonLayerId, id: featureId },
+                //     //             { pointsTotal: pointsTotal },
+                //     //         );
+                //     //         console.log("featureState set");
+                //     //     }
+                //     // }
+                // }); // end feature loop
             } else {
                 console.log("error. source is not loaded.");
             }
@@ -240,12 +255,6 @@
 
     function addGeojsonLayer() {
         if (geojsons[baseMapYear]) {
-            // map.setFeatureState({
-            //     source: geojsonLayerId,
-            //     id: featureStateId,
-            // });
-            // updateFeatureStates(map);
-
             map.addLayer({
                 id: geojsonLayerId,
                 type: "fill",
@@ -256,6 +265,13 @@
             console.log("error. no geojsons[year]");
         }
         console.log("end of addGeojsonLayer");
+    }
+
+    function setFeatureState(featureId, pointsTotal) {
+        map.setFeatureState(
+            { source: geojsonLayerId, id: featureId },
+            { pointsTotal: pointsTotal },
+        );
     }
 
     // change map colors based on data
@@ -302,9 +318,10 @@
 
     // get points totals for color weighting
     function getPointsTotal(countryName) {
+        let pointsTotal = 0;
         let countryData = filteredData[countryName];
         if (countryData) {
-            let pointsTotal = 0;
+            // let pointsTotal = 0;
             countryData.forEach((row) => {
                 // destructure row object to access medal
                 const { medal } = row;
@@ -317,8 +334,9 @@
                     pointsTotal += 1;
                 }
             });
-            return pointsTotal;
+            // return pointsTotal;
         }
+        return pointsTotal;
     }
 
     // update to different basemap if different year is selected
