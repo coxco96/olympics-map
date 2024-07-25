@@ -36,14 +36,6 @@
     $: selectedEvent.subscribe((value) => (sportEvent = value));
     $: filteredDataStore.subscribe((value) => (filteredData = value));
 
-    // $: sourceIsLoaded = isSourceLoaded();
-    // $: console.log(`source loaded? ${sourceIsLoaded}`);
-
-    // $: if (sourceIsLoaded) {
-    //     console.log('reactive sourceIsLoaded')
-    //     addGeojsonLayer();
-    // }
-
     /* DISPLAY CORRECT HISTORIC BASE MAP BASED ON YEAR */
 
     // get numeric form of year
@@ -52,6 +44,19 @@
     // if all years are selected, use basemap from year 2000
     // otherwise, get the right baseMapYear
     $: baseMapYear = isNaN(numericyear) ? "2000" : getBaseMapYear(numericyear);
+    $: mapExists = map ? true : false;
+    $: console.log(`does the map exist? ${mapExists}`);
+
+    // update baseMap after initial load if year if changed
+    // TODO: figure out how to make this NOT run until the baseMapYear actually changes
+    // right now it runs once right after the initial load, when mapExists turns true
+    $: if (mapExists && geojsons[baseMapYear]) updateGeojsonSource();
+
+    // if map exists and filteredData changes, update feature states
+    // if filteredData changes AFTER mount
+    $: if (mapExists && filteredData) {setFeatureState(); console.log('line 54')}
+
+    /* INITIALIZE MAP, SOURCE, LAYER AND FEATURE-STATES ON INITIAL COMPONENT MOUNT */
 
     onMount(async () => {
         console.log("in onMount");
@@ -77,70 +82,12 @@
             // if source is loaded, loop through each feature to setFeatureState
             sourceIsLoaded = isSourceLoaded() ? true : false;
             if (sourceIsLoaded) {
-                let pointsTotal, countryName, featureId;
                 console.log("source is loaded");
-
-                // access geojson data with id generated on addSource
-                let features = map.querySourceFeatures(geojsonLayerId);
-
-                features.forEach((feature) => {
-                    featureId = feature.id;
-                    countryName = feature.properties.NAME;
-                    pointsTotal = getPointsTotal(countryName);
-                    setFeatureState(featureId, pointsTotal)
-                });
-
-                // features.forEach((feature) => {
-                //     console.log(feature);
-                //     featureId = feature.id;
-                //     pointsTotal = getPointsTotal(feature.properties.NAME);
-                //     console.log(pointsTotal, feature.properties.NAME)
-                //     // if feature name is defined (TODO: preprocess geojsons so there are not undefined names):
-                //     // if (feature.properties.NAME) {
-                //     //     countryName = feature.properties.NAME;
-                //     //     featureId = feature.id;
-                //     //     // if there is olympics country data for this country...
-                //     //     if (filteredData[countryName]) {
-                //     //         pointsTotal = getPointsTotal(countryName) ? getPointsTotal(countryName) : 0;
-                //     //         setFeatureState(featureId, pointsTotal);
-                //     //         map.setFeatureState(
-                //     //             { source: geojsonLayerId, id: featureId },
-                //     //             { pointsTotal: pointsTotal },
-                //     //         );
-                //     //         console.log("featureState set");
-                //     //     }
-                //     // }
-                // }); // end feature loop
+                setFeatureState(); // set feature states for styling
             } else {
                 console.log("error. source is not loaded.");
             }
-        });
-
-        // addgeojsonLayer();
-
-        // map.on("style.load", () => {
-        //     if (filteredData) {
-        //         // updateFeatureStates(map); // ensure data is updated after style loads
-        //         addgeojsonLayer(baseMapYear);
-        //     }
-        // });
-
-        // Handle initial map style load if it has already occurred
-        // if (map.isStyleLoaded()) {
-        //     map.fire("style.load"); // Manually trigger the style load event
-        // }
-
-        // ensure pointsTotal is updated on initial load
-        // if (map.isStyleLoaded()) {
-        //     updateFeatureStates(map);
-        // } else {
-        //     map.on("style.load", () => {
-        //         updateFeatureStates(map);
-        //     });
-        // }
-
-        /* ADD INITIAL geojson LAYER */
-        // addgeojsonLayer(baseMapYear);
+        }); // end of map.on("load" ... )
 
         /* HOVER EFFECT LAYER */
         // map.addLayer({
@@ -224,6 +171,7 @@
         //     // tooltip.remove();
         //     map.setFilter("hover-layer", ["==", "NAME", ""]);
         // });
+        console.log('end of onMount')
     }); // end onMOunt
 
     // if map already is all initialized etc, and baseMapYear updates,
@@ -253,6 +201,19 @@
         console.log("end of addGeojsonSource()");
     }
 
+    function updateGeojsonSource() {
+        // if source already exists, set with correct basemap
+        if (map.getSource(geojsonLayerId)) {
+            console.log(
+                "source already exists. resetting data with new baseMapYear.",
+            );
+            map.getSource(geojsonLayerId).setData(geojsons[baseMapYear]);
+        } else {
+            console.log("source did not exist. adding now. (line 219)");
+            addGeojsonSource();
+        }
+    }
+
     function addGeojsonLayer() {
         if (geojsons[baseMapYear]) {
             map.addLayer({
@@ -267,54 +228,23 @@
         console.log("end of addGeojsonLayer");
     }
 
-    function setFeatureState(featureId, pointsTotal) {
-        map.setFeatureState(
-            { source: geojsonLayerId, id: featureId },
-            { pointsTotal: pointsTotal },
-        );
+    function setFeatureState() {
+        let pointsTotal, featureId, countryName; // intialize
+
+        // access geojson data with id generated on addSource
+        let features = map.querySourceFeatures(geojsonLayerId);
+
+        // set feature state for each feature based on pointsTotal
+        features.forEach((feature) => {
+            featureId = feature.id;
+            countryName = feature.properties.NAME;
+            pointsTotal = getPointsTotal(countryName);
+            map.setFeatureState(
+                { source: geojsonLayerId, id: featureId },
+                { pointsTotal: pointsTotal },
+            );
+        });
     }
-
-    // change map colors based on data
-    // function updateFeatureStates(map) {
-    //     // it's undefined here
-    //     map.getSource(geojsonLayerId)
-    //         .getData()
-    //         .then((data) => {
-    //             console.log(data.features);
-    //         });
-
-    //     let features = map.querySourceFeatures(geojsonLayerId);
-
-    //     features.forEach((feature) => {
-    //         let pointsTotal = 0; // to get points totals based on medal type and count
-    //         let featureId = feature.id;
-    //         let country;
-    //         if (feature.properties.NAME) {
-    //             country = feature.properties.NAME;
-    //         }
-
-    //         if (filteredData[country]) {
-    //             filteredData[country].forEach((row) => {
-    //                 // destructure row object to access medal
-    //                 const { medal } = row;
-
-    //                 // count medals
-    //                 if (medal === "Gold") {
-    //                     pointsTotal += 3;
-    //                 } else if (medal === "Silver") {
-    //                     pointsTotal += 2;
-    //                 } else if (medal === "Bronze") {
-    //                     pointsTotal += 1;
-    //                 }
-    //             });
-    //         }
-
-    //         map.setFeatureState(
-    //             { source: geojsonLayerId, id: featureId },
-    //             { pointsTotal: pointsTotal },
-    //         );
-    //     });
-    // }
 
     // get points totals for color weighting
     function getPointsTotal(countryName) {
@@ -340,14 +270,14 @@
     }
 
     // update to different basemap if different year is selected
-    function updategeojsonLayer(year) {
-        if (map.getSource(geojsonLayerId)) {
-            map.getSource(geojsonLayerId).setData(geojsons[year]);
-        } else {
-            addGeojsonLayer();
-        }
-        updateFeatureStates(map);
-    }
+    // function updateGeojsonLayer(year) {
+    //     if (map.getSource(geojsonLayerId)) {
+    //         map.getSource(geojsonLayerId).setData(geojsons[year]);
+    //     } else {
+    //         addGeojsonLayer();
+    //     }
+    //     updateFeatureStates(map);
+    // }
 
     // check if geojson source is loaded
     function isSourceLoaded() {
