@@ -25,6 +25,9 @@
 
     let year, sport, sportEvent, container, map, tooltipContent, filteredData;
     let sourceIsLoaded = false;
+    // to avoid running reactive statements on initial load
+    let isFeatureStateFirstRun = true;
+    let isBaseMapFirstRun = true; 
     let geojsonLayerId = "geojson-layer";
     let hoverLayerId = "hover-layer";
     // let featureStateId = "feature-state-layer";
@@ -48,13 +51,24 @@
     $: console.log(`does the map exist? ${mapExists}`);
 
     // update baseMap after initial load if year if changed
-    // TODO: figure out how to make this NOT run until the baseMapYear actually changes
-    // right now it runs once right after the initial load, when mapExists turns true
-    $: if (mapExists && geojsons[baseMapYear]) updateGeojsonSource();
+    // TODO: make this only run if the baseMapYear changes in a way that 
+    // will actually change the base map
+    $: if (mapExists && geojsons[baseMapYear]) {
+        if (!isBaseMapFirstRun) {
+            updateGeojsonSource();
+        }
+        isBaseMapFirstRun = false;
+    }
 
     // if map exists and filteredData changes, update feature states
+    // except for the first time the trigger is fired (to avoid unnecessarily running)
     // if filteredData changes AFTER mount
-    $: if (mapExists && filteredData) {setFeatureState(); console.log('line 54')}
+    $: if (mapExists && filteredData) {
+        if (!isFeatureStateFirstRun) {
+            setFeatureStates();
+        }
+        isFeatureStateFirstRun = false;
+    }
 
     /* INITIALIZE MAP, SOURCE, LAYER AND FEATURE-STATES ON INITIAL COMPONENT MOUNT */
 
@@ -79,11 +93,11 @@
         // once source and layer have been added:
         map.on("load", () => {
             console.log("map loaded");
-            // if source is loaded, loop through each feature to setFeatureState
+            // if source is loaded, loop through each feature to setFeatureStates
             sourceIsLoaded = isSourceLoaded() ? true : false;
             if (sourceIsLoaded) {
                 console.log("source is loaded");
-                setFeatureState(); // set feature states for styling
+                setFeatureStates(); // set feature states for styling
             } else {
                 console.log("error. source is not loaded.");
             }
@@ -171,7 +185,7 @@
         //     // tooltip.remove();
         //     map.setFilter("hover-layer", ["==", "NAME", ""]);
         // });
-        console.log('end of onMount')
+        console.log("end of onMount");
     }); // end onMOunt
 
     // if map already is all initialized etc, and baseMapYear updates,
@@ -228,8 +242,9 @@
         console.log("end of addGeojsonLayer");
     }
 
-    function setFeatureState() {
-        let pointsTotal, featureId, countryName; // intialize
+    function setFeatureStates() {
+        // intialize for features iteration
+        let pointsTotal, featureId, countryName;
 
         // access geojson data with id generated on addSource
         let features = map.querySourceFeatures(geojsonLayerId);
@@ -251,7 +266,6 @@
         let pointsTotal = 0;
         let countryData = filteredData[countryName];
         if (countryData) {
-            // let pointsTotal = 0;
             countryData.forEach((row) => {
                 // destructure row object to access medal
                 const { medal } = row;
@@ -264,20 +278,9 @@
                     pointsTotal += 1;
                 }
             });
-            // return pointsTotal;
         }
         return pointsTotal;
     }
-
-    // update to different basemap if different year is selected
-    // function updateGeojsonLayer(year) {
-    //     if (map.getSource(geojsonLayerId)) {
-    //         map.getSource(geojsonLayerId).setData(geojsons[year]);
-    //     } else {
-    //         addGeojsonLayer();
-    //     }
-    //     updateFeatureStates(map);
-    // }
 
     // check if geojson source is loaded
     function isSourceLoaded() {
@@ -287,19 +290,6 @@
             return false;
         }
     }
-
-    /* DEV NOTE */
-    // must use map.querySourceFeatures(geojsonLayerId)
-
-    // the following let's you access the geojson data, but does not give access to the id generated
-    // map.getSource(geojsonLayerId)
-    //     .getData()
-    //     .then((data) => {
-    //         let getDataFeatures = data.features;
-    //         getDataFeatures.forEach((feature) => {
-    //             console.log(feature.id);
-    //         });
-    //     });
 </script>
 
 <div bind:this={container} id="map" />
