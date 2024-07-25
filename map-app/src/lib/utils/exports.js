@@ -77,18 +77,18 @@ export function filterData(year, sport, sportEvent, initialData) {
     let countryData = initialData[country];
     let filteredCountryData = countryData.filter(x => {
       // if no filters set, return all data
-      if ((year === '' || year === 'All years (1896-2024)') && sport === '' && sportEvent === '') {
+      if ((year === 'All years (1896-2024)') && sport === '' && sportEvent === '') {
         return x
         // if year is only filter, return all data with that year
-      } else if ((year != '' || year != 'All years (1896-2024)') && sport === '' && sportEvent === '') {
+      } else if ((year != 'All years (1896-2024)') && sport === '' && sportEvent === '') {
         return x['year'] === year
         // if year and sport are only filters, return all data with those
-      } else if ((year != '' || year != 'All years (1896-2024)') && sport != '' && sportEvent === '') {
+      } else if ((year != 'All years (1896-2024)') && sport != '' && sportEvent === '') {
         return (
           x['year'] === year && x['sport'] === sport
         )
         // if all filters are set, return only what matches all three
-      } else if ((year != '' || year != 'All years (1896-2024)') && sport != '' && sportEvent != '') {
+      } else if ((year != 'All years (1896-2024)') && sport != '' && sportEvent != '') {
         return (
           x['year'] === year &&
           x['sport'] === sport &&
