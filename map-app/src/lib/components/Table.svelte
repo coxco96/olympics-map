@@ -2,8 +2,6 @@
     import {Table} from '@sveltestrap/sveltestrap'
     import { filteredDataStore } from '$lib/utils/stores.js';
 
-
-    // TODO: fix the buggy thing where the button doesn't hit the right state when filterData changes
     // button toggle state
     let sortBy = 'pointsTotal'; // default sorting option
 
@@ -51,12 +49,11 @@
 
     function toggleSort() {
         sortBy = sortBy === 'pointsTotal' ? 'country' : 'pointsTotal';
-        // tableData = makeTableArr(filteredData, sortBy);
     }
 
     $: buttonText = sortBy === 'pointsTotal' ? 'Sort by country' : 'Sort by results';
 
-    $: tableData = makeTableArr(filteredData);
+    $: tableData = makeTableArr(filteredData, sortBy);
 
 </script>
 

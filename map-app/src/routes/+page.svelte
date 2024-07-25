@@ -43,7 +43,6 @@
     // filter the data and write it to the store
     let filteredData;
     $: {
-        console.log('reactive thingy is running!')
         filteredData = filterData(year, sport, sportEvent);
         filteredDataStore.set(filteredData);
     }
@@ -52,13 +51,11 @@
     let filteredArr;
     let filteredObj;
     function filterData(year, sport, sportEvent) {
-        console.log(year, sport, sportEvent)
         filteredObj = {};
         filteredArr = []
         for (let country in initialData) {
             let countryData = initialData[country];
             let filteredCountryData = countryData.filter(x => {
-                console.log(year, sport, sportEvent);
                 // if no filters set, return all data
                 if (year === '' && sport === '' && sportEvent === '') {
                     return x
