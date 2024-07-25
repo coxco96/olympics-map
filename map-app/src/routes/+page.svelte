@@ -9,17 +9,15 @@
     import { Container, Col, Row, InputGroup, Input } from "@sveltestrap/sveltestrap";
 
     // function to convert data into object
-    import { convertData } from "../lib/utils/exports.js";
+    import { convertData, filterData } from "../lib/utils/exports.js";
     
     // stores, context and lifecycle
     import { filteredDataStore, selectedYear, selectedSport, selectedEvent } from "$lib/utils/stores.js";
     import { initialDataContext } from "$lib/utils/context.js";
-    import { onDestroy, setContext } from "svelte";
+    import { setContext } from "svelte";
 
     // predeclared vars
     let initialData;
-    let filtered = [];
-
 
    /* SET CONTEXT WITH INITIAL DATA AND ALSO AS THE INITIAL STORE */
     $: {
@@ -36,69 +34,23 @@
     $: selectedSport.subscribe(value => sport = value);
     $: selectedEvent.subscribe(value => sportEvent = value);
 
-    // Reactive declarations to update local variables from stores
+    // reactive declarations to update local variables from stores
     $: year = $selectedYear;
     $: sport = $selectedSport;
     $: sportEvent = $selectedEvent;
+
     // filter the data and write it to the store
     let filteredData;
     $: {
-        filteredData = filterData(year, sport, sportEvent);
+        filteredData = filterData(year, sport, sportEvent, initialData);
         filteredDataStore.set(filteredData);
     }
 
-    // filter data based on filter selections
-    let filteredArr;
-    let filteredObj;
-    function filterData(year, sport, sportEvent) {
-        filteredObj = {};
-        filteredArr = []
-        for (let country in initialData) {
-            let countryData = initialData[country];
-            let filteredCountryData = countryData.filter(x => {
-                // if no filters set, return all data
-                if (year === '' && sport === '' && sportEvent === '') {
-                    return x
-                // if year is only filter, return all data with that year
-                } else if (year != '' && sport === '' && sportEvent === '') {
-                    return x['year'] === year
-                // if year and sport are only filters, return all data with those
-                } else if (year != '' && sport != '' && sportEvent === '') {
-                    return (
-                        x['year'] === year && x['sport'] === sport
-                    )
-                // if all filters are set, return only what matches all three
-                } else if (year != '' && sport != '' && sportEvent != '') {
-                    return (
-                        x['year'] === year &&
-                        x['sport'] === sport &&
-                        x['sportEvent'] === sportEvent
-                )
-                } else {
-                    console.log('filters selected out of order!')
-                }
-                
-            })
-            if (filteredCountryData.length > 0) {
-                filteredObj[country] = filteredCountryData;
-            }
-        }
-        return filteredObj;
-    }
-    
-    
 
 
-  
-    // /* CLEAN UP SUBSCRIPTIONS ON DESTROY */
-    // onDestroy(() => {
-    //     unsubscribeYear();
-    //     unsubscribeSport();
-    //     unsubscribeEvent();
-    // });
    
 
-    const dataObj = convertData(data);
+    // const dataObj = convertData(data);
 
     let tableView = false; // default to map instead of table
 
@@ -134,11 +86,11 @@
                 {#if tableView}
                     <Table />
                 {:else}
-                    <Map {dataObj} />
+                    <Map />
                 {/if}
             </Col>
         </Row>
-        <Row>
+        <!-- <Row>
             <footer class="footer">
                 <figure class="text-end">
                     <blockquote class="blockquote">
@@ -152,7 +104,7 @@
                     </figcaption>
                 </figure>
             </footer>
-        </Row>
+        </Row> -->
     </Container>
 </main>
 

@@ -16,6 +16,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@rollup/rollup-darwin-arm64": "^4.19.0",
 		"@sveltestrap/sveltestrap": "^6.2.7",
 		"dotenv": "^16.4.5",
 		"googleapis": "^140.0.1",
