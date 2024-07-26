@@ -52,6 +52,15 @@
     $: pointsTotalStore.subscribe((value) => (pointsTotalArr = value));
     $: console.log(pointsTotalArr);
 
+    let isFirstPaint = true;
+    $: if (pointsTotalArr && map) {
+        // if not first load, repaint the map.
+        if (!isFirstPaint) {
+            setFeatureStates();
+        }
+        isFirstPaint = false;
+    }
+
     /* DISPLAY CORRECT HISTORIC BASE MAP BASED ON YEAR */
 
     // get numeric form of year
