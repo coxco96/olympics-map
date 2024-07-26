@@ -6,7 +6,7 @@
     import Map from "$lib/components/Map.svelte";
     import Table from "$lib/components/Table.svelte";
     import Filters from "$lib/components/Filters.svelte";
-    import { Container, Col, Row, InputGroup, Input } from "@sveltestrap/sveltestrap";
+    import { Container, Col, Row, InputGroup } from "@sveltestrap/sveltestrap";
 
     // function to convert data into object
     import { convertData, filterData } from "../lib/utils/exports.js";
@@ -27,25 +27,17 @@
         }
     }
 
-
-
     let sport, year, sportEvent;
     $: selectedYear.subscribe(value => year = value);
     $: selectedSport.subscribe(value => sport = value);
     $: selectedEvent.subscribe(value => sportEvent = value);
-
-    // subscribe to store in which to push all pointsTotal values
-    // $: pointsTotalStore.subscribe(value => pointsTotalArr = value);
-    
 
     // reactive declarations to update local variables from stores
     $: year = $selectedYear;
     $: sport = $selectedSport;
     $: sportEvent = $selectedEvent;
 
-    // $: pointsTotalArr = $pointsTotalStore;
-    // $: console.log(pointsTotalArr);
-
+    // TODO & question: why doesn't filteredData and pointsTotalArr need those reactive declarations, too? ^
 
     // filter the data and write it to the store
     let filteredData;
@@ -84,12 +76,7 @@
         pointsTotalStore.set(pointsTotalArr);   
     }
 
-
-
-   
-
-    // const dataObj = convertData(data);
-
+    // TODO: default to tableView for screen reader devices (and possibly mobile?)
     let tableView = false; // default to map instead of table
 
     function toggleView() {
@@ -128,21 +115,11 @@
                 {/if}
             </Col>
         </Row>
-        <!-- <Row>
-            <footer class="footer">
-                <figure class="text-end">
-                    <blockquote class="blockquote">
-                        <p>
-                            I was built this way for a reason, so I'm going to
-                            use it.
-                        </p>
-                    </blockquote>
-                    <figcaption class="blockquote-footer">
-                        <cite title="Simone Biles">Simone Biles</cite>
-                    </figcaption>
-                </figure>
+        <Row>
+            <footer class="footer text-end">
+                <cite title="Designed and developed @mapcourt">Designed and developed by @mapcourt</cite>
             </footer>
-        </Row> -->
+        </Row>
     </Container>
 </main>
 
