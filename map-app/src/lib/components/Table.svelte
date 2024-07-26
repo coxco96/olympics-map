@@ -11,7 +11,6 @@
     $: filteredDataStore.subscribe(value => filteredData = value);
     $: pointsTotalStore.subscribe(value => pointsTotalArr = value);
 
-    // NOT BEHAVING AS EXPECTED
     $: console.log(pointsTotalArr);
 
     function makeTableArr (filteredData, sortBy) {

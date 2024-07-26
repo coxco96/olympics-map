@@ -11,7 +11,11 @@
     import { geojsons } from "$lib/geojsons/basemaps.js";
 
     // function to get baseMapYear and paint obj for data styling
-    import { getBaseMapYear, paint, makeTooltipString } from "$lib/utils/exports.js";
+    import {
+        getBaseMapYear,
+        paint,
+        makeTooltipString,
+    } from "$lib/utils/exports.js";
 
     // import stores
     import {
@@ -19,6 +23,7 @@
         selectedSport,
         selectedEvent,
         filteredDataStore,
+        pointsTotalStore
     } from "$lib/utils/stores.js";
 
     /* PREDECLARE NECESSARY VARIABLES */
@@ -30,14 +35,22 @@
     let isBaseMapFirstRun = true;
     let geojsonLayerId = "geojson-layer";
     let hoverLayerId = "hover-layer";
+    let pointsTotalArr;
     // let featureStateId = "feature-state-layer";
 
     /* SUBSCRIBE TO STORES FOR DATA FILTERING */
 
-    selectedYear.subscribe(value => year = value || "All years (1896-2024)");
-    selectedSport.subscribe(value => sport = value || "All sports");
-    selectedEvent.subscribe(value => sportEvent = value || "All events");
-    filteredDataStore.subscribe(value => filteredData = value);
+
+    // TODO / question: why are these not reactive?
+    selectedYear.subscribe(
+        (value) => (year = value || "All years (1896-2024)"),
+    );
+    selectedSport.subscribe((value) => (sport = value || "All sports"));
+    selectedEvent.subscribe((value) => (sportEvent = value || "All events"));
+    filteredDataStore.subscribe((value) => (filteredData = value));
+
+    $: pointsTotalStore.subscribe((value) => (pointsTotalArr = value));
+    $: console.log(pointsTotalArr);
 
     /* DISPLAY CORRECT HISTORIC BASE MAP BASED ON YEAR */
 
@@ -71,7 +84,6 @@
     /* INITIALIZE MAP, SOURCE, LAYER AND FEATURE-STATES ON INITIAL COMPONENT MOUNT */
 
     onMount(async () => {
-
         /* INITIALIZE MAP */
         map = new maplibregl.Map({
             container: container,
@@ -213,9 +225,9 @@
             // get min and max pointTotals (excluding 0)
             max = pointsTotal > max ? pointsTotal : max;
             if (min == 0) {
-                min = pointsTotal
+                min = pointsTotal;
             } else if (pointsTotal != 0) {
-                min = pointsTotal < min ? pointsTotal : min
+                min = pointsTotal < min ? pointsTotal : min;
             }
             map.setFeatureState(
                 { source: geojsonLayerId, id: featureId },
@@ -223,7 +235,7 @@
             );
         });
         // need to somehow pass these values to addGeoJsonLayer
-        // OR actually... better to save these as a store so 
+        // OR actually... better to save these as a store so
         // can be used to color Table, too?
         console.log(`min: ${min}, max: ${max}`);
     }
