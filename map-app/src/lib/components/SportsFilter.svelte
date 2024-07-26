@@ -4,22 +4,30 @@
 
     let sport = "All sports";
     let year = "All years (1896-2024)";
-    let sportEvent;
+    let sportEvent = "All events";
 
     // subscribe to store values
-    $: selectedSport.subscribe(value => sport = value || "All sports");
-    $: selectedYear.subscribe(value => {
-        year = value || "All years (1896-2024)";
-        // automatically reset sport if it's not available for the new year
-        if (year !== "All years (1896-2024)" && !isSportAvailableForYear(sport, year)) {
-            selectedSport.set("All sports");
-            sport = "All sports";
-        }
-    });
-    $: selectedEvent.subscribe(value => sportEvent = value || "All events");
+    $: {
+        // update local variables from stores
+        selectedSport.subscribe(value => {
+            sport = value || "All sports"; // default to "All sports" if value is empty
+        });
+        selectedYear.subscribe(value => {
+            year = value || "All years (1896-2024)"; // Default to "All years" if value is empty
+            // automatically reset sport if it's not available for the new year
+            if (year !== "All years (1896-2024)" && !isSportAvailableForYear(sport, year)) {
+                sport = "All sports"; // reset to "All sports" if the current sport is not available for the selected year
+                selectedSport.set(sport); // update the store
+            }
+        });
+        selectedEvent.subscribe(value => {
+            sportEvent = value || "All events"; // default to "All events" if value is empty
+        });
+    }
 
     function handleChange(event) {
-        selectedSport.set(event.target.value);
+        sport = event.target.value;
+        selectedSport.set(sport); // update the store
     }
 
     function isSportAvailableForYear(sport, year) {

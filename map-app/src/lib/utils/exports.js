@@ -71,40 +71,71 @@ export const getBaseMapYear = (selection) => {
   return baseMapYears[0].toString(); // return the first year if selection is less than the smallest year
 };
 
+// export function filterData(year, sport, sportEvent, initialData) {
+//   let filteredObj = {};
+//   for (let country in initialData) {
+//     let countryData = initialData[country];
+//     let filteredCountryData = countryData.filter(x => {
+//       // if no filters set, return all data
+//       if ((year === 'All years (1896-2024)') && sport === '' && sportEvent === '') {
+//         return x
+//         // if year is only filter, return all data with that year
+//       } else if ((year != 'All years (1896-2024)') && sport === '' && sportEvent === '') {
+//         return x['year'] === year
+//         // if year and sport are only filters, return all data with those
+//       } else if ((year != 'All years (1896-2024)') && sport != '' && sportEvent === '') {
+//         return (
+//           x['year'] === year && x['sport'] === sport
+//         )
+//         // if all filters are set, return only what matches all three
+//       } else if ((year != 'All years (1896-2024)') && sport != '' && sportEvent != '') {
+//         return (
+//           x['year'] === year &&
+//           x['sport'] === sport &&
+//           x['sportEvent'] === sportEvent
+//         )
+//       } else {
+//         console.log('filters selected out of order!')
+//       }
+
+//     })
+//     if (filteredCountryData.length > 0) {
+//       filteredObj[country] = filteredCountryData;
+//     }
+//   }
+//   return filteredObj;
+// }
+
 export function filterData(year, sport, sportEvent, initialData) {
   let filteredObj = {};
-  for (let country in initialData) {
-    let countryData = initialData[country];
-    let filteredCountryData = countryData.filter(x => {
-      // if no filters set, return all data
-      if ((year === 'All years (1896-2024)') && sport === '' && sportEvent === '') {
-        return x
-        // if year is only filter, return all data with that year
-      } else if ((year != 'All years (1896-2024)') && sport === '' && sportEvent === '') {
-        return x['year'] === year
-        // if year and sport are only filters, return all data with those
-      } else if ((year != 'All years (1896-2024)') && sport != '' && sportEvent === '') {
-        return (
-          x['year'] === year && x['sport'] === sport
-        )
-        // if all filters are set, return only what matches all three
-      } else if ((year != 'All years (1896-2024)') && sport != '' && sportEvent != '') {
-        return (
-          x['year'] === year &&
-          x['sport'] === sport &&
-          x['sportEvent'] === sportEvent
-        )
-      } else {
-        console.log('filters selected out of order!')
-      }
 
-    })
-    if (filteredCountryData.length > 0) {
-      filteredObj[country] = filteredCountryData;
-    }
+  for (let country in initialData) {
+      let countryData = initialData[country];
+
+      let filteredCountryData = countryData.filter(x => {
+          // check if all filters are set to "All" (i.e., no filtering)
+          if (year === 'All years (1896-2024)' && sport === 'All sports' && sportEvent === 'All events') {
+              return true; // return all data
+          }
+
+          // filtering based on year, sport, and sportEvent
+          let yearMatch = year === 'All years (1896-2024)' || x['year'] === year;
+          let sportMatch = sport === 'All sports' || x['sport'] === sport;
+          let eventMatch = sportEvent === 'All events' || x['sportEvent'] === sportEvent;
+
+          return yearMatch && sportMatch && eventMatch;
+      });
+
+
+      if (filteredCountryData.length > 0) {
+          filteredObj[country] = filteredCountryData;
+      }
   }
   return filteredObj;
 }
+
+
+
 
 export const baseMapYears = [1880, 1900, 1914, 1920, 1938, 1945, 1960, 1994, 2000];
 
