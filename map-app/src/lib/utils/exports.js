@@ -23,12 +23,27 @@ export function convertData(data) {
 }
 
 export function makeTooltipString(country, data) {
+  let goldMedalCount = 0;
+  let silverMedalCount = 0; 
+  let bronzeMedalCount = 0;
+
+  data.forEach(d => {
+    let { medal } = d;
+    if (medal === 'Gold') {
+      goldMedalCount++;
+    } 
+    if (medal === 'Silver') {
+      silverMedalCount++;
+    }
+    if (medal === 'Bronze') {
+      bronzeMedalCount++;
+    }
+  })
   return `
               <strong>${country}</strong> <br>
-              Gold Medals: <br>
-              Silver Medals: <br>
-              Bronze Medals: <br>
-              Athletes: 
+              Gold Medals: ${goldMedalCount}<br>
+              Silver Medals: ${silverMedalCount}<br>
+              Bronze Medals: ${bronzeMedalCount}<br>
               `;
 }
 
