@@ -13,7 +13,7 @@
     // function to get baseMapYear and paint obj for data styling
     import {
         getBaseMapYear,
-        paint,
+        makePaint,
         makeTooltipString,
     } from "$lib/utils/exports.js";
 
@@ -199,7 +199,7 @@
                 id: geojsonLayerId,
                 type: "fill",
                 source: geojsonLayerId,
-                paint: paint,
+                paint: makePaint(pointsTotalArr),
             });
         } else {
             console.log("error. no geojsons[year]");
