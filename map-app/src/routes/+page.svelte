@@ -12,7 +12,7 @@
     import { convertData, filterData } from "../lib/utils/exports.js";
     
     // stores, context and lifecycle
-    import { filteredDataStore, selectedYear, selectedSport, selectedEvent } from "$lib/utils/stores.js";
+    import { filteredDataStore, selectedYear, selectedSport, selectedEvent, pointsTotalStore } from "$lib/utils/stores.js";
     import { initialDataContext } from "$lib/utils/context.js";
     import { setContext } from "svelte";
 
@@ -34,16 +34,51 @@
     $: selectedSport.subscribe(value => sport = value);
     $: selectedEvent.subscribe(value => sportEvent = value);
 
+    // subscribe to store in which to push all pointsTotal values
+    // $: pointsTotalStore.subscribe(value => pointsTotalArr = value);
+    
+
     // reactive declarations to update local variables from stores
     $: year = $selectedYear;
     $: sport = $selectedSport;
     $: sportEvent = $selectedEvent;
+
+    // $: pointsTotalArr = $pointsTotalStore;
+    // $: console.log(pointsTotalArr);
+
 
     // filter the data and write it to the store
     let filteredData;
     $: {
         filteredData = filterData(year, sport, sportEvent, initialData);
         filteredDataStore.set(filteredData);
+    }
+
+    let pointsTotalArr = [];
+    $: if (filteredData) {
+        for (let country in filteredData) {
+            let countryData = filteredData[country];
+            countryData.forEach(row => {
+                let pointsTotal = 0; // initialize
+
+                // destructure row object to access medal
+                const { medal } = row;
+            
+                // count medals
+                if (medal === 'Gold') {
+                    pointsTotal += 3;
+                } else if (medal === 'Silver') {
+                    pointsTotal += 2;
+                } else if (medal ==='Bronze') {
+                    pointsTotal += 1;
+                }
+                if (pointsTotal != 0) {
+                    pointsTotalArr.push(pointsTotal);
+                }
+            })
+        }
+        pointsTotalStore.set(pointsTotalArr.sort());
+        console.log(pointsTotalArr);
     }
 
 

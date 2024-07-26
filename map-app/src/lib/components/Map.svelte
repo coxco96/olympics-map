@@ -34,10 +34,10 @@
 
     /* SUBSCRIBE TO STORES FOR DATA FILTERING */
 
-    $: selectedYear.subscribe((value) => (year = value));
-    $: selectedSport.subscribe((value) => (sport = value));
-    $: selectedEvent.subscribe((value) => (sportEvent = value));
-    $: filteredDataStore.subscribe((value) => (filteredData = value));
+    selectedYear.subscribe(value => year = value || "All years (1896-2024)");
+    selectedSport.subscribe(value => sport = value || "All sports");
+    selectedEvent.subscribe(value => sportEvent = value || "All events");
+    filteredDataStore.subscribe(value => filteredData = value);
 
     /* DISPLAY CORRECT HISTORIC BASE MAP BASED ON YEAR */
 
@@ -47,12 +47,11 @@
     // if all years are selected, use basemap from year 2000
     // otherwise, get the right baseMapYear
     $: baseMapYear = isNaN(numericyear) ? "2000" : getBaseMapYear(numericyear);
-    $: mapExists = map ? true : false;
 
     // update baseMap after initial load if year if changed
     // TODO: make this only run if the baseMapYear changes in a way that
     // will actually change the base map
-    $: if (mapExists && geojsons[baseMapYear]) {
+    $: if (map && geojsons[baseMapYear]) {
         if (!isBaseMapFirstRun) {
             updateGeojsonSource();
         }
@@ -62,7 +61,7 @@
     // if map exists and filteredData changes, update feature states
     // except for the first time the trigger is fired (to avoid unnecessarily running)
     // if filteredData changes AFTER mount
-    $: if (mapExists && filteredData) {
+    $: if (map && filteredData) {
         if (!isFeatureStateFirstRun) {
             setFeatureStates();
         }
@@ -202,16 +201,31 @@
         // access geojson data with id generated on addSource
         let features = map.querySourceFeatures(geojsonLayerId);
 
+        // initialize to get min and max pointsTotal for paint (so darkest blue is max and lighest is min)
+        let min = 0;
+        let max = 0;
+
         // set feature state for each feature based on pointsTotal
         features.forEach((feature) => {
             featureId = feature.id;
             countryName = feature.properties.NAME;
             pointsTotal = getPointsTotal(countryName);
+            // get min and max pointTotals (excluding 0)
+            max = pointsTotal > max ? pointsTotal : max;
+            if (min == 0) {
+                min = pointsTotal
+            } else if (pointsTotal != 0) {
+                min = pointsTotal < min ? pointsTotal : min
+            }
             map.setFeatureState(
                 { source: geojsonLayerId, id: featureId },
                 { pointsTotal: pointsTotal },
             );
         });
+        // need to somehow pass these values to addGeoJsonLayer
+        // OR actually... better to save these as a store so 
+        // can be used to color Table, too?
+        console.log(`min: ${min}, max: ${max}`);
     }
 
     // get points totals for color weighting

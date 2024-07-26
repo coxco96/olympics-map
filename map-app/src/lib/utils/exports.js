@@ -62,7 +62,7 @@ export const paint = {
       ["feature-state", "pointsTotal"],
       1,
       "#add8e6", // light blue for the minimum value
-      200, // TODO: adjust this to your actual max pointsTotal
+      6500, // TODO: adjust this to your actual max pointsTotal
       "#00008b", // dark blue for the maximum value
     ],
   ],
