@@ -56,6 +56,7 @@
 
     let pointsTotalArr = [];
     $: if (filteredData) {
+        let arr = []
         for (let country in filteredData) {
             let countryData = filteredData[country];
             countryData.forEach(row => {
@@ -72,13 +73,15 @@
                 } else if (medal ==='Bronze') {
                     pointsTotal += 1;
                 }
+                // if pointsTotal is not 0, push it to pointsTotal
                 if (pointsTotal != 0) {
-                    pointsTotalArr.push(pointsTotal);
+                    arr.push(pointsTotal);
                 }
+
             })
         }
-        pointsTotalStore.set(pointsTotalArr.sort());
-        console.log(pointsTotalArr);
+        pointsTotalArr = arr.sort()
+        pointsTotalStore.set(pointsTotalArr);   
     }
 
 

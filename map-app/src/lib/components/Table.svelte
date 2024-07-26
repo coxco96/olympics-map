@@ -1,14 +1,18 @@
 <script>
     import {Table} from '@sveltestrap/sveltestrap'
-    import { filteredDataStore } from '$lib/utils/stores.js';
+    import { filteredDataStore, pointsTotalStore } from '$lib/utils/stores.js';
 
     // button toggle state
     let sortBy = 'pointsTotal'; // default sorting option
 
     // subscribe to filterDataStore
     let filteredData;
+    let pointsTotalArr;
     $: filteredDataStore.subscribe(value => filteredData = value);
+    $: pointsTotalStore.subscribe(value => pointsTotalArr = value);
 
+    // NOT BEHAVING AS EXPECTED
+    $: console.log(pointsTotalArr);
 
     function makeTableArr (filteredData, sortBy) {
         let tableArr = [];
