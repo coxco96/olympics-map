@@ -116,7 +116,7 @@
             </Col>
         </Row>
         <Row>
-            <footer class="footer text-end">
+            <footer class="mt-3 footer text-end">
                 <cite title="Designed and developed @mapcourt">Designed and developed by @mapcourt</cite>
             </footer>
         </Row>
