@@ -54,13 +54,25 @@ export function makeTooltipString(country, data, olympicTeam) {
       bronzeMedalCount++;
     }
   })
-  return `
-              <strong>${country}</strong> <br>
-              <strong>${olympicTeam}</strong>
-              Gold Medals: ${goldMedalCount}<br>
-              Silver Medals: ${silverMedalCount}<br>
-              Bronze Medals: ${bronzeMedalCount}<br>
-              `;
+  let string = (olympicTeam == '' || olympicTeam == undefined) 
+  // second one if olympicTeam is specified,
+  // first one if not
+  ? `
+  <strong>${country}</strong> <br>
+  Gold Medals: ${goldMedalCount}<br>
+  Silver Medals: ${silverMedalCount}<br>
+  Bronze Medals: ${bronzeMedalCount}<br>
+  ` 
+  : `
+  <strong>${country}</strong> <br>
+  <strong>(Team ${olympicTeam})</strong><br>
+  Gold Medals: ${goldMedalCount}<br>
+  Silver Medals: ${silverMedalCount}<br>
+  Bronze Medals: ${bronzeMedalCount}<br>
+  ` 
+
+
+  return string;
 }
 
 

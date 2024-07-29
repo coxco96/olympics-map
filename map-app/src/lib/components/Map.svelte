@@ -23,7 +23,7 @@
         selectedSport,
         selectedEvent,
         filteredDataStore,
-        pointsTotalStore
+        pointsTotalStore,
     } from "$lib/utils/stores.js";
 
     /* PREDECLARE NECESSARY VARIABLES */
@@ -39,7 +39,6 @@
     // let featureStateId = "feature-state-layer";
 
     /* SUBSCRIBE TO STORES FOR DATA FILTERING */
-
 
     // TODO / question: why are these not reactive?
     selectedYear.subscribe(
@@ -152,13 +151,17 @@
             // if mouse is on a named feature, get & display its data
             if (e.features && e.features[0].properties.NAME) {
                 let country = e.features[0].properties.NAME;
-                let olympicTeam = e.features[0].properties['OLYMPIC_TEAM'] ? e.features[0].properties['OLYMPIC_TEAM'] : '';
+                let olympicTeam = e.features[0].properties["OLYMPIC_TEAM"]
+                    ? e.features[0].properties["OLYMPIC_TEAM"]
+                    : "";
                 if (filteredData[country]) {
                     tooltipContent = makeTooltipString(
                         country,
                         filteredData[country],
-                        olympicTeam
+                        olympicTeam,
                     );
+                } else if (filteredData[olympicTeam]) {
+                    tooltipContent = makeTooltipString(country, filteredData[olympicTeam], olympicTeam)
                 } else {
                     tooltipContent = `${country}<br>${olympicTeam}`;
                 }
@@ -219,7 +222,7 @@
 
     function setFeatureStates() {
         // intialize for features iteration
-        let pointsTotal, featureId, countryName;
+        let pointsTotal, featureId, countryName, olympicTeam;
 
         // access geojson data with id generated on addSource
         let features = map.querySourceFeatures(geojsonLayerId);
@@ -232,7 +235,10 @@
         features.forEach((feature) => {
             featureId = feature.id;
             countryName = feature.properties.NAME;
-            pointsTotal = getPointsTotal(countryName);
+            olympicTeam = feature.properties["OLYMPIC_TEAM"]
+                ? feature.properties["OLYMPIC_TEAM"]
+                : undefined;
+            pointsTotal = getPointsTotal(countryName, olympicTeam);
             // get min and max pointTotals (excluding 0)
             max = pointsTotal > max ? pointsTotal : max;
             if (min == 0) {
@@ -252,9 +258,20 @@
     }
 
     // get points totals for color weighting
-    function getPointsTotal(countryName) {
+    function getPointsTotal(countryName, olympicTeam) {
+        let countryData;
+
         let pointsTotal = 0;
-        let countryData = filteredData[countryName];
+
+        // if olympicTeam is defined, then the team name 
+        // doesn't match the country name
+        if (olympicTeam) {
+            countryData = filteredData[olympicTeam];
+            console.log(olympicTeam, countryName, countryData);
+        } else {
+            countryData = filteredData[countryName]
+        }
+
         if (countryData) {
             countryData.forEach((row) => {
                 // destructure row object to access medal
