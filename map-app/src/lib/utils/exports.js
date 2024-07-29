@@ -1,18 +1,3 @@
-export const altCountryNames = {
-  'Australasia': ['Australia', 'New Zealand']
-}
-
-export const backwardsAltCountryNames = {
-  'Australia': ['Australasia'],
-  'New Zealand': ['Australasia']
-}
-
-function figureAltNames(country) {
-// if geography country name is Victoria (UK), New South Wales (UK), Queensland (UK), South Australia (UK), Western Australia (UK) or Northern Territory (UK),
-// show Australia wins AND show hover effect on ALL of these
-}
-
-
 // turn data array into object with each country as key and 
 // all of its medals data as value
 export function convertData(data) {

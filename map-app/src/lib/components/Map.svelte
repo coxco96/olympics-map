@@ -9,6 +9,8 @@
     // historic base maps
     // TODO: get rid of this and just make a list of geojsons keys
     import { geojsons } from "$lib/geojsons/basemaps.js";
+    import {world1880} from '$lib/geojsons/world-1880.js'
+    
 
     // function to get baseMapYear and paint obj for data styling
     import {
