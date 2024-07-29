@@ -1,3 +1,14 @@
+export const nameExceptions = {
+  'Austria': 'On 1880 and 1900 maps, this was Austria Hungary. Most sources separate Austrian and Hungarian competitors, but on this map, at least for now, these are counted as Austrian. This is random choice for simplicity.',
+  'Hungary': 'On 1880 and 1900 maps, this was Austria Hungary. Most sources separate Austrian and Hungarian competitors, but on this map, at least for now, these are counted as Austrian. This is random choice for simplicity.',
+  'Australasia': 'Right now, Australasia team isnt being counted anywhere.',
+  'Bohemia': 'Is not being counted anywhere right now. Competed 1900, 1908 and 1912 as its own team, part of Hungary.',
+  'Finland': 'On 1900 map, this shows up on map as part of Russian Empire. Is not being counted at all right now until 1914. First competed in 1908.',
+  'Sweden': 'On 1900 map, there is Sweden Norway. All is set to count as Norway. For no reason, just simplicity, for now.',
+  'Norway': 'On 1900 map, there is Sweden Norway. All is set to count as Norway. For no reason, just simplicity, for now.',
+  
+}
+
 // turn data array into object with each country as key and 
 // all of its medals data as value
 export function convertData(data) {
