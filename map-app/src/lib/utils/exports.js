@@ -6,7 +6,8 @@ export const nameExceptions = {
   'Finland': 'On 1900 map, this shows up on map as part of Russian Empire. Is not being counted at all right now until 1914. First competed in 1908.',
   'Sweden': 'On 1900 map, there is Sweden Norway. All is set to count as Norway. For no reason, just simplicity, for now.',
   'Norway': 'On 1900 map, there is Sweden Norway. All is set to count as Norway. For no reason, just simplicity, for now.',
-  'Ireland': 'On the 1920 map, it is called United Kingdom of Great Britain and Ireland. Olympic team is set to Great Britain for now, but Ireland did compete. Decision just for simplicity for now.'
+  'Ireland': 'On the 1920 and 1930 maps, it is called United Kingdom of Great Britain and Ireland. Olympic team is set to Great Britain for now, but Ireland did compete. Decision just for simplicity for now.',
+  'Germany': 'On 1945 map, Germany is split as Germany (USA) and Germany (Soviet). For now I have set them both to OLYMPIC_TEAM as Germany. Worth checking later if this should be specifically one or the other.'
 
 }
 

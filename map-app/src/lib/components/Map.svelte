@@ -13,8 +13,8 @@
     import {world1900} from '$lib/geojsons/world-1900.js';
     import {world1914} from '$lib/geojsons/world-1914.js';
     import {world1920} from '$lib/geojsons/world-1920.js';
-    // import {world1930} from '$lib/geojsons/world-1930.js';
-    // import {world1938} from '$lib/geojsons/world-1938.js';
+    import {world1930} from '$lib/geojsons/world-1930.js';
+    import {world1938} from '$lib/geojsons/world-1938.js';
     // import {world1945} from '$lib/geojsons/world-1945.js';
     // import {world1960} from '$lib/geojsons/world-1960.js';
     // import {world1994} from '$lib/geojsons/world-1994.js';
@@ -26,8 +26,8 @@
         1900: world1900,
         1914: world1914,
         1920: world1920,
-        1930: world1880,
-        1938: world1880,
+        1930: world1930,
+        1938: world1938,
         1945: world1880,
         1960: world1880,
         1994: world1880,
