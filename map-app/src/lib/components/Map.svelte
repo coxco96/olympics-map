@@ -8,8 +8,29 @@
 
     // historic base maps
     // TODO: get rid of this and just make a list of geojsons keys
-    import { geojsons } from "$lib/geojsons/basemaps.js";
-    import {world1880} from '$lib/geojsons/world-1880.js'
+    // import { geojsons } from "$lib/geojsons/basemaps.js";
+    import {world1880} from '$lib/geojsons/world-1880.js';
+    import {world1900} from '$lib/geojsons/world-1900.js';
+    import {world1914} from '$lib/geojsons/world-1914.js';
+    import {world1920} from '$lib/geojsons/world-1920.js';
+    import {world1930} from '$lib/geojsons/world-1930.js';
+    import {world1938} from '$lib/geojsons/world-1938.js';
+    import {world1945} from '$lib/geojsons/world-1945.js';
+    import {world1960} from '$lib/geojsons/world-1960.js';
+    import {world1994} from '$lib/geojsons/world-1994.js';
+    import {world2000} from '$lib/geojsons/world-2000.js';
+    const geojsons = {
+        1880: world1880,
+        1900: world1900,
+        1914: world1914,
+        1920: world1920,
+        1930: world1930,
+        1938: world1938,
+        1945: world1945,
+        1960: world1960,
+        1994: world1994,
+        2000: world2000
+    }
     
 
     // function to get baseMapYear and paint obj for data styling
