@@ -152,13 +152,15 @@
             // if mouse is on a named feature, get & display its data
             if (e.features && e.features[0].properties.NAME) {
                 let country = e.features[0].properties.NAME;
+                let olympicTeam = e.features[0].properties['OLYMPIC_TEAM'] ? e.features[0].properties['OLYMPIC_TEAM'] : '';
                 if (filteredData[country]) {
                     tooltipContent = makeTooltipString(
                         country,
                         filteredData[country],
+                        olympicTeam
                     );
                 } else {
-                    tooltipContent = country;
+                    tooltipContent = `${country}<br>${olympicTeam}`;
                 }
 
                 tooltip
