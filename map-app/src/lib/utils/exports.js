@@ -102,7 +102,7 @@ export const makePaint = (maxPoints) => {
         ["feature-state", "pointsTotal"],
         1,
         "#92b3d1", // light blue for the minimum value
-        maxPoints, // TODO: adjust this to your actual max pointsTotal
+        maxPoints, 
         "#010742", // dark blue for the maximum value
       ],
     ],
@@ -162,7 +162,6 @@ export function filterData(year, sport, sportEvent, initialData) {
 export const baseMapYears = [1880, 1900, 1914, 1920, 1938, 1945, 1960, 1994, 2000];
 
 export const sportsArray = [
-  "All sports",
   "3x3 Basketball",
   "Aeronautics",
   "Alpine Skiing",
