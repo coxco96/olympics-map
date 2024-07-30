@@ -49,7 +49,7 @@
 </script>
 
 <select bind:value={sport} on:change={handleChange} class="form-select" name="Sport">
-    {#each relevantSports as s}
-        <option value={s}>{s}</option>
+    {#each relevantSports as sport}
+        <option value={sport}>{sport}</option>
     {/each}
 </select>

@@ -88,7 +88,6 @@
         // pointsTotalArr = arr.sort();
         pointsTotalStore.set(pointsTotalArr); // this is in case want to later use all  values to create statistical breaks in color gradient
         if (isFinite(mostPoints)) {
-            console.log(mostPoints);
             maxPointsStore.set(mostPoints);
         } else {
             console.log('error: mostPoints was not finite...', mostPoints)
