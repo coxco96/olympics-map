@@ -26,7 +26,7 @@
     }
 
     function handleChange(event) {
-        selectedSport.set(event.target.value); // update the store
+        selectedSport.set(event.target.value); // update the store on change
     }
 
     function isSportAvailableForYear(sport, year) {
@@ -46,6 +46,8 @@
         }
     }
 </script>
+
+{sport}
 
 <select bind:value={sport} on:change={handleChange} class="form-select" name="Sport">
     {#each relevantSports as sport}
