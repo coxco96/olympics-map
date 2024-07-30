@@ -132,3 +132,4 @@ dist
 # google sheet connection
 *sheet.json
 *api/
+.vercel
