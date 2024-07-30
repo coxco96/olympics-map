@@ -8,6 +8,8 @@
 		"preview": "vite preview"
 	},
 	"devDependencies": {
+		"@rollup/plugin-commonjs": "^26.0.1",
+		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/rollup-darwin-arm64": "^4.19.0",
 		"@sveltejs/adapter-auto": "^3.0.0",
 		"@sveltejs/adapter-vercel": "^5.4.1",
