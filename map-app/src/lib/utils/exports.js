@@ -7,8 +7,14 @@ export const nameExceptions = {
   'Sweden': 'On 1900 map, there is Sweden Norway. All is set to count as Norway. For no reason, just simplicity, for now.',
   'Norway': 'On 1900 map, there is Sweden Norway. All is set to count as Norway. For no reason, just simplicity, for now.',
   'Ireland': 'On the 1920 and 1930 maps, it is called United Kingdom of Great Britain and Ireland. Olympic team is set to Great Britain for now, but Ireland did compete. Decision just for simplicity for now.',
-  'Germany': 'On 1945 map, Germany is split as Germany (USA) and Germany (Soviet). For now I have set them both to OLYMPIC_TEAM as Germany. Worth checking later if this should be specifically one or the other.'
-
+  'Germany': 'On 1945 map, Germany is split as Germany (USA) and Germany (Soviet). For now I have set them both to OLYMPIC_TEAM as Germany. Worth checking later if this should be specifically one or the other.',
+  'Liechtenstein': 'On the 1960 map, this area is covered by Switzerland and Austria. It is not currently set to show up or count toward any totals.',
+  'United States Virgin Islands': 'Not included in 1960 map, therefore will not show up except on table.',
+  'West Indies Federation': 'Will not be included on map but will be in table.',
+  'Netherlands Antilles': 'Will not be included on 1960 basemap.',
+  'Singapore': '1960 basemap doesnt include. Singapore gained independence in 1963 and briefly joined Malaysia, but Malaysia also competed... it broke away for independent sovereignty in 1965... but I dont have a basemap for between 1960 and 1994 so Singapore will not appear before 1994.',
+  'Bermuda': 'No Bermuda on the 1960 map, so it will not appear except in table.',
+  'Lithuania': 'Appears on 1960 map under USSR/Soviet Union, so it will not appear.'
 }
 
 // turn data array into object with each country as key and 
