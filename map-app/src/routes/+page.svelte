@@ -112,9 +112,12 @@
     <Container class="mt-5">
         <Row>
             <Col md="8">
-                <h1 class="display-4">Olympic Medals Counts</h1>
-                <p class="lead">Hover over the map for detailed information, and use filters to customize your view.</p>
+                <h1 class="display-4">Olympic Medal Counts</h1>
+                <p class='lead' style='font-weight: 400; font-size:1rem; margin-bottom: .6rem;'>Designed and developed by Courtney Cox | <a href='https://www.mapcourt.com' target='_blank'>mapcourt.com</a></p>
+                <p class="lead" >Hover over the map for detailed information, and use filters to customize your view.</p>
             </Col>
+
+
         </Row>
         <Row class="mb-3">
             <!-- TODO: check form accessibility here -->
@@ -153,12 +156,12 @@
                 {/if}
             </Col>
         </Row>
-        <Row>
+        <!-- <Row>
             <footer class="mt-2 footer">
                 
                 Designed and developed by <a href='https://www.mapcourt.com' target=_blank>Courtney Cox</a>
             </footer>
-        </Row>
+        </Row> -->
     </Container>
 </main>
 
