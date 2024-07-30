@@ -86,9 +86,7 @@ export function makeTooltipString(country, data, olympicTeam) {
 }
 
 
-export const makePaint = (pointsTotalArr) => {
-  console.log('from makePaint')
-  console.log(pointsTotalArr);
+export const makePaint = (maxPoints) => {
   return {
     "fill-color": [
       "case",
@@ -103,9 +101,9 @@ export const makePaint = (pointsTotalArr) => {
         ["linear"],
         ["feature-state", "pointsTotal"],
         1,
-        "#add8e6", // light blue for the minimum value
-        6500, // TODO: adjust this to your actual max pointsTotal
-        "#00008b", // dark blue for the maximum value
+        "#92b3d1", // light blue for the minimum value
+        maxPoints, // TODO: adjust this to your actual max pointsTotal
+        "#010742", // dark blue for the maximum value
       ],
     ],
     "fill-opacity": [
@@ -113,7 +111,7 @@ export const makePaint = (pointsTotalArr) => {
       ["==", ["feature-state", "pointsTotal"], null],
       0.2,
       ["==", ["feature-state", "pointsTotal"], 0],
-      0.9,
+      0.5,
       1,
     ],
   };
@@ -128,42 +126,7 @@ export const getBaseMapYear = (selection) => {
     }
   }
   return baseMapYears[0].toString(); // return the first year if selection is less than the smallest year
-};
-
-// export function filterData(year, sport, sportEvent, initialData) {
-//   let filteredObj = {};
-//   for (let country in initialData) {
-//     let countryData = initialData[country];
-//     let filteredCountryData = countryData.filter(x => {
-//       // if no filters set, return all data
-//       if ((year === 'All years (1896-2024)') && sport === '' && sportEvent === '') {
-//         return x
-//         // if year is only filter, return all data with that year
-//       } else if ((year != 'All years (1896-2024)') && sport === '' && sportEvent === '') {
-//         return x['year'] === year
-//         // if year and sport are only filters, return all data with those
-//       } else if ((year != 'All years (1896-2024)') && sport != '' && sportEvent === '') {
-//         return (
-//           x['year'] === year && x['sport'] === sport
-//         )
-//         // if all filters are set, return only what matches all three
-//       } else if ((year != 'All years (1896-2024)') && sport != '' && sportEvent != '') {
-//         return (
-//           x['year'] === year &&
-//           x['sport'] === sport &&
-//           x['sportEvent'] === sportEvent
-//         )
-//       } else {
-//         console.log('filters selected out of order!')
-//       }
-
-//     })
-//     if (filteredCountryData.length > 0) {
-//       filteredObj[country] = filteredCountryData;
-//     }
-//   }
-//   return filteredObj;
-// }
+}
 
 export function filterData(year, sport, sportEvent, initialData) {
   let filteredObj = {};

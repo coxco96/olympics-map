@@ -9,16 +9,16 @@
 
     // historic base maps
     // import {world1880} from '$lib/geojsons/world-1880.js';
-    import {world1880} from '$lib/geojsons/world-1880.js';
-    import {world1900} from '$lib/geojsons/world-1900.js';
-    import {world1914} from '$lib/geojsons/world-1914.js';
-    import {world1920} from '$lib/geojsons/world-1920.js';
-    import {world1930} from '$lib/geojsons/world-1930.js';
-    import {world1938} from '$lib/geojsons/world-1938.js';
-    import {world1945} from '$lib/geojsons/world-1945.js';
-    import {world1960} from '$lib/geojsons/world-1960.js';
-    import {world1994} from '$lib/geojsons/world-1994.js';
-    import {world2000} from '$lib/geojsons/world-2000.js';
+    import { world1880 } from "$lib/geojsons/world-1880.js";
+    import { world1900 } from "$lib/geojsons/world-1900.js";
+    import { world1914 } from "$lib/geojsons/world-1914.js";
+    import { world1920 } from "$lib/geojsons/world-1920.js";
+    import { world1930 } from "$lib/geojsons/world-1930.js";
+    import { world1938 } from "$lib/geojsons/world-1938.js";
+    import { world1945 } from "$lib/geojsons/world-1945.js";
+    import { world1960 } from "$lib/geojsons/world-1960.js";
+    import { world1994 } from "$lib/geojsons/world-1994.js";
+    import { world2000 } from "$lib/geojsons/world-2000.js";
 
     // store in object for easy access to historic basemaps
     const geojsons = {
@@ -31,9 +31,8 @@
         1945: world1945,
         1960: world1960,
         1994: world1994,
-        2000: world2000
-    }
-    
+        2000: world2000,
+    };
 
     // function to get baseMapYear and paint obj for data styling
     import {
@@ -49,6 +48,7 @@
         selectedEvent,
         filteredDataStore,
         pointsTotalStore,
+        maxPointsStore,
     } from "$lib/utils/stores.js";
 
     /* PREDECLARE NECESSARY VARIABLES */
@@ -60,12 +60,12 @@
     let isBaseMapFirstRun = true;
     let geojsonLayerId = "geojson-layer";
     let hoverLayerId = "hover-layer";
-    let pointsTotalArr;
-    // let featureStateId = "feature-state-layer";
+    // let pointsTotalArr
+    let maxPoints;
 
     /* SUBSCRIBE TO STORES FOR DATA FILTERING */
 
-    // TODO / question: why are these not reactive?
+    // TODO / question: why did I not make these not reactive here?
     selectedYear.subscribe(
         (value) => (year = value || "All years (1896-2024)"),
     );
@@ -73,16 +73,34 @@
     selectedEvent.subscribe((value) => (sportEvent = value || "All events"));
     filteredDataStore.subscribe((value) => (filteredData = value));
 
-    $: pointsTotalStore.subscribe((value) => (pointsTotalArr = value));
-    $: console.log(pointsTotalArr);
+    // $: pointsTotalStore.subscribe((value) => (pointsTotalArr = value));
+
+    $: maxPointsStore.subscribe((value) => (maxPoints = value));
 
     let isFirstPaint = true;
-    $: if (pointsTotalArr && map) {
+    $: if (maxPoints) {
         // if not first load, repaint the map.
         if (!isFirstPaint) {
             setFeatureStates();
+            updatePaintProperties();
         }
         isFirstPaint = false;
+    }
+
+    function updatePaintProperties() {
+        if (map) {
+            let paintObj = makePaint(maxPoints);
+            map.setPaintProperty(
+                geojsonLayerId,
+                "fill-color",
+                paintObj["fill-color"],
+            );
+            map.setPaintProperty(
+                geojsonLayerId,
+                "fill-opacity",
+                paintObj["fill-opacity"],
+            );
+        }
     }
 
     /* DISPLAY CORRECT HISTORIC BASE MAP BASED ON YEAR */
@@ -100,6 +118,8 @@
     $: if (map && geojsons[baseMapYear]) {
         if (!isBaseMapFirstRun) {
             updateGeojsonSource();
+            // setFeatureStates();
+            // updatePaintProperties();
         }
         isBaseMapFirstRun = false;
     }
@@ -137,7 +157,6 @@
             id: hoverLayerId,
             type: "line",
             source: geojsonLayerId,
-            layout: {},
             paint: {
                 "line-color": "white",
                 "line-width": 2,
@@ -186,7 +205,11 @@
                         olympicTeam,
                     );
                 } else if (filteredData[olympicTeam]) {
-                    tooltipContent = makeTooltipString(country, filteredData[olympicTeam], olympicTeam)
+                    tooltipContent = makeTooltipString(
+                        country,
+                        filteredData[olympicTeam],
+                        olympicTeam,
+                    );
                 } else {
                     tooltipContent = `${country}<br>${olympicTeam}`;
                 }
@@ -207,7 +230,8 @@
             tooltip.remove();
             map.setFilter("hover-layer", ["==", "NAME", ""]);
         });
-    }); // end onMOunt
+
+    }); // end onMount
 
     /* FUNCTIONS */
 
@@ -217,6 +241,14 @@
                 type: "geojson",
                 data: geojsons[baseMapYear],
                 generateId: true, // in order to use feature states
+            });
+
+            // wait for source to be loaded
+            map.on("data", (e) => {
+                if (e.sourceId === geojsonLayerId && e.isSourceLoaded) {
+                    setFeatureStates();
+                    updatePaintProperties();
+                }
             });
         } else {
             console.log("error. no geojsons[baseMapYear]");
@@ -238,7 +270,7 @@
                 id: geojsonLayerId,
                 type: "fill",
                 source: geojsonLayerId,
-                paint: makePaint(pointsTotalArr),
+                paint: makePaint(maxPoints),
             });
         } else {
             console.log("error. no geojsons[year]");
@@ -246,40 +278,27 @@
     }
 
     function setFeatureStates() {
-        // intialize for features iteration
-        let pointsTotal, featureId, countryName, olympicTeam;
+        if (map) {
+            // intialize for features iteration
+            let pointsTotal, featureId, countryName, olympicTeam;
 
-        // access geojson data with id generated on addSource
-        let features = map.querySourceFeatures(geojsonLayerId);
+            // access geojson data with id generated on addSource
+            let features = map.querySourceFeatures(geojsonLayerId);
 
-        // initialize to get min and max pointsTotal for paint (so darkest blue is max and lighest is min)
-        let min = 0;
-        let max = 0;
-
-        // set feature state for each feature based on pointsTotal
-        features.forEach((feature) => {
-            featureId = feature.id;
-            countryName = feature.properties.NAME;
-            olympicTeam = feature.properties["OLYMPIC_TEAM"]
-                ? feature.properties["OLYMPIC_TEAM"]
-                : undefined;
-            pointsTotal = getPointsTotal(countryName, olympicTeam);
-            // get min and max pointTotals (excluding 0)
-            max = pointsTotal > max ? pointsTotal : max;
-            if (min == 0) {
-                min = pointsTotal;
-            } else if (pointsTotal != 0) {
-                min = pointsTotal < min ? pointsTotal : min;
-            }
-            map.setFeatureState(
-                { source: geojsonLayerId, id: featureId },
-                { pointsTotal: pointsTotal },
-            );
-        });
-        // need to somehow pass these values to addGeoJsonLayer
-        // OR actually... better to save these as a store so
-        // can be used to color Table, too?
-        console.log(`min: ${min}, max: ${max}`);
+            // set feature state for each feature based on pointsTotal
+            features.forEach((feature) => {
+                featureId = feature.id;
+                countryName = feature.properties.NAME;
+                olympicTeam = feature.properties["OLYMPIC_TEAM"]
+                    ? feature.properties["OLYMPIC_TEAM"]
+                    : undefined;
+                pointsTotal = getPointsTotal(countryName, olympicTeam);
+                map.setFeatureState(
+                    { source: geojsonLayerId, id: featureId },
+                    { pointsTotal: pointsTotal },
+                );
+            });
+        }
     }
 
     // get points totals for color weighting
@@ -288,12 +307,12 @@
 
         let pointsTotal = 0;
 
-        // if olympicTeam is defined, then the team name 
+        // if olympicTeam is defined, then the team name
         // doesn't match the country name
         if (olympicTeam) {
             countryData = filteredData[olympicTeam];
         } else {
-            countryData = filteredData[countryName]
+            countryData = filteredData[countryName];
         }
 
         if (countryData) {

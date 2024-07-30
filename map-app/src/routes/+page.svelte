@@ -10,16 +10,23 @@
 
     // function to convert data into object
     import { convertData, filterData } from "../lib/utils/exports.js";
-    
+
     // stores, context and lifecycle
-    import { filteredDataStore, selectedYear, selectedSport, selectedEvent, pointsTotalStore } from "$lib/utils/stores.js";
+    import {
+        filteredDataStore,
+        selectedYear,
+        selectedSport,
+        selectedEvent,
+        pointsTotalStore,
+        maxPointsStore,
+    } from "$lib/utils/stores.js";
     import { initialDataContext } from "$lib/utils/context.js";
     import { setContext } from "svelte";
 
     // predeclared vars
     let initialData;
 
-   /* SET CONTEXT WITH INITIAL DATA AND ALSO AS THE INITIAL STORE */
+    /* SET CONTEXT WITH INITIAL DATA AND ALSO AS THE INITIAL STORE */
     $: {
         if (data) {
             initialData = convertData(data); // convert to object by country
@@ -28,9 +35,9 @@
     }
 
     let sport, year, sportEvent;
-    $: selectedYear.subscribe(value => year = value);
-    $: selectedSport.subscribe(value => sport = value);
-    $: selectedEvent.subscribe(value => sportEvent = value);
+    $: selectedYear.subscribe((value) => (year = value));
+    $: selectedSport.subscribe((value) => (sport = value));
+    $: selectedEvent.subscribe((value) => (sportEvent = value));
 
     // reactive declarations to update local variables from stores
     $: year = $selectedYear;
@@ -48,32 +55,50 @@
 
     let pointsTotalArr = [];
     $: if (filteredData) {
-        let arr = []
+        let arr = [];
+        let mostPoints = 1;
         for (let country in filteredData) {
+            let pointsTotal = 0; // initialize
             let countryData = filteredData[country];
-            countryData.forEach(row => {
-                let pointsTotal = 0; // initialize
-
+            countryData.forEach((row) => {
                 // destructure row object to access medal
                 const { medal } = row;
-            
+
                 // count medals
-                if (medal === 'Gold') {
+                if (medal === "Gold") {
                     pointsTotal += 3;
-                } else if (medal === 'Silver') {
+                } else if (medal === "Silver") {
                     pointsTotal += 2;
-                } else if (medal ==='Bronze') {
+                } else if (medal === "Bronze") {
                     pointsTotal += 1;
                 }
-                // if pointsTotal is not 0, push it to pointsTotal
-                if (pointsTotal != 0) {
-                    arr.push(pointsTotal);
-                }
+            });
+            // if pointsTotal is not 0, push it to pointsTotal
+            if (pointsTotal != 0) {
+                arr.push(pointsTotal);
+            }
+            if (pointsTotal > mostPoints) {
+                mostPoints = pointsTotal
+            }
 
-            })
         }
-        pointsTotalArr = arr.sort()
-        pointsTotalStore.set(pointsTotalArr);   
+        if (mostPoints < 2) {
+                mostPoints = 2;
+            }
+        // pointsTotalArr = arr.sort();
+        pointsTotalStore.set(pointsTotalArr); // this is in case want to later use all  values to create statistical breaks in color gradient
+        if (isFinite(mostPoints)) {
+            console.log(mostPoints);
+            maxPointsStore.set(mostPoints);
+        } else {
+            console.log('error: mostPoints was not finite...', mostPoints)
+        }
+        
+        
+        
+        // let max = Math.max(...pointsTotalArr);
+        // console.log(max);
+        // maxPointsStore.set(max);
     }
 
     // TODO: default to tableView for screen reader devices (and possibly mobile?)
@@ -117,7 +142,9 @@
         </Row>
         <Row>
             <footer class="mt-3 footer text-end">
-                <cite title="Designed and developed @mapcourt">Designed and developed by @mapcourt</cite>
+                <cite title="Designed and developed @mapcourt"
+                    >Designed and developed by @mapcourt</cite
+                >
             </footer>
         </Row>
     </Container>
