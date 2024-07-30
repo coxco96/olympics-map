@@ -1,6 +1,6 @@
 <script>
     // layout
-    import { Col } from "@sveltestrap/sveltestrap";
+    import { Col, Row } from "@sveltestrap/sveltestrap";
 
     // each filter
     import YearsFilter from "$lib/components/YearsFilter.svelte";
@@ -9,12 +9,12 @@
 
 </script>
 
-<Col>
+
     <YearsFilter />
-</Col>
-<Col>
+
+
     <SportsFilter />
-</Col>
-<Col>
+
     <EventsFilter />
-</Col>
+
+

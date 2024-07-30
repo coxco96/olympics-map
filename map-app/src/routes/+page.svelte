@@ -6,6 +6,9 @@
     import Map from "$lib/components/Map.svelte";
     import Table from "$lib/components/Table.svelte";
     import Filters from "$lib/components/Filters.svelte";
+    import YearsFilter from "$lib/components/YearsFilter.svelte";
+    import SportsFilter from "$lib/components/SportsFilter.svelte";
+    import EventsFilter from "$lib/components/EventsFilter.svelte";
     import { Container, Col, Row, InputGroup } from "@sveltestrap/sveltestrap";
 
     // function to convert data into object
@@ -78,23 +81,20 @@
                 arr.push(pointsTotal);
             }
             if (pointsTotal > mostPoints) {
-                mostPoints = pointsTotal
+                mostPoints = pointsTotal;
             }
-
         }
         if (mostPoints < 2) {
-                mostPoints = 2;
-            }
+            mostPoints = 2;
+        }
         // pointsTotalArr = arr.sort();
         pointsTotalStore.set(pointsTotalArr); // this is in case want to later use all  values to create statistical breaks in color gradient
         if (isFinite(mostPoints)) {
             maxPointsStore.set(mostPoints);
         } else {
-            console.log('error: mostPoints was not finite...', mostPoints)
+            console.log("error: mostPoints was not finite...", mostPoints);
         }
-        
-        
-        
+
         // let max = Math.max(...pointsTotalArr);
         // console.log(max);
         // maxPointsStore.set(max);
@@ -111,22 +111,36 @@
 <main>
     <Container class="mt-5">
         <Row>
-            <Col md="6">
-                <h1 class="display-4">Olympics Map</h1>
-                <p class="lead">Medals won etc etc</p>
+            <Col md="8">
+                <h1 class="display-4">Olympic Medals Counts</h1>
+                <p class="lead">Hover over the map for detailed information, and use filters to customize your view.</p>
             </Col>
         </Row>
         <Row class="mb-3">
             <!-- TODO: check form accessibility here -->
-            <InputGroup>
-                <Col>
-                    <Filters />
-                </Col>
-            </InputGroup>
+
             <Col>
-                <button on:click={toggleView}>
-                    {tableView ? "Switch to Map View" : "Switch to Table View"}
-                </button>
+                    <InputGroup>
+                        <Col>
+                            <YearsFilter />
+                        </Col>
+                    
+                        <Col style='margin-right: 5px; margin-left: 5px;'>
+                            <SportsFilter />
+                        </Col>
+                        <Col>
+                            <EventsFilter />
+                        </Col>
+                    </InputGroup>
+
+                    <Row class="mt-3">
+                        <Col>
+                            <button class="map-table-toggle" on:click={toggleView}>
+                                {tableView ? "View as map" : "View as table"}
+                            </button>
+                        </Col>
+                    </Row>
+                
             </Col>
         </Row>
 
@@ -140,14 +154,17 @@
             </Col>
         </Row>
         <Row>
-            <footer class="mt-3 footer text-end">
-                <cite title="Designed and developed @mapcourt"
-                    >Designed and developed by @mapcourt</cite
-                >
+            <footer class="mt-2 footer">
+                
+                Designed and developed by <a href='https://www.mapcourt.com' target=_blank>Courtney Cox</a>
             </footer>
         </Row>
     </Container>
 </main>
 
 <style>
+    /* .map-table-toggle {
+        border-left: solid 1px black;
+        margin-left: 20px;
+    } */
 </style>

@@ -45,7 +45,7 @@
         selectedSport,
         selectedEvent,
         filteredDataStore,
-        pointsTotalStore,
+        // pointsTotalStore,
         maxPointsStore,
     } from "$lib/utils/stores.js";
 
@@ -130,15 +130,27 @@
         isFeatureStateFirstRun = false;
     }
 
+    let isZoomable = false; // keep track of zoomable parts of map (features only)
+
     /* INITIALIZE MAP, SOURCE, LAYER AND FEATURE-STATES ON INITIAL COMPONENT MOUNT */
 
     onMount(async () => {
+
         /* INITIALIZE MAP */
         map = new maplibregl.Map({
-            container: container,
-            center: [0, 0],
-            zoom: 1,
+            container: container, // binded
+            // center: [0, 0],
+            // zoom: 5,
+            dragRotate: false,
+            renderWorldCopies: false,
+            // scrollZoom: false, // prevent accidental zooming
+            
+
+            // projection: 'globe'
+            // customAttribution: 'hey!!!!'
         });
+
+        map.getCanvas().style.cursor = "auto";
 
         // add source and layer
         if (filteredData) {
@@ -162,6 +174,9 @@
 
         // once source and layer have been added:
         map.on("load", () => {
+            const bounds = [[-180, -79], [180, 85]] // exclude antarctica
+            map.fitBounds(bounds)
+
             // if source is loaded, loop through each feature to setFeatureStates
             sourceIsLoaded = isSourceLoaded() ? true : false;
             if (sourceIsLoaded) {
@@ -176,6 +191,10 @@
             closeButton: false,
             closeOnClick: false,
         });
+
+        map.on('mouseenter', geojsonLayerId, () => {
+            isZoomable = true;
+        })
 
         // on mousemove, display tooltip
         map.on("mousemove", geojsonLayerId, (e) => {
@@ -222,10 +241,17 @@
         });
 
         map.on("mouseleave", geojsonLayerId, () => {
-            map.getCanvas().style.cursor = "";
+            isZoomable = false;
+            map.getCanvas().style.cursor = "auto";
             tooltip.remove();
             map.setFilter("hover-layer", ["==", "NAME", ""]);
         });
+
+        map.on('wheel', (e) => {
+            if (!isZoomable) {
+                e.preventDefault(); // prevent zooming except on features
+            }
+        })
 
     }); // end onMount
 
