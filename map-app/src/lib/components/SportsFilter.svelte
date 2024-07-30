@@ -21,13 +21,12 @@
             }
         });
         selectedEvent.subscribe(value => {
-            sportEvent = value || "All events"; // default to "All events" if value is empty
+            sportEvent = value // || "All events"; // default to "All events" if value is empty
         });
     }
 
     function handleChange(event) {
-        sport = event.target.value;
-        selectedSport.set(sport); // update the store
+        selectedSport.set(event.target.value); // update the store
     }
 
     function isSportAvailableForYear(sport, year) {
@@ -52,4 +51,5 @@
     {#each relevantSports as sport}
         <option value={sport}>{sport}</option>
     {/each}
+
 </select>
