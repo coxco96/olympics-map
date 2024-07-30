@@ -7,8 +7,6 @@ config();
 // handle line breaks in key
 const privateKey = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n')
 
-console.log(process.env.GOOGLE_CREDENTIALS_OBJECT);
-
 const credentials = {
   "type": "service_account",
   "project_id": process.env.GOOGLE_PROJECT_ID,
