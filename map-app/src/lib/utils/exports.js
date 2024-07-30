@@ -12,9 +12,14 @@ export const nameExceptions = {
   'United States Virgin Islands': 'Not included in 1960 map, therefore will not show up except on table.',
   'West Indies Federation': 'Will not be included on map but will be in table.',
   'Netherlands Antilles': 'Will not be included on 1960 basemap.',
-  'Singapore': '1960 and 1994 basemaps do not include. Singapore gained independence in 1963 and briefly joined Malaysia, but Malaysia also competed... it broke away for independent sovereignty in 1965... but I dont have a basemap for between 1960 and 1994 so Singapore will not appear before 1994.',
-  'Bermuda': 'No Bermuda on the 1960 or 1994 maps, so it will not appear except in table.',
+  'Singapore': '1960 and 1994 and 2000 basemaps do not include. Singapore gained independence in 1963 and briefly joined Malaysia, but Malaysia also competed... it broke away for independent sovereignty in 1965... but I dont have a basemap for between 1960 and 1994 so Singapore will not appear before 1994.',
+  'Bermuda': 'No Bermuda on the 1960 or 1994 or 2000 maps, so it will not appear except in table.',
   'Lithuania': 'Appears on 1960 map under USSR/Soviet Union, so it will not appear.',
+  'Bahrain': 'Does not appear on 2000 map so will only appear in table view.',
+  'Kosovo': 'Appears on 2000 map under Serbia. First medal was in 2016. If I use a more updated base map past 2000, could add this in, but for now it will stay off.',
+  'Mauritius': 'No geography for Mauritius on 2000 basemap. First medal was 2008 so could add later if more recent basemap is used, but for now it will only be in table.',
+  'Serbia and Montenegro': 'Fixed for 1994 but then realized first medal was 1996. Both Serbia and Montenegro individually had medals post-2000 so for now anything won under Serbia and Montenegro will not show up on map.',
+  'ROC': 'On the 2000 basemap, I used Russian Federation as the OLYMPIC_NAME for Russia, leaving out ROC.'
 
 }
 
