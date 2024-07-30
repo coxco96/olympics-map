@@ -4,11 +4,16 @@ import { config } from 'dotenv';
 // Load environment variables from .env file
 config();
 
+// handle line breaks in key
+const privateKey = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, '\n')
+
+console.log(process.env.GOOGLE_CREDENTIALS_OBJECT);
+
 const credentials = {
   "type": "service_account",
   "project_id": process.env.GOOGLE_PROJECT_ID,
   "private_key_id": process.env.GOOGLE_PRIVATE_KEY_ID,
-  "private_key": process.env.GOOGLE_PRIVATE_KEY, //.replace(/\\n/g, '\n'), // Handle newlines in private key
+  "private_key": privateKey,
   "client_email": process.env.GOOGLE_CLIENT_EMAIL,
   "client_id": process.env.GOOGLE_CLIENT_ID,
   "auth_uri": process.env.GOOGLE_AUTH_URI,
