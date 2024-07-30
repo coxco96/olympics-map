@@ -6,36 +6,12 @@
     let year = "All years (1896-2024)";
     let sportEvent = "All events";
 
-    // subscribe to store values
-    // $: {
-    //     // update local variables from stores
-    //     selectedSport.subscribe(value => {
-    //         sport = value // || "All sports"; // default to "All sports" if value is empty
-    //     });
-    //     selectedYear.subscribe(value => {
-    //         year = value || "All years (1896-2024)"; // Default to "All years" if value is empty
-    //         // automatically reset sport if it's not available for the new year
-    //         if (year !== "All years (1896-2024)" && !isSportAvailableForYear(sport, year)) {
-    //             sport = "All sports"; // reset to "All sports" if the current sport is not available for the selected year
-    //             selectedSport.set(sport); // update the store
-    //         }
-    //     });
-    //     selectedEvent.subscribe(value => {
-    //         sportEvent = value // || "All events"; // default to "All events" if value is empty
-    //     });
-    // }
-
     $: selectedYear.subscribe(value => year = value);
     $: selectedSport.subscribe(value => sport = value);
     $: selectedEvent.subscribe(value => sportEvent = value);
 
     function handleChange(event) {
         selectedSport.set(event.target.value); // update the store on change
-    }
-
-    function isSportAvailableForYear(sport, year) {
-        // check if the sport is available for the selected year
-        return eventsByYear[year] && eventsByYear[year][sport];
     }
 
     let relevantSports = [];
@@ -50,8 +26,6 @@
         }
     }
 </script>
-
-{sport}
 
 <select bind:value={sport} on:change={handleChange} class="form-select" name="Sport">
     {#each relevantSports as sport}
