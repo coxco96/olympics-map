@@ -12,9 +12,10 @@ export const nameExceptions = {
   'United States Virgin Islands': 'Not included in 1960 map, therefore will not show up except on table.',
   'West Indies Federation': 'Will not be included on map but will be in table.',
   'Netherlands Antilles': 'Will not be included on 1960 basemap.',
-  'Singapore': '1960 basemap doesnt include. Singapore gained independence in 1963 and briefly joined Malaysia, but Malaysia also competed... it broke away for independent sovereignty in 1965... but I dont have a basemap for between 1960 and 1994 so Singapore will not appear before 1994.',
-  'Bermuda': 'No Bermuda on the 1960 map, so it will not appear except in table.',
-  'Lithuania': 'Appears on 1960 map under USSR/Soviet Union, so it will not appear.'
+  'Singapore': '1960 and 1994 basemaps do not include. Singapore gained independence in 1963 and briefly joined Malaysia, but Malaysia also competed... it broke away for independent sovereignty in 1965... but I dont have a basemap for between 1960 and 1994 so Singapore will not appear before 1994.',
+  'Bermuda': 'No Bermuda on the 1960 or 1994 maps, so it will not appear except in table.',
+  'Lithuania': 'Appears on 1960 map under USSR/Soviet Union, so it will not appear.',
+
 }
 
 // turn data array into object with each country as key and 
