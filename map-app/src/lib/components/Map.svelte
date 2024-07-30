@@ -5,10 +5,8 @@
     import { onMount } from "svelte";
     import maplibregl from "maplibre-gl";
     import "maplibre-gl/dist/maplibre-gl.css";
-    // import {geojsons} from '$lib/geojsons/basemaps.js';
 
     // historic base maps
-    // import {world1880} from '$lib/geojsons/world-1880.js';
     import { world1880 } from "$lib/geojsons/world-1880.js";
     import { world1900 } from "$lib/geojsons/world-1900.js";
     import { world1914 } from "$lib/geojsons/world-1914.js";
@@ -118,8 +116,6 @@
     $: if (map && geojsons[baseMapYear]) {
         if (!isBaseMapFirstRun) {
             updateGeojsonSource();
-            // setFeatureStates();
-            // updatePaintProperties();
         }
         isBaseMapFirstRun = false;
     }

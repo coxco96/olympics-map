@@ -10,7 +10,7 @@
     $: {
         // update local variables from stores
         selectedSport.subscribe(value => {
-            sport = value || "All sports"; // default to "All sports" if value is empty
+            sport = value // || "All sports"; // default to "All sports" if value is empty
         });
         selectedYear.subscribe(value => {
             year = value || "All years (1896-2024)"; // Default to "All years" if value is empty
