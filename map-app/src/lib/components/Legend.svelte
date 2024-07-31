@@ -1,5 +1,20 @@
 <script>
     import { Container, Row, Col } from "@sveltestrap/sveltestrap";
+    import { makePaint } from "$lib/utils/exports.js";
+    import {pointsTotalStore} from '$lib/utils/stores.js'
+    let pointsTotalArr;
+
+
+    $: pointsTotalStore.subscribe((value) => (pointsTotalArr = value));
+    
+    // TODO: turn these into stores to avoid the repeated code from Map
+    import chroma from 'chroma-js';
+    $: breaks = chroma.limits(pointsTotalArr, "k", 4);
+    $: colorize = chroma
+        .scale("OrRd")
+        .domain(breaks)
+        .mode("lch")
+        .correctLightness();
 </script>
 
 <!-- 
@@ -21,15 +36,18 @@ One is the vertical gradient rectangle; the other contains the "Less" and "Most"
 
 <Container>
     <div class="legend-container">
-
-        <div class='first-row'>
-            <Row class='mb-2'>
-                <Col><div class='info-text'>Medal count is weighted by medal type.</div></Col>
+        <div class="first-row">
+            <Row class="mb-2">
+                <Col
+                    ><div class="info-text">
+                        Medal count is weighted by medal type.
+                    </div></Col
+                >
             </Row>
         </div>
 
         <div class="second-row">
-            <Row class='g-1 mb-1'>
+            <Row class="g-1 mb-1">
                 <Col xs={{ size: 3 }}>
                     <div class="no-medals-color"></div>
                 </Col>
@@ -38,11 +56,17 @@ One is the vertical gradient rectangle; the other contains the "Less" and "Most"
                 </Col>
             </Row>
         </div>
-        <div class='third-row'>
-            <Row class='g-1'>
-                <Col xs={{size: 2}}><div class='text gradient-text'>Least</div></Col>
-                <Col xs={{size: 8}}><div class='gradient-rectangle'></div></Col>
-                <Col xs={{size: 2}}><div class='text gradient-text'>Most</div></Col>
+        <div class="third-row">
+            <Row class="g-1">
+                <Col xs={{ size: 2 }}
+                    ><div class="text gradient-text">Least</div></Col
+                >
+                <Col xs={{ size: 8 }}
+                    ><div class="gradient-rectangle"></div></Col
+                >
+                <Col xs={{ size: 2 }}
+                    ><div class="text gradient-text">Most</div></Col
+                >
             </Row>
         </div>
     </div>
@@ -70,13 +94,18 @@ One is the vertical gradient rectangle; the other contains the "Less" and "Most"
         height: 100%;
         background-color: #ccc;
         /* TODO update opacity */
-        opacity: .5; 
+        opacity: 0.5;
         border: 1px solid #999;
     }
 
     .gradient-rectangle {
         width: 100%;
         height: 100%;
-        background: linear-gradient(to right,#92b3d1 0%, #92b3d2 30%, #010742 100%); 
+        background: linear-gradient(
+            to right,
+            #92b3d1 0%,
+            #92b3d2 30%,
+            #010742 100%
+        );
     }
 </style>

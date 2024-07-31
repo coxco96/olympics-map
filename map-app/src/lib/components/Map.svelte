@@ -8,8 +8,7 @@
     import chroma from "chroma-js";
 
     // map legend
-    import Legend from '$lib/components/Legend.svelte';
-    
+    import Legend from "$lib/components/Legend.svelte";
 
     // historic base maps
     import { world1880 } from "$lib/geojsons/world-1880.js";
@@ -39,13 +38,12 @@
 
     // getBaseMapYear, makePaint and makeTooltipString are functions
     // gameLocations is an object of host city locations by year
-    // olympicIconSvg is used for host city marker
 
     import {
         getBaseMapYear,
         makeTooltipString,
         gameLocations,
-        olympicIconSvg
+        makePaint
     } from "$lib/utils/exports.js";
 
     // import stores
@@ -68,6 +66,7 @@
         tooltipContent,
         filteredData,
         gameLocationMarker;
+
     let sourceIsLoaded = false;
     let isFeatureStateFirstRun = true;
     let isBaseMapFirstRun = true;
@@ -88,17 +87,16 @@
     filteredDataStore.subscribe((value) => (filteredData = value));
 
     $: pointsTotalStore.subscribe((value) => (pointsTotalArr = value));
-    $: console.log(pointsTotalArr)
+
     // just k-means clustering to get breaks for colors
-    $: breaks = chroma.limits(pointsTotalArr, 'k', 4);
+    $: breaks = chroma.limits(pointsTotalArr, "k", 4);
     $: colorize = chroma
-        .scale('OrRd')
+        .scale("Purples") // BuGn, BuPu, Blues
         .domain(breaks)
-        .mode('lch')
+        .mode("lch")
         .correctLightness();
 
     // $: console.log(colorize(5))
-
 
     $: maxPointsStore.subscribe((value) => (maxPoints = value));
 
@@ -133,11 +131,12 @@
         const style = document.createElement("style");
         style.innerHTML = `
                 .games-marker {
-                background-color: red;
+                background-color: #fcba03;
                 border-radius: 50%;
-                width: 10px;
-                height: 10px;
-                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.8)
+                border: 1px solid #dbd7d7;
+                width: 13px;
+                height: 13px;
+                box-shadow: 0 0 4px 1.5px #ccc;
                 }
             `;
         document.head.appendChild(style);
@@ -359,119 +358,65 @@
         }
     }
 
-function makePaint() {
-  console.log(breaks);
+    // function makePaint(breaks) {
+    //     // create array of objects with rbg string associated with each break point
+    //     const fillColorsArr = () => {
+    //         let rgbBreaks = [];
+    //         breaks.forEach((colorStop) => {
+    //             let thisColor = colorize(colorStop);
+    //             // make obj with maplibre-ready rgb string
+    //             let obj = {
+    //                 [colorStop]: `rgb(${thisColor["_rgb"][0].toString()}, ${thisColor["_rgb"][1].toString()}, ${thisColor["_rgb"][2].toString()})`,
+    //             };
+    //             rgbBreaks.push(obj);
+    //         });
+    //         return rgbBreaks;
+    //     };
 
+    //     let colors = fillColorsArr();
 
-  const fillColorString = () => {
-    let rgbBreaks = [];
-    breaks.forEach(colorStop => {
-        let thisColor = colorize(colorStop)
-        // make obj with maplibre-ready rgb string
-        let obj = {[colorStop]: `rgb(${thisColor['_rgb'][0].toString()}, ${thisColor['_rgb'][1].toString()}, ${thisColor['_rgb'][2].toString()})`};
-        rgbBreaks.push(obj)
-    })
-    return rgbBreaks;
-  }
+    //     colors.forEach((color) => {
+    //         const key = Object.keys(color)[0]; // this is the break number
+    //         const rgbString = color[key];
+    //         console.log(key, rgbString);
+    //     });
 
-  let colors2 = fillColorString();
+    //     // initialize the fill-color array
+    //     let fillColorArray = [];
 
-  colors2.forEach(color => {
-            const key = Object.keys(color)[0]; // this is the break number
-            const rgbString = color[key];
-            console.log(key, rgbString)
-        })
+    //     // add gradient color stops based on colors2
+    //     colors.forEach((color) => {
+    //         const key = parseInt(Object.keys(color)[0], 10); // Ensure key is an integer
+    //         const rgbString = color[key];
+    //         fillColorArray.push(key, rgbString);
+    //     });
 
-    // initialize the fill-color array
-    let fillColorArray = [];
-
-// add gradient color stops based on colors2
-colors2.forEach(color => {
-    const key = parseInt(Object.keys(color)[0], 10); // Ensure key is an integer
-    const rgbString = color[key];
-    fillColorArray.push(key, rgbString);
-});
-
-console.log(fillColorArray);
-
-const style = {
-    "fill-color": [
-      "case",
-      ["==", ["feature-state", "pointsTotal"], null],
-      "black", // black for undefined pointsTotal (debugging purposes)
-      ["==", ["feature-state", "pointsTotal"], 0],
-      "#ccc", // gray for pointsTotal = 0
-        [
-        "interpolate",
-        ["linear"],
-        ["feature-state", "pointsTotal"],
-        ...fillColorArray
-        ] 
-    ],
-    "fill-opacity": [
-      "case",
-      ["==", ["feature-state", "pointsTotal"], null],
-      0,
-      ["==", ["feature-state", "pointsTotal"], 0],
-      0.5,
-      1,
-    ]
-};
-
-console.log(style);
-return style;
-
-  let colors = ['#710025', '#8b0038', '#a20f4a', '#b52759', '#c83c68', '#db4e78', '#ee6088', '#fe749b', '#ff91b6', '#ffabd0', '#ffc4e8']
-//   return {
-
-//     "fill-color": [
-//       "case",
-//       ["==", ["feature-state", "pointsTotal"], null],
-//       "black", // black for undefined pointsTotal (debugging purposes)
-//       ["==", ["feature-state", "pointsTotal"], 0],
-//       "#ccc", // gray for pointsTotal = 0
-  
-//       // apply gradient based on pointsTotal
-//       [
-//         "interpolate",
-//         ["linear"],
-//         ["feature-state", "pointsTotal"],
-
-
-//         1,
-//         colors[9],
-//         maxPoints*.2,
-//         colors[8], 
-//         maxPoints*.3,
-//         colors[7], 
-//         maxPoints*.4,
-//         colors[6],
-//         maxPoints*.5,
-//         colors[5],
-//         maxPoints*.6,
-//         colors[4],
-//         maxPoints*.7,
-//         colors[3],
-//         maxPoints*.8,
-//         colors[2],
-//         maxPoints*.9,
-//         colors[1],
-//         maxPoints, 
-//         colors[0], // darkest color for max value
-//       ],
-//     ],
-//     "fill-opacity": [
-//       "case",
-//       ["==", ["feature-state", "pointsTotal"], null],
-//       0,
-//       ["==", ["feature-state", "pointsTotal"], 0],
-//       0.5,
-//       1,
-//     ],
-//   };
-}
-
-
+    //     // object to return as paint for styling
+    //     const style = {
+    //         "fill-color": [
+    //             "case",
+    //             ["==", ["feature-state", "pointsTotal"], null],
+    //             "black", // black for undefined pointsTotal (debugging purposes)
+    //             ["==", ["feature-state", "pointsTotal"], 0],
+    //             "#ccc", // gray for pointsTotal = 0
+    //             [
+    //                 "interpolate",
+    //                 ["linear"],
+    //                 ["feature-state", "pointsTotal"],
+    //                 ...fillColorArray,
+    //             ],
+    //         ],
+    //         "fill-opacity": [
+    //             "case",
+    //             ["==", ["feature-state", "pointsTotal"], null],
+    //             0,
+    //             ["==", ["feature-state", "pointsTotal"], 0],
+    //             0.5,
+    //             1,
+    //         ],
+    //     };
+    //     return style;
+    // }
 
     function addGeojsonLayer() {
         if (geojsons[baseMapYear]) {
@@ -479,7 +424,7 @@ return style;
                 id: geojsonLayerId,
                 type: "fill",
                 source: geojsonLayerId,
-                paint: makePaint(maxPoints, breaks),
+                paint: makePaint(colorize, breaks, false),
             });
         } else {
             console.log("error. no geojsons[year]");
@@ -519,7 +464,7 @@ return style;
 
     function updatePaintProperties() {
         if (map) {
-            let paintObj = makePaint(maxPoints, breaks);
+            let paintObj = makePaint(colorize, breaks, false);
             map.setPaintProperty(
                 geojsonLayerId,
                 "fill-color",
@@ -572,17 +517,14 @@ return style;
             return false;
         }
     }
-
 </script>
 
-<div class='map-container'>
+<div class="map-container">
     <div bind:this={container} id="map" />
     <Legend />
 </div>
 
-
 <style>
-
     #map {
         height: 100%;
         width: 100%;

@@ -49,14 +49,16 @@ export function convertData(data) {
 
 export function makeTooltipString(country, data, olympicTeam) {
   let goldMedalCount = 0;
-  let silverMedalCount = 0; 
+  let silverMedalCount = 0;
   let bronzeMedalCount = 0;
 
   data.forEach(d => {
-    let { medal } = d;
+    let {
+      medal
+    } = d;
     if (medal === 'Gold') {
       goldMedalCount++;
-    } 
+    }
     if (medal === 'Silver') {
       silverMedalCount++;
     }
@@ -64,95 +66,79 @@ export function makeTooltipString(country, data, olympicTeam) {
       bronzeMedalCount++;
     }
   })
-  let string = (olympicTeam == '' || olympicTeam == undefined) 
-  // second one if olympicTeam is specified,
-  // first one if not
-  ? `
+  let string = (olympicTeam == '' || olympicTeam == undefined)
+    // second one if olympicTeam is specified,
+    // first one if not
+    ?
+    `
   <strong>${country}</strong> <br>
   Gold Medals: ${goldMedalCount}<br>
   Silver Medals: ${silverMedalCount}<br>
   Bronze Medals: ${bronzeMedalCount}<br>
-  ` 
-  : `
+  ` :
+    `
   <strong>${country}</strong> <br>
   <strong>(Team ${olympicTeam})</strong><br>
   Gold Medals: ${goldMedalCount}<br>
   Silver Medals: ${silverMedalCount}<br>
   Bronze Medals: ${bronzeMedalCount}<br>
-  ` 
+  `
 
 
   return string;
 }
 
 
-export const makePaint = (maxPoints, breaks) => {
-  console.log(breaks);
+export function makePaint(colorize, breaks, isForLegend) {
 
-  let colors = ['#710025', '#8b0038', '#a20f4a', '#b52759', '#c83c68', '#db4e78', '#ee6088', '#fe749b', '#ff91b6', '#ffabd0', '#ffc4e8']
-  return {
-//     "fill-color": [
-//     "case",
-//     // Handle undefined pointsTotal
-//     ["==", ["feature-state", "pointsTotal"], null],
-//     "black", // black for undefined pointsTotal (debugging purposes)
+  // is isForLegend is true, return obj needed for legend styling rather than full paint object
+  if (isForLegend) {
+    console.log('for the legend')
+  }
+  // create array of objects with rbg string associated with each break point
+  const fillColorsArr = () => {
+    let rgbBreaks = [];
+    breaks.forEach((colorStop) => {
+      let thisColor = colorize(colorStop);
+      // make obj with maplibre-ready rgb string
+      let obj = {
+        [colorStop]: `rgb(${thisColor["_rgb"][0].toString()}, ${thisColor["_rgb"][1].toString()}, ${thisColor["_rgb"][2].toString()})`,
+      };
+      rgbBreaks.push(obj);
+    });
+    return rgbBreaks;
+  };
 
-//     // Handle pointsTotal = 0
-//     ["==", ["feature-state", "pointsTotal"], 0],
-//     "#ccc", // gray for pointsTotal = 0
+  let colors = fillColorsArr();
 
-//     // Apply gradient based on pointsTotal
-//     [
-//         "interpolate",
-//         ["linear"],
-//         ["feature-state", "pointsTotal"],
+  colors.forEach((color) => {
+    const key = Object.keys(color)[0]; // this is the break number
+    const rgbString = color[key];
+  });
 
-//         // Minimum value with color stops
-//         // 0, "#ccc",   // Light blue for minimum value
+  // initialize the fill-color array
+  let fillColorArray = [];
 
-//         // Intermediate color stops
-//         0.2 * maxPoints, "#d8dee6",
-//         0.4 * maxPoints, "#bed1e8",
-//         0.6 * maxPoints, "#69bdd6",
-//         0.8 * maxPoints, "#d1708bd",
+  // add gradient color stops based on colors2
+  colors.forEach((color) => {
+    const key = parseInt(Object.keys(color)[0], 10); // Ensure key is an integer
+    const rgbString = color[key];
+    fillColorArray.push(key, rgbString);
+  });
 
-//         // Maximum value with color stops
-//         maxPoints, "#07438c"    // Dark blue for maximum value
-//     ]
-// ],
-
+  // object to return as paint for styling
+  const style = {
     "fill-color": [
       "case",
       ["==", ["feature-state", "pointsTotal"], null],
       "black", // black for undefined pointsTotal (debugging purposes)
       ["==", ["feature-state", "pointsTotal"], 0],
       "#ccc", // gray for pointsTotal = 0
-  
-      // apply gradient based on pointsTotal
       [
         "interpolate",
         ["linear"],
         ["feature-state", "pointsTotal"],
-        1,
-        colors[9],
-        maxPoints*.2,
-        colors[8], 
-        maxPoints*.3,
-        colors[7], 
-        maxPoints*.4,
-        colors[6],
-        maxPoints*.5,
-        colors[5],
-        maxPoints*.6,
-        colors[4],
-        maxPoints*.7,
-        colors[3],
-        maxPoints*.8,
-        colors[2],
-        maxPoints*.9,
-        colors[1],
-        maxPoints, 
-        colors[0], // darkest color for max value
+        ...fillColorArray,
       ],
     ],
     "fill-opacity": [
@@ -164,6 +150,7 @@ export const makePaint = (maxPoints, breaks) => {
       1,
     ],
   };
+  return style;
 }
 
 
@@ -181,26 +168,26 @@ export function filterData(year, sport, sportEvent, initialData) {
   let filteredObj = {};
 
   for (let country in initialData) {
-      let countryData = initialData[country];
+    let countryData = initialData[country];
 
-      let filteredCountryData = countryData.filter(x => {
-          // check if all filters are set to "All" (i.e., no filtering)
-          if (year === 'All years (1896-2024)' && sport === 'All sports' && sportEvent === 'All events') {
-              return true; // return all data
-          }
-
-          // filtering based on year, sport, and sportEvent
-          let yearMatch = year === 'All years (1896-2024)' || x['year'] === year;
-          let sportMatch = sport === 'All sports' || x['sport'] === sport;
-          let eventMatch = sportEvent === 'All events' || x['sportEvent'] === sportEvent;
-
-          return yearMatch && sportMatch && eventMatch;
-      });
-
-
-      if (filteredCountryData.length > 0) {
-          filteredObj[country] = filteredCountryData;
+    let filteredCountryData = countryData.filter(x => {
+      // check if all filters are set to "All" (i.e., no filtering)
+      if (year === 'All years (1896-2024)' && sport === 'All sports' && sportEvent === 'All events') {
+        return true; // return all data
       }
+
+      // filtering based on year, sport, and sportEvent
+      let yearMatch = year === 'All years (1896-2024)' || x['year'] === year;
+      let sportMatch = sport === 'All sports' || x['sport'] === sport;
+      let eventMatch = sportEvent === 'All events' || x['sportEvent'] === sportEvent;
+
+      return yearMatch && sportMatch && eventMatch;
+    });
+
+
+    if (filteredCountryData.length > 0) {
+      filteredObj[country] = filteredCountryData;
+    }
   }
   return filteredObj;
 }
