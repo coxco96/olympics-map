@@ -5,7 +5,6 @@
     // components
     import Map from "$lib/components/Map.svelte";
     import Table from "$lib/components/Table.svelte";
-    import Filters from "$lib/components/Filters.svelte";
     import YearsFilter from "$lib/components/YearsFilter.svelte";
     import SportsFilter from "$lib/components/SportsFilter.svelte";
     import EventsFilter from "$lib/components/EventsFilter.svelte";
@@ -87,7 +86,7 @@
         if (mostPoints < 2) {
             mostPoints = 2;
         }
-        // pointsTotalArr = arr.sort();
+        pointsTotalArr = arr.sort((a,b)=> a-b); // sort lowest to highest
         pointsTotalStore.set(pointsTotalArr); // this is in case want to later use all  values to create statistical breaks in color gradient
         if (isFinite(mostPoints)) {
             maxPointsStore.set(mostPoints);
@@ -96,7 +95,6 @@
         }
 
         // let max = Math.max(...pointsTotalArr);
-        // console.log(max);
         // maxPointsStore.set(max);
     }
 

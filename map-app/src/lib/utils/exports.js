@@ -86,12 +86,45 @@ export function makeTooltipString(country, data, olympicTeam) {
 }
 
 
-export const makePaint = (maxPoints) => {
+export const makePaint = (maxPoints, breaks) => {
+  console.log(breaks);
+
+  let colors = ['#710025', '#8b0038', '#a20f4a', '#b52759', '#c83c68', '#db4e78', '#ee6088', '#fe749b', '#ff91b6', '#ffabd0', '#ffc4e8']
   return {
+//     "fill-color": [
+//     "case",
+//     // Handle undefined pointsTotal
+//     ["==", ["feature-state", "pointsTotal"], null],
+//     "black", // black for undefined pointsTotal (debugging purposes)
+
+//     // Handle pointsTotal = 0
+//     ["==", ["feature-state", "pointsTotal"], 0],
+//     "#ccc", // gray for pointsTotal = 0
+
+//     // Apply gradient based on pointsTotal
+//     [
+//         "interpolate",
+//         ["linear"],
+//         ["feature-state", "pointsTotal"],
+
+//         // Minimum value with color stops
+//         // 0, "#ccc",   // Light blue for minimum value
+
+//         // Intermediate color stops
+//         0.2 * maxPoints, "#d8dee6",
+//         0.4 * maxPoints, "#bed1e8",
+//         0.6 * maxPoints, "#69bdd6",
+//         0.8 * maxPoints, "#d1708bd",
+
+//         // Maximum value with color stops
+//         maxPoints, "#07438c"    // Dark blue for maximum value
+//     ]
+// ],
+
     "fill-color": [
       "case",
       ["==", ["feature-state", "pointsTotal"], null],
-      "black", // black for undefined pointsTotal
+      "black", // black for undefined pointsTotal (debugging purposes)
       ["==", ["feature-state", "pointsTotal"], 0],
       "#ccc", // gray for pointsTotal = 0
   
@@ -101,15 +134,31 @@ export const makePaint = (maxPoints) => {
         ["linear"],
         ["feature-state", "pointsTotal"],
         1,
-        "#92b3d1", // light blue for the minimum value
+        colors[9],
+        maxPoints*.2,
+        colors[8], 
+        maxPoints*.3,
+        colors[7], 
+        maxPoints*.4,
+        colors[6],
+        maxPoints*.5,
+        colors[5],
+        maxPoints*.6,
+        colors[4],
+        maxPoints*.7,
+        colors[3],
+        maxPoints*.8,
+        colors[2],
+        maxPoints*.9,
+        colors[1],
         maxPoints, 
-        "#010742", // dark blue for the maximum value
+        colors[0], // darkest color for max value
       ],
     ],
     "fill-opacity": [
       "case",
       ["==", ["feature-state", "pointsTotal"], null],
-      0.2,
+      0,
       ["==", ["feature-state", "pointsTotal"], 0],
       0.5,
       1,
@@ -315,7 +364,7 @@ export const gameLocations = {
   }
 }
 
-
+export const olympicIconSvg = '<svg viewBox="-34 -12 68 33" width="1020" height="495" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><clipPath id="interlace"><path d="M -11,-11 h 22 v 22 h -22 z M 11,-1.5 a 10.5,10.5 0 0,0 0,21 v -3 a 7.5,7.5 0 1,1 0,-15 M -11,1.5 a 7.5,7.5 0 1,1 0,15 v 3 a 10.5,10.5 0 0,0 0,-21 z" clip-rule="evenodd"/></clipPath><clipPath id="interlace_Firefox"><!-- Firefox workaround --><path d="M 0,0 l -12,12 h 12 z"/></clipPath><g id="ring"><circle r="9" clip-path="url(#interlace)"/><circle r="9" clip-path="url(#interlace_Firefox)"/><!-- Firefox workaround --><path d="M 0,-9 a 9,9 0 0,1 9,9" transform="rotate(45)"/></g></defs><g fill="none" stroke-width="2"><g stroke="#0085c7" transform="translate(-22,0)"><use xlink:href="#ring"/><path d="M 0,-9 a 9,9 0 0,0 0,18"/></g><use xlink:href="#ring" stroke="black"/><g stroke="#df0024" transform="translate(22,0)"><use xlink:href="#ring"/><path d="M 0,-9 a 9,9 0 0,1 0,18"/></g><use xlink:href="#ring" stroke="#f4c300" transform="translate(-11,9) rotate(180)"/><use xlink:href="#ring" stroke="#009f3d" transform="translate(11,9) rotate(180)"/></g></svg>'
 
 export const baseMapYears = [1880, 1900, 1914, 1920, 1938, 1945, 1960, 1994, 2000];
 

@@ -2,9 +2,14 @@
     /* IMPORTS AND EXPORT */
 
     // dev stuff
-    import { onMount, onDestroy } from "svelte";
+    import { onMount } from "svelte";
     import maplibregl from "maplibre-gl";
     import "maplibre-gl/dist/maplibre-gl.css";
+    import chroma from "chroma-js";
+
+    // map legend
+    import Legend from '$lib/components/Legend.svelte';
+    
 
     // historic base maps
     import { world1880 } from "$lib/geojsons/world-1880.js";
@@ -32,12 +37,15 @@
         2000: world2000,
     };
 
-    // function to get baseMapYear and paint obj for data styling
+    // getBaseMapYear, makePaint and makeTooltipString are functions
+    // gameLocations is an object of host city locations by year
+    // olympicIconSvg is used for host city marker
+
     import {
         getBaseMapYear,
-        makePaint,
         makeTooltipString,
         gameLocations,
+        olympicIconSvg
     } from "$lib/utils/exports.js";
 
     // import stores
@@ -46,7 +54,7 @@
         selectedSport,
         selectedEvent,
         filteredDataStore,
-        // pointsTotalStore,
+        pointsTotalStore,
         maxPointsStore,
     } from "$lib/utils/stores.js";
 
@@ -66,7 +74,7 @@
     let isMarkerHovered = false; // used to keep feature tooltip from appearing if mouse is over gameLocationMarker
     let geojsonLayerId = "geojson-layer";
     let hoverLayerId = "hover-layer";
-    // let pointsTotalArr
+    let pointsTotalArr = [];
     let maxPoints;
 
     /* SUBSCRIBE TO STORES FOR DATA FILTERING */
@@ -79,7 +87,18 @@
     selectedEvent.subscribe((value) => (sportEvent = value || "All events"));
     filteredDataStore.subscribe((value) => (filteredData = value));
 
-    // $: pointsTotalStore.subscribe((value) => (pointsTotalArr = value));
+    $: pointsTotalStore.subscribe((value) => (pointsTotalArr = value));
+    $: console.log(pointsTotalArr)
+    // just k-means clustering to get breaks for colors
+    $: breaks = chroma.limits(pointsTotalArr, 'k', 4);
+    $: colorize = chroma
+        .scale('OrRd')
+        .domain(breaks)
+        .mode('lch')
+        .correctLightness();
+
+    // $: console.log(colorize(5))
+
 
     $: maxPointsStore.subscribe((value) => (maxPoints = value));
 
@@ -114,10 +133,11 @@
         const style = document.createElement("style");
         style.innerHTML = `
                 .games-marker {
-                background-color: yellow;
+                background-color: red;
                 border-radius: 50%;
-                width: 15px;
-                height: 15px;
+                width: 10px;
+                height: 10px;
+                box-shadow: 0 0 10px 2px rgba(255, 0, 0, 0.8)
                 }
             `;
         document.head.appendChild(style);
@@ -339,13 +359,127 @@
         }
     }
 
+function makePaint() {
+  console.log(breaks);
+
+
+  const fillColorString = () => {
+    let rgbBreaks = [];
+    breaks.forEach(colorStop => {
+        let thisColor = colorize(colorStop)
+        // make obj with maplibre-ready rgb string
+        let obj = {[colorStop]: `rgb(${thisColor['_rgb'][0].toString()}, ${thisColor['_rgb'][1].toString()}, ${thisColor['_rgb'][2].toString()})`};
+        rgbBreaks.push(obj)
+    })
+    return rgbBreaks;
+  }
+
+  let colors2 = fillColorString();
+
+  colors2.forEach(color => {
+            const key = Object.keys(color)[0]; // this is the break number
+            const rgbString = color[key];
+            console.log(key, rgbString)
+        })
+
+    // initialize the fill-color array
+    let fillColorArray = [];
+
+// add gradient color stops based on colors2
+colors2.forEach(color => {
+    const key = parseInt(Object.keys(color)[0], 10); // Ensure key is an integer
+    const rgbString = color[key];
+    fillColorArray.push(key, rgbString);
+});
+
+console.log(fillColorArray);
+
+const style = {
+    "fill-color": [
+      "case",
+      ["==", ["feature-state", "pointsTotal"], null],
+      "black", // black for undefined pointsTotal (debugging purposes)
+      ["==", ["feature-state", "pointsTotal"], 0],
+      "#ccc", // gray for pointsTotal = 0
+        [
+        "interpolate",
+        ["linear"],
+        ["feature-state", "pointsTotal"],
+        ...fillColorArray
+        ] 
+    ],
+    "fill-opacity": [
+      "case",
+      ["==", ["feature-state", "pointsTotal"], null],
+      0,
+      ["==", ["feature-state", "pointsTotal"], 0],
+      0.5,
+      1,
+    ]
+};
+
+console.log(style);
+return style;
+
+  let colors = ['#710025', '#8b0038', '#a20f4a', '#b52759', '#c83c68', '#db4e78', '#ee6088', '#fe749b', '#ff91b6', '#ffabd0', '#ffc4e8']
+//   return {
+
+//     "fill-color": [
+//       "case",
+//       ["==", ["feature-state", "pointsTotal"], null],
+//       "black", // black for undefined pointsTotal (debugging purposes)
+//       ["==", ["feature-state", "pointsTotal"], 0],
+//       "#ccc", // gray for pointsTotal = 0
+  
+//       // apply gradient based on pointsTotal
+//       [
+//         "interpolate",
+//         ["linear"],
+//         ["feature-state", "pointsTotal"],
+
+
+//         1,
+//         colors[9],
+//         maxPoints*.2,
+//         colors[8], 
+//         maxPoints*.3,
+//         colors[7], 
+//         maxPoints*.4,
+//         colors[6],
+//         maxPoints*.5,
+//         colors[5],
+//         maxPoints*.6,
+//         colors[4],
+//         maxPoints*.7,
+//         colors[3],
+//         maxPoints*.8,
+//         colors[2],
+//         maxPoints*.9,
+//         colors[1],
+//         maxPoints, 
+//         colors[0], // darkest color for max value
+//       ],
+//     ],
+//     "fill-opacity": [
+//       "case",
+//       ["==", ["feature-state", "pointsTotal"], null],
+//       0,
+//       ["==", ["feature-state", "pointsTotal"], 0],
+//       0.5,
+//       1,
+//     ],
+//   };
+}
+
+
+
     function addGeojsonLayer() {
         if (geojsons[baseMapYear]) {
             map.addLayer({
                 id: geojsonLayerId,
                 type: "fill",
                 source: geojsonLayerId,
-                paint: makePaint(maxPoints),
+                paint: makePaint(maxPoints, breaks),
             });
         } else {
             console.log("error. no geojsons[year]");
@@ -385,7 +519,7 @@
 
     function updatePaintProperties() {
         if (map) {
-            let paintObj = makePaint(maxPoints);
+            let paintObj = makePaint(maxPoints, breaks);
             map.setPaintProperty(
                 geojsonLayerId,
                 "fill-color",
@@ -438,13 +572,25 @@
             return false;
         }
     }
+
 </script>
 
-<div bind:this={container} id="map" />
+<div class='map-container'>
+    <div bind:this={container} id="map" />
+    <Legend />
+</div>
+
 
 <style>
-    /* TODO: make pointer just regular unless over a country */
+
     #map {
+        height: 100%;
+        width: 100%;
+        /* background: linear-gradient(to right, #1d2671, #c33764); */
+    }
+
+    .map-container {
+        position: relative;
         height: 600px;
         width: 100%;
     }
