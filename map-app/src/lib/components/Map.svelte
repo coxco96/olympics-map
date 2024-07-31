@@ -230,7 +230,7 @@
             source: geojsonLayerId,
             paint: {
                 "line-color": "white",
-                "line-width": 2,
+                "line-width": 1.5,
             },
             filter: ["==", "NAME", ""], // initially set to no country
         });
@@ -474,5 +474,6 @@
         position: relative;
         height: 600px;
         width: 100%;
+        /* background-color: white; */
     }
 </style>

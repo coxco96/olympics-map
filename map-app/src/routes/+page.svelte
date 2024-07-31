@@ -108,7 +108,7 @@
         <Row>
             <Col md="8">
                 <h1 class="display-4">Olympic Medal Counts</h1>
-                <p class='lead' style='font-weight: 400; font-size:1rem; margin-bottom: .6rem;'>Designed and developed by Courtney Cox | <a href='https://www.mapcourt.com' target='_blank'>mapcourt.com</a></p>
+                <p class='lead' style='font-weight: 450; font-size:1rem; margin-bottom: .6rem;'>Designed and developed by Courtney Cox | <a href='https://www.mapcourt.com' target='_blank'>mapcourt.com</a></p>
                 <p class="lead" >Hover over the map for detailed information, and use filters to customize your view.</p>
             </Col>
 
@@ -153,15 +153,29 @@
         </Row>
 
 
-        <Row>
-            <footer class="mt-2 footer">
+        <Row class='d-flex justify-content-end'>
+            <div class="mt-3 right-align-container">
                 <p>Sources: Olympedia (1896-2023 Games); Olympic Games (2024 Games); @aourednik via Github (historic basemaps).</p>
-            </footer>
+            </div>
         </Row>
     </Container>
 </main>
 
 <style>
+
+.right-align-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    h1, p {
+        color: rgb(250, 250, 250);
+    }
+
+    a {
+        color:rgb(138, 247, 255);
+    }
+
     /* .map-table-toggle {
         border-left: solid 1px black;
         margin-left: 20px;

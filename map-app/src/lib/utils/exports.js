@@ -111,11 +111,6 @@ export function makePaint(colorize, breaks, isForLegend) {
 
   let colors = fillColorsArr();
 
-  colors.forEach((color) => {
-    const key = Object.keys(color)[0]; // this is the break number
-    const rgbString = color[key];
-  });
-
   // initialize the fill-color array
   let fillColorArray = [];
 
@@ -128,12 +123,13 @@ export function makePaint(colorize, breaks, isForLegend) {
 
   // object to return as paint for styling
   const style = {
+    "fill-outline-color": "white",
     "fill-color": [
       "case",
       ["==", ["feature-state", "pointsTotal"], null],
       "black", // black for undefined pointsTotal (debugging purposes)
       ["==", ["feature-state", "pointsTotal"], 0],
-      "#ccc", // gray for pointsTotal = 0
+      "#242222", // gray for pointsTotal = 0
       [
         "interpolate",
         ["linear"],
@@ -146,7 +142,7 @@ export function makePaint(colorize, breaks, isForLegend) {
       ["==", ["feature-state", "pointsTotal"], null],
       0,
       ["==", ["feature-state", "pointsTotal"], 0],
-      0.5,
+      .1,
       1,
     ],
   };
