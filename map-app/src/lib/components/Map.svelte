@@ -211,7 +211,6 @@
             renderWorldCopies: false,
         });
 
-        // console.log(gameLocations[Number(year)].latlon);
 
         map.getCanvas().style.cursor = "auto";
 
@@ -241,7 +240,7 @@
 
             // set bounds of map after it's been loaded
             const bounds = [
-                [-180, -79],
+                [-180, -75],
                 [180, 85],
             ]; // exclude antarctica
             map.fitBounds(bounds);

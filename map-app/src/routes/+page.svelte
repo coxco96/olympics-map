@@ -8,7 +8,7 @@
     import YearsFilter from "$lib/components/YearsFilter.svelte";
     import SportsFilter from "$lib/components/SportsFilter.svelte";
     import EventsFilter from "$lib/components/EventsFilter.svelte";
-    import { Container, Col, Row, InputGroup } from "@sveltestrap/sveltestrap";
+    import { Container, Col, Row, Button } from "@sveltestrap/sveltestrap";
 
     // function to convert data into object
     import { convertData, filterData } from "../lib/utils/exports.js";
@@ -104,7 +104,7 @@
 </script>
 
 <main>
-    <Container class="mt-5">
+    <Container class="mt-2">
         <Row>
             <Col md="8">
                 <h1 class="display-4">Olympic Medal Counts</h1>
@@ -117,29 +117,34 @@
         <Row class="mb-3">
             <!-- TODO: check form accessibility here -->
 
-            <Col>
-                    <InputGroup>
-                        <Col>
+                     
+                        <Col xs={{size: 3}}>
                             <YearsFilter />
                         </Col>
-                    
-                        <Col style='margin-right: 5px; margin-left: 5px;'>
+                        <Col xs={{size: 2}}>
                             <SportsFilter />
                         </Col>
-                        <Col>
+                        <Col xs={{size: 2}}>
                             <EventsFilter />
                         </Col>
-                    </InputGroup>
+                
+                        <Col xs={{size: 3}}>
+                            <Button color='dark' on:click={toggleView}>
+                                <div class='map-table-toggle'>
+                                    {tableView ? "View as map" : "View as table"}
+                                </div>     
+                            </Button>
+                        </Col>
 
-                    <Row class="mt-3">
+                    <!-- <Row class="mt-3">
                         <Col>
                             <button class="map-table-toggle" on:click={toggleView}>
                                 {tableView ? "View as map" : "View as table"}
                             </button>
                         </Col>
-                    </Row>
+                    </Row> -->
                 
-            </Col>
+            <!-- </Col> -->
         </Row>
 
         <Row>
@@ -169,7 +174,11 @@
     }
 
     h1, p {
-        color: rgb(250, 250, 250);
+        color: #FFFAFA
+    }
+
+    h1 {
+        font-weight: 600;
     }
 
     a {
