@@ -2,7 +2,7 @@
     /* IMPORTS AND EXPORT */
 
     // dev stuff
-    import { onMount } from "svelte";
+    import { onMount, onDestroy } from "svelte";
     import maplibregl from "maplibre-gl";
     import "maplibre-gl/dist/maplibre-gl.css";
 
@@ -37,6 +37,7 @@
         getBaseMapYear,
         makePaint,
         makeTooltipString,
+        gameLocations,
     } from "$lib/utils/exports.js";
 
     // import stores
@@ -51,9 +52,15 @@
 
     /* PREDECLARE NECESSARY VARIABLES */
 
-    let year, sport, sportEvent, container, map, tooltipContent, filteredData;
+    let year,
+        sport,
+        sportEvent,
+        container,
+        map,
+        tooltipContent,
+        filteredData,
+        gameLocationMarker;
     let sourceIsLoaded = false;
-    // to avoid running reactive statements on initial load
     let isFeatureStateFirstRun = true;
     let isBaseMapFirstRun = true;
     let geojsonLayerId = "geojson-layer";
@@ -85,21 +92,35 @@
         isFirstPaint = false;
     }
 
-    function updatePaintProperties() {
-        if (map) {
-            let paintObj = makePaint(maxPoints);
-            map.setPaintProperty(
-                geojsonLayerId,
-                "fill-color",
-                paintObj["fill-color"],
-            );
-            map.setPaintProperty(
-                geojsonLayerId,
-                "fill-opacity",
-                paintObj["fill-opacity"],
-            );
+    $: mapExists = map ? true : false; // used below to ensure marker isn't added to non-existent map (which causes error)
+
+    // if a game location is available for current year, 
+    // put a marker on the location of the games
+    $: if (mapExists && gameLocations[Number(year)]) {
+            if (gameLocationMarker) {
+                gameLocationMarker.remove();
+            }
+            gameLocationMarker = new maplibregl.Marker({
+                element: createMarker(),
+            })
+                .setLngLat([
+                    gameLocations[Number(year)].latlon[1],
+                    gameLocations[Number(year)].latlon[0],
+                ])
+                .addTo(map);
+
+            // style the marker as a yellow circle (for now!)
+            const style = document.createElement("style");
+            style.innerHTML = `
+                .games-marker {
+                background-color: yellow;
+                border-radius: 50%;
+                width: 15px;
+                height: 15px;
+                }
+            `;
+            document.head.appendChild(style);
         }
-    }
 
     /* DISPLAY CORRECT HISTORIC BASE MAP BASED ON YEAR */
 
@@ -135,20 +156,15 @@
     /* INITIALIZE MAP, SOURCE, LAYER AND FEATURE-STATES ON INITIAL COMPONENT MOUNT */
 
     onMount(async () => {
-
         /* INITIALIZE MAP */
         map = new maplibregl.Map({
             container: container, // binded
-            // center: [0, 0],
-            // zoom: 5,
             dragRotate: false,
             renderWorldCopies: false,
-            // scrollZoom: false, // prevent accidental zooming
-            
-
-            // projection: 'globe'
-            // customAttribution: 'hey!!!!'
         });
+
+        // console.log(gameLocations[Number(year)].latlon);
+        
 
         map.getCanvas().style.cursor = "auto";
 
@@ -174,8 +190,15 @@
 
         // once source and layer have been added:
         map.on("load", () => {
-            const bounds = [[-180, -79], [180, 85]] // exclude antarctica
-            map.fitBounds(bounds)
+            // add marker after map is loaded
+
+            initializeMarker();
+            // set bounds of map after it's been loaded
+            const bounds = [
+                [-180, -79],
+                [180, 85],
+            ]; // exclude antarctica
+            map.fitBounds(bounds);
 
             // if source is loaded, loop through each feature to setFeatureStates
             sourceIsLoaded = isSourceLoaded() ? true : false;
@@ -192,9 +215,9 @@
             closeOnClick: false,
         });
 
-        map.on('mouseenter', geojsonLayerId, () => {
+        map.on("mouseenter", geojsonLayerId, () => {
             isZoomable = true;
-        })
+        });
 
         // on mousemove, display tooltip
         map.on("mousemove", geojsonLayerId, (e) => {
@@ -247,15 +270,34 @@
             map.setFilter("hover-layer", ["==", "NAME", ""]);
         });
 
-        map.on('wheel', (e) => {
+        map.on("wheel", (e) => {
             if (!isZoomable) {
                 e.preventDefault(); // prevent zooming except on features
             }
-        })
-
+        });
     }); // end onMount
 
+
+
     /* FUNCTIONS */
+
+    function initializeMarker() {
+        if (gameLocations[Number(year)]) {
+            if (gameLocationMarker) {
+                gameLocationMarker.remove();
+            }
+            if (map) { // ensure map is initialized
+                gameLocationMarker = new maplibregl.Marker({
+                    element: createMarker(),
+                })
+                    .setLngLat([
+                        gameLocations[Number(year)].latlon[1],
+                        gameLocations[Number(year)].latlon[0],
+                    ])
+                    .addTo(map);
+            }
+        }
+    }
 
     function addGeojsonSource() {
         if (geojsons[baseMapYear]) {
@@ -299,6 +341,13 @@
         }
     }
 
+    // create yellow circle marker to mark games location
+    function createMarker() {
+        const markerElement = document.createElement("div");
+        markerElement.className = "games-marker";
+        return markerElement;
+    }
+
     function setFeatureStates() {
         if (map) {
             // intialize for features iteration
@@ -320,6 +369,22 @@
                     { pointsTotal: pointsTotal },
                 );
             });
+        }
+    }
+
+    function updatePaintProperties() {
+        if (map) {
+            let paintObj = makePaint(maxPoints);
+            map.setPaintProperty(
+                geojsonLayerId,
+                "fill-color",
+                paintObj["fill-color"],
+            );
+            map.setPaintProperty(
+                geojsonLayerId,
+                "fill-opacity",
+                paintObj["fill-opacity"],
+            );
         }
     }
 

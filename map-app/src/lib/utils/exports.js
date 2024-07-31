@@ -156,6 +156,164 @@ export function filterData(year, sport, sportEvent, initialData) {
   return filteredObj;
 }
 
+export const gameLocations = {
+  "1896": {
+    "location": "Athens, Greece",
+    "latlon": [37.9838096, 23.7275388]
+  },
+  "1900": {
+    "location": "Paris, France",
+    "latlon": [48.8575475, 2.3513765]
+  },
+  "1904": {
+    "location": "St. Louis",
+    "latlon": [38.6270025, -90.1994041999999]
+  },
+  "1908": {
+    "location": "London",
+    "latlon": [51.5072178, -0.1275862]
+  },
+  "1912": {
+    "location": "Stockholm",
+    "latlon": [59.3293234999999, 18.0685808]
+  },
+  "1920": {
+    "location": "Antwerp",
+    "latlon": [51.2213404, 4.4051485]
+  },
+  "1924": {
+    "location": "Paris",
+    "latlon": [48.8575475, 2.3513765]
+  },
+  "1928": {
+    "location": "Amsterdam",
+    "latlon": [52.3675734, 4.9041389]
+  },
+  "1932": {
+    "location": "Los Angeles",
+    "latlon": [34.0549076, -118.242643]
+  },
+  "1934": {
+    "location": "Tokyo",
+    "latlon": [35.6764225, 139.650027]
+  },
+  "1936": {
+    "location": "Berlin",
+    "latlon": [52.5200065999999, 13.404954]
+  },
+  "1948": {
+    "location": "London",
+    "latlon": [51.5072178, -0.1275862]
+  },
+  "1952": {
+    "location": "Helsinki",
+    "latlon": [60.1698556999999, 24.938379]
+  },
+  "1956": {
+    "location": "Melbourne",
+    "latlon": [-37.8136276, 144.9630576]
+  },
+  "1960": {
+    "location": "Rome",
+    "latlon": [41.8967068, 12.4822025]
+  },
+  "1964": {
+    "location": "Tokyo",
+    "latlon": [35.6764225, 139.650027]
+  },
+  "1968": {
+    "location": "Mexico City",
+    "latlon": [19.4326077, -99.133208]
+  },
+  "1972": {
+    "location": "Munich",
+    "latlon": [48.1351253, 11.5819806]
+  },
+  "1976": {
+    "location": "Montreal",
+    "latlon": [45.5018869, -73.5673918999999]
+  },
+  "1980": {
+    "location": "Moscow",
+    "latlon": [55.755826, 37.6173]
+  },
+  "1984": {
+    "location": "Los Angeles",
+    "latlon": [34.0549076, -118.242643]
+  },
+  "1988": {
+    "location": "Seoul",
+    "latlon": [37.550263, 126.9970831]
+  },
+  "1992": {
+    "location": "Barcelona",
+    "latlon": [41.3873974, 2.168568]
+  },
+  "1994": {
+    "location": "Lillehammer",
+    "latlon": [61.1152713, 10.4662306]
+  },
+  "1996": {
+    "location": "Atlanta",
+    "latlon": [33.748752, -84.3876844999999]
+  },
+  "1998": {
+    "location": "Nagano",
+    "latlon": [36.6485258, 138.1950371]
+  },
+  "2000": {
+    "location": "Sydney",
+    "latlon": [-33.8688197, 151.2092955]
+  },
+  "2002": {
+    "location": "Salt Lake City",
+    "latlon": [40.7607793, -111.8910474]
+  },
+  "2004": {
+    "location": "Athens",
+    "latlon": [37.9838096, 23.7275388]
+  },
+  "2006": {
+    "location": "Turin",
+    "latlon": [45.0703155, 7.6868552]
+  },
+  "2008": {
+    "location": "Beijing",
+    "latlon": [39.904211, 116.407395]
+  },
+  "2010": {
+    "location": "Vancouver",
+    "latlon": [49.2827291, -123.1207375]
+  },
+  "2012": {
+    "location": "London",
+    "latlon": [51.5072178, -0.1275862]
+  },
+  "2014": {
+    "location": "Sochi",
+    "latlon": [43.6028078999999, 39.7341543]
+  },
+  "2016": {
+    "location": "Rio de Janeiro",
+    "latlon": [-22.9068467, -43.1728965]
+  },
+  "2018": {
+    "location": "Pyeongchang",
+    "latlon": [37.3677068, 128.3954442]
+  },
+  "2020": {
+    "location": "Tokyo",
+    "latlon": [35.6764225, 139.650027]
+  },
+  "2022": {
+    "location": "Beijing",
+    "latlon": [39.904211, 116.407395]
+  },
+  "2024": {
+    "location": "Paris",
+    "latlon": [48.8575475, 2.3513765]
+  }
+}
 
 
 
