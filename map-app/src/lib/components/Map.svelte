@@ -122,6 +122,12 @@
             document.head.appendChild(style);
         }
 
+        // if there is a gameLocationMarker map on the map, but the year
+        // changes to one that should not have a marker, remove the marker
+        $: if (mapExists && gameLocationMarker && !gameLocations[Number(year)]) {
+            gameLocationMarker.remove();
+        }
+
     /* DISPLAY CORRECT HISTORIC BASE MAP BASED ON YEAR */
 
     // get numeric form of year
@@ -192,7 +198,6 @@
         map.on("load", () => {
             // add marker after map is loaded
 
-            initializeMarker();
             // set bounds of map after it's been loaded
             const bounds = [
                 [-180, -79],
@@ -280,24 +285,6 @@
 
 
     /* FUNCTIONS */
-
-    function initializeMarker() {
-        if (gameLocations[Number(year)]) {
-            if (gameLocationMarker) {
-                gameLocationMarker.remove();
-            }
-            if (map) { // ensure map is initialized
-                gameLocationMarker = new maplibregl.Marker({
-                    element: createMarker(),
-                })
-                    .setLngLat([
-                        gameLocations[Number(year)].latlon[1],
-                        gameLocations[Number(year)].latlon[0],
-                    ])
-                    .addTo(map);
-            }
-        }
-    }
 
     function addGeojsonSource() {
         if (geojsons[baseMapYear]) {
