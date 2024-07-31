@@ -114,21 +114,21 @@
 
 
         </Row>
-        <Row class="mb-3">
+        <Row class="mb-3 g-2">
             <!-- TODO: check form accessibility here -->
 
                      
-                        <Col xs={{size: 3}}>
+                        <Col xs={{size: 6}} lg={{size: 3}}>
                             <YearsFilter />
                         </Col>
-                        <Col xs={{size: 2}}>
+                        <Col xs={{size: 6}} lg={{size: 2}}>
                             <SportsFilter />
                         </Col>
-                        <Col xs={{size: 2}}>
+                        <Col xs={{size: 6}} lg={{size: 2}}>
                             <EventsFilter />
                         </Col>
                 
-                        <Col xs={{size: 3}}>
+                        <Col xs={{size: 6}} lg={{size: 3}}>
                             <Button color='dark' on:click={toggleView}>
                                 <div class='map-table-toggle'>
                                     {tableView ? "View as map" : "View as table"}
