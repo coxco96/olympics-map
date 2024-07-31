@@ -88,15 +88,14 @@
 
     $: pointsTotalStore.subscribe((value) => (pointsTotalArr = value));
 
-    // just k-means clustering to get breaks for colors
+    // just k-means clustering to get breaks for colors using chroma
     $: breaks = chroma.limits(pointsTotalArr, "k", 4);
     $: colorize = chroma
-        .scale("Purples") // BuGn, BuPu, Blues
+        .scale("Purples") 
         .domain(breaks)
         .mode("lch")
         .correctLightness();
 
-    // $: console.log(colorize(5))
 
     $: maxPointsStore.subscribe((value) => (maxPoints = value));
 
@@ -358,66 +357,6 @@
         }
     }
 
-    // function makePaint(breaks) {
-    //     // create array of objects with rbg string associated with each break point
-    //     const fillColorsArr = () => {
-    //         let rgbBreaks = [];
-    //         breaks.forEach((colorStop) => {
-    //             let thisColor = colorize(colorStop);
-    //             // make obj with maplibre-ready rgb string
-    //             let obj = {
-    //                 [colorStop]: `rgb(${thisColor["_rgb"][0].toString()}, ${thisColor["_rgb"][1].toString()}, ${thisColor["_rgb"][2].toString()})`,
-    //             };
-    //             rgbBreaks.push(obj);
-    //         });
-    //         return rgbBreaks;
-    //     };
-
-    //     let colors = fillColorsArr();
-
-    //     colors.forEach((color) => {
-    //         const key = Object.keys(color)[0]; // this is the break number
-    //         const rgbString = color[key];
-    //         console.log(key, rgbString);
-    //     });
-
-    //     // initialize the fill-color array
-    //     let fillColorArray = [];
-
-    //     // add gradient color stops based on colors2
-    //     colors.forEach((color) => {
-    //         const key = parseInt(Object.keys(color)[0], 10); // Ensure key is an integer
-    //         const rgbString = color[key];
-    //         fillColorArray.push(key, rgbString);
-    //     });
-
-    //     // object to return as paint for styling
-    //     const style = {
-    //         "fill-color": [
-    //             "case",
-    //             ["==", ["feature-state", "pointsTotal"], null],
-    //             "black", // black for undefined pointsTotal (debugging purposes)
-    //             ["==", ["feature-state", "pointsTotal"], 0],
-    //             "#ccc", // gray for pointsTotal = 0
-    //             [
-    //                 "interpolate",
-    //                 ["linear"],
-    //                 ["feature-state", "pointsTotal"],
-    //                 ...fillColorArray,
-    //             ],
-    //         ],
-    //         "fill-opacity": [
-    //             "case",
-    //             ["==", ["feature-state", "pointsTotal"], null],
-    //             0,
-    //             ["==", ["feature-state", "pointsTotal"], 0],
-    //             0.5,
-    //             1,
-    //         ],
-    //     };
-    //     return style;
-    // }
-
     function addGeojsonLayer() {
         if (geojsons[baseMapYear]) {
             map.addLayer({
@@ -521,7 +460,7 @@
 
 <div class="map-container">
     <div bind:this={container} id="map" />
-    <Legend />
+    <!-- <Legend /> -->
 </div>
 
 <style>

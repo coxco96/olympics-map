@@ -93,9 +93,6 @@
         } else {
             console.log("error: mostPoints was not finite...", mostPoints);
         }
-
-        // let max = Math.max(...pointsTotalArr);
-        // maxPointsStore.set(max);
     }
 
     // TODO: default to tableView for screen reader devices (and possibly mobile?)
@@ -154,12 +151,13 @@
                 {/if}
             </Col>
         </Row>
-        <!-- <Row>
+
+
+        <Row>
             <footer class="mt-2 footer">
-                
-                Designed and developed by <a href='https://www.mapcourt.com' target=_blank>Courtney Cox</a>
+                <p>Sources: Olympedia (1896-2023 Games); Olympic Games (2024 Games); @aourednik via Github (historic basemaps).</p>
             </footer>
-        </Row> -->
+        </Row>
     </Container>
 </main>
 
