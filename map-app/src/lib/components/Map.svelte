@@ -63,6 +63,7 @@
     let sourceIsLoaded = false;
     let isFeatureStateFirstRun = true;
     let isBaseMapFirstRun = true;
+    let isMarkerHovered = false; // used to keep feature tooltip from appearing if mouse is over gameLocationMarker
     let geojsonLayerId = "geojson-layer";
     let hoverLayerId = "hover-layer";
     // let pointsTotalArr
@@ -94,24 +95,24 @@
 
     $: mapExists = map ? true : false; // used below to ensure marker isn't added to non-existent map (which causes error)
 
-    // if a game location is available for current year, 
+    // if a game location is available for current year,
     // put a marker on the location of the games
     $: if (mapExists && gameLocations[Number(year)]) {
-            if (gameLocationMarker) {
-                gameLocationMarker.remove();
-            }
-            gameLocationMarker = new maplibregl.Marker({
-                element: createMarker(),
-            })
-                .setLngLat([
-                    gameLocations[Number(year)].latlon[1],
-                    gameLocations[Number(year)].latlon[0],
-                ])
-                .addTo(map);
+        if (gameLocationMarker) {
+            gameLocationMarker.remove();
+        }
+        gameLocationMarker = new maplibregl.Marker({
+            element: createMarker(),
+        })
+            .setLngLat([
+                gameLocations[Number(year)].latlon[1],
+                gameLocations[Number(year)].latlon[0],
+            ])
+            .addTo(map);
 
-            // style the marker as a yellow circle (for now!)
-            const style = document.createElement("style");
-            style.innerHTML = `
+        // style the marker as a yellow circle (for now!)
+        const style = document.createElement("style");
+        style.innerHTML = `
                 .games-marker {
                 background-color: yellow;
                 border-radius: 50%;
@@ -119,14 +120,37 @@
                 height: 15px;
                 }
             `;
-            document.head.appendChild(style);
-        }
+        document.head.appendChild(style);
 
-        // if there is a gameLocationMarker map on the map, but the year
-        // changes to one that should not have a marker, remove the marker
-        $: if (mapExists && gameLocationMarker && !gameLocations[Number(year)]) {
-            gameLocationMarker.remove();
-        }
+        // create a tooltip for the marker
+        const markerTooltip = new maplibregl.Popup({
+            closeButton: false,
+            closeOnClick: false,
+        });
+        // if mouse hovers over the marker, show the tooltip
+        gameLocationMarker.getElement().addEventListener("mouseenter", () => {
+            isMarkerHovered = true;
+            markerTooltip
+                .setLngLat([
+                    gameLocations[Number(year)].latlon[1],
+                    gameLocations[Number(year)].latlon[0],
+                ])
+                .setHTML(`Host City: ${gameLocations[Number(year)].location}`) // You can customize this
+                .addTo(map);
+        });
+
+        // hide the tooltip when mouse leaves
+        gameLocationMarker.getElement().addEventListener("mouseleave", () => {
+            isMarkerHovered = false;
+            markerTooltip.remove();
+        });
+    }
+
+    // if there is a gameLocationMarker map on the map, but the year
+    // changes to one that should not have a marker, remove the marker
+    $: if (mapExists && gameLocationMarker && !gameLocations[Number(year)]) {
+        gameLocationMarker.remove();
+    }
 
     /* DISPLAY CORRECT HISTORIC BASE MAP BASED ON YEAR */
 
@@ -170,7 +194,6 @@
         });
 
         // console.log(gameLocations[Number(year)].latlon);
-        
 
         map.getCanvas().style.cursor = "auto";
 
@@ -226,6 +249,9 @@
 
         // on mousemove, display tooltip
         map.on("mousemove", geojsonLayerId, (e) => {
+            // if the mouse is on the marker, do not show the feature tooltip
+            if (isMarkerHovered) return;
+
             // if map is zoomed out so multiple copies of feature are visible, only show tooltip once
             let coords = e.features[0].geometry.coordinates.slice();
             while (Math.abs(e.lngLat.lng - coords[0]) > 180) {
@@ -281,8 +307,6 @@
             }
         });
     }); // end onMount
-
-
 
     /* FUNCTIONS */
 
