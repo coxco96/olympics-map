@@ -463,16 +463,21 @@
 </div>
 
 <style>
-    #map {
-        height: 100%;
-        width: 100%;
-        /* background: linear-gradient(to right, #1d2671, #c33764); */
-    }
+#map {
+    height: 100%;
+    width: 100%;
+}
 
     .map-container {
         position: relative;
         height: 600px;
         width: 100%;
-        /* background-color: white; */
     }
+
+    @media only screen and (max-width: 420px) {
+    .map-container {
+        height: 400px;
+        width: 100%;
+    }
+}
 </style>
