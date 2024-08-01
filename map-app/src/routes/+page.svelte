@@ -112,9 +112,9 @@
                     class="lead"
                     style="font-weight: 450; font-size:1rem; margin-bottom: .6rem;"
                 >
-                    Designed and developed by Courtney Cox | <a
+                    Designed and developed by Courtney Lastname | <a
                         href="https://www.mapcourt.com"
-                        target="_blank">mapcourt.com</a
+                        target="_blank">mywebsite.com</a
                     >
                 </p>
                 <p class="lead">
