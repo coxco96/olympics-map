@@ -116,7 +116,7 @@ export function makePaint(colorize, breaks, isForLegend) {
 
   // add gradient color stops based on colors2
   colors.forEach((color) => {
-    const key = parseInt(Object.keys(color)[0], 10); // Ensure key is an integer
+    const key = parseInt(Object.keys(color)[0], 10); // ensure key is an integer
     const rgbString = color[key];
     fillColorArray.push(key, rgbString);
   });
@@ -129,7 +129,7 @@ export function makePaint(colorize, breaks, isForLegend) {
       ["==", ["feature-state", "pointsTotal"], null],
       "black", // black for undefined pointsTotal (debugging purposes)
       ["==", ["feature-state", "pointsTotal"], 0],
-      "#242222", // gray for pointsTotal = 0
+      "black", // gray for pointsTotal = 0
       [
         "interpolate",
         ["linear"],

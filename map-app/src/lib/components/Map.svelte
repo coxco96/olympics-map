@@ -43,7 +43,7 @@
         getBaseMapYear,
         makeTooltipString,
         gameLocations,
-        makePaint
+        makePaint,
     } from "$lib/utils/exports.js";
 
     // import stores
@@ -90,12 +90,26 @@
 
     // just k-means clustering to get breaks for colors using chroma
     $: breaks = chroma.limits(pointsTotalArr, "k", 4);
+    // $: colorize = chroma
+    //     .scale("Purples")
+    //     .domain(breaks)
+    //     .mode("lch")
+    //     .correctLightness()
+
+    $: originalColors = chroma.scale("Purples").colors(breaks.length);
+    $: darkenedColors = originalColors.map((color, index) =>
+        index === 0 ? chroma(color).darken(2.6).hex() : color,
+    );
+    $: filteredColors = darkenedColors.filter((color, index) => {
+    return index !== 0;
+});
+
+
     $: colorize = chroma
-        .scale("Purples") 
+        .scale(filteredColors)
         .domain(breaks)
         .mode("lch")
-        .correctLightness();
-
+        // .correctLightness();
 
     $: maxPointsStore.subscribe((value) => (maxPoints = value));
 
@@ -210,7 +224,6 @@
             dragRotate: false,
             renderWorldCopies: false,
         });
-
 
         map.getCanvas().style.cursor = "auto";
 
@@ -463,10 +476,10 @@
 </div>
 
 <style>
-#map {
-    height: 100%;
-    width: 100%;
-}
+    #map {
+        height: 100%;
+        width: 100%;
+    }
 
     .map-container {
         position: relative;
@@ -475,9 +488,9 @@
     }
 
     @media only screen and (max-width: 420px) {
-    .map-container {
-        height: 400px;
-        width: 100%;
+        .map-container {
+            height: 400px;
+            width: 100%;
+        }
     }
-}
 </style>
