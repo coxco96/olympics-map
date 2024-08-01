@@ -58,14 +58,15 @@
     }
 
     $: buttonText =
-        sortBy === "pointsTotal" ? "Sort alphabetically" : "Sort by rank";
+        sortBy === "pointsTotal" ? "<span style='font-size: .875rem;'>Sorted by rank</span>" : "<span style='font-size: .875rem;'>Sorted alphabetically</span>";
 
+    $: buttonHoverText = sortBy === 'pointsTotal' ? 'Sort alphabetically' : 'Sort by rank';
     $: tableData = makeTableArr(filteredData, sortBy);
 </script>
 
 <div>
-    <Button class="mt-2" color={"dark"} on:click={toggleSort}>
-        {buttonText}
+    <Button class="mt-2" color={"dark"} on:click={toggleSort} title={buttonHoverText}>
+        {@html buttonText}
     </Button>
 </div>
 
