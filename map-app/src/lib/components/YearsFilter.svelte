@@ -1,5 +1,5 @@
 <script>
-    import {selectedYear, selectedSport, selectedEvent, filteredDataStore} from '$lib/utils/stores.js';
+    import {selectedYear, selectedSport, selectedEvent} from '$lib/utils/stores.js';
     import {yearsArray} from '$lib/utils/exports.js';
     let year = 'All years (1896-2024)';
     let sport = 'All sports';
@@ -14,10 +14,12 @@
         selectedYear.set(event.target.value);
     }
 
+    yearsArray.reverse();
+
 </script>
 
 <select bind:value={year} on:change={handleChange} class="form-select" name="Year">
-    {#each yearsArray.reverse() as year}
+    {#each yearsArray as year}
             <option value={year}
                 >{year}</option
             >
