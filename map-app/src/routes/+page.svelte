@@ -86,7 +86,7 @@
         if (mostPoints < 2) {
             mostPoints = 2;
         }
-        pointsTotalArr = arr.sort((a,b)=> a-b); // sort lowest to highest
+        pointsTotalArr = arr.sort((a, b) => a - b); // sort lowest to highest
         pointsTotalStore.set(pointsTotalArr); // this is in case want to later use all  values to create statistical breaks in color gradient
         if (isFinite(mostPoints)) {
             maxPointsStore.set(mostPoints);
@@ -108,43 +108,41 @@
         <Row>
             <Col md="8">
                 <h1 class="display-4">Olympic Medal Counts</h1>
-                <p class='lead' style='font-weight: 450; font-size:1rem; margin-bottom: .6rem;'>Designed and developed by Courtney Cox | <a href='https://www.mapcourt.com' target='_blank'>mapcourt.com</a></p>
-                <p class="lead" >Hover over the map for detailed information, and use filters to customize your view.</p>
+                <p
+                    class="lead"
+                    style="font-weight: 450; font-size:1rem; margin-bottom: .6rem;"
+                >
+                    Designed and developed by Courtney Cox | <a
+                        href="https://www.mapcourt.com"
+                        target="_blank">mapcourt.com</a
+                    >
+                </p>
+                <p class="lead">
+                    Hover over the map for detailed information, and use filters
+                    to customize your view.
+                </p>
             </Col>
-
-
         </Row>
         <Row class="mb-3 g-2">
             <!-- TODO: check form accessibility here -->
 
-                     
-                        <Col xs={{size: 6}} lg={{size: 3}}>
-                            <YearsFilter />
-                        </Col>
-                        <Col xs={{size: 6}} lg={{size: 2}}>
-                            <SportsFilter />
-                        </Col>
-                        <Col xs={{size: 6}} lg={{size: 2}}>
-                            <EventsFilter />
-                        </Col>
-                
-                        <Col xs={{size: 6}} lg={{size: 3}}>
-                            <Button color='dark' on:click={toggleView}>
-                                <div class='map-table-toggle'>
-                                    {tableView ? "View as map" : "View as table"}
-                                </div>     
-                            </Button>
-                        </Col>
+            <Col xs={{ size: 6 }} lg={{ size: 3 }}>
+                <YearsFilter />
+            </Col>
+            <Col xs={{ size: 6 }} lg={{ size: 2 }}>
+                <SportsFilter />
+            </Col>
+            <Col xs={{ size: 6 }} lg={{ size: 2 }}>
+                <EventsFilter />
+            </Col>
 
-                    <!-- <Row class="mt-3">
-                        <Col>
-                            <button class="map-table-toggle" on:click={toggleView}>
-                                {tableView ? "View as map" : "View as table"}
-                            </button>
-                        </Col>
-                    </Row> -->
-                
-            <!-- </Col> -->
+            <Col xs={{ size: 6 }} lg={{ size: 3 }}>
+                <Button color="dark" on:click={toggleView}>
+                    <div class="map-table-toggle">
+                        {tableView ? "View as map" : "View as table"}
+                    </div>
+                </Button>
+            </Col>
         </Row>
 
         <Row>
@@ -157,24 +155,36 @@
             </Col>
         </Row>
 
-
-        <Row class='d-flex justify-content-end'>
+        <Row class="d-flex justify-content-end">
             <div class="mt-3 right-align-container">
-                <p>Sources: Olympedia (1896-2023 Games); Olympic Games (2024 Games); @aourednik via Github (historic basemaps).</p>
+                <p>
+                    Sources: Olympedia (1896-2023 Games); Olympic Games (2024
+                    Games); @aourednik via Github (historic basemaps).
+                </p>
             </div>
         </Row>
     </Container>
 </main>
 
 <style>
-
-.right-align-container {
+    .right-align-container {
         display: flex;
         justify-content: flex-end;
     }
 
-    h1, p {
-        color: #FFFAFA
+    h1,
+    p {
+        color: #fffafa;
+    }
+
+    @media (prefers-contrast: more) {
+        h1, p {
+            color: black;
+        }
+
+        a {
+            color: blue;
+        }
     }
 
     h1 {
@@ -182,11 +192,7 @@
     }
 
     a {
-        color:rgb(138, 247, 255);
+        color: rgb(138, 247, 255);
     }
 
-    /* .map-table-toggle {
-        border-left: solid 1px black;
-        margin-left: 20px;
-    } */
 </style>
