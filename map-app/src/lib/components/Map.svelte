@@ -90,26 +90,26 @@
 
     // just k-means clustering to get breaks for colors using chroma
     $: breaks = chroma.limits(pointsTotalArr, "k", 4);
+    // $: colorize = chroma
+    //     .scale("Purples")
+    //     .domain(breaks)
+    //     .mode("lch")
+    //     .correctLightness()
+
+    $: originalColors = chroma.scale("Purples").colors(breaks.length);
+    $: darkenedColors = originalColors.map((color, index) =>
+        index === 0 ? chroma(color).darken(1.6).hex() : color,
+    );
+    $: filteredColors = darkenedColors.filter((color, index) => {
+    return index !== 0;
+});
+
+
     $: colorize = chroma
-        .scale("Purples")
+        .scale(filteredColors)
         .domain(breaks)
         .mode("lch")
-        .correctLightness()
-
-//     $: originalColors = chroma.scale("Purples").colors(breaks.length);
-//     $: darkenedColors = originalColors.map((color, index) =>
-//         index === 0 ? chroma(color).darken(1.6).hex() : color,
-//     );
-//     $: filteredColors = darkenedColors.filter((color, index) => {
-//     return index !== 0;
-// });
-
-
-//     $: colorize = chroma
-//         .scale(filteredColors)
-//         .domain(breaks)
-//         .mode("lch")
-//         .correctLightness();
+        .correctLightness();
 
     $: maxPointsStore.subscribe((value) => (maxPoints = value));
 
