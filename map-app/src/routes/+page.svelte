@@ -31,7 +31,9 @@
     /* SET CONTEXT WITH INITIAL DATA AND ALSO AS THE INITIAL STORE */
     $: {
         if (data) {
+            console.log(data);
             initialData = convertData(data); // convert to object by country
+            console.log(initialData);
             setContext(initialDataContext, initialData);
         }
     }
