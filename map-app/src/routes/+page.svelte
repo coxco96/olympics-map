@@ -11,7 +11,11 @@
     import { Container, Col, Row, Button } from "@sveltestrap/sveltestrap";
 
     // function to convert data into object
-    import { convertData, filterData } from "../lib/utils/exports.js";
+    import {
+        convertData,
+        filterData,
+        eventsByYear,
+    } from "../lib/utils/exports.js";
 
     // stores, context and lifecycle
     import {
@@ -31,9 +35,7 @@
     /* SET CONTEXT WITH INITIAL DATA AND ALSO AS THE INITIAL STORE */
     $: {
         if (data) {
-            console.log(data);
             initialData = convertData(data); // convert to object by country
-            console.log(initialData);
             setContext(initialDataContext, initialData);
         }
     }
@@ -48,8 +50,6 @@
     $: sport = $selectedSport;
     $: sportEvent = $selectedEvent;
 
-    // TODO & question: why doesn't filteredData and pointsTotalArr need those reactive declarations, too? ^
-
     // filter the data and write it to the store
     let filteredData;
     $: {
@@ -59,6 +59,26 @@
 
     let pointsTotalArr = [];
     $: if (filteredData) {
+        // check if any sports or events are in the data but not in eventsByYear...
+        let newSports = [];
+        let newSportEvents = [];
+        if (year != "All years (1896-2024)" && sport != "All sports") {
+            for (let x in filteredData) {
+                filteredData[x].forEach((y) => {
+                    if (eventsByYear[year][sport]) {
+                        // if there are sportEvents in the data
+                        if (!eventsByYear[year][sport].includes(y.sportEvent) && !newSportEvents.includes(y.sportEvent)) {
+                            newSportEvents.push(y.sportEvent);
+                        }
+                    }
+                    if (newSportEvents.length > 0) {
+                        console.log(y.sport);
+                        console.log(newSportEvents);
+                    }
+                });
+            }
+        } // end debug
+
         let arr = [];
         let mostPoints = 1;
         for (let country in filteredData) {
@@ -184,7 +204,8 @@
     }
 
     @media (prefers-contrast: more) {
-        h1, p {
+        h1,
+        p {
             color: black;
         }
 
@@ -200,5 +221,4 @@
     /* a {
         color: rgb(138, 247, 255);
     } */
-
 </style>
