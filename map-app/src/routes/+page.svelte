@@ -180,8 +180,8 @@
         <Row class="d-flex justify-content-end">
             <div class="mt-3 right-align-container">
                 <p>
-                    <span style='font-weight:500'>Note</span>: This data comes with a few caveats. Read them <a href='./notes'>here</a>.<br><span style='font-weight:500'>Sources</span>: Olympedia (1896-2023 Games); Olympic Games (2024
-                    Games); @aourednik via Github (historic basemaps).
+                    <span style='font-weight:500'>Sources</span>: Olympedia (1896-2023 Games); Olympic Games (2024
+                    Games); @aourednik via Github (historic basemaps).<br><span style='font-weight:500'>Note</span>: This data comes with a few caveats. Read them <a href='./notes'>here</a>.
                 </p>
             </div>
         </Row>

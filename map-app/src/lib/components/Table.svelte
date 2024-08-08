@@ -75,9 +75,9 @@
     <thead>
         <tr>
             <th class="th">Country</th>
-            <th class="th">Gold Medals</th>
-            <th class="th">Silver Medals</th>
-            <th class="th">Bronze Medals</th>
+            <th class="th">Gold</th>
+            <th class="th">Silver</th>
+            <th class="th">Bronze</th>
         </tr>
     </thead>
     <tbody>

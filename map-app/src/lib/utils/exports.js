@@ -28,7 +28,7 @@ export const nameExceptions = {
 export function convertData(data) {
   const dataObj = {};
   data = data.post;
-  data.forEach(row => {
+  data.slice(1).forEach(row => {
     const [country, medal, year, sport, sportEvent, athlete, source] = row;
 
     if (!dataObj[country]) {
@@ -72,16 +72,16 @@ export function makeTooltipString(country, data, olympicTeam) {
     ?
     `
   <strong>${country}</strong> <br>
-  Gold Medals: ${goldMedalCount}<br>
-  Silver Medals: ${silverMedalCount}<br>
-  Bronze Medals: ${bronzeMedalCount}<br>
+  Gold: ${goldMedalCount}<br>
+  Silver: ${silverMedalCount}<br>
+  Bronze: ${bronzeMedalCount}<br>
   ` :
     `
   <strong>${country}</strong> <br>
   <strong>(Team ${olympicTeam})</strong><br>
-  Gold Medals: ${goldMedalCount}<br>
-  Silver Medals: ${silverMedalCount}<br>
-  Bronze Medals: ${bronzeMedalCount}<br>
+  Gold: ${goldMedalCount}<br>
+  Silver: ${silverMedalCount}<br>
+  Bronze: ${bronzeMedalCount}<br>
   `
 
 
