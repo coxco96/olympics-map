@@ -13,20 +13,33 @@ United States,Bronze,2024,Artistic Gymnastics,Women's Uneven Bars,Sunisa LEE
 United States,Bronze,2024,Artistic Gymnastics,Women's Floor Exercise,Jordan CHILES
 United States,Silver,2024,Artistic Swimming,Team,United States
 United States,Gold,2024,Athletics,Men's 100m,Noah LYLES
+United States,Gold,2024,Athletics,Men's 400m,Quincy HALL
 United States,Gold,2024,Athletics,Men's 1500m,Cole HOCKER
+United States,Gold,2024,Athletics,Men's 110m Hurdles,Grant HOLLOWAY
+United States,Gold,2024,Athletics,Men's 400m Hurdles,Rai BENJAMIN
 United States,Gold,2024,Athletics,Men's Shot Put,Ryan CROUSER
 United States,Gold,2024,Athletics,Women's 200m,Gabrielle THOMAS
+United States,Gold,2024,Athletics,Women's 400m Hurdles,Sydney McLAUGHLIN-LEVRONE
+United States,Gold,2024,Athletics,Women's Long Jump,Tara DAVIS-WOODHALL
 United States,Gold,2024,Athletics,Women's Discus Throw,Valarie ALLMAN
+United States,Gold,2024,Athletics,Women's 4 x 100m Relay,United States
+United States,Silver,2024,Athletics,Men's 200m,Kenneth BEDNAREK
+United States,Silver,2024,Athletics,Men's 3000m Steeplechase,Kenneth ROOKS
+United States,Silver,2024,Athletics,Men's 110m Hurdles,Daniel ROBERTS
 United States,Silver,2024,Athletics,Men's Pole Vault,Sam KENDRICKS
 United States,Silver,2024,Athletics,Men's Shot Put,Joe KOVACS
 United States,Silver,2024,Athletics,Women's 100m,Sha'carri RICHARDSON
+United States,Silver,2024,Athletics,Women's 400m Hurdles,Anna COCKRELL
+United States,Silver,2024,Athletics,Women's Pole Vault,Katie MOON
 United States,Silver,2024,Athletics,Women's Hammer Throw,Annette Nneka ECHIKUNWOKE
 United States,Silver,2024,Athletics,4 x 400m Relay Mixed,United States
 United States,Bronze,2024,Athletics,Men's 100m,Fred KERLEY
+United States,Bronze,2024,Athletics,Men's 200m,Noah LYLES
 United States,Bronze,2024,Athletics,Men's 1500m,Yared NUGUSE
 United States,Bronze,2024,Athletics,Men's 10,000m,Grant FISHER
 United States,Bronze,2024,Athletics,Women's 100m,Melissa JEFFERSON
 United States,Bronze,2024,Athletics,Women's 200m,Brittany BROWN
+United States,Bronze,2024,Athletics,Women's Long Jump,Jasmine MOORE
 United States,Bronze,2024,Athletics,Women's Triple Jump,Jasmine MOORE
 United States,Bronze,2024,Boxing,Men's 71kg,Omari JONES
 United States,Bronze,2024,Canoe Slalom,Women's Canoe Single,Evy LEIBFARTH
@@ -54,6 +67,7 @@ United States,Bronze,2024,Shooting,Skeet Women,Austen Jewell SMITH
 United States,Silver,2024,Skateboarding,Men's Street,Jagger EATON
 United States,Silver,2024,Skateboarding,Men's Park,Tom SCHAAR
 United States,Bronze,2024,Skateboarding,Men's Street,Nyjah HUSTON
+United States,Bronze,2024,Sport Climbing,Men's Speed,Sam WATSON
 United States,Gold,2024,Surfing,Women,Caroline MARKS
 United States,Gold,2024,Swimming,Women's 800m Freestyle,Katie LEDECKY
 United States,Gold,2024,Swimming,Women's 1500m Freestyle,Katie LEDECKY
@@ -83,11 +97,18 @@ United States,Bronze,2024,Swimming,Women's 400m Individual Medley,Emma WEYANT
 United States,Bronze,2024,Swimming,Men's 200m Freestyle,Luke HOBSON
 United States,Bronze,2024,Swimming,Men's 100m Backstroke,Ryan MURPHY
 United States,Bronze,2024,Swimming,Men's 400m Individual Medley,Carson FOSTER
+United States,Bronze,2024,Taekwondo,Women -67kg,Kristina TEACHOUT
 United States,Silver,2024,Tennis,Men's Doubles,KRAJICEK/RAM
 United States,Bronze,2024,Tennis,Men's Doubles,FRITZ/PAUL
 United States,Silver,2024,Triathlon,Mixed Relay,United States of Amer
+United States,Bronze,2024,Volleyball,Men,United States
+United States,Gold,2024,Weightlifting,Women's 71kg,Olivia REEVES
 United States,Bronze,2024,Weightlifting,Men's 61kg,Hampton MORRIS
+United States,Gold,2024,Wrestling,Women's Freestyle 50kg,Sarah Ann HILDEBRANDT
 United States,Gold,2024,Wrestling,Women's Freestyle 68kg,Amit ELOR
+United States,Silver,2024,Wrestling,Men's Freestyle 57kg,Spencer Richard LEE
+United States,Bronze,2024,Wrestling,Women's Freestyle 57kg,Helen Louise MAROULIS
+United States,Bronze,2024,Wrestling,Men's Freestyle 86kg,Aaron Marquel BROOKS
 China,Silver,2024,Archery,Women's Team,China
 China,Gold,2024,Artistic Gymnastics,Men's Rings,LIU Yang
 China,Gold,2024,Artistic Gymnastics,Men's Parallel Bars,ZOU Jingyuan
@@ -101,20 +122,32 @@ China,Bronze,2024,Artistic Gymnastics,Men's Horizontal Bar,ZHANG Boheng
 China,Gold,2024,Artistic Swimming,Team,China
 China,Gold,2024,Athletics,Women's 20km Race Walk,YANG Jiayu
 China,Silver,2024,Athletics,Women's Discus Throw,FENG Bin
+China,Bronze,2024,Athletics,Women's Shot Put,SONG Jiayuan
 China,Bronze,2024,Athletics,Women's Hammer Throw,ZHAO Jie
 China,Gold,2024,Badminton,Women's Doubles,CHEN/JIA
 China,Gold,2024,Badminton,Mixed Doubles,ZHENG/HUANG
 China,Silver,2024,Badminton,Women's Singles,HE Bing Jiao
 China,Silver,2024,Badminton,Men's Doubles,LIANG/WANG
 China,Silver,2024,Badminton,Women's Doubles,LIU/TAN
+China,Gold,2024,Boxing,Women's 50kg,WU Yu
+China,Gold,2024,Boxing,Women's 54kg,CHANG Yuan
 China,Silver,2024,Boxing,Women's 60kg,YANG Wenlu
+China,Silver,2024,Boxing,Women's 66kg,YANG Liu
+China,Bronze,2024,Breaking,B-Girls,671
+China,Gold,2024,Canoe Sprint,Men's Canoe Double 500m,LIU/JI
+China,Gold,2024,Canoe Sprint,Women's Canoe Double 500m,XU/SUN
 China,Gold,2024,Cycling BMX Freestyle,Women's Park,DENG Yawen
+China,Gold,2024,Diving,Women's 3m Springboard,CHEN Yiwen
 China,Gold,2024,Diving,Women's 10m Platform,QUAN Hongchan
 China,Gold,2024,Diving,Women's Synchronised 3m Springboard,CHANG/CHEN
 China,Gold,2024,Diving,Women's Synchronised 10m Platform,CHEN/QUAN
+China,Gold,2024,Diving,Men's 3m Springboard,XIE Siyi
 China,Gold,2024,Diving,Men's Synchronised 3m Springboard,LONG/WANG
 China,Gold,2024,Diving,Men's Synchronised 10m Platform,LIAN/YANG
 China,Silver,2024,Diving,Women's 10m Platform,CHEN Yuxi
+China,Silver,2024,Diving,Men's 3m Springboard,WANG Zongyuan
+China,Bronze,2024,Diving,Women's 3m Springboard,CHANG Yani
+China,Silver,2024,Hockey,Women,China
 China,Bronze,2024,Judo,Women -78 kg,MA Zhenzhao
 China,Gold,2024,Shooting,10m Air Rifle Men,SHENG Lihao
 China,Gold,2024,Shooting,50m Rifle 3 Positions Men,LIU Yukun
@@ -127,6 +160,7 @@ China,Bronze,2024,Shooting,25m Rapid Fire Pistol Men,WANG Xinjie
 China,Bronze,2024,Shooting,50m Rifle 3 Positions Women,ZHANG Qiongyue
 China,Bronze,2024,Shooting,Skeet Mixed Team,China
 China,Silver,2024,Sport Climbing,Women's Speed,DENG Lijuan
+China,Silver,2024,Sport Climbing,Men's Speed,WU Peng
 China,Gold,2024,Swimming,Men's 100m Freestyle,PAN Zhanle
 China,Gold,2024,Swimming,Men's 4 x 100m Medley Relay,China
 China,Silver,2024,Swimming,Women's 100m Breaststroke,TANG Qianting
@@ -142,27 +176,44 @@ China,Bronze,2024,Swimming,Men's 200m Individual Medley,WANG Shun
 China,Gold,2024,Table Tennis,Men's Singles,FAN Zhendong
 China,Gold,2024,Table Tennis,Women's Singles,CHEN Meng
 China,Gold,2024,Table Tennis,Mixed Doubles,WANG/SUN
+China,Gold,2024,Table Tennis,Men's Team,China
 China,Silver,2024,Table Tennis,Women's Singles,SUN Yingsha
+China,Silver,2024,Taekwondo,Women -49kg,GUO Qing
+China,Bronze,2024,Taekwondo,Men -68kg,LIANG Yushuai
 China,Gold,2024,Tennis,Women's Singles,ZHENG Qinwen
 China,Silver,2024,Tennis,Mixed Doubles,WANG/ZHANG
 China,Silver,2024,Trampoline Gymnastics,Men,WANG Zisai
 China,Bronze,2024,Trampoline Gymnastics,Men,YAN Langyu
+China,Gold,2024,Weightlifting,Women's 49kg,HOU Zhihui
+China,Gold,2024,Weightlifting,Women's 59kg,LUO Shifang
 China,Gold,2024,Weightlifting,Men's 61kg,LI Fabin
 China,Silver,2024,Wrestling,Men's Greco-Roman 60kg,CAO Liguo
 China,Bronze,2024,Wrestling,Men's Greco-Roman 130kg,MENG Lingzhe
+China,Bronze,2024,Wrestling,Women's Freestyle 50kg,FENG Ziqi
+China,Bronze,2024,Wrestling,Women's Freestyle 53kg,PANG Qianyu
+China,Bronze,2024,Wrestling,Women's Freestyle 57kg,HONG Kexin
+Australia,Gold,2024,Athletics,Women's Pole Vault,Nina KENNEDY
 Australia,Silver,2024,Athletics,Women's High Jump,Nicola OLYSLAGERS
+Australia,Bronze,2024,Athletics,Men's Discus Throw,Matthew DENNY
 Australia,Bronze,2024,Athletics,Women's High Jump,Eleanor PATTERSON
 Australia,Bronze,2024,Athletics,Women's 20km Race Walk,Jemima MONTAG
 Australia,Bronze,2024,Athletics,Marathon Race Walk Relay Mixed,COWLEY R/MONTAG J
+Australia,Bronze,2024,Boxing,Men's 57kg,Charlie SENIOR
+Australia,Bronze,2024,Boxing,Women's 75kg,Caitlin PARKER
 Australia,Gold,2024,Canoe Slalom,Women's Kayak Single,Jessica FOX
 Australia,Gold,2024,Canoe Slalom,Women's Canoe Single,Jessica FOX
 Australia,Gold,2024,Canoe Slalom,Women's Kayak Cross,Noemie FOX
+Australia,Silver,2024,Canoe Sprint,Men's Kayak Four 500m,Australia
+Australia,Bronze,2024,Canoe Sprint,Men's Kayak Double 500m,van der WE/GREEN
 Australia,Bronze,2024,Cycling BMX Freestyle,Women's Park,Natalya DIEHM
 Australia,Gold,2024,Cycling BMX Racing,Women,Saya SAKAKIBARA
 Australia,Gold,2024,Cycling Road,Women's Individual Time Trial,Grace BROWN
 Australia,Gold,2024,Cycling Track,Men's Team Pursuit,Australia
+Australia,Silver,2024,Cycling Track,Men's Sprint,Matthew RICHARDSON
 Australia,Bronze,2024,Cycling Track,Men's Team Sprint,Australia
+Australia,Silver,2024,Diving,Women's 3m Springboard,Maddison KEENEY
 Australia,Silver,2024,Equestrian,Eventing Individual,Christopher BURTON
+Australia,Silver,2024,Marathon Swimming,Women's 10km,Moesha JOHNSON
 Australia,Bronze,2024,Rowing,Women's Pair,MORRISON/McINTYRE
 Australia,Gold,2024,Sailing,Men's Dinghy,Matt WEARN
 Australia,Silver,2024,Sailing,Men's Windsurfing,Grae MORRIS
@@ -189,59 +240,51 @@ Australia,Bronze,2024,Swimming,Women's 200m Individual Medley,Kaylee McKEOWN
 Australia,Bronze,2024,Swimming,Men's 4 x 200m Freestyle Relay,Australia
 Australia,Bronze,2024,Swimming,Mixed 4 x 100m Medley Relay,Australia
 Australia,Gold,2024,Tennis,Men's Doubles,EBDEN/PEERS
-France,Silver,2024,3x3 Basketball,Men,France
-France,Silver,2024,Archery,Men's Team,France
-France,Bronze,2024,Archery,Women's Individual,Lisa BARBELIN
-France,Gold,2024,Canoe Slalom,Men's Canoe Single,Nicolas GESTIN
-France,Silver,2024,Canoe Slalom,Men's Kayak Single,Titouan CASTRYCK
-France,Silver,2024,Canoe Slalom,Women's Kayak Cross,Angele HUG
-France,Bronze,2024,Cycling BMX Freestyle,Men's Park,Anthony JEANJEAN
-France,Gold,2024,Cycling BMX Racing,Men,Joris DAUDET
-France,Silver,2024,Cycling BMX Racing,Men,Sylvain ANDRE
-France,Bronze,2024,Cycling BMX Racing,Men,Romain MAHIEU
-France,Gold,2024,Cycling Mountain Bike,Women's Cross-country,Pauline FERRAND PREVOT
-France,Silver,2024,Cycling Mountain Bike,Men's Cross-country,Victor KORETZKY
-France,Silver,2024,Cycling Road,Men's Road Race,Valentin MADOUAS
-France,Bronze,2024,Cycling Road,Men's Road Race,Christophe LAPORTE
-France,Silver,2024,Equestrian,Eventing Team,France
-France,Bronze,2024,Equestrian,Jumping Team,France
-France,Gold,2024,Fencing,Women's Sabre Individual,Manon APITHY-BRUNET
-France,Silver,2024,Fencing,Women's Épée Individual,Auriane MALLO-BRETON
-France,Silver,2024,Fencing,Women's Sabre Individual,Sara BALZER
-France,Silver,2024,Fencing,Men's Épée Individual,Yannick BOREL
-France,Silver,2024,Fencing,Women's Épée Team,France
-France,Bronze,2024,Fencing,Men's Foil Team,France
-France,Bronze,2024,Fencing,Men's Sabre Team,France
-France,Gold,2024,Judo,Men +100 kg,Teddy RINER
-France,Gold,2024,Judo,Mixed Team,France
-France,Silver,2024,Judo,Men -60 kg,Luka MKHEIDZE
-France,Silver,2024,Judo,Men -73 kg,Joan-Benjamin GABA
-France,Bronze,2024,Judo,Women -48 kg,Shirine BOUKLI
-France,Bronze,2024,Judo,Women -52 kg,Amandine BUCHARD
-France,Bronze,2024,Judo,Women -57 kg,Sarah Leonie CYSIQUE
-France,Bronze,2024,Judo,Women -63 kg,Clarisse AGBEGNENOU
-France,Bronze,2024,Judo,Women +78 kg,Romane DICKO
-France,Bronze,2024,Judo,Men -90 kg,Maxime-Gael NGAYAP HAMBOU
-France,Gold,2024,Rugby Sevens,Men,France
-France,Bronze,2024,Sailing,Women's Skiff,STEYAERT/PICON
-France,Silver,2024,Shooting,25m Pistol Women,Camille JEDRZEJEWSKI
-France,Gold,2024,Surfing,Men,Kauli VAAST
-France,Bronze,2024,Surfing,Women,Johanne DEFAY
-France,Gold,2024,Swimming,Men's 200m Breaststroke,Leon MARCHAND
-France,Gold,2024,Swimming,Men's 200m Butterfly,Leon MARCHAND
-France,Gold,2024,Swimming,Men's 200m Individual Medley,Leon MARCHAND
-France,Gold,2024,Swimming,Men's 400m Individual Medley,Leon MARCHAND
-France,Silver,2024,Swimming,Women's 1500m Freestyle,Anastasiia KIRPICHNIKOVA
-France,Bronze,2024,Swimming,Men's 50m Freestyle,Florent MANAUDOU
-France,Bronze,2024,Swimming,Men's 4 x 100m Medley Relay,France
-France,Bronze,2024,Table Tennis,Men's Singles,Felix LEBRUN
-France,Bronze,2024,Taekwondo,Men -58kg,Cyrian RAVET
-France,Gold,2024,Triathlon,Women's Individual,Cassandre BEAUGRAND
-France,Bronze,2024,Triathlon,Men's Individual,Leo BERGERE
+Japan,Gold,2024,Artistic Gymnastics,Men's Team,Japan
+Japan,Gold,2024,Artistic Gymnastics,Men's All-Around,OKA Shinnosuke
+Japan,Gold,2024,Artistic Gymnastics,Men's Horizontal Bar,OKA Shinnosuke
+Japan,Bronze,2024,Artistic Gymnastics,Men's Parallel Bars,OKA Shinnosuke
+Japan,Bronze,2024,Badminton,Women's Doubles,MATSUYAMA/SHIDA
+Japan,Bronze,2024,Badminton,Mixed Doubles,WATANABE/HIGASHINO
+Japan,Gold,2024,Breaking,B-Girls,AMI
+Japan,Bronze,2024,Equestrian,Eventing Team,Japan
+Japan,Gold,2024,Fencing,Men's Épée Individual,KANO Koki
+Japan,Gold,2024,Fencing,Men's Foil Team,Japan
+Japan,Silver,2024,Fencing,Men's Épée Team,Japan
+Japan,Bronze,2024,Fencing,Women's Foil Team,Japan
+Japan,Bronze,2024,Fencing,Women's Sabre Team,Japan
+Japan,Bronze,2024,Golf,Men's Individual Stroke Play,MATSUYAMA Hideki
+Japan,Gold,2024,Judo,Women -48 kg,TSUNODA Natsumi
+Japan,Gold,2024,Judo,Men -66 kg,ABE Hifumi
+Japan,Gold,2024,Judo,Men -81 kg,NAGASE Takanori
+Japan,Silver,2024,Judo,Men -90 kg,MURAO Sanshiro
+Japan,Silver,2024,Judo,Mixed Team,Japan
+Japan,Bronze,2024,Judo,Women -57 kg,FUNAKUBO Haruka
+Japan,Bronze,2024,Judo,Men -60 kg,NAGAYAMA Ryuju
+Japan,Bronze,2024,Judo,Men -73 kg,HASHIMOTO Soichi
+Japan,Silver,2024,Sailing,Mixed Dinghy,OKADA/YOSHIOKA
+Japan,Gold,2024,Skateboarding,Women's Street,YOSHIZAWA Coco
+Japan,Gold,2024,Skateboarding,Men's Street,HORIGOME Yuto
+Japan,Silver,2024,Skateboarding,Women's Street,AKAMA Liz
+Japan,Silver,2024,Skateboarding,Women's Park,HIRAKI Cocona
+Japan,Silver,2024,Sport Climbing,Men's Boulder & Lead,ANRAKU Sorato
+Japan,Silver,2024,Swimming,Men's 400m Individual Medley,MATSUSHITA Tomoyuki
+Japan,Bronze,2024,Table Tennis,Women's Singles,Hina HAYATA
+Japan,Gold,2024,Wrestling,Men's Greco-Roman 60kg,FUMITA Kenichiro
+Japan,Gold,2024,Wrestling,Men's Greco-Roman 77kg,KUSAKA Nao
+Japan,Gold,2024,Wrestling,Women's Freestyle 53kg,FUJINAMI Akari
+Japan,Gold,2024,Wrestling,Women's Freestyle 57kg,SAKURAI Tsugumi
+Japan,Gold,2024,Wrestling,Men's Freestyle 57kg,HIGUCHI Rei
+Japan,Bronze,2024,Wrestling,Women's Freestyle 50kg,SUSAKI Yui
+Japan,Bronze,2024,Wrestling,Women's Freestyle 68kg,OZAKI Nonoka
 Great Britain,Bronze,2024,Artistic Gymnastics,Men's Floor Exercise,Jake JARMAN
 Great Britain,Bronze,2024,Artistic Gymnastics,Men's Vault,Harry HEPWORTH
 Great Britain,Gold,2024,Athletics,Women's 800m,Keely HODGKINSON
+Great Britain,Silver,2024,Athletics,Men's 400m,Matthew HUDSON-SMITH
 Great Britain,Silver,2024,Athletics,Men's 1500m,Josh KERR
+Great Britain,Silver,2024,Athletics,Women's Heptathlon,Katarina JOHNSON-THOMPSON
+Great Britain,Silver,2024,Athletics,Women's 4 x 100m Relay,Great Britain
+Great Britain,Bronze,2024,Athletics,Men's 4 x 100m Relay,Great Britain
 Great Britain,Bronze,2024,Athletics,4 x 400m Relay Mixed,Great Britain
 Great Britain,Bronze,2024,Boxing,Men's 71kg,Lewis RICHARDSON
 Great Britain,Silver,2024,Canoe Slalom,Men's Canoe Single,Adam BURGESS
@@ -254,6 +297,9 @@ Great Britain,Silver,2024,Cycling Road,Women's Individual Time Trial,Anna HENDER
 Great Britain,Gold,2024,Cycling Track,Women's Team Sprint,Great Britain
 Great Britain,Silver,2024,Cycling Track,Men's Team Sprint,Great Britain
 Great Britain,Silver,2024,Cycling Track,Men's Team Pursuit,Great Britain
+Great Britain,Silver,2024,Cycling Track,Women's Madison,BARKER/EVANS
+Great Britain,Bronze,2024,Cycling Track,Men's Sprint,Jack CARLIN
+Great Britain,Bronze,2024,Cycling Track,Women's Keirin,Emma FINUCANE
 Great Britain,Bronze,2024,Cycling Track,Women's Team Pursuit,Great Britain
 Great Britain,Silver,2024,Diving,Men's Synchronised 10m Platform,DALEY/WILLIAMS
 Great Britain,Bronze,2024,Diving,Women's Synchronised 3m Springboard,HARPER/MEW JENSEN
@@ -273,10 +319,12 @@ Great Britain,Silver,2024,Rowing,Women's Four,Great Britain
 Great Britain,Bronze,2024,Rowing,Women's Double Sculls,HODGKINS B/WILDE
 Great Britain,Bronze,2024,Rowing,Men's Four,Great Britain
 Great Britain,Bronze,2024,Rowing,Women's Eight,Great Britain
+Great Britain,Gold,2024,Sailing,Women's Kite,Eleanor ALDRIDGE
 Great Britain,Bronze,2024,Sailing,Women's Windsurfing,Emma WILSON
 Great Britain,Gold,2024,Shooting,Trap Men,Nathan HALES
 Great Britain,Silver,2024,Shooting,Skeet Women,Amber Jo RUTTER
 Great Britain,Bronze,2024,Skateboarding,Women's Park,Sky BROWN
+Great Britain,Gold,2024,Sport Climbing,Men's Boulder & Lead,Toby ROBERTS
 Great Britain,Gold,2024,Swimming,Men's 4 x 200m Freestyle Relay,Great Britain
 Great Britain,Silver,2024,Swimming,Men's 50m Freestyle,Benjamin PROUD
 Great Britain,Silver,2024,Swimming,Men's 200m Freestyle,Matthew RICHARDS
@@ -286,36 +334,62 @@ Great Britain,Gold,2024,Trampoline Gymnastics,Women,Bryony PAGE
 Great Britain,Gold,2024,Triathlon,Men's Individual,Alex YEE
 Great Britain,Bronze,2024,Triathlon,Women's Individual,Beth POTTER
 Great Britain,Bronze,2024,Triathlon,Mixed Relay,Great Britain
-Japan,Gold,2024,Artistic Gymnastics,Men's Team,Japan
-Japan,Gold,2024,Artistic Gymnastics,Men's All-Around,OKA Shinnosuke
-Japan,Gold,2024,Artistic Gymnastics,Men's Horizontal Bar,OKA Shinnosuke
-Japan,Bronze,2024,Artistic Gymnastics,Men's Parallel Bars,OKA Shinnosuke
-Japan,Bronze,2024,Badminton,Women's Doubles,MATSUYAMA/SHIDA
-Japan,Bronze,2024,Badminton,Mixed Doubles,WATANABE/HIGASHINO
-Japan,Bronze,2024,Equestrian,Eventing Team,Japan
-Japan,Gold,2024,Fencing,Men's Épée Individual,KANO Koki
-Japan,Gold,2024,Fencing,Men's Foil Team,Japan
-Japan,Silver,2024,Fencing,Men's Épée Team,Japan
-Japan,Bronze,2024,Fencing,Women's Foil Team,Japan
-Japan,Bronze,2024,Fencing,Women's Sabre Team,Japan
-Japan,Bronze,2024,Golf,Men's Individual Stroke Play,MATSUYAMA Hideki
-Japan,Gold,2024,Judo,Women -48 kg,TSUNODA Natsumi
-Japan,Gold,2024,Judo,Men -66 kg,ABE Hifumi
-Japan,Gold,2024,Judo,Men -81 kg,NAGASE Takanori
-Japan,Silver,2024,Judo,Men -90 kg,MURAO Sanshiro
-Japan,Silver,2024,Judo,Mixed Team,Japan
-Japan,Bronze,2024,Judo,Women -57 kg,FUNAKUBO Haruka
-Japan,Bronze,2024,Judo,Men -60 kg,NAGAYAMA Ryuju
-Japan,Bronze,2024,Judo,Men -73 kg,HASHIMOTO Soichi
-Japan,Gold,2024,Skateboarding,Women's Street,YOSHIZAWA Coco
-Japan,Gold,2024,Skateboarding,Men's Street,HORIGOME Yuto
-Japan,Silver,2024,Skateboarding,Women's Street,AKAMA Liz
-Japan,Silver,2024,Skateboarding,Women's Park,HIRAKI Cocona
-Japan,Silver,2024,Swimming,Men's 400m Individual Medley,MATSUSHITA Tomoyuki
-Japan,Bronze,2024,Table Tennis,Women's Singles,Hina HAYATA
-Japan,Gold,2024,Wrestling,Men's Greco-Roman 60kg,FUMITA Kenichiro
-Japan,Gold,2024,Wrestling,Men's Greco-Roman 77kg,KUSAKA Nao
-Japan,Bronze,2024,Wrestling,Women's Freestyle 68kg,OZAKI Nonoka
+France,Silver,2024,3x3 Basketball,Men,France
+France,Silver,2024,Archery,Men's Team,France
+France,Bronze,2024,Archery,Women's Individual,Lisa BARBELIN
+France,Silver,2024,Boxing,Men's 51kg,Billal BENNAMA
+France,Silver,2024,Boxing,Men's 63.5kg,Sofiane OUMIHA
+France,Bronze,2024,Boxing,Men's +92kg,Djamili-Dini ABOUDOU MOINDZE
+France,Gold,2024,Canoe Slalom,Men's Canoe Single,Nicolas GESTIN
+France,Silver,2024,Canoe Slalom,Men's Kayak Single,Titouan CASTRYCK
+France,Silver,2024,Canoe Slalom,Women's Kayak Cross,Angele HUG
+France,Bronze,2024,Cycling BMX Freestyle,Men's Park,Anthony JEANJEAN
+France,Gold,2024,Cycling BMX Racing,Men,Joris DAUDET
+France,Silver,2024,Cycling BMX Racing,Men,Sylvain ANDRE
+France,Bronze,2024,Cycling BMX Racing,Men,Romain MAHIEU
+France,Gold,2024,Cycling Mountain Bike,Women's Cross-country,Pauline FERRAND PREVOT
+France,Silver,2024,Cycling Mountain Bike,Men's Cross-country,Victor KORETZKY
+France,Silver,2024,Cycling Road,Men's Road Race,Valentin MADOUAS
+France,Bronze,2024,Cycling Road,Men's Road Race,Christophe LAPORTE
+France,Gold,2024,Cycling Track,Men's Omnium,Benjamin THOMAS
+France,Silver,2024,Equestrian,Eventing Team,France
+France,Bronze,2024,Equestrian,Jumping Team,France
+France,Gold,2024,Fencing,Women's Sabre Individual,Manon APITHY-BRUNET
+France,Silver,2024,Fencing,Women's Épée Individual,Auriane MALLO-BRETON
+France,Silver,2024,Fencing,Women's Sabre Individual,Sara BALZER
+France,Silver,2024,Fencing,Men's Épée Individual,Yannick BOREL
+France,Silver,2024,Fencing,Women's Épée Team,France
+France,Bronze,2024,Fencing,Men's Foil Team,France
+France,Bronze,2024,Fencing,Men's Sabre Team,France
+France,Silver,2024,Football,Men,France
+France,Gold,2024,Judo,Men +100 kg,Teddy RINER
+France,Gold,2024,Judo,Mixed Team,France
+France,Silver,2024,Judo,Men -60 kg,Luka MKHEIDZE
+France,Silver,2024,Judo,Men -73 kg,Joan-Benjamin GABA
+France,Bronze,2024,Judo,Women -48 kg,Shirine BOUKLI
+France,Bronze,2024,Judo,Women -52 kg,Amandine BUCHARD
+France,Bronze,2024,Judo,Women -57 kg,Sarah Leonie CYSIQUE
+France,Bronze,2024,Judo,Women -63 kg,Clarisse AGBEGNENOU
+France,Bronze,2024,Judo,Women +78 kg,Romane DICKO
+France,Bronze,2024,Judo,Men -90 kg,Maxime-Gael NGAYAP HAMBOU
+France,Gold,2024,Rugby Sevens,Men,France
+France,Silver,2024,Sailing,Women's Kite,Lauriane NOLOT
+France,Bronze,2024,Sailing,Women's Skiff,STEYAERT/PICON
+France,Silver,2024,Shooting,25m Pistol Women,Camille JEDRZEJEWSKI
+France,Gold,2024,Surfing,Men,Kauli VAAST
+France,Bronze,2024,Surfing,Women,Johanne DEFAY
+France,Gold,2024,Swimming,Men's 200m Breaststroke,Leon MARCHAND
+France,Gold,2024,Swimming,Men's 200m Butterfly,Leon MARCHAND
+France,Gold,2024,Swimming,Men's 200m Individual Medley,Leon MARCHAND
+France,Gold,2024,Swimming,Men's 400m Individual Medley,Leon MARCHAND
+France,Silver,2024,Swimming,Women's 1500m Freestyle,Anastasiia KIRPICHNIKOVA
+France,Bronze,2024,Swimming,Men's 50m Freestyle,Florent MANAUDOU
+France,Bronze,2024,Swimming,Men's 4 x 100m Medley Relay,France
+France,Bronze,2024,Table Tennis,Men's Singles,Felix LEBRUN
+France,Bronze,2024,Table Tennis,Men's Team,France
+France,Bronze,2024,Taekwondo,Men -58kg,Cyrian RAVET
+France,Gold,2024,Triathlon,Women's Individual,Cassandre BEAUGRAND
+France,Bronze,2024,Triathlon,Men's Individual,Leo BERGERE
 Korea,Gold,2024,Archery,Men's Individual,KIM Woojin
 Korea,Gold,2024,Archery,Women's Individual,LIM Sihyeon
 Korea,Gold,2024,Archery,Men's Team,Korea
@@ -342,40 +416,23 @@ Korea,Silver,2024,Shooting,10m Air Pistol Women,KIM Yeji
 Korea,Silver,2024,Shooting,10m Air Rifle Mixed Team,Korea 1
 Korea,Bronze,2024,Swimming,Men's 400m Freestyle,KIM Woomin
 Korea,Bronze,2024,Table Tennis,Mixed Doubles,LIM/SHIN
-Italy,Gold,2024,Artistic Gymnastics,Women's Balance Beam,Alice D'AMATO
-Italy,Silver,2024,Artistic Gymnastics,Women's Team,Italy
-Italy,Bronze,2024,Artistic Gymnastics,Women's Balance Beam,Manila ESPOSITO
-Italy,Bronze,2024,Athletics,Men's Long Jump,Mattia FURLANI
-Italy,Gold,2024,Canoe Slalom,Men's Kayak Single,Giovanni de GENNARO
-Italy,Silver,2024,Cycling Road,Men's Individual Time Trial,Filippo GANNA
-Italy,Bronze,2024,Cycling Track,Men's Team Pursuit,Italy
-Italy,Gold,2024,Fencing,Women's Épée Team,Italy
-Italy,Silver,2024,Fencing,Men's Foil Individual,Filippo MACCHI
-Italy,Silver,2024,Fencing,Women's Foil Team,Italy
-Italy,Silver,2024,Fencing,Men's Foil Team,Italy
-Italy,Bronze,2024,Fencing,Men's Sabre Individual,Luigi SAMELE
-Italy,Gold,2024,Judo,Women -78 kg,Alice BELLANDI
-Italy,Silver,2024,Rowing,Lightweight Men's Double Sculls,OPPO/SOARES
-Italy,Silver,2024,Rowing,Men's Quadruple Sculls,Italy
-Italy,Gold,2024,Sailing,Women's Windsurfing,Marta MAGGETTI
-Italy,Gold,2024,Shooting,Skeet Mixed Team,Italy 1
-Italy,Silver,2024,Shooting,10m Air Pistol Men,Federico Nilo MALDINI
-Italy,Silver,2024,Shooting,Trap Women,Silvana Maria STANCO
-Italy,Bronze,2024,Shooting,10m Air Pistol Men,Paolo MONNA
-Italy,Gold,2024,Swimming,Men's 100m Backstroke,Thomas CECCON
-Italy,Gold,2024,Swimming,Men's 100m Breaststroke,Nicolo MARTINENGHI
-Italy,Silver,2024,Swimming,Men's 1500m Freestyle,Gregorio PALTRINIERI
-Italy,Bronze,2024,Swimming,Men's 800m Freestyle,Gregorio PALTRINIERI
-Italy,Bronze,2024,Swimming,Men's 4 x 100m Freestyle Relay,Italy
-Italy,Gold,2024,Tennis,Women's Doubles,ERRANI/PAOLINI
-Italy,Bronze,2024,Tennis,Men's Singles,Lorenzo MUSETTI
+Korea,Gold,2024,Taekwondo,Men -58kg,PARK Taejoon
+Korea,Gold,2024,Taekwondo,Women -57kg,KIM Yujin
 Netherlands,Gold,2024,3x3 Basketball,Men,Netherlands
 Netherlands,Gold,2024,Athletics,4 x 400m Relay Mixed,Netherlands
 Netherlands,Bronze,2024,Athletics,Women's 5000m,Sifan HASSAN
+Netherlands,Bronze,2024,Athletics,Women's 10,000m,Sifan HASSAN
+Netherlands,Bronze,2024,Athletics,Women's 400m Hurdles,Femke BOL
 Netherlands,Silver,2024,Cycling BMX Racing,Women,Manon VEENSTRA
 Netherlands,Silver,2024,Cycling Road,Women's Road Race,Marianne VOS
 Netherlands,Gold,2024,Cycling Track,Men's Team Sprint,Netherlands
+Netherlands,Gold,2024,Cycling Track,Men's Sprint,Harrie LAVREYSEN
+Netherlands,Silver,2024,Cycling Track,Women's Keirin,Hetty van de WOUW
+Netherlands,Bronze,2024,Cycling Track,Women's Madison,van BELLE/van der DUI
 Netherlands,Bronze,2024,Equestrian,Jumping Individual,Maikel van der VLEUTEN
+Netherlands,Gold,2024,Hockey,Men,Netherlands
+Netherlands,Gold,2024,Hockey,Women,Netherlands
+Netherlands,Gold,2024,Marathon Swimming,Women's 10km,Sharon van ROUWENDAAL
 Netherlands,Gold,2024,Rowing,Women's Pair,CLEVERING/MEESTER
 Netherlands,Gold,2024,Rowing,Women's Four,Netherlands
 Netherlands,Gold,2024,Rowing,Women's Single Sculls,Karolien FLORIJN
@@ -387,28 +444,81 @@ Netherlands,Bronze,2024,Rowing,Men's Single Sculls,Simon van DORP
 Netherlands,Gold,2024,Sailing,Women's Dinghy,Marit BOUWMEESTER
 Netherlands,Gold,2024,Sailing,Women's Skiff,AANHOLT/DUETZ
 Netherlands,Bronze,2024,Sailing,Men's Windsurfing,Luuc van OPZEELAND
+Netherlands,Bronze,2024,Sailing,Women's Kite,Annelous LAMMERTS
 Netherlands,Bronze,2024,Swimming,Women's 200m Breaststroke,Tes SCHOUTEN
 Netherlands,Bronze,2024,Swimming,Men's 200m Breaststroke,Caspar CORBEAU
 Germany,Gold,2024,3x3 Basketball,Women,Germany
 Germany,Silver,2024,Archery,Mixed Team,Germany
+Germany,Gold,2024,Athletics,Women's Shot Put,Yemisi OGUNLEYE
 Germany,Silver,2024,Athletics,Men's Decathlon,Leo NEUGEBAUER
+Germany,Silver,2024,Athletics,Women's Long Jump,Malaika MIHAMBO
+Germany,Bronze,2024,Athletics,Women's 4 x 100m Relay,Germany
+Germany,Bronze,2024,Boxing,Men's +92kg,Nelvie Raman TIAFACK
 Germany,Silver,2024,Canoe Slalom,Women's Canoe Single,Elena LILIK
 Germany,Bronze,2024,Canoe Slalom,Men's Kayak Cross,Noah HEGGE
+Germany,Gold,2024,Canoe Sprint,Men's Kayak Double 500m,SCHOPF/LEMKE
+Germany,Gold,2024,Canoe Sprint,Men's Kayak Four 500m,Germany
+Germany,Silver,2024,Canoe Sprint,Women's Kayak Four 500m,Germany
+Germany,Bronze,2024,Canoe Sprint,Women's Kayak Double 500m,PASZEK/HAKE
 Germany,Bronze,2024,Cycling Track,Women's Team Sprint,Germany
 Germany,Gold,2024,Equestrian,Eventing Individual,Michael JUNG
 Germany,Gold,2024,Equestrian,Dressage Team,Germany
 Germany,Gold,2024,Equestrian,Dressage Individual,Jessica von BREDOW-WERNDL
 Germany,Gold,2024,Equestrian,Jumping Individual,Christian KUKUK
 Germany,Silver,2024,Equestrian,Dressage Individual,Isabell WERTH
+Germany,Bronze,2024,Football,Women,Germany
+Germany,Silver,2024,Hockey,Men,Germany
 Germany,Silver,2024,Judo,Women -70 kg,Miriam BUTKEREIT
+Germany,Silver,2024,Marathon Swimming,Men's 10km,Oliver KLEMET
+Germany,Gold,2024,Rhythmic Gymnastics,Individual All-Around,Darja VARFOLOMEEV
 Germany,Gold,2024,Rowing,Men's Single Sculls,Oliver ZEIDLER
 Germany,Bronze,2024,Rowing,Women's Quadruple Sculls,Germany
 Germany,Gold,2024,Swimming,Men's 400m Freestyle,Lukas MAERTENS
 Germany,Bronze,2024,Swimming,Women's 1500m Freestyle,Isabel GOSE
 Germany,Gold,2024,Triathlon,Mixed Relay,Germany
+Italy,Gold,2024,Artistic Gymnastics,Women's Balance Beam,Alice D'AMATO
+Italy,Silver,2024,Artistic Gymnastics,Women's Team,Italy
+Italy,Bronze,2024,Artistic Gymnastics,Women's Balance Beam,Manila ESPOSITO
+Italy,Silver,2024,Athletics,Women's 10,000m,Nadia BATTOCLETTI
+Italy,Bronze,2024,Athletics,Men's Long Jump,Mattia FURLANI
+Italy,Bronze,2024,Athletics,Men's Triple Jump,Andy DIAZ HERNANDEZ
+Italy,Gold,2024,Canoe Slalom,Men's Kayak Single,Giovanni de GENNARO
+Italy,Silver,2024,Canoe Sprint,Men's Canoe Double 500m,CASADEI/TACCHINI
+Italy,Silver,2024,Cycling Road,Men's Individual Time Trial,Filippo GANNA
+Italy,Gold,2024,Cycling Track,Women's Madison,CONSONNI/GUAZZINI
+Italy,Bronze,2024,Cycling Track,Men's Team Pursuit,Italy
+Italy,Gold,2024,Fencing,Women's Épée Team,Italy
+Italy,Silver,2024,Fencing,Men's Foil Individual,Filippo MACCHI
+Italy,Silver,2024,Fencing,Women's Foil Team,Italy
+Italy,Silver,2024,Fencing,Men's Foil Team,Italy
+Italy,Bronze,2024,Fencing,Men's Sabre Individual,Luigi SAMELE
+Italy,Gold,2024,Judo,Women -78 kg,Alice BELLANDI
+Italy,Bronze,2024,Marathon Swimming,Women's 10km,Ginevra TADDEUCCI
+Italy,Bronze,2024,Rhythmic Gymnastics,Individual All-Around,Sofia RAFFAELI
+Italy,Silver,2024,Rowing,Lightweight Men's Double Sculls,OPPO/SOARES
+Italy,Silver,2024,Rowing,Men's Quadruple Sculls,Italy
+Italy,Gold,2024,Sailing,Women's Windsurfing,Marta MAGGETTI
+Italy,Gold,2024,Sailing,Mixed Multihull,TITA/BANTI
+Italy,Gold,2024,Shooting,Skeet Mixed Team,Italy 1
+Italy,Silver,2024,Shooting,10m Air Pistol Men,Federico Nilo MALDINI
+Italy,Silver,2024,Shooting,Trap Women,Silvana Maria STANCO
+Italy,Bronze,2024,Shooting,10m Air Pistol Men,Paolo MONNA
+Italy,Gold,2024,Swimming,Men's 100m Backstroke,Thomas CECCON
+Italy,Gold,2024,Swimming,Men's 100m Breaststroke,Nicolo MARTINENGHI
+Italy,Silver,2024,Swimming,Men's 1500m Freestyle,Gregorio PALTRINIERI
+Italy,Bronze,2024,Swimming,Men's 800m Freestyle,Gregorio PALTRINIERI
+Italy,Bronze,2024,Swimming,Men's 4 x 100m Freestyle Relay,Italy
+Italy,Bronze,2024,Taekwondo,Men -80kg,Simone ALESSIO
+Italy,Gold,2024,Tennis,Women's Doubles,ERRANI/PAOLINI
+Italy,Bronze,2024,Tennis,Men's Singles,Lorenzo MUSETTI
+Italy,Bronze,2024,Weightlifting,Men's 89kg,Antonino PIZZOLATO
 Canada,Gold,2024,Athletics,Men's Hammer Throw,Ethan KATZBERG
+Canada,Gold,2024,Athletics,Men's 4 x 100m Relay,Canada
 Canada,Gold,2024,Athletics,Women's Hammer Throw,Camryn ROGERS
+Canada,Bronze,2024,Athletics,Women's Pole Vault,Alysha NEWMAN
+Canada,Silver,2024,Beach Volleyball,Women,MELISSA/BRANDIE
 Canada,Bronze,2024,Boxing,Men's 63.5kg,Wyatt SANFORD
+Canada,Bronze,2024,Canoe Sprint,Women's Canoe Double 500m,MACKENZIE/VINCENT
 Canada,Bronze,2024,Diving,Men's Synchronised 10m Platform,WIENS/ZSOMBOR-MURRAY
 Canada,Bronze,2024,Fencing,Women's Foil Individual,Eleanor HARVEY
 Canada,Gold,2024,Judo,Women -57 kg,Christa DEGUCHI
@@ -422,16 +532,15 @@ Canada,Silver,2024,Swimming,Men's 100m Butterfly,Josh LIENDO
 Canada,Bronze,2024,Swimming,Women's 200m Backstroke,Kylie MASSE
 Canada,Bronze,2024,Swimming,Men's 100m Butterfly,Ilya KHARUN
 Canada,Bronze,2024,Swimming,Men's 200m Butterfly,Ilya KHARUN
+Canada,Bronze,2024,Taekwondo,Women -57kg,Skylar PARK
 Canada,Bronze,2024,Tennis,Mixed Doubles,DABROWSKI/AUGER-ALIAS
 Canada,Bronze,2024,Trampoline Gymnastics,Women,Sophiane METHOT
-Ireland,Gold,2024,Artistic Gymnastics,Men's Pommel Horse,Rhys MC CLENAGHAN
-Ireland,Gold,2024,Boxing,Women's 60kg,Kellie HARRINGTON
-Ireland,Gold,2024,Rowing,Lightweight Men's Double Sculls,Mc CARTHY/O DONOVAN
-Ireland,Bronze,2024,Rowing,Men's Double Sculls,LYNCH/DOYLE
-Ireland,Gold,2024,Swimming,Men's 800m Freestyle,Daniel WIFFEN
-Ireland,Bronze,2024,Swimming,Women's 100m Breaststroke,Mona Mc SHARRY
-Ireland,Bronze,2024,Swimming,Men's 1500m Freestyle,Daniel WIFFEN
+Canada,Silver,2024,Weightlifting,Women's 59kg,Maude CHARRON
+New Zealand,Silver,2024,Athletics,Women's Shot Put,Maddison-Lee WESCHE
 New Zealand,Gold,2024,Canoe Slalom,Men's Kayak Cross,Finn BUTCHER
+New Zealand,Gold,2024,Canoe Sprint,Women's Kayak Double 500m,CARRINGTON/HOSKIN
+New Zealand,Gold,2024,Canoe Sprint,Women's Kayak Four 500m,New Zealand
+New Zealand,Gold,2024,Cycling Track,Women's Keirin,Ellesse ANDREWS
 New Zealand,Silver,2024,Cycling Track,Women's Team Sprint,New Zealand
 New Zealand,Silver,2024,Cycling Track,Women's Team Pursuit,New Zealand
 New Zealand,Gold,2024,Rowing,Women's Double Sculls,FRANCIS/SPOORS
@@ -440,36 +549,62 @@ New Zealand,Silver,2024,Rowing,Women's Single Sculls,Emma TWIGG
 New Zealand,Bronze,2024,Rowing,Women's Four,New Zealand
 New Zealand,Gold,2024,Rugby Sevens,Women,New Zealand
 New Zealand,Silver,2024,Sailing,Men's Skiff,McHARDIE/McKENZIE
+New Zealand,Bronze,2024,Sailing,Mixed Multihull,WILKINSON/DAWSON
 New Zealand,Silver,2024,Triathlon,Men's Individual,Hayden WILDE
 Hungary,Silver,2024,Athletics,Men's Hammer Throw,Bence HALASZ
+Hungary,Silver,2024,Canoe Sprint,Men's Kayak Double 500m,NADAS/TOTKA
+Hungary,Silver,2024,Canoe Sprint,Women's Kayak Double 500m,CSIPES/GAZSO
+Hungary,Bronze,2024,Canoe Sprint,Women's Kayak Double 500m,PUPP/FOJT
+Hungary,Bronze,2024,Canoe Sprint,Women's Kayak Four 500m,Hungary
 Hungary,Gold,2024,Fencing,Men's Épée Team,Hungary
 Hungary,Silver,2024,Fencing,Men's Sabre Team,Hungary
 Hungary,Bronze,2024,Fencing,Women's Épée Individual,Eszter MUHARI
+Hungary,Gold,2024,Marathon Swimming,Men's 10km,Kristof RASOVSZKY
+Hungary,Bronze,2024,Marathon Swimming,Men's 10km,David BETLEHEM
 Hungary,Bronze,2024,Shooting,25m Pistol Women,Veronika MAJOR
 Hungary,Gold,2024,Swimming,Men's 200m Backstroke,Hubert KOS
 Hungary,Gold,2024,Swimming,Men's 100m Butterfly,Kristof MILAK
 Hungary,Silver,2024,Swimming,Men's 200m Butterfly,Kristof MILAK
-Sweden,Gold,2024,Athletics,Men's Pole Vault,Armand DUPLANTIS
-Sweden,Bronze,2024,Cycling Mountain Bike,Women's Cross-country,Jenny RISSVEDS
-Sweden,Bronze,2024,Judo,Women -48 kg,Tara BABULFATH
-Sweden,Silver,2024,Sailing,Women's Skiff,BOBECK/NETZLER
-Sweden,Silver,2024,Shooting,10m Air Rifle Men,Victor LINDGREN
-Sweden,Gold,2024,Swimming,Women's 50m Freestyle,Sarah SJOESTROEM
-Sweden,Gold,2024,Swimming,Women's 100m Freestyle,Sarah SJOESTROEM
-Sweden,Silver,2024,Table Tennis,Men's Singles,Truls MOREGARD
-Romania,Gold,2024,Rowing,Men's Double Sculls,CORNEA/ENACHE
-Romania,Gold,2024,Rowing,Women's Eight,Romania
-Romania,Silver,2024,Rowing,Women's Pair,VRINCEANU/ANGHEL
-Romania,Silver,2024,Rowing,Women's Double Sculls,BODNAR/RADIS
-Romania,Silver,2024,Rowing,Lightweight Women's Double Sculls,van GRONINGEN/COZMIUC
-Romania,Gold,2024,Swimming,Men's 200m Freestyle,David POPOVICI
-Romania,Bronze,2024,Swimming,Men's 100m Freestyle,David POPOVICI
+Hungary,Gold,2024,Taekwondo,Women -67kg,Viviana MARTON
+Uzbekistan,Gold,2024,Boxing,Men's 51kg,Hasanboy DUSMATOV
+Uzbekistan,Gold,2024,Boxing,Men's 71kg,Asadkhuja MUYDINKHUJAEV
+Uzbekistan,Gold,2024,Boxing,Men's 92kg,Lazizbek MULLOJONOV
+Uzbekistan,Gold,2024,Judo,Women -52 kg,Diyora KELDIYOROVA
+Uzbekistan,Bronze,2024,Judo,Men -100 kg,Muzaffarbek TUROBOYEV
+Uzbekistan,Bronze,2024,Judo,Men +100 kg,Alisher YUSUPOV
+Uzbekistan,Gold,2024,Taekwondo,Men -68kg,Ulugbek RASHITOV
+Uzbekistan,Bronze,2024,Wrestling,Men's Freestyle 57kg,Gulomjon ABDULLAEV
+Spain,Silver,2024,3x3 Basketball,Women,Spain
+Spain,Bronze,2024,Artistic Swimming,Team,Spain
+Spain,Gold,2024,Athletics,Men's Triple Jump,Jordan Alejandro DIAZ FORTUN
+Spain,Gold,2024,Athletics,Marathon Race Walk Relay Mixed,MARTIN A/PEREZ M
+Spain,Silver,2024,Athletics,Women's 20km Race Walk,Maria PEREZ
+Spain,Bronze,2024,Athletics,Men's 20km Race Walk,Alvaro MARTIN
+Spain,Bronze,2024,Boxing,Men's 92kg,Enmanuel REYES PLA
+Spain,Bronze,2024,Canoe Slalom,Men's Kayak Single,Pau ECHANIZ
+Spain,Bronze,2024,Canoe Sprint,Men's Kayak Four 500m,Spain
+Spain,Bronze,2024,Canoe Sprint,Men's Canoe Double 500m,MORENO/DOMINGUEZ
+Spain,Gold,2024,Football,Men,Spain
+Spain,Bronze,2024,Judo,Men -60 kg,Francisco GARRIGOS
+Spain,Gold,2024,Sailing,Men's Skiff,BOTIN/TRITTEL
+Spain,Silver,2024,Tennis,Men's Singles,Carlos ALCARAZ
+Spain,Bronze,2024,Tennis,Women's Doubles,BUCSA/SORRIBES TORMO
+Ireland,Gold,2024,Artistic Gymnastics,Men's Pommel Horse,Rhys MC CLENAGHAN
+Ireland,Gold,2024,Boxing,Women's 60kg,Kellie HARRINGTON
+Ireland,Gold,2024,Rowing,Lightweight Men's Double Sculls,Mc CARTHY/O DONOVAN
+Ireland,Bronze,2024,Rowing,Men's Double Sculls,LYNCH/DOYLE
+Ireland,Gold,2024,Swimming,Men's 800m Freestyle,Daniel WIFFEN
+Ireland,Bronze,2024,Swimming,Women's 100m Breaststroke,Mona Mc SHARRY
+Ireland,Bronze,2024,Swimming,Men's 1500m Freestyle,Daniel WIFFEN
 Brazil,Gold,2024,Artistic Gymnastics,Women's Floor Exercise,Rebeca ANDRADE
 Brazil,Silver,2024,Artistic Gymnastics,Women's All-Around,Rebeca ANDRADE
 Brazil,Silver,2024,Artistic Gymnastics,Women's Vault,Rebeca ANDRADE
 Brazil,Bronze,2024,Artistic Gymnastics,Women's Team,Brazil
 Brazil,Silver,2024,Athletics,Men's 20km Race Walk,Caio BONFIM
+Brazil,Bronze,2024,Athletics,Men's 400m Hurdles,Alison dos SANTOS
+Brazil,Gold,2024,Beach Volleyball,Women,ANA PATRICIA/DUDA
 Brazil,Bronze,2024,Boxing,Women's 60kg,Beatriz Iasmin SOARES FERREIRA
+Brazil,Silver,2024,Canoe Sprint,Men's Canoe Single 1000m,Isaquias QUEIROZ
 Brazil,Gold,2024,Judo,Women +78 kg,Beatriz SOUZA
 Brazil,Silver,2024,Judo,Men -66 kg,Willian LIMA
 Brazil,Bronze,2024,Judo,Women -52 kg,Larissa PIMENTA
@@ -478,35 +613,90 @@ Brazil,Bronze,2024,Skateboarding,Women's Street,Rayssa LEAL
 Brazil,Bronze,2024,Skateboarding,Men's Park,Augusto AKIO
 Brazil,Silver,2024,Surfing,Women,Tatiana WESTON-WEBB
 Brazil,Bronze,2024,Surfing,Men,Gabriel MEDINA
-Spain,Silver,2024,3x3 Basketball,Women,Spain
-Spain,Bronze,2024,Artistic Swimming,Team,Spain
-Spain,Gold,2024,Athletics,Marathon Race Walk Relay Mixed,MARTIN A/PEREZ M
-Spain,Silver,2024,Athletics,Women's 20km Race Walk,Maria PEREZ
-Spain,Bronze,2024,Athletics,Men's 20km Race Walk,Alvaro MARTIN
-Spain,Bronze,2024,Boxing,Men's 92kg,Enmanuel REYES PLA
-Spain,Bronze,2024,Canoe Slalom,Men's Kayak Single,Pau ECHANIZ
-Spain,Bronze,2024,Judo,Men -60 kg,Francisco GARRIGOS
-Spain,Gold,2024,Sailing,Men's Skiff,BOTIN/TRITTEL
-Spain,Silver,2024,Tennis,Men's Singles,Carlos ALCARAZ
-Spain,Bronze,2024,Tennis,Women's Doubles,BUCSA/SORRIBES TORMO
+Brazil,Bronze,2024,Taekwondo,Men -68kg,Edival PONTES
 Ukraine,Silver,2024,Artistic Gymnastics,Men's Parallel Bars,Illia KOVTUN
 Ukraine,Gold,2024,Athletics,Women's High Jump,Yaroslava MAHUCHIKH
 Ukraine,Bronze,2024,Athletics,Men's Hammer Throw,Mykhaylo KOKHAN
 Ukraine,Bronze,2024,Athletics,Women's High Jump,Iryna GERASHCHENKO
+Ukraine,Gold,2024,Boxing,Men's 80kg,Oleksandr KHYZHNIAK
+Ukraine,Silver,2024,Canoe Sprint,Women's Canoe Double 500m,LUZAN/RYBACHOK
 Ukraine,Gold,2024,Fencing,Women's Sabre Team,Ukraine
 Ukraine,Bronze,2024,Fencing,Women's Sabre Individual,Olga KHARLAN
 Ukraine,Silver,2024,Shooting,50m Rifle 3 Positions Men,Serhiy KULISH
+Ukraine,Silver,2024,Wrestling,Men's Greco-Roman 67kg,Parviz NASIBOV
+Ukraine,Bronze,2024,Wrestling,Men's Greco-Roman 87kg,Zhan BELENIUK
+Sweden,Gold,2024,Athletics,Men's Pole Vault,Armand DUPLANTIS
+Sweden,Bronze,2024,Cycling Mountain Bike,Women's Cross-country,Jenny RISSVEDS
+Sweden,Bronze,2024,Judo,Women -48 kg,Tara BABULFATH
+Sweden,Silver,2024,Sailing,Women's Skiff,BOBECK/NETZLER
+Sweden,Bronze,2024,Sailing,Mixed Dinghy,DAHLBERG/KARLSSON
+Sweden,Silver,2024,Shooting,10m Air Rifle Men,Victor LINDGREN
+Sweden,Gold,2024,Swimming,Women's 50m Freestyle,Sarah SJOESTROEM
+Sweden,Gold,2024,Swimming,Women's 100m Freestyle,Sarah SJOESTROEM
+Sweden,Silver,2024,Table Tennis,Men's Singles,Truls MOREGARD
+Sweden,Silver,2024,Table Tennis,Men's Team,Sweden
+Romania,Gold,2024,Rowing,Men's Double Sculls,CORNEA/ENACHE
+Romania,Gold,2024,Rowing,Women's Eight,Romania
+Romania,Silver,2024,Rowing,Women's Pair,VRINCEANU/ANGHEL
+Romania,Silver,2024,Rowing,Women's Double Sculls,BODNAR/RADIS
+Romania,Silver,2024,Rowing,Lightweight Women's Double Sculls,van GRONINGEN/COZMIUC
+Romania,Gold,2024,Swimming,Men's 200m Freestyle,David POPOVICI
+Romania,Bronze,2024,Swimming,Men's 100m Freestyle,David POPOVICI
+Romania,Silver,2024,Weightlifting,Women's 49kg,Mihaela Valentina CAMBEI
+Bulgaria,Bronze,2024,Boxing,Men's 57kg,Javier IBANEZ DIAZ
+Bulgaria,Silver,2024,Rhythmic Gymnastics,Individual All-Around,Boryana KALEYN
+Bulgaria,Bronze,2024,Taekwondo,Women -57kg,Alizadeh KIMIA
+Bulgaria,Gold,2024,Weightlifting,Men's 89kg,Karlos May NASAR
+Bulgaria,Bronze,2024,Weightlifting,Men's 73kg,Bozhidar Dimitrov ANDREEV
+Bulgaria,Gold,2024,Wrestling,Men's Greco-Roman 87kg,Semen Sergeevich NOVIKOV
+Bulgaria,Gold,2024,Wrestling,Men's Freestyle 86kg,Magomed Eldarovitch RAMAZANOV
+Belgium,Gold,2024,Athletics,Women's Heptathlon,Nafissatou THIAM
+Belgium,Bronze,2024,Athletics,Women's Heptathlon,Noor VIDTS
+Belgium,Gold,2024,Cycling Road,Men's Road Race,Remco EVENEPOEL
+Belgium,Gold,2024,Cycling Road,Men's Individual Time Trial,Remco EVENEPOEL
+Belgium,Bronze,2024,Cycling Road,Women's Road Race,Lotte KOPECKY
+Belgium,Bronze,2024,Cycling Road,Men's Individual Time Trial,Wout van AERT
+Belgium,Bronze,2024,Cycling Track,Men's Omnium,Fabio van den BOSSCHE
+Belgium,Bronze,2024,Judo,Women -70 kg,Gabriella WILLEMS
+Belgium,Bronze,2024,Taekwondo,Women -67kg,Sarah CHAARI
+IR Iran,Silver,2024,Taekwondo,Men -80kg,Mehran BARKHORDARI
+IR Iran,Silver,2024,Taekwondo,Women -57kg,Nahid KIYANICHANDEH
+IR Iran,Bronze,2024,Taekwondo,Women -49kg,Mobina NEMATZADEH
+IR Iran,Gold,2024,Wrestling,Men's Greco-Roman 67kg,Saeid ESMAEILI LEIVESI
+IR Iran,Gold,2024,Wrestling,Men's Greco-Roman 97kg,Mohammadhadi SARAVI
+IR Iran,Silver,2024,Wrestling,Men's Greco-Roman 87kg,Alireza MOHMADIPIANI
+IR Iran,Silver,2024,Wrestling,Men's Freestyle 86kg,Hassan YAZDANICHARATI
+IR Iran,Bronze,2024,Wrestling,Men's Greco-Roman 130kg,Amin MIRZAZADEH
+Azerbaijan,Silver,2024,Boxing,Men's 92kg,Loren Berto ALFONSO DOMINGUEZ
+Azerbaijan,Gold,2024,Judo,Men -73 kg,Hidayat HEYDAROV
+Azerbaijan,Gold,2024,Judo,Men -100 kg,Zelym KOTSOIEV
+Azerbaijan,Silver,2024,Taekwondo,Men -58kg,Gashim MAGOMEDOV
+Azerbaijan,Bronze,2024,Wrestling,Men's Greco-Roman 67kg,Hasrat JAFAROV
 Croatia,Bronze,2024,Athletics,Women's Discus Throw,Sandra ELKASEVIC
 Croatia,Gold,2024,Judo,Women -70 kg,Barbara MATIC
 Croatia,Gold,2024,Rowing,Men's Pair,SINKOVIC/SINKOVIC
 Croatia,Bronze,2024,Shooting,10m Air Rifle Men,Miran MARICIC
 Croatia,Bronze,2024,Taekwondo,Women -49kg,Lena STOJKOVIC
 Croatia,Silver,2024,Tennis,Women's Singles,Donna VEKIC
-Belgium,Gold,2024,Cycling Road,Men's Road Race,Remco EVENEPOEL
-Belgium,Gold,2024,Cycling Road,Men's Individual Time Trial,Remco EVENEPOEL
-Belgium,Bronze,2024,Cycling Road,Women's Road Race,Lotte KOPECKY
-Belgium,Bronze,2024,Cycling Road,Men's Individual Time Trial,Wout van AERT
-Belgium,Bronze,2024,Judo,Women -70 kg,Gabriella WILLEMS
+Cuba,Gold,2024,Boxing,Men's 63.5kg,Erislandy ALVAREZ BORGES
+Cuba,Bronze,2024,Boxing,Men's 80kg,Arlen LOPEZ CARDONA
+Cuba,Gold,2024,Wrestling,Men's Greco-Roman 130kg,Mijain LOPEZ NUNEZ
+Cuba,Silver,2024,Wrestling,Women's Freestyle 50kg,Yusneylis GUZMAN LOPEZ
+Cuba,Bronze,2024,Wrestling,Men's Greco-Roman 67kg,Luis Alberto ORTA SANCHEZ
+Cuba,Bronze,2024,Wrestling,Men's Greco-Roman 97kg,Gabriel Alejandro ROSILLO KINDELAN
+Kenya,Gold,2024,Athletics,Women's 5000m,Beatrice CHEBET
+Kenya,Gold,2024,Athletics,Women's 10,000m,Beatrice CHEBET
+Kenya,Silver,2024,Athletics,Women's 5000m,Faith KIPYEGON
+Kenya,Bronze,2024,Athletics,Men's 3000m Steeplechase,Abraham KIBIWOT
+Kenya,Bronze,2024,Athletics,Women's 800m,Mary MORAA
+Kenya,Bronze,2024,Athletics,Women's 3000m Steeplechase,Faith CHEROTICH
+Serbia,Gold,2024,Shooting,10m Air Pistol Mixed Team,Serbia
+Serbia,Silver,2024,Taekwondo,Women -67kg,Aleksandra PERISIC
+Serbia,Gold,2024,Tennis,Men's Singles,Novak DJOKOVIC
+Austria,Bronze,2024,Judo,Women -70 kg,Michaela POLLERES
+Austria,Gold,2024,Sailing,Men's Kite,Valentin BONTUS
+Austria,Gold,2024,Sailing,Mixed Dinghy,VADLAU/MAEHR
+Austria,Bronze,2024,Sport Climbing,Men's Boulder & Lead,Jakob SCHUBERT
 Hong Kong, China,Gold,2024,Fencing,Women's Épée Individual,KONG Man Wai Vivian
 Hong Kong, China,Gold,2024,Fencing,Men's Foil Individual,CHEUNG Ka Long
 Hong Kong, China,Bronze,2024,Swimming,Women's 100m Freestyle,HAUGHEY Siobhan Bernadette
@@ -514,16 +704,41 @@ Hong Kong, China,Bronze,2024,Swimming,Women's 200m Freestyle,HAUGHEY Siobhan Ber
 Philippines,Gold,2024,Artistic Gymnastics,Men's Floor Exercise,Carlos Edriel YULO
 Philippines,Gold,2024,Artistic Gymnastics,Men's Vault,Carlos Edriel YULO
 Philippines,Bronze,2024,Boxing,Women's 50kg,Aira VILLEGAS
-Azerbaijan,Gold,2024,Judo,Men -73 kg,Hidayat HEYDAROV
-Azerbaijan,Gold,2024,Judo,Men -100 kg,Zelym KOTSOIEV
-Serbia,Gold,2024,Shooting,10m Air Pistol Mixed Team,Serbia
-Serbia,Gold,2024,Tennis,Men's Singles,Novak DJOKOVIC
+Philippines,Bronze,2024,Boxing,Women's 57kg,Nesthy PETECIO
+Czechia,Gold,2024,Canoe Sprint,Men's Canoe Single 1000m,Martin FUKSA
+Czechia,Bronze,2024,Fencing,Men's Épée Team,Czechia
+Czechia,Gold,2024,Tennis,Mixed Doubles,SINIAKOVA/MACHAC
+Indonesia,Bronze,2024,Badminton,Women's Singles,Gregoria Mariska TUNJUNG
+Indonesia,Gold,2024,Sport Climbing,Men's Speed,Veddriq LEONARDO
+Indonesia,Gold,2024,Weightlifting,Men's 73kg,Rizki JUNIANSYAH
+Algeria,Gold,2024,Artistic Gymnastics,Women's Uneven Bars,Kaylia NEMOUR
+Algeria,Gold,2024,Boxing,Women's 66kg,Imane KHELIF
 Israel,Silver,2024,Artistic Gymnastics,Men's Floor Exercise,Artem DOLGOPYAT
 Israel,Silver,2024,Judo,Women -78 kg,Inbar LANIR
 Israel,Silver,2024,Judo,Women +78 kg,Raz HERSHKO
 Israel,Bronze,2024,Judo,Men -100 kg,Peter PALTCHIK
 Israel,Gold,2024,Sailing,Men's Windsurfing,Tom REUVENY
 Israel,Silver,2024,Sailing,Women's Windsurfing,Sharon KANTOR
+Kazakhstan,Silver,2024,Artistic Gymnastics,Men's Pommel Horse,Nariman KURBANOV
+Kazakhstan,Silver,2024,Boxing,Men's 80kg,Nurbek ORALBAY
+Kazakhstan,Bronze,2024,Boxing,Women's 50kg,Nazym KYZAIBAY
+Kazakhstan,Gold,2024,Judo,Men -60 kg,Yeldos SMETOV
+Kazakhstan,Bronze,2024,Judo,Men -66 kg,Gusman KYRGYZBAYEV
+Kazakhstan,Bronze,2024,Shooting,10m Air Rifle Mixed Team,Kazakhstan 1
+Kazakhstan,Silver,2024,Wrestling,Men's Greco-Roman 77kg,Demeu ZHADRAYEV
+Jamaica,Gold,2024,Athletics,Men's Discus Throw,Roje STONA
+Jamaica,Silver,2024,Athletics,Men's 100m,Kishane THOMPSON
+Jamaica,Silver,2024,Athletics,Men's Long Jump,Wayne PINNOCK
+Jamaica,Silver,2024,Athletics,Women's Triple Jump,Shanieka RICKETTS
+Jamaica,Bronze,2024,Athletics,Men's 110m Hurdles,Rasheed BROADBELL
+Jamaica,Bronze,2024,Athletics,Men's Shot Put,Rajindra CAMPBELL
+Thailand,Silver,2024,Badminton,Men's Singles,Kunlavut VITIDSARN
+Thailand,Bronze,2024,Boxing,Women's 66kg,Janjaem SUWANNAPHENG
+Thailand,Gold,2024,Taekwondo,Women -49kg,Panipak WONGPATTANAKIT
+Thailand,Silver,2024,Weightlifting,Men's 61kg,Theerapong SILACHAI
+Thailand,Silver,2024,Weightlifting,Men's 73kg,Weeraphon WICHUMA
+Thailand,Bronze,2024,Weightlifting,Women's 49kg,Surodchana KHAMBAO
+Switzerland,Bronze,2024,Beach Volleyball,Women,HUBERLI/BRUNNER
 Switzerland,Bronze,2024,Cycling BMX Racing,Women,Zoe CLAESSENS
 Switzerland,Silver,2024,Equestrian,Jumping Individual,Steve GUERDAT
 Switzerland,Bronze,2024,Rowing,Men's Pair,ROEOESLI/GULICH
@@ -531,19 +746,24 @@ Switzerland,Gold,2024,Shooting,50m Rifle 3 Positions Women,Chiara LEONE
 Switzerland,Bronze,2024,Shooting,10m Air Rifle Women,Audrey GOGNIAT
 Switzerland,Bronze,2024,Swimming,Men's 200m Backstroke,Roman MITYUKOV
 Switzerland,Silver,2024,Triathlon,Women's Individual,Julie DERRON
-Kazakhstan,Silver,2024,Artistic Gymnastics,Men's Pommel Horse,Nariman KURBANOV
-Kazakhstan,Bronze,2024,Boxing,Women's 50kg,Nazym KYZAIBAY
-Kazakhstan,Gold,2024,Judo,Men -60 kg,Yeldos SMETOV
-Kazakhstan,Bronze,2024,Judo,Men -66 kg,Gusman KYRGYZBAYEV
-Kazakhstan,Bronze,2024,Shooting,10m Air Rifle Mixed Team,Kazakhstan 1
-Kazakhstan,Silver,2024,Wrestling,Men's Greco-Roman 77kg,Demeu ZHADRAYEV
+Denmark,Gold,2024,Badminton,Men's Singles,Viktor AXELSEN
+Denmark,Silver,2024,Equestrian,Dressage Team,Denmark
+Denmark,Silver,2024,Sailing,Women's Dinghy,Anne-Marie RINDOM
+Denmark,Bronze,2024,Taekwondo,Men -80kg,Edi HRNIC
+Denmark,Bronze,2024,Wrestling,Men's Greco-Roman 87kg,Turpal Ali BISULTANOV
+South Africa,Silver,2024,Athletics,Men's 4 x 100m Relay,South Africa
+South Africa,Bronze,2024,Cycling Mountain Bike,Men's Cross-country,Alan HATHERLY
+South Africa,Bronze,2024,Rugby Sevens,Men,South Africa
+South Africa,Gold,2024,Swimming,Women's 100m Breaststroke,Tatjana SMITH
+South Africa,Silver,2024,Swimming,Women's 200m Breaststroke,Tatjana SMITH
+Ecuador,Gold,2024,Athletics,Men's 20km Race Walk,Brian Daniel PINTADO
+Ecuador,Silver,2024,Athletics,Marathon Race Walk Relay Mixed,PINTADO B/MOREJON G
+Ecuador,Bronze,2024,Weightlifting,Women's 71kg,Angie Paola PALACIOS DAJOMES
+Ecuador,Silver,2024,Wrestling,Women's Freestyle 53kg,Lucia Yamileth YEPEZ GUZMAN
 Georgia,Bronze,2024,Boxing,Men's 63.5kg,Lasha GURULI
 Georgia,Gold,2024,Judo,Men -90 kg,Lasha BEKAURI
 Georgia,Silver,2024,Judo,Men -81 kg,Tato GRIGALASHVILI
 Georgia,Silver,2024,Judo,Men -100 kg,Ilia SULAMANIDZE
-Denmark,Gold,2024,Badminton,Men's Singles,Viktor AXELSEN
-Denmark,Silver,2024,Equestrian,Dressage Team,Denmark
-Denmark,Silver,2024,Sailing,Women's Dinghy,Anne-Marie RINDOM
 Greece,Bronze,2024,Artistic Gymnastics,Men's Rings,Eleftherios PETROUNIAS
 Greece,Gold,2024,Athletics,Men's Long Jump,Miltiadis TENTOGLOU
 Greece,Bronze,2024,Athletics,Men's Pole Vault,Emmanouil KARALIS
@@ -551,26 +771,31 @@ Greece,Bronze,2024,Judo,Men -90 kg,Theodoros TSELIDIS
 Greece,Bronze,2024,Rowing,Lightweight Women's Double Sculls,KONTOU/FITSIOU
 Greece,Bronze,2024,Rowing,Lightweight Men's Double Sculls,PAPAKONSTA/GKAIDATZIS
 Greece,Silver,2024,Swimming,Men's 200m Backstroke,Apostolos CHRISTOU
+Greece,Bronze,2024,Wrestling,Men's Freestyle 86kg,Dauren KURUGLIEV
+Poland,Bronze,2024,Athletics,Women's 400m,Natalia KACZMAREK
 Poland,Silver,2024,Canoe Slalom,Women's Kayak Single,Klaudia ZWOLINSKA
 Poland,Bronze,2024,Fencing,Women's Épée Team,Poland
 Poland,Bronze,2024,Rowing,Men's Quadruple Sculls,Poland
 Poland,Gold,2024,Sport Climbing,Women's Speed,Aleksandra MIROSLAW
 Poland,Bronze,2024,Sport Climbing,Women's Speed,Aleksandra KALUCKA
 Poland,Bronze,2024,Tennis,Women's Singles,Iga SWIATEK
-Kenya,Gold,2024,Athletics,Women's 5000m,Beatrice CHEBET
-Kenya,Silver,2024,Athletics,Women's 5000m,Faith KIPYEGON
-Kenya,Bronze,2024,Athletics,Women's 800m,Mary MORAA
-Kenya,Bronze,2024,Athletics,Women's 3000m Steeplechase,Faith CHEROTICH
-South Africa,Bronze,2024,Cycling Mountain Bike,Men's Cross-country,Alan HATHERLY
-South Africa,Bronze,2024,Rugby Sevens,Men,South Africa
-South Africa,Gold,2024,Swimming,Women's 100m Breaststroke,Tatjana SMITH
-South Africa,Silver,2024,Swimming,Women's 200m Breaststroke,Tatjana SMITH
+Argentina,Gold,2024,Cycling BMX Freestyle,Men's Park,Jose TORRES GIL
+Argentina,Bronze,2024,Hockey,Women,Argentina
+Argentina,Silver,2024,Sailing,Mixed Multihull,MAJDALANI/BOSCO
+Norway,Gold,2024,Athletics,Men's Decathlon,Markus ROOTH
+Norway,Silver,2024,Athletics,Men's 400m Hurdles,Karsten WARHOLM
+Norway,Bronze,2024,Sailing,Women's Dinghy,Line Flem HOEST
+Tunisia,Silver,2024,Fencing,Men's Sabre Individual,Fares FERJANI
+Tunisia,Gold,2024,Taekwondo,Men -80kg,Firas KATOUSSI
+Tunisia,Bronze,2024,Taekwondo,Men -58kg,Mohamed Khalil JENDOUBI
+Bahrain,Gold,2024,Athletics,Women's 3000m Steeplechase,Winfred YAVI
+Bahrain,Silver,2024,Athletics,Women's 400m,Salwa Eid NASER
 Chile,Gold,2024,Shooting,Skeet Women,Francisca CROVETTO CHADID
 Chile,Silver,2024,Wrestling,Men's Greco-Roman 130kg,Yasmani ACOSTA FERNANDEZ
-Ecuador,Gold,2024,Athletics,Men's 20km Race Walk,Brian Daniel PINTADO
-Ecuador,Silver,2024,Athletics,Marathon Race Walk Relay Mixed,PINTADO B/MOREJON G
 Saint Lucia,Gold,2024,Athletics,Women's 100m,Julien ALFRED
 Saint Lucia,Silver,2024,Athletics,Women's 200m,Julien ALFRED
+Slovenia,Gold,2024,Judo,Women -63 kg,Andreja LESKI
+Slovenia,Silver,2024,Sailing,Men's Kite,Toni VODISEK
 Uganda,Gold,2024,Athletics,Men's 10,000m,Joshua CHEPTEGEI
 Uganda,Silver,2024,Athletics,Women's 3000m Steeplechase,Peruth CHEMUTAI
 Chinese Taipei,Bronze,2024,Artistic Gymnastics,Men's Horizontal Bar,TANG Chia-Hung
@@ -578,79 +803,80 @@ Chinese Taipei,Gold,2024,Badminton,Men's Doubles,LEE/WANG
 Chinese Taipei,Bronze,2024,Boxing,Women's 60kg,WU Shih Yi
 Chinese Taipei,Bronze,2024,Boxing,Women's 66kg,CHEN Nien Chin
 Chinese Taipei,Bronze,2024,Shooting,Skeet Men,LEE Meng Yuan
-Cuba,Bronze,2024,Boxing,Men's 80kg,Arlen LOPEZ CARDONA
-Cuba,Gold,2024,Wrestling,Men's Greco-Roman 130kg,Mijain LOPEZ NUNEZ
-Cuba,Bronze,2024,Wrestling,Men's Greco-Roman 97kg,Gabriel Alejandro ROSILLO KINDELAN
-IR Iran,Bronze,2024,Taekwondo,Women -49kg,Mobina NEMATZADEH
-IR Iran,Gold,2024,Wrestling,Men's Greco-Roman 97kg,Mohammadhadi SARAVI
-IR Iran,Bronze,2024,Wrestling,Men's Greco-Roman 130kg,Amin MIRZAZADEH
-Uzbekistan,Gold,2024,Judo,Women -52 kg,Diyora KELDIYOROVA
-Uzbekistan,Bronze,2024,Judo,Men -100 kg,Muzaffarbek TUROBOYEV
-Uzbekistan,Bronze,2024,Judo,Men +100 kg,Alisher YUSUPOV
-Czechia,Bronze,2024,Fencing,Men's Épée Team,Czechia
-Czechia,Gold,2024,Tennis,Mixed Doubles,SINIAKOVA/MACHAC
+Chinese Taipei,Bronze,2024,Weightlifting,Women's 59kg,KUO Hsing-Chun
+Dominican Republic,Gold,2024,Athletics,Women's 400m,Marileidy PAULINO
+Dominican Republic,Bronze,2024,Boxing,Men's 51kg,Yunior ALCANTARA REYES
+Dominican Republic,Bronze,2024,Boxing,Men's 80kg,Cristian Javier PINALES
 Guatemala,Gold,2024,Shooting,Trap Women,Adriana RUANO OLIVA
 Guatemala,Bronze,2024,Shooting,Trap Men,Jean Pierre BROL CARDENAS
-Norway,Gold,2024,Athletics,Men's Decathlon,Markus ROOTH
-Norway,Bronze,2024,Sailing,Women's Dinghy,Line Flem HOEST
-Algeria,Gold,2024,Artistic Gymnastics,Women's Uneven Bars,Kaylia NEMOUR
-Argentina,Gold,2024,Cycling BMX Freestyle,Men's Park,Jose TORRES GIL
-Bahrain,Gold,2024,Athletics,Women's 3000m Steeplechase,Winfred YAVI
+Morocco,Gold,2024,Athletics,Men's 3000m Steeplechase,Soufiane EL BAKKALI
+Morocco,Bronze,2024,Football,Men,Morocco
+Botswana,Gold,2024,Athletics,Men's 200m,Letsile TEBOGO
 Dominica,Gold,2024,Athletics,Women's Triple Jump,Thea LAFOND
-Slovenia,Gold,2024,Judo,Women -63 kg,Andreja LESKI
-Jamaica,Silver,2024,Athletics,Men's 100m,Kishane THOMPSON
-Jamaica,Silver,2024,Athletics,Men's Long Jump,Wayne PINNOCK
-Jamaica,Silver,2024,Athletics,Women's Triple Jump,Shanieka RICKETTS
-Jamaica,Bronze,2024,Athletics,Men's Shot Put,Rajindra CAMPBELL
+Pakistan,Gold,2024,Athletics,Men's Javelin Throw,Arshad NADEEM
+Türkiye,Bronze,2024,Archery,Men's Team,Türkiye
+Türkiye,Silver,2024,Boxing,Women's 50kg,Buse Naz CAKIROGLU
+Türkiye,Silver,2024,Boxing,Women's 54kg,Hatice AKBAS
+Türkiye,Bronze,2024,Boxing,Women's 57kg,Esra YILDIZ KAHRAMAN
+Türkiye,Silver,2024,Shooting,10m Air Pistol Mixed Team,Türkiye 2
+Türkiye,Bronze,2024,Wrestling,Women's Freestyle 68kg,Buse CAVUSOGLU TOSUN
+Mexico,Bronze,2024,Archery,Women's Team,Mexico
+Mexico,Silver,2024,Boxing,Men's 71kg,Marco Alonso VERDE ALVAREZ
+Mexico,Silver,2024,Diving,Men's Synchronised 3m Springboard,CELAYA/OLVERA
+Mexico,Bronze,2024,Diving,Men's 3m Springboard,Osmar OLVERA IBARRA
+Mexico,Silver,2024,Judo,Women -63 kg,Prisca AWITI ALCARAZ
+Colombia,Silver,2024,Artistic Gymnastics,Men's Horizontal Bar,Angel BARAJAS
+Colombia,Silver,2024,Weightlifting,Women's 71kg,Mari Leivis SANCHEZ
+Colombia,Silver,2024,Weightlifting,Men's 89kg,Yeison LOPEZ
 DPR Korea,Bronze,2024,Boxing,Women's 54kg,PANG Cholmi
 DPR Korea,Silver,2024,Diving,Women's Synchronised 10m Platform,JO/KIM
 DPR Korea,Bronze,2024,Diving,Women's 10m Platform,KIM Mi Rae
 DPR Korea,Silver,2024,Table Tennis,Mixed Doubles,RI/KIM
 DPR Korea,Bronze,2024,Wrestling,Men's Greco-Roman 60kg,RI Se Ung
+DPR Korea,Bronze,2024,Wrestling,Women's Freestyle 53kg,CHOE Hyo Gyong
+Lithuania,Bronze,2024,3x3 Basketball,Men,Lithuania
+Lithuania,Silver,2024,Athletics,Men's Discus Throw,Mykolas ALEKNA
+Lithuania,Silver,2024,Breaking,B-Girls,NICKA
+Lithuania,Bronze,2024,Rowing,Women's Single Sculls,Viktorija SENKUTE
 Armenia,Silver,2024,Artistic Gymnastics,Men's Vault,Artur DAVTYAN
 Armenia,Silver,2024,Wrestling,Men's Greco-Roman 97kg,Artur ALEKSANYAN
 Armenia,Bronze,2024,Wrestling,Men's Greco-Roman 77kg,Malkhas AMOYAN
-Mexico,Bronze,2024,Archery,Women's Team,Mexico
-Mexico,Silver,2024,Diving,Men's Synchronised 3m Springboard,CELAYA/OLVERA
-Mexico,Silver,2024,Judo,Women -63 kg,Prisca AWITI ALCARAZ
-Thailand,Silver,2024,Badminton,Men's Singles,Kunlavut VITIDSARN
-Thailand,Bronze,2024,Boxing,Women's 66kg,Janjaem SUWANNAPHENG
-Thailand,Silver,2024,Weightlifting,Men's 61kg,Theerapong SILACHAI
+Portugal,Silver,2024,Athletics,Men's Triple Jump,Pedro PICHARDO
+Portugal,Silver,2024,Cycling Track,Men's Omnium,Iuri LEITAO
+Portugal,Bronze,2024,Judo,Women -78 kg,Patricia SAMPAIO
 Ethiopia,Silver,2024,Athletics,Men's 10,000m,Berihu AREGAWI
 Ethiopia,Silver,2024,Athletics,Women's 800m,Tsige DUGUMA
+India,Silver,2024,Athletics,Men's Javelin Throw,Neeraj CHOPRA
+India,Bronze,2024,Hockey,Men,India
+India,Bronze,2024,Shooting,50m Rifle 3 Positions Men,Swapnil KUSALE
+India,Bronze,2024,Shooting,10m Air Pistol Women,Manu BHAKER
+India,Bronze,2024,Shooting,10m Air Pistol Mixed Team,India 1
+India,Bronze,2024,Wrestling,Men's Freestyle 57kg,Aman AMAN
 Kyrgyzstan,Silver,2024,Wrestling,Women's Freestyle 68kg,Meerim ZHUMANAZAROVA
 Kyrgyzstan,Bronze,2024,Wrestling,Men's Greco-Roman 60kg,Zholaman SHARSHENBEKOV
 Kyrgyzstan,Bronze,2024,Wrestling,Men's Greco-Roman 77kg,Akzhol MAKHMUDOV
 Kyrgyzstan,Bronze,2024,Wrestling,Men's Greco-Roman 97kg,Uzur DZHUZUPBEKOV
-Türkiye,Bronze,2024,Archery,Men's Team,Türkiye
-Türkiye,Silver,2024,Shooting,10m Air Pistol Mixed Team,Türkiye 2
-Türkiye,Bronze,2024,Wrestling,Women's Freestyle 68kg,Buse CAVUSOGLU TOSUN
+Republic of Moldova,Bronze,2024,Canoe Sprint,Men's Canoe Single 1000m,Serghei TARNOVSCHI
+Republic of Moldova,Bronze,2024,Judo,Men -66 kg,Denis VIERU
+Republic of Moldova,Bronze,2024,Judo,Men -73 kg,Adil OSMANOV
+Republic of Moldova,Silver,2024,Wrestling,Women's Freestyle 57kg,Anastasia NICHITA
 Kosovo,Silver,2024,Judo,Women -52 kg,Distria KRASNIQI
 Kosovo,Bronze,2024,Judo,Women -63 kg,Laura FAZLIU
-Colombia,Silver,2024,Artistic Gymnastics,Men's Horizontal Bar,Angel BARAJAS
 Cyprus,Silver,2024,Sailing,Men's Dinghy,Pavlos KONTIDES
 Fiji,Silver,2024,Rugby Sevens,Men,Fiji
+Jordan,Silver,2024,Taekwondo,Men -68kg,Zaid KAREEM
 Mongolia,Silver,2024,Judo,Women -48 kg,Baasankhuu BAVUUDORJ
-Tunisia,Silver,2024,Fencing,Men's Sabre Individual,Fares FERJANI
-India,Bronze,2024,Shooting,50m Rifle 3 Positions Men,Swapnil KUSALE
-India,Bronze,2024,Shooting,10m Air Pistol Women,Manu BHAKER
-India,Bronze,2024,Shooting,10m Air Pistol Mixed Team,India 1
 Tajikistan,Bronze,2024,Boxing,Men's 92kg,Davlat BOLTAEV
 Tajikistan,Bronze,2024,Judo,Men -81 kg,Somon MAKHMADBEKOV
 Tajikistan,Bronze,2024,Judo,Men +100 kg,Temur RAKHIMOV
-Dominican Republic,Bronze,2024,Boxing,Men's 51kg,Yunior ALCANTARA REYES
-Dominican Republic,Bronze,2024,Boxing,Men's 80kg,Cristian Javier PINALES
-Lithuania,Bronze,2024,3x3 Basketball,Men,Lithuania
-Lithuania,Bronze,2024,Rowing,Women's Single Sculls,Viktorija SENKUTE
+Grenada,Bronze,2024,Athletics,Men's Javelin Throw,Anderson PETERS
+Grenada,Bronze,2024,Athletics,Men's Decathlon,Lindon VICTOR
 Malaysia,Bronze,2024,Badminton,Men's Singles,Zii Jia LEE
 Malaysia,Bronze,2024,Badminton,Men's Doubles,CHIA/SOH
-Republic of Moldova,Bronze,2024,Judo,Men -66 kg,Denis VIERU
-Republic of Moldova,Bronze,2024,Judo,Men -73 kg,Adil OSMANOV
-Austria,Bronze,2024,Judo,Women -70 kg,Michaela POLLERES
 Cabo Verde,Bronze,2024,Boxing,Men's 51kg,David de PINA
 Egypt,Bronze,2024,Fencing,Men's Épée Individual,Mohamed ELSAYED
-Grenada,Bronze,2024,Athletics,Men's Decathlon,Lindon VICTOR
-Indonesia,Bronze,2024,Badminton,Women's Singles,Gregoria Mariska TUNJUNG
+EOR,Bronze,2024,Boxing,Women's 75kg,Cindy Winner DJANKEU NGAMBA
 Peru,Bronze,2024,Sailing,Men's Dinghy,Stefano PESCHIERA
-Portugal,Bronze,2024,Judo,Women -78 kg,Patricia SAMPAIO
+Singapore,Bronze,2024,Sailing,Men's Kite,Maximilian MAEDER
 Slovakia,Bronze,2024,Canoe Slalom,Men's Canoe Single,Matej BENUS
+Zambia,Bronze,2024,Athletics,Men's 400m,Muzala SAMUKONGA

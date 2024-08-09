@@ -48,4 +48,12 @@ readFile('data2024.json', 'utf8', (err, data) => {
             console.log('CSV file has been saved.');
         }
     });
+
+    writeFile('last-updated.txt', timeGenerated, 'utf8', (err) => {
+        if (err) {
+            console.error(err);
+        } else {
+            console.log('last-updated.txt has been saved');
+        }
+    });
 });
