@@ -62,7 +62,7 @@
         // check if any sports or events are in the data but not in eventsByYear...
         let newSports = [];
         let newSportEvents = [];
-        if (year != "All years (1896-2024)" && sport != "All sports") {
+        if (year != "All years (1896-2022)" && sport != "All sports") {
             for (let x in filteredData) {
                 filteredData[x].forEach((y) => {
                     if (eventsByYear[year][sport]) {
@@ -139,6 +139,8 @@
                         target="_blank">mapcourt.com</a
                     >
                 </p>
+                <span class='visually-hidden'>Note for users of assistive technology: This page contains a world map, which visually shows medal counts with color. Darker colors mean more medals. When the map is hovered over, a popup displays with the data specific to that country. You can explore the data using the "view as table" button, which contains all of the same data as is displayed on the map. 
+                    When the year, sport or event filters are changed, the table is adjusted to reflect the filters.</span>
                 <p class="lead">
                     Hover over the map for detailed information, and use filters
                     to customize your view.
@@ -170,7 +172,7 @@
         <Row>
             <Col>
                 {#if tableView}
-                    <Table />
+                    <Table/>
                 {:else}
                     <Map />
                 {/if}
@@ -180,8 +182,8 @@
         <Row class="d-flex justify-content-end">
             <div class="mt-3 right-align-container">
                 <p>
-                    <span style='font-weight:500'>Sources</span>: Olympedia (1896-2023 Games); Olympic Games (2024
-                    Games); @aourednik via Github (historic basemaps).<br><span style='font-weight:500'>Note</span>: This data comes with a few caveats. Read them <a href='./notes'>here</a>.
+                    <span style='font-weight:500'>Sources</span>: Olympedia (1896-2022 Games); Olympic Games (2024
+                    Games); @aourednik via Github (historic basemaps).<br><span style='font-weight:500'>Note</span>: This data has some caveats. Read them <a href='./notes'>here</a>.
                 </p>
             </div>
         </Row>
@@ -193,11 +195,6 @@
         display: flex;
         justify-content: flex-end;
     }
-
-    /* h1,
-    p {
-        color: #fffafa;
-    } */
 
     a {
         color: blue;

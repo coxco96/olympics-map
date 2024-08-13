@@ -60,6 +60,7 @@
     name="Event"
 >
     {#each relevantEvents as event}
+    
         <option value={event}>{event}</option>
     {/each}
 </select>

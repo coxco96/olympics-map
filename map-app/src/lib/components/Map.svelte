@@ -472,7 +472,7 @@
 
 <div class="map-container">
     <div bind:this={container} id="map" />
-    <!-- <Legend /> -->
+    <Legend />
 </div>
 
 <style>

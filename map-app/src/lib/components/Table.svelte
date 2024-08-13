@@ -71,13 +71,13 @@
 </div>
 
 <!-- this is the sveltestrap Table component, not a self-reference -->
-<Table>
+<Table striped={true} bordered={true}>
     <thead>
         <tr>
-            <th class="th">Country</th>
-            <th class="th">Gold</th>
-            <th class="th">Silver</th>
-            <th class="th">Bronze</th>
+            <th scope='col' class="th">Country</th>
+            <th scope='col' class="th">Gold</th>
+            <th scope='col' class="th">Silver</th>
+            <th scope='col' class="th">Bronze</th>
         </tr>
     </thead>
     <tbody>
