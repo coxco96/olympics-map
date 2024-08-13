@@ -53,6 +53,7 @@
                 </Row>
             </Col>
         </Row>
+    
 
         <Row noGutters class='mt-3'>
             <Col><span class='label-text'>Least</span></Col>
@@ -60,6 +61,7 @@
             <Col><span style='padding-left: 5px' class='label-text'>Most</span></Col>
 
         </Row>
+        <Row><p style='font-size: 13px;'>Medal count is weighted by type.</p></Row>
     </Container>
 </div>
 

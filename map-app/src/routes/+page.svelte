@@ -62,7 +62,7 @@
         // check if any sports or events are in the data but not in eventsByYear...
         let newSports = [];
         let newSportEvents = [];
-        if (year != "All years (1896-2022)" && sport != "All sports") {
+        if (year != "All years (1896-2024)" && sport != "All sports") {
             for (let x in filteredData) {
                 filteredData[x].forEach((y) => {
                     if (eventsByYear[year][sport]) {
