@@ -36,7 +36,7 @@
     /* SET CONTEXT WITH INITIAL DATA AND ALSO AS THE INITIAL STORE */
     $: {
         if (data) {
-            console.log(makeSportEventObj(data));
+            // console.log(makeSportEventObj(data));
             initialData = convertData(data); // convert to object by country
             setContext(initialDataContext, initialData);
         }
