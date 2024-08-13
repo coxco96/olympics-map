@@ -98,13 +98,13 @@
     $: darkenedColors = originalColors.map((color, index) =>
         index === 0 ? chroma(color).darken(1.6).hex() : color,
     );
-    $: filteredColors = originalColors.filter((color, index) => {
+    $: filteredColors = darkenedColors.filter((color, index) => {
     return index !== 0;
 });
 
 
     $: colorize = chroma
-        .scale(filteredColors.length >= lengthOfData ? filteredColors : chroma.scale("Purples").colors(lengthOfData))
+        .scale(filteredColors.length >= lengthOfData ? filteredColors : chroma.scale("Purples").colors(lengthOfData).filter((color, index) => {return index !==0}))
         .domain(breaks)
         .mode("lch")
         .correctLightness();
