@@ -15,6 +15,7 @@
         convertData,
         filterData,
         eventsByYear,
+        makeSportEventObj
     } from "../lib/utils/exports.js";
 
     // stores, context and lifecycle
@@ -35,6 +36,7 @@
     /* SET CONTEXT WITH INITIAL DATA AND ALSO AS THE INITIAL STORE */
     $: {
         if (data) {
+            console.log(makeSportEventObj(data));
             initialData = convertData(data); // convert to object by country
             setContext(initialDataContext, initialData);
         }
@@ -70,10 +72,6 @@
                         if (!eventsByYear[year][sport].includes(y.sportEvent) && !newSportEvents.includes(y.sportEvent)) {
                             newSportEvents.push(y.sportEvent);
                         }
-                    }
-                    if (newSportEvents.length > 0) {
-                        console.log(y.sport);
-                        console.log(newSportEvents);
                     }
                 });
             }

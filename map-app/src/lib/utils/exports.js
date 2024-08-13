@@ -20,6 +20,34 @@ export const nameExceptions = {
   'Mauritius': 'No geography for Mauritius on 2000 basemap. First medal was 2008 so could add later if more recent basemap is used, but for now it will only be in table.',
   'Serbia and Montenegro': 'Fixed for 1994 but then realized first medal was 1996. Both Serbia and Montenegro individually had medals post-2000 so for now anything won under Serbia and Montenegro will not show up on map.',
   'ROC': 'On the 2000 basemap, I used Russian Federation as the OLYMPIC_NAME for Russia, leaving out ROC.'
+}
+
+
+// this one is by year first, then sport with array holding events
+export function makeSportEventObj(data) {
+  data = data.post;
+  
+  let sportObj = {};
+
+  data.forEach(([country,medal,year,sport,sportEvent,athlete,source]) => {
+      
+      // initialize year if not present in sportObj
+      if (!sportObj[year]) {
+          sportObj[year] = {};
+      }
+
+      // initialize sport if not present for current year
+      if (!sportObj[year][sport]) {
+          sportObj[year][sport] = []
+      }
+
+      // if year is not present under this sportEvent, add it
+      if (!sportObj[year][sport].includes(sportEvent)) {
+          sportObj[year][sport].push(sportEvent)
+      }
+  })
+  console.log(sportObj);
+  return sportObj;
 
 }
 
@@ -507,9 +535,9 @@ export const eventsByYear = {
       "100 kilometres, Men"
     ],
     "Swimming": [
-      "100 metres Freestyle, Men",
+      "Men's 100m Freestyle",
       "500 metres Freestyle, Men",
-      "1,200 metres Freestyle, Men",
+      "1,Men's 200m Freestyle",
       "100 metres Freestyle For Sailors, Men"
     ],
     "Fencing": [
@@ -539,7 +567,7 @@ export const eventsByYear = {
       "Rope Climbing, Men"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men"
+      "Men's Road Race"
     ],
     "Wrestling": [
       "Unlimited Class, Greco-Roman, Men"
@@ -581,9 +609,9 @@ export const eventsByYear = {
       "Épée, Masters, Individual, Men"
     ],
     "Swimming": [
-      "200 metres Freestyle, Men",
+      "Men's 200m Freestyle",
       "1,000 metres Freestyle, Men",
-      "200 metres Backstroke, Men",
+      "Men's 200m Backstroke",
       "200 metres Obstacle Course, Men",
       "Underwater Swimming, Men",
       "4,000 metres Freestyle, Men",
@@ -607,11 +635,11 @@ export const eventsByYear = {
       "High Jump, Open"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Rowing": [
       "Eights, Men",
-      "Single Sculls, Men",
+      "Men's Single Sculls",
       "Coxed Pairs, Men",
       "Coxed Fours, Men"
     ],
@@ -708,7 +736,7 @@ export const eventsByYear = {
       "Men's Hammer Throw"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Golf": [
       "Individual, Men",
@@ -719,8 +747,8 @@ export const eventsByYear = {
     ],
     "Rowing": [
       "Eights, Men",
-      "Single Sculls, Men",
-      "Double Sculls, Men",
+      "Men's Single Sculls",
+      "Men's Double Sculls",
       "Coxless Pairs, Men",
       "Coxless Fours, Men"
     ],
@@ -826,7 +854,7 @@ export const eventsByYear = {
       "3 miles, Men's Team",
       "Men's High Jump",
       "Men's 800m",
-      "1,600 metres Medley Relay, Men",
+      "Men's 1600m Medley Relay",
       "Men's 400m",
       "Men's 1500m",
       "5 miles, Men",
@@ -853,12 +881,12 @@ export const eventsByYear = {
       "Rugby, Men"
     ],
     "Swimming": [
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "100 metres Backstroke, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "200 metres Breaststroke, Men",
-      "100 metres Freestyle, Men"
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 100m Backstroke",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 200m Breaststroke",
+      "Men's 100m Freestyle"
     ],
     "Cycling Track": [
       "20 kilometres, Men",
@@ -878,7 +906,7 @@ export const eventsByYear = {
       "Eights, Men",
       "Coxless Pairs, Men",
       "Coxless Fours, Men",
-      "Single Sculls, Men"
+      "Men's Single Sculls"
     ],
     "Sailing": [
       "6 metres, Open",
@@ -921,7 +949,7 @@ export const eventsByYear = {
       "Heavyweight, Freestyle, Men"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Artistic Gymnastics": [
       "Men's All-Around (Team)",
@@ -956,7 +984,7 @@ export const eventsByYear = {
       "Singles, Covered Courts, Women"
     ],
     "Hockey": [
-      "Hockey, Men"
+      "Men"
     ],
     "Jeu De Paume": [
       "Singles, Men"
@@ -974,14 +1002,14 @@ export const eventsByYear = {
   },
   "1912": {
     "Swimming": [
-      "100 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "100 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Backstroke, Men",
-      "200 metres Breaststroke, Men",
+      "Men's 100m Freestyle",
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 4 x 200m Freestyle Relay",
+      "Women's 100m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Men's 100m Backstroke",
+      "Men's 200m Breaststroke",
       "400 metres Breaststroke, Men"
     ],
     "Tennis": [
@@ -1006,7 +1034,7 @@ export const eventsByYear = {
       "Men's Team"
     ],
     "Rowing": [
-      "Single Sculls, Men",
+      "Men's Single Sculls",
       "Coxed Fours, Outriggers, Men",
       "Coxed Fours, Inriggers, Men",
       "Eights, Men"
@@ -1023,7 +1051,7 @@ export const eventsByYear = {
       "Men's 5000m",
       "Men's 10,000m",
       "Cross-Country, Individual, Men",
-      "Cross-Country, Men's Team",
+      "Men's Cross-country's Team",
       "Shot Put, Both Hands, Men",
       "Men's Discus Throw",
       "Discus Throw, Both Hands, Men",
@@ -1053,7 +1081,7 @@ export const eventsByYear = {
       "Men's All-Around (Team)"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Sailing": [
       "6 metres, Open",
@@ -1106,7 +1134,7 @@ export const eventsByYear = {
       "Plain High, Men"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
+      "Men's Road Race",
       "Road Race, Men's Team"
     ],
     "Tug-Of-War": [
@@ -1128,7 +1156,7 @@ export const eventsByYear = {
       "Men's 5000m",
       "Men's 10,000m",
       "Cross-Country, Individual, Men",
-      "Cross-Country, Men's Team",
+      "Men's Cross-country's Team",
       "Men's Triple Jump",
       "Men's Shot Put",
       "Men's Discus Throw",
@@ -1152,15 +1180,15 @@ export const eventsByYear = {
       "Men's 400m Hurdles"
     ],
     "Swimming": [
-      "1,500 metres Freestyle, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "100 metres Backstroke, Men",
-      "400 metres Freestyle, Men",
-      "200 metres Breaststroke, Men",
+      "Men's 1500m Freestyle",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 100m Backstroke",
+      "Men's 400m Freestyle",
+      "Men's 200m Breaststroke",
       "400 metres Breaststroke, Men",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Freestyle, Men",
-      "100 metres Freestyle, Women",
+      "Women's 4 x 100m Freestyle Relay",
+      "Men's 100m Freestyle",
+      "Women's 100m Freestyle",
       "300 metres Freestyle, Women"
     ],
     "Archery": [
@@ -1190,7 +1218,7 @@ export const eventsByYear = {
     ],
     "Cycling Road": [
       "Road Race, Men's Team",
-      "Road Race, Individual, Men"
+      "Men's Road Race"
     ],
     "Cycling Track": [
       "50 kilometres, Men",
@@ -1219,10 +1247,10 @@ export const eventsByYear = {
       "Sabre, Individual, Men"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Hockey": [
-      "Hockey, Men"
+      "Men"
     ],
     "Sailing": [
       "6 metres, Open",
@@ -1282,7 +1310,7 @@ export const eventsByYear = {
       "Light-Heavyweight, Men"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Tennis": [
       "Doubles, Mixed",
@@ -1316,9 +1344,9 @@ export const eventsByYear = {
       "Singles, Women"
     ],
     "Rowing": [
-      "Double Sculls, Men",
+      "Men's Double Sculls",
       "Coxed Pairs, Men",
-      "Single Sculls, Men",
+      "Men's Single Sculls",
       "Eights, Men",
       "Coxed Fours, Men"
     ],
@@ -1347,7 +1375,7 @@ export const eventsByYear = {
       "Men's 3000m Steeplechase",
       "Men's 3000m's Team",
       "Cross-Country, Individual, Men",
-      "Cross-Country, Men's Team",
+      "Men's Cross-country's Team",
       "Men's Discus Throw",
       "Men's Javelin Throw",
       "Pentathlon, Men",
@@ -1386,17 +1414,17 @@ export const eventsByYear = {
       "Springboard, Women"
     ],
     "Swimming": [
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "200 metres Breaststroke, Men",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Backstroke, Women",
-      "200 metres Breaststroke, Women",
-      "100 metres Backstroke, Men",
-      "100 metres Freestyle, Men",
-      "100 metres Freestyle, Women",
-      "400 metres Freestyle, Women"
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 200m Breaststroke",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 100m Backstroke",
+      "Women's 200m Breaststroke",
+      "Men's 100m Backstroke",
+      "Men's 100m Freestyle",
+      "Women's 100m Freestyle",
+      "Women's 400m Freestyle"
     ],
     "Alpinism": [
       "Alpinism, Open"
@@ -1414,7 +1442,7 @@ export const eventsByYear = {
       "Pairs, Mixed"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
+      "Men's Road Race",
       "Road Race, Men's Team"
     ],
     "Cycling Track": [
@@ -1461,16 +1489,16 @@ export const eventsByYear = {
     "Rowing": [
       "Coxless Fours, Men",
       "Eights, Men",
-      "Double Sculls, Men",
+      "Men's Double Sculls",
       "Coxless Pairs, Men",
       "Coxed Fours, Men",
-      "Single Sculls, Men",
+      "Men's Single Sculls",
       "Coxed Pairs, Men"
     ],
     "Shooting": [
       "Trap, Men's Team",
       "Free Rifle, Prone, 600 metres, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
+      "25m Rapid Fire Pistol Men",
       "Trap, Men",
       "Free Rifle, 400, 600 and Men's 800m's Team",
       "Small-Bore Rifle, Prone, 50 metres, Men",
@@ -1480,7 +1508,7 @@ export const eventsByYear = {
       "Running Target, Single Shot, Men's Team"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Artistic Gymnastics": [
       "Men's All-Around (Individual)",
@@ -1544,7 +1572,7 @@ export const eventsByYear = {
       "Large Hill, Individual, Men"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Modern Pentathlon": [
       "Individual, Men"
@@ -1571,20 +1599,20 @@ export const eventsByYear = {
       "Sabre, Men's Team"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Swimming": [
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "200 metres Breaststroke, Men",
-      "200 metres Breaststroke, Women",
-      "100 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Backstroke, Women",
-      "100 metres Freestyle, Men",
-      "400 metres Freestyle, Women",
-      "100 metres Backstroke, Men"
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 200m Breaststroke",
+      "Women's 200m Breaststroke",
+      "Women's 100m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 100m Backstroke",
+      "Men's 100m Freestyle",
+      "Women's 400m Freestyle",
+      "Men's 100m Backstroke"
     ],
     "Cycling Track": [
       "1,000 metres Time Trial, Men",
@@ -1593,8 +1621,8 @@ export const eventsByYear = {
       "Team Pursuit, 4,000 metres, Men"
     ],
     "Rowing": [
-      "Single Sculls, Men",
-      "Double Sculls, Men",
+      "Men's Single Sculls",
+      "Men's Double Sculls",
       "Coxed Pairs, Men",
       "Eights, Men",
       "Coxless Pairs, Men",
@@ -1671,7 +1699,7 @@ export const eventsByYear = {
       "Men's Pole Vault"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Artistic Gymnastics": [
       "Men's All-Around (Team)",
@@ -1691,7 +1719,7 @@ export const eventsByYear = {
       "Large Hill, Individual, Men"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
+      "Men's Road Race",
       "Road Race, Men's Team"
     ],
     "Sailing": [
@@ -1716,7 +1744,7 @@ export const eventsByYear = {
       "Men's Team"
     ],
     "Hockey": [
-      "Hockey, Men"
+      "Men"
     ],
     "Modern Pentathlon": [
       "Individual, Men"
@@ -1790,8 +1818,8 @@ export const eventsByYear = {
       "Team Pursuit, 4,000 metres, Men"
     ],
     "Rowing": [
-      "Single Sculls, Men",
-      "Double Sculls, Men",
+      "Men's Single Sculls",
+      "Men's Double Sculls",
       "Eights, Men",
       "Coxed Pairs, Men",
       "Coxless Fours, Men",
@@ -1799,17 +1827,17 @@ export const eventsByYear = {
       "Coxless Pairs, Men"
     ],
     "Swimming": [
-      "100 metres Backstroke, Women",
-      "200 metres Breaststroke, Women",
-      "400 metres Freestyle, Men",
-      "4 × 100 metres Freestyle Relay, Women",
-      "4 × 200 metres Freestyle Relay, Men",
-      "100 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "100 metres Backstroke, Men",
-      "200 metres Breaststroke, Men",
-      "100 metres Freestyle, Women",
-      "400 metres Freestyle, Women"
+      "Women's 100m Backstroke",
+      "Women's 200m Breaststroke",
+      "Men's 400m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 100m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 100m Backstroke",
+      "Men's 200m Breaststroke",
+      "Women's 100m Freestyle",
+      "Women's 400m Freestyle"
     ],
     "Wrestling": [
       "Light-Heavyweight, Freestyle, Men",
@@ -1866,7 +1894,7 @@ export const eventsByYear = {
       "Two Person Keelboat, Open"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Speed Skating": [
       "Men's 500m",
@@ -1876,7 +1904,7 @@ export const eventsByYear = {
     ],
     "Cycling Road": [
       "Road Race, Men's Team",
-      "Road Race, Individual, Men"
+      "Men's Road Race"
     ],
     "Artistic Gymnastics": [
       "Men's All-Around (Individual)",
@@ -1903,7 +1931,7 @@ export const eventsByYear = {
       "Alpinism, Open"
     ],
     "Shooting": [
-      "Rapid-Fire Pistol, 25 metres, Men",
+      "25m Rapid Fire Pistol Men",
       "Small-Bore Rifle, Prone, 50 metres, Men"
     ],
     "Water Polo": [
@@ -1914,7 +1942,7 @@ export const eventsByYear = {
       "Two, Men"
     ],
     "Hockey": [
-      "Hockey, Men"
+      "Men"
     ],
     "Equestrian Jumping": [
       "Individual, Men"
@@ -1955,25 +1983,25 @@ export const eventsByYear = {
     ],
     "Rowing": [
       "Coxless Pairs, Men",
-      "Single Sculls, Men",
+      "Men's Single Sculls",
       "Coxed Pairs, Men",
       "Coxed Fours, Men",
-      "Double Sculls, Men",
+      "Men's Double Sculls",
       "Coxless Fours, Men",
       "Eights, Men"
     ],
     "Swimming": [
-      "100 metres Freestyle, Women",
-      "400 metres Freestyle, Women",
-      "200 metres Breaststroke, Women",
-      "200 metres Breaststroke, Men",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Freestyle, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "100 metres Backstroke, Men",
-      "100 metres Backstroke, Women"
+      "Women's 100m Freestyle",
+      "Women's 400m Freestyle",
+      "Women's 200m Breaststroke",
+      "Men's 200m Breaststroke",
+      "Women's 4 x 100m Freestyle Relay",
+      "Men's 100m Freestyle",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 100m Backstroke",
+      "Women's 100m Backstroke"
     ],
     "Athletics": [
       "Men's Triple Jump",
@@ -2028,10 +2056,10 @@ export const eventsByYear = {
       "Folding Kayak Doubles, Men's 10,000m"
     ],
     "Canoe Sprint": [
-      "Kayak Singles, Men's 1000m",
-      "Kayak Doubles, Men's 1000m",
-      "Canadian Doubles, Men's 1000m",
-      "Canadian Singles, Men's 1000m"
+      "Kayak Singles, 1,000 metres, Men",
+      "Kayak Doubles, 1,000 metres, Men",
+      "Canadian Doubles, 1,000 metres, Men",
+      "Canadian Singles, 1,000 metres, Men"
     ],
     "Equestrian Dressage": [
       "Individual, Men",
@@ -2047,7 +2075,7 @@ export const eventsByYear = {
       "Épée, Individual, Men"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Handball": [
       "Handball, Men"
@@ -2072,7 +2100,7 @@ export const eventsByYear = {
     ],
     "Cycling Road": [
       "Road Race, Men's Team",
-      "Road Race, Individual, Men"
+      "Men's Road Race"
     ],
     "Water Polo": [
       "Water Polo, Men"
@@ -2097,7 +2125,7 @@ export const eventsByYear = {
       "Bantamweight, Freestyle, Men"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Artistic Gymnastics": [
       "Men's Rings",
@@ -2127,7 +2155,7 @@ export const eventsByYear = {
     ],
     "Shooting": [
       "Free Pistol, 50 metres, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
+      "25m Rapid Fire Pistol Men",
       "Small-Bore Rifle, Prone, 50 metres, Men"
     ],
     "Alpine Skiing": [
@@ -2145,7 +2173,7 @@ export const eventsByYear = {
       "Men's Team"
     ],
     "Hockey": [
-      "Hockey, Men"
+      "Men"
     ],
     "Modern Pentathlon": [
       "Individual, Men"
@@ -2226,14 +2254,14 @@ export const eventsByYear = {
       "Three Person Keelboat, Open"
     ],
     "Shooting": [
-      "Rapid-Fire Pistol, 25 metres, Men",
+      "25m Rapid Fire Pistol Men",
       "Free Rifle, Three Positions, 300 metres, Men",
       "Free Pistol, 50 metres, Men",
       "Small-Bore Rifle, Prone, 50 metres, Men"
     ],
     "Rowing": [
-      "Single Sculls, Men",
-      "Double Sculls, Men",
+      "Men's Single Sculls",
+      "Men's Double Sculls",
       "Coxed Pairs, Men",
       "Coxless Fours, Men",
       "Coxed Fours, Men",
@@ -2241,17 +2269,17 @@ export const eventsByYear = {
       "Eights, Men"
     ],
     "Swimming": [
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "100 metres Backstroke, Women",
-      "200 metres Breaststroke, Women",
-      "100 metres Freestyle, Women",
-      "400 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "4 × 200 metres Freestyle Relay, Men",
-      "100 metres Backstroke, Men",
-      "100 metres Freestyle, Men",
-      "200 metres Breaststroke, Men"
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Women's 100m Backstroke",
+      "Women's 200m Breaststroke",
+      "Women's 100m Freestyle",
+      "Women's 400m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 100m Backstroke",
+      "Men's 100m Freestyle",
+      "Men's 200m Breaststroke"
     ],
     "Wrestling": [
       "Welterweight, Freestyle, Men",
@@ -2288,10 +2316,10 @@ export const eventsByYear = {
     ],
     "Canoe Sprint": [
       "Kayak Singles, Women's 500m",
-      "Canadian Singles, Men's 1000m",
-      "Canadian Doubles, Men's 1000m",
-      "Kayak Singles, Men's 1000m",
-      "Kayak Doubles, Men's 1000m"
+      "Canadian Singles, 1,000 metres, Men",
+      "Canadian Doubles, 1,000 metres, Men",
+      "Kayak Singles, 1,000 metres, Men",
+      "Kayak Doubles, 1,000 metres, Men"
     ],
     "Fencing": [
       "Foil, Individual, Women",
@@ -2316,7 +2344,7 @@ export const eventsByYear = {
       "Pairs, Mixed"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
+      "Men's Road Race",
       "Road Race, Men's Team"
     ],
     "Cycling Track": [
@@ -2339,7 +2367,7 @@ export const eventsByYear = {
       "Kayak Doubles, Men's 10,000m"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Artistic Gymnastics": [
       "Men's Floor Exercise",
@@ -2359,7 +2387,7 @@ export const eventsByYear = {
       "Springboard, Women"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Cross Country Skiing": [
       "50 kilometres, Men",
@@ -2388,7 +2416,7 @@ export const eventsByYear = {
       "Men's Team"
     ],
     "Hockey": [
-      "Hockey, Men"
+      "Men"
     ],
     "Weightlifting": [
       "Bantamweight, Men",
@@ -2460,8 +2488,8 @@ export const eventsByYear = {
       "Flyweight, Men"
     ],
     "Rowing": [
-      "Double Sculls, Men",
-      "Single Sculls, Men",
+      "Men's Double Sculls",
+      "Men's Single Sculls",
       "Eights, Men",
       "Coxless Pairs, Men",
       "Coxed Fours, Men",
@@ -2484,24 +2512,24 @@ export const eventsByYear = {
       "Team Pursuit, 4,000 metres, Men"
     ],
     "Swimming": [
-      "200 metres Breaststroke, Men",
-      "1,500 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "100 metres Backstroke, Men",
-      "200 metres Breaststroke, Women",
-      "100 metres Freestyle, Women",
-      "400 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Freestyle, Men",
-      "100 metres Backstroke, Women"
+      "Men's 200m Breaststroke",
+      "Men's 1500m Freestyle",
+      "Men's 400m Freestyle",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 100m Backstroke",
+      "Women's 200m Breaststroke",
+      "Women's 100m Freestyle",
+      "Women's 400m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Men's 100m Freestyle",
+      "Women's 100m Backstroke"
     ],
     "Canoe Sprint": [
-      "Kayak Doubles, Men's 1000m",
+      "Kayak Doubles, 1,000 metres, Men",
       "Kayak Singles, Women's 500m",
-      "Canadian Singles, Men's 1000m",
-      "Canadian Doubles, Men's 1000m",
-      "Kayak Singles, Men's 1000m"
+      "Canadian Singles, 1,000 metres, Men",
+      "Canadian Doubles, 1,000 metres, Men",
+      "Kayak Singles, 1,000 metres, Men"
     ],
     "Alpine Skiing": [
       "Downhill, Men",
@@ -2517,7 +2545,7 @@ export const eventsByYear = {
       "Pairs, Mixed"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
+      "Men's Road Race",
       "Road Race, Men's Team"
     ],
     "Canoe Marathon": [
@@ -2528,15 +2556,15 @@ export const eventsByYear = {
     ],
     "Shooting": [
       "Trap, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
+      "50m Rifle 3 Positions Men",
       "Running Target, Single and Double Shot, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
+      "25m Rapid Fire Pistol Men",
       "Free Pistol, 50 metres, Men",
       "Small-Bore Rifle, Prone, 50 metres, Men",
       "Free Rifle, Three Positions, 300 metres, Men"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Speed Skating": [
       "Men's 500m",
@@ -2631,10 +2659,10 @@ export const eventsByYear = {
       "Four, Men"
     ],
     "Hockey": [
-      "Hockey, Men"
+      "Men"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Water Polo": [
       "Water Polo, Men"
@@ -2716,8 +2744,8 @@ export const eventsByYear = {
       "Team Pursuit, 4,000 metres, Men"
     ],
     "Rowing": [
-      "Single Sculls, Men",
-      "Double Sculls, Men",
+      "Men's Single Sculls",
+      "Men's Double Sculls",
       "Eights, Men",
       "Coxless Pairs, Men",
       "Coxless Fours, Men",
@@ -2732,26 +2760,26 @@ export const eventsByYear = {
       "Two Person Keelboat, Open"
     ],
     "Swimming": [
-      "100 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "100 metres Backstroke, Men",
-      "100 metres Freestyle, Women",
-      "400 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "200 metres Breaststroke, Women",
-      "100 metres Backstroke, Women",
-      "200 metres Butterfly, Men",
-      "200 metres Breaststroke, Men",
-      "100 metres Butterfly, Women"
+      "Men's 100m Freestyle",
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 100m Backstroke",
+      "Women's 100m Freestyle",
+      "Women's 400m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 200m Breaststroke",
+      "Women's 100m Backstroke",
+      "Men's 200m Butterfly",
+      "Men's 200m Breaststroke",
+      "Women's 100m Butterfly"
     ],
     "Canoe Sprint": [
-      "Kayak Doubles, Men's 1000m",
+      "Kayak Doubles, 1,000 metres, Men",
       "Kayak Singles, Women's 500m",
-      "Kayak Singles, Men's 1000m",
-      "Canadian Singles, Men's 1000m",
-      "Canadian Doubles, Men's 1000m"
+      "Kayak Singles, 1,000 metres, Men",
+      "Canadian Singles, 1,000 metres, Men",
+      "Canadian Doubles, 1,000 metres, Men"
     ],
     "Alpine Skiing": [
       "Downhill, Men",
@@ -2785,7 +2813,7 @@ export const eventsByYear = {
       "Welterweight, Greco-Roman, Men"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Diving": [
       "Springboard, Women",
@@ -2795,15 +2823,15 @@ export const eventsByYear = {
     ],
     "Shooting": [
       "Small-Bore Rifle, Prone, 50 metres, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
+      "50m Rifle 3 Positions Men",
       "Free Pistol, 50 metres, Men",
       "Free Rifle, Three Positions, 300 metres, Men",
       "Trap, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
+      "25m Rapid Fire Pistol Men",
       "Running Target, Single and Double Shot, Men"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Artistic Gymnastics": [
       "Women's Balance Beam",
@@ -2844,7 +2872,7 @@ export const eventsByYear = {
       "Men's 5000m"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
+      "Men's Road Race",
       "Road Race, Men's Team"
     ],
     "Fencing": [
@@ -2857,7 +2885,7 @@ export const eventsByYear = {
       "Épée, Individual, Men"
     ],
     "Hockey": [
-      "Hockey, Men"
+      "Men"
     ],
     "Water Polo": [
       "Water Polo, Men"
@@ -2934,35 +2962,35 @@ export const eventsByYear = {
       "Men's Team"
     ],
     "Swimming": [
-      "100 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "100 metres Backstroke, Men",
-      "200 metres Butterfly, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "100 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Butterfly, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "200 metres Breaststroke, Women",
-      "100 metres Backstroke, Women",
-      "200 metres Breaststroke, Men",
-      "400 metres Freestyle, Women"
+      "Men's 100m Freestyle",
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 100m Backstroke",
+      "Men's 200m Butterfly",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 100m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 100m Butterfly",
+      "Women's 4 x 100m Medley Relay",
+      "Women's 200m Breaststroke",
+      "Women's 100m Backstroke",
+      "Men's 200m Breaststroke",
+      "Women's 400m Freestyle"
     ],
     "Rowing": [
       "Coxless Pairs, Men",
       "Eights, Men",
-      "Double Sculls, Men",
+      "Men's Double Sculls",
       "Coxed Fours, Men",
-      "Single Sculls, Men",
+      "Men's Single Sculls",
       "Coxed Pairs, Men",
       "Coxless Fours, Men"
     ],
     "Shooting": [
       "Free Rifle, Three Positions, 300 metres, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
+      "25m Rapid Fire Pistol Men",
+      "50m Rifle 3 Positions Men",
       "Small-Bore Rifle, Prone, 50 metres, Men",
       "Trap, Men",
       "Free Pistol, 50 metres, Men"
@@ -2979,7 +3007,7 @@ export const eventsByYear = {
       "Large Hill, Individual, Men"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
+      "Men's Road Race",
       "100 kilometres Team Time Trial, Men"
     ],
     "Cycling Track": [
@@ -3031,19 +3059,19 @@ export const eventsByYear = {
       "Singles, Women"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Canoe Sprint": [
-      "Kayak Singles, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
       "Kayak Relay, 4 × Men's 500m",
       "Kayak Singles, Women's 500m",
       "Kayak Doubles, Women's 500m",
-      "Kayak Doubles, Men's 1000m",
-      "Canadian Singles, Men's 1000m",
-      "Canadian Doubles, Men's 1000m"
+      "Kayak Doubles, 1,000 metres, Men",
+      "Canadian Singles, 1,000 metres, Men",
+      "Canadian Doubles, 1,000 metres, Men"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Biathlon": [
       "20 kilometres, Men"
@@ -3109,7 +3137,7 @@ export const eventsByYear = {
       "Water Polo, Men"
     ],
     "Hockey": [
-      "Hockey, Men"
+      "Men"
     ]
   },
   "1964": {
@@ -3156,7 +3184,7 @@ export const eventsByYear = {
       "Men's 200m"
     ],
     "Hockey": [
-      "Hockey, Men"
+      "Men"
     ],
     "Judo": [
       "Open Class, Men",
@@ -3172,24 +3200,24 @@ export const eventsByYear = {
       "Two Person Keelboat, Open"
     ],
     "Swimming": [
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "4 × 100 metres Freestyle Relay, Men",
-      "200 metres Breaststroke, Men",
-      "200 metres Butterfly, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "100 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Backstroke, Women",
-      "100 metres Freestyle, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "400 metres Individual Medley, Men",
-      "100 metres Butterfly, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "200 metres Breaststroke, Women",
-      "200 metres Backstroke, Men",
-      "400 metres Freestyle, Women",
-      "400 metres Individual Medley, Women"
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 4 x 100m Freestyle Relay",
+      "Men's 200m Breaststroke",
+      "Men's 200m Butterfly",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 100m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 100m Backstroke",
+      "Men's 100m Freestyle",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 400m Individual Medley",
+      "Women's 100m Butterfly",
+      "Women's 4 x 100m Medley Relay",
+      "Women's 200m Breaststroke",
+      "Men's 200m Backstroke",
+      "Women's 400m Freestyle",
+      "Women's 400m Individual Medley"
     ],
     "Alpine Skiing": [
       "Downhill, Men",
@@ -3214,7 +3242,7 @@ export const eventsByYear = {
       "Singles, Men"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
+      "Men's Road Race",
       "100 kilometres Team Time Trial, Men"
     ],
     "Cycling Track": [
@@ -3240,8 +3268,8 @@ export const eventsByYear = {
       "Bantamweight, Men"
     ],
     "Shooting": [
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
+      "50m Rifle 3 Positions Men",
+      "25m Rapid Fire Pistol Men",
       "Free Pistol, 50 metres, Men",
       "Small-Bore Rifle, Prone, 50 metres, Men",
       "Trap, Men",
@@ -3267,11 +3295,11 @@ export const eventsByYear = {
     ],
     "Rowing": [
       "Coxless Pairs, Men",
-      "Double Sculls, Men",
+      "Men's Double Sculls",
       "Eights, Men",
       "Coxless Fours, Men",
       "Coxed Pairs, Men",
-      "Single Sculls, Men",
+      "Men's Single Sculls",
       "Coxed Fours, Men"
     ],
     "Artistic Gymnastics": [
@@ -3291,11 +3319,11 @@ export const eventsByYear = {
       "Men's Horizontal Bar"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Weightlifting": [
       "Middleweight, Men",
@@ -3307,15 +3335,15 @@ export const eventsByYear = {
       "Heavyweight, Men"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Canoe Sprint": [
-      "Canadian Doubles, Men's 1000m",
-      "Kayak Doubles, Men's 1000m",
-      "Kayak Fours, Men's 1000m",
-      "Canadian Singles, Men's 1000m",
+      "Canadian Doubles, 1,000 metres, Men",
+      "Kayak Doubles, 1,000 metres, Men",
+      "Kayak Fours, 1,000 metres, Men",
+      "Canadian Singles, 1,000 metres, Men",
       "Kayak Doubles, Women's 500m",
-      "Kayak Singles, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
       "Kayak Singles, Women's 500m"
     ],
     "Cross Country Skiing": [
@@ -3394,13 +3422,13 @@ export const eventsByYear = {
       "Lightweight, Men"
     ],
     "Rowing": [
-      "Single Sculls, Men",
+      "Men's Single Sculls",
       "Eights, Men",
       "Coxless Pairs, Men",
       "Coxed Pairs, Men",
       "Coxless Fours, Men",
       "Coxed Fours, Men",
-      "Double Sculls, Men"
+      "Men's Double Sculls"
     ],
     "Athletics": [
       "Men's 200m",
@@ -3445,45 +3473,45 @@ export const eventsByYear = {
       "Individual, Open"
     ],
     "Hockey": [
-      "Hockey, Men"
+      "Men"
     ],
     "Swimming": [
-      "100 metres Freestyle, Men",
-      "200 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "4 × 100 metres Freestyle Relay, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "400 metres Freestyle, Women",
-      "100 metres Butterfly, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "400 metres Freestyle, Men",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Backstroke, Women",
-      "200 metres Backstroke, Women",
-      "100 metres Backstroke, Men",
-      "200 metres Backstroke, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "200 metres Butterfly, Women",
-      "400 metres Individual Medley, Women",
-      "200 metres Butterfly, Men",
-      "200 metres Breaststroke, Men",
-      "800 metres Freestyle, Women",
-      "100 metres Breaststroke, Men",
-      "100 metres Breaststroke, Women",
-      "200 metres Breaststroke, Women",
-      "100 metres Butterfly, Men",
-      "200 metres Individual Medley, Men",
-      "400 metres Individual Medley, Men",
-      "100 metres Freestyle, Women",
-      "200 metres Freestyle, Women",
-      "200 metres Individual Medley, Women"
+      "Men's 100m Freestyle",
+      "Men's 200m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 4 x 100m Freestyle Relay",
+      "Men's 4 x 200m Freestyle Relay",
+      "Women's 400m Freestyle",
+      "Women's 100m Butterfly",
+      "Women's 4 x 100m Medley Relay",
+      "Men's 400m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 100m Backstroke",
+      "Women's 200m Backstroke",
+      "Men's 100m Backstroke",
+      "Men's 200m Backstroke",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 200m Butterfly",
+      "Women's 400m Individual Medley",
+      "Men's 200m Butterfly",
+      "Men's 200m Breaststroke",
+      "Women's 800m Freestyle",
+      "Men's 100m Breaststroke",
+      "Women's 100m Breaststroke",
+      "Women's 200m Breaststroke",
+      "Men's 100m Butterfly",
+      "Men's 200m Individual Medley",
+      "Men's 400m Individual Medley",
+      "Women's 100m Freestyle",
+      "Women's 200m Freestyle",
+      "Women's 200m Individual Medley"
     ],
     "Canoe Sprint": [
-      "Kayak Doubles, Men's 1000m",
-      "Kayak Singles, Men's 1000m",
-      "Kayak Fours, Men's 1000m",
-      "Canadian Singles, Men's 1000m",
-      "Canadian Doubles, Men's 1000m",
+      "Kayak Doubles, 1,000 metres, Men",
+      "Kayak Singles, 1,000 metres, Men",
+      "Kayak Fours, 1,000 metres, Men",
+      "Canadian Singles, 1,000 metres, Men",
+      "Canadian Doubles, 1,000 metres, Men",
       "Kayak Doubles, Women's 500m",
       "Kayak Singles, Women's 500m"
     ],
@@ -3537,7 +3565,7 @@ export const eventsByYear = {
       "Light-Heavyweight, Men"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Wrestling": [
       "Flyweight, Greco-Roman, Men",
@@ -3562,7 +3590,7 @@ export const eventsByYear = {
       "Individual, Open"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Artistic Gymnastics": [
       "Women's All-Around (Individual)",
@@ -3590,17 +3618,17 @@ export const eventsByYear = {
       "Small-Bore Rifle, Prone, 50 metres, Open",
       "Free Pistol, 50 metres, Open",
       "Trap, Open",
-      "Skeet, Open",
+      "Skeet, Mixed",
       "Rapid-Fire Pistol, 25 metres, Open",
       "Free Rifle, Three Positions, 300 metres, Open",
       "Small-Bore Rifle, Three Positions, 50 metres, Open"
     ],
     "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
+      "Men's Road Race",
       "100 kilometres Team Time Trial, Men"
     ],
     "Nordic Combined": [
@@ -3656,10 +3684,10 @@ export const eventsByYear = {
   },
   "1972": {
     "Rowing": [
-      "Single Sculls, Men",
+      "Men's Single Sculls",
       "Coxed Pairs, Men",
       "Coxed Fours, Men",
-      "Double Sculls, Men",
+      "Men's Double Sculls",
       "Coxless Pairs, Men",
       "Coxless Fours, Men",
       "Eights, Men"
@@ -3705,7 +3733,7 @@ export const eventsByYear = {
       "Men's Long Jump"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
+      "Men's Road Race",
       "100 kilometres Team Time Trial, Men"
     ],
     "Cycling Track": [
@@ -3722,39 +3750,39 @@ export const eventsByYear = {
       "Two Person Heavyweight Dinghy, Open"
     ],
     "Swimming": [
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "100 metres Freestyle, Women",
-      "200 metres Freestyle, Women",
-      "400 metres Freestyle, Women",
-      "800 metres Freestyle, Women",
-      "100 metres Breaststroke, Women",
-      "200 metres Breaststroke, Women",
-      "200 metres Individual Medley, Women",
-      "400 metres Individual Medley, Women",
-      "100 metres Butterfly, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "200 metres Backstroke, Women",
-      "4 × 100 metres Freestyle Relay, Men",
-      "100 metres Backstroke, Men",
-      "200 metres Backstroke, Men",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Butterfly, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "200 metres Breaststroke, Men",
-      "400 metres Individual Medley, Men",
-      "100 metres Backstroke, Women",
-      "100 metres Breaststroke, Men",
-      "100 metres Freestyle, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "200 metres Individual Medley, Men",
-      "200 metres Freestyle, Men",
-      "200 metres Butterfly, Men",
-      "200 metres Butterfly, Women"
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Women's 100m Freestyle",
+      "Women's 200m Freestyle",
+      "Women's 400m Freestyle",
+      "Women's 800m Freestyle",
+      "Women's 100m Breaststroke",
+      "Women's 200m Breaststroke",
+      "Women's 200m Individual Medley",
+      "Women's 400m Individual Medley",
+      "Men's 100m Butterfly",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 200m Backstroke",
+      "Men's 4 x 100m Freestyle Relay",
+      "Men's 100m Backstroke",
+      "Men's 200m Backstroke",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 100m Butterfly",
+      "Women's 4 x 100m Medley Relay",
+      "Men's 200m Breaststroke",
+      "Men's 400m Individual Medley",
+      "Women's 100m Backstroke",
+      "Men's 100m Breaststroke",
+      "Men's 100m Freestyle",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 200m Individual Medley",
+      "Men's 200m Freestyle",
+      "Men's 200m Butterfly",
+      "Women's 200m Butterfly"
     ],
     "Canoe Slalom": [
       "Kayak Singles, Slalom, Men",
-      "Canadian Singles, Slalom, Men",
+      "Men's Canoe Single",
       "Canadian Doubles, Slalom, Men",
       "Kayak Singles, Slalom, Women"
     ],
@@ -3763,7 +3791,7 @@ export const eventsByYear = {
       "Running Target, 50 metres, Open",
       "Rapid-Fire Pistol, 25 metres, Open",
       "Small-Bore Rifle, Three Positions, 50 metres, Open",
-      "Skeet, Open",
+      "Skeet, Mixed",
       "Trap, Open",
       "Free Rifle, Three Positions, 300 metres, Open",
       "Small-Bore Rifle, Prone, 50 metres, Open"
@@ -3803,13 +3831,13 @@ export const eventsByYear = {
       "Light-Flyweight, Men"
     ],
     "Canoe Sprint": [
-      "Canadian Doubles, Men's 1000m",
+      "Canadian Doubles, 1,000 metres, Men",
       "Kayak Doubles, Women's 500m",
-      "Kayak Singles, Men's 1000m",
-      "Kayak Doubles, Men's 1000m",
-      "Canadian Singles, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
+      "Kayak Doubles, 1,000 metres, Men",
+      "Canadian Singles, 1,000 metres, Men",
       "Kayak Singles, Women's 500m",
-      "Kayak Fours, Men's 1000m"
+      "Kayak Fours, 1,000 metres, Men"
     ],
     "Weightlifting": [
       "Featherweight, Men",
@@ -3866,7 +3894,7 @@ export const eventsByYear = {
       "4 × 10 kilometres Relay, Men"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Artistic Gymnastics": [
       "Men's All-Around (Team)",
@@ -3885,11 +3913,11 @@ export const eventsByYear = {
       "Women's Floor Exercise"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Biathlon": [
       "20 kilometres, Men",
@@ -3937,7 +3965,7 @@ export const eventsByYear = {
       "Water Polo, Men"
     ],
     "Hockey": [
-      "Hockey, Men"
+      "Men"
     ],
     "Bobsleigh": [
       "Four, Men",
@@ -3964,7 +3992,7 @@ export const eventsByYear = {
       "Individual, Open"
     ],
     "Hockey": [
-      "Hockey, Men"
+      "Men"
     ],
     "Sailing": [
       "One Person Dinghy, Open",
@@ -3975,36 +4003,36 @@ export const eventsByYear = {
       "Two Person Keelboat, Open"
     ],
     "Swimming": [
-      "1,500 metres Freestyle, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "400 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Backstroke, Women",
-      "200 metres Backstroke, Women",
-      "400 metres Individual Medley, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "100 metres Backstroke, Men",
-      "100 metres Freestyle, Women",
-      "200 metres Freestyle, Women",
-      "800 metres Freestyle, Women",
-      "100 metres Breaststroke, Women",
-      "100 metres Butterfly, Women",
-      "200 metres Butterfly, Women",
-      "4 × 200 metres Freestyle Relay, Men",
-      "100 metres Breaststroke, Men",
-      "200 metres Breaststroke, Men",
-      "400 metres Freestyle, Men",
-      "400 metres Individual Medley, Men",
-      "200 metres Breaststroke, Women",
-      "100 metres Freestyle, Men",
-      "200 metres Freestyle, Men",
-      "200 metres Backstroke, Men",
-      "100 metres Butterfly, Men",
-      "200 metres Butterfly, Men"
+      "Men's 1500m Freestyle",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 400m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 100m Backstroke",
+      "Women's 200m Backstroke",
+      "Women's 400m Individual Medley",
+      "Women's 4 x 100m Medley Relay",
+      "Men's 100m Backstroke",
+      "Women's 100m Freestyle",
+      "Women's 200m Freestyle",
+      "Women's 800m Freestyle",
+      "Women's 100m Breaststroke",
+      "Women's 100m Butterfly",
+      "Women's 200m Butterfly",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 100m Breaststroke",
+      "Men's 200m Breaststroke",
+      "Men's 400m Freestyle",
+      "Men's 400m Individual Medley",
+      "Women's 200m Breaststroke",
+      "Men's 100m Freestyle",
+      "Men's 200m Freestyle",
+      "Men's 200m Backstroke",
+      "Men's 100m Butterfly",
+      "Men's 200m Butterfly"
     ],
     "Shooting": [
       "Free Pistol, 50 metres, Open",
-      "Skeet, Open",
+      "Skeet, Mixed",
       "Rapid-Fire Pistol, 25 metres, Open",
       "Trap, Open",
       "Running Target, 50 metres, Open",
@@ -4095,19 +4123,19 @@ export const eventsByYear = {
       "Basketball, Men"
     ],
     "Rowing": [
-      "Double Sculls, Women",
+      "Women's Double Sculls",
       "Coxless Pairs, Women",
       "Coxed Fours, Women",
-      "Quadruple Sculls, Men",
+      "Men's Quadruple Sculls",
       "Coxed Pairs, Men",
-      "Single Sculls, Men",
-      "Double Sculls, Men",
+      "Men's Single Sculls",
+      "Men's Double Sculls",
       "Coxless Pairs, Men",
       "Coxless Fours, Men",
       "Coxed Fours, Men",
       "Eights, Men",
-      "Single Sculls, Women",
-      "Coxed Quadruple Sculls, Women",
+      "Women's Single Sculls",
+      "Coxed Women's Quadruple Sculls",
       "Eights, Women"
     ],
     "Weightlifting": [
@@ -4146,15 +4174,15 @@ export const eventsByYear = {
     "Canoe Sprint": [
       "Canadian Singles, Men's 500m",
       "Kayak Singles, Men's 500m",
-      "Kayak Singles, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
       "Kayak Doubles, Men's 500m",
-      "Kayak Doubles, Men's 1000m",
-      "Kayak Fours, Men's 1000m",
+      "Kayak Doubles, 1,000 metres, Men",
+      "Kayak Fours, 1,000 metres, Men",
       "Kayak Singles, Women's 500m",
       "Kayak Doubles, Women's 500m",
-      "Canadian Singles, Men's 1000m",
+      "Canadian Singles, 1,000 metres, Men",
       "Canadian Doubles, Men's 500m",
-      "Canadian Doubles, Men's 1000m"
+      "Canadian Doubles, 1,000 metres, Men"
     ],
     "Figure Skating": [
       "Singles, Men",
@@ -4168,7 +4196,7 @@ export const eventsByYear = {
       "Men's 1500m",
       "Men's 5000m",
       "Men's 10,000m",
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Men's 500m",
       "Women's 1000m",
       "Women's 1500m"
@@ -4182,19 +4210,19 @@ export const eventsByYear = {
       "Heavyweight, Men"
     ],
     "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Modern Pentathlon": [
       "Individual, Men",
       "Men's Team"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Cycling Road": [
       "100 kilometres Team Time Trial, Men",
-      "Road Race, Individual, Men"
+      "Men's Road Race"
     ],
     "Artistic Gymnastics": [
       "Men's All-Around (Team)",
@@ -4219,7 +4247,7 @@ export const eventsByYear = {
       "Platform, Women"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Handball": [
       "Handball, Women",
@@ -4310,44 +4338,44 @@ export const eventsByYear = {
     ],
     "Canoe Sprint": [
       "Kayak Singles, Men's 500m",
-      "Kayak Fours, Men's 1000m",
+      "Kayak Fours, 1,000 metres, Men",
       "Canadian Singles, Men's 500m",
-      "Canadian Singles, Men's 1000m",
+      "Canadian Singles, 1,000 metres, Men",
       "Canadian Doubles, Men's 500m",
       "Kayak Singles, Women's 500m",
-      "Kayak Singles, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
       "Kayak Doubles, Men's 500m",
-      "Canadian Doubles, Men's 1000m",
+      "Canadian Doubles, 1,000 metres, Men",
       "Kayak Doubles, Women's 500m",
-      "Kayak Doubles, Men's 1000m"
+      "Kayak Doubles, 1,000 metres, Men"
     ],
     "Swimming": [
-      "200 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "200 metres Backstroke, Men",
-      "100 metres Breaststroke, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "800 metres Freestyle, Women",
-      "200 metres Butterfly, Women",
-      "4 × 200 metres Freestyle Relay, Men",
-      "100 metres Breaststroke, Women",
-      "100 metres Freestyle, Men",
-      "100 metres Butterfly, Men",
-      "200 metres Butterfly, Men",
-      "100 metres Freestyle, Women",
-      "200 metres Freestyle, Women",
-      "400 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Backstroke, Women",
-      "200 metres Backstroke, Women",
-      "100 metres Butterfly, Women",
-      "400 metres Individual Medley, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "200 metres Breaststroke, Men",
-      "400 metres Individual Medley, Men",
-      "400 metres Freestyle, Men",
-      "100 metres Backstroke, Men",
-      "200 metres Breaststroke, Women"
+      "Men's 200m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 200m Backstroke",
+      "Men's 100m Breaststroke",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 800m Freestyle",
+      "Women's 200m Butterfly",
+      "Men's 4 x 200m Freestyle Relay",
+      "Women's 100m Breaststroke",
+      "Men's 100m Freestyle",
+      "Men's 100m Butterfly",
+      "Men's 200m Butterfly",
+      "Women's 100m Freestyle",
+      "Women's 200m Freestyle",
+      "Women's 400m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 100m Backstroke",
+      "Women's 200m Backstroke",
+      "Women's 100m Butterfly",
+      "Women's 400m Individual Medley",
+      "Women's 4 x 100m Medley Relay",
+      "Men's 200m Breaststroke",
+      "Men's 400m Individual Medley",
+      "Men's 400m Freestyle",
+      "Men's 100m Backstroke",
+      "Women's 200m Breaststroke"
     ],
     "Equestrian Dressage": [
       "Individual, Open",
@@ -4365,7 +4393,7 @@ export const eventsByYear = {
       "Rapid-Fire Pistol, 25 metres, Open",
       "Free Pistol, 50 metres, Open",
       "Small-Bore Rifle, Prone, 50 metres, Open",
-      "Skeet, Open",
+      "Skeet, Mixed",
       "Small-Bore Rifle, Three Positions, 50 metres, Open",
       "Running Target, 50 metres, Open",
       "Trap, Open"
@@ -4431,24 +4459,24 @@ export const eventsByYear = {
       "Heavyweight, Men"
     ],
     "Rowing": [
-      "Quadruple Sculls, Men",
+      "Men's Quadruple Sculls",
       "Coxless Pairs, Women",
       "Coxed Fours, Women",
-      "Coxed Quadruple Sculls, Women",
-      "Double Sculls, Men",
-      "Single Sculls, Men",
+      "Coxed Women's Quadruple Sculls",
+      "Men's Double Sculls",
+      "Men's Single Sculls",
       "Coxless Pairs, Men",
       "Coxed Pairs, Men",
       "Coxless Fours, Men",
       "Coxed Fours, Men",
       "Eights, Men",
-      "Single Sculls, Women",
-      "Double Sculls, Women",
+      "Women's Single Sculls",
+      "Women's Double Sculls",
       "Eights, Women"
     ],
     "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Weightlifting": [
       "Featherweight, Men",
@@ -4494,7 +4522,7 @@ export const eventsByYear = {
       "4 × 10 kilometres Relay, Men"
     ],
     "Speed Skating": [
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Women's 500m",
       "Women's 1000m",
       "Women's 1500m",
@@ -4506,7 +4534,7 @@ export const eventsByYear = {
     ],
     "Cycling Road": [
       "100 kilometres Team Time Trial, Men",
-      "Road Race, Individual, Men"
+      "Men's Road Race"
     ],
     "Cycling Track": [
       "Team Pursuit, 4,000 metres, Men",
@@ -4515,11 +4543,11 @@ export const eventsByYear = {
       "1,000 metres Time Trial, Men"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Hockey": [
-      "Hockey, Women",
-      "Hockey, Men"
+      "Women",
+      "Men"
     ],
     "Diving": [
       "Platform, Men",
@@ -4579,7 +4607,7 @@ export const eventsByYear = {
       "Team, Open"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ]
   },
   "1984": {
@@ -4641,17 +4669,17 @@ export const eventsByYear = {
       "Men's Discus Throw"
     ],
     "Canoe Sprint": [
-      "Kayak Doubles, Men's 1000m",
+      "Kayak Doubles, 1,000 metres, Men",
       "Kayak Doubles, Men's 500m",
       "Canadian Singles, Men's 500m",
-      "Canadian Singles, Men's 1000m",
+      "Canadian Singles, 1,000 metres, Men",
       "Kayak Doubles, Women's 500m",
       "Kayak Fours, Women's 500m",
       "Kayak Singles, Men's 500m",
-      "Kayak Fours, Men's 1000m",
-      "Canadian Doubles, Men's 1000m",
+      "Kayak Fours, 1,000 metres, Men",
+      "Canadian Doubles, 1,000 metres, Men",
       "Kayak Singles, Women's 500m",
-      "Kayak Singles, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
       "Canadian Doubles, Men's 500m"
     ],
     "Cycling Track": [
@@ -4662,16 +4690,16 @@ export const eventsByYear = {
       "Individual Pursuit, 4,000 metres, Men"
     ],
     "Rowing": [
-      "Quadruple Sculls, Men",
+      "Men's Quadruple Sculls",
       "Eights, Men",
       "Coxed Fours, Women",
-      "Double Sculls, Men",
-      "Single Sculls, Women",
-      "Single Sculls, Men",
-      "Double Sculls, Women",
+      "Men's Double Sculls",
+      "Women's Single Sculls",
+      "Men's Single Sculls",
+      "Women's Double Sculls",
       "Coxless Pairs, Women",
       "Coxless Fours, Men",
-      "Coxed Quadruple Sculls, Women",
+      "Coxed Women's Quadruple Sculls",
       "Coxed Fours, Men",
       "Coxed Pairs, Men",
       "Eights, Women",
@@ -4688,47 +4716,47 @@ export const eventsByYear = {
     ],
     "Shooting": [
       "Sporting Pistol, 25 metres, Women",
-      "Air Rifle, 10 metres, Men",
+      "10m Air Rifle Men",
       "Free Pistol, 50 metres, Men",
       "Running Target, 50 metres, Men",
-      "Air Rifle, 10 metres, Women",
-      "Small-Bore Rifle, Three Positions, 50 metres, Women",
-      "Skeet, Open",
-      "Rapid-Fire Pistol, 25 metres, Men",
+      "10m Air Rifle Women",
+      "50m Rifle 3 Positions Women",
+      "Skeet, Mixed",
+      "25m Rapid Fire Pistol Men",
       "Small-Bore Rifle, Prone, 50 metres, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
+      "50m Rifle 3 Positions Men",
       "Trap, Open"
     ],
     "Swimming": [
-      "100 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "4 × 100 metres Freestyle Relay, Men",
-      "100 metres Breaststroke, Men",
-      "200 metres Breaststroke, Men",
-      "100 metres Butterfly, Men",
-      "200 metres Butterfly, Men",
-      "400 metres Individual Medley, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "200 metres Butterfly, Women",
-      "200 metres Individual Medley, Women",
-      "400 metres Individual Medley, Women",
-      "200 metres Breaststroke, Women",
-      "100 metres Backstroke, Men",
-      "200 metres Backstroke, Men",
-      "200 metres Individual Medley, Men",
-      "100 metres Breaststroke, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "4 × 200 metres Freestyle Relay, Men",
-      "400 metres Freestyle, Women",
-      "800 metres Freestyle, Women",
-      "100 metres Freestyle, Women",
-      "200 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Backstroke, Women",
-      "200 metres Backstroke, Women",
-      "200 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "100 metres Butterfly, Women"
+      "Men's 100m Freestyle",
+      "Men's 400m Freestyle",
+      "Men's 4 x 100m Freestyle Relay",
+      "Men's 100m Breaststroke",
+      "Men's 200m Breaststroke",
+      "Men's 100m Butterfly",
+      "Men's 200m Butterfly",
+      "Men's 400m Individual Medley",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 200m Butterfly",
+      "Women's 200m Individual Medley",
+      "Women's 400m Individual Medley",
+      "Women's 200m Breaststroke",
+      "Men's 100m Backstroke",
+      "Men's 200m Backstroke",
+      "Men's 200m Individual Medley",
+      "Women's 100m Breaststroke",
+      "Women's 4 x 100m Medley Relay",
+      "Men's 4 x 200m Freestyle Relay",
+      "Women's 400m Freestyle",
+      "Women's 800m Freestyle",
+      "Women's 100m Freestyle",
+      "Women's 200m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 100m Backstroke",
+      "Women's 200m Backstroke",
+      "Men's 200m Freestyle",
+      "Men's 1500m Freestyle",
+      "Women's 100m Butterfly"
     ],
     "Weightlifting": [
       "Light-Heavyweight, Men",
@@ -4761,20 +4789,20 @@ export const eventsByYear = {
       "Giant Slalom, Men"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Artistic Swimming": [
       "Solo, Women",
-      "Duet, Women"
+      "Duet"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
+      "Men's Road Race",
       "100 kilometres Team Time Trial, Men",
-      "Road Race, Individual, Women"
+      "Women's Road Race"
     ],
     "Diving": [
       "Springboard, Women",
@@ -4815,7 +4843,7 @@ export const eventsByYear = {
     ],
     "Speed Skating": [
       "Men's 500m",
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Men's 1500m",
       "Men's 5000m",
       "Men's 10,000m",
@@ -4873,7 +4901,7 @@ export const eventsByYear = {
       "30 kilometres, Men"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Ski Jumping": [
       "Large Hill, Individual, Men",
@@ -4913,8 +4941,8 @@ export const eventsByYear = {
       "Individual, Open"
     ],
     "Hockey": [
-      "Hockey, Men",
-      "Hockey, Women"
+      "Men",
+      "Women"
     ],
     "Water Polo": [
       "Water Polo, Men"
@@ -4928,8 +4956,8 @@ export const eventsByYear = {
       "Doubles, Men"
     ],
     "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Athletics": [
       "Women's Marathon",
@@ -4990,16 +5018,16 @@ export const eventsByYear = {
       "Light-Heavyweight, Men"
     ],
     "Canoe Sprint": [
-      "Kayak Singles, Men's 1000m",
-      "Kayak Doubles, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
+      "Kayak Doubles, 1,000 metres, Men",
       "Canadian Singles, Men's 500m",
-      "Canadian Singles, Men's 1000m",
+      "Canadian Singles, 1,000 metres, Men",
       "Kayak Singles, Women's 500m",
       "Kayak Doubles, Women's 500m",
       "Kayak Fours, Women's 500m",
       "Kayak Singles, Men's 500m",
-      "Kayak Fours, Men's 1000m",
-      "Canadian Doubles, Men's 1000m",
+      "Kayak Fours, 1,000 metres, Men",
+      "Canadian Doubles, 1,000 metres, Men",
       "Canadian Doubles, Men's 500m",
       "Kayak Doubles, Men's 500m"
     ],
@@ -5012,41 +5040,41 @@ export const eventsByYear = {
       "Sprint, Women"
     ],
     "Hockey": [
-      "Hockey, Women",
-      "Hockey, Men"
+      "Women",
+      "Men"
     ],
     "Swimming": [
-      "200 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "800 metres Freestyle, Women",
-      "100 metres Breaststroke, Women",
-      "200 metres Breaststroke, Women",
-      "4 × 100 metres Medley Relay, Men",
-      "4 × 100 metres Medley Relay, Women",
-      "50 metres Freestyle, Women",
-      "100 metres Freestyle, Women",
-      "100 metres Butterfly, Women",
-      "200 metres Freestyle, Women",
-      "200 metres Butterfly, Men",
-      "1,500 metres Freestyle, Men",
-      "4 × 100 metres Freestyle Relay, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "200 metres Backstroke, Men",
-      "200 metres Individual Medley, Men",
-      "400 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Backstroke, Women",
-      "200 metres Backstroke, Women",
-      "200 metres Butterfly, Women",
-      "200 metres Individual Medley, Women",
-      "400 metres Individual Medley, Women",
-      "100 metres Freestyle, Men",
-      "100 metres Breaststroke, Men",
-      "200 metres Breaststroke, Men",
-      "100 metres Butterfly, Men",
-      "400 metres Individual Medley, Men",
-      "100 metres Backstroke, Men",
-      "50 metres Freestyle, Men"
+      "Men's 200m Freestyle",
+      "Men's 400m Freestyle",
+      "Women's 800m Freestyle",
+      "Women's 100m Breaststroke",
+      "Women's 200m Breaststroke",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 4 x 100m Medley Relay",
+      "Women's 50m Freestyle",
+      "Women's 100m Freestyle",
+      "Women's 100m Butterfly",
+      "Women's 200m Freestyle",
+      "Men's 200m Butterfly",
+      "Men's 1500m Freestyle",
+      "Men's 4 x 100m Freestyle Relay",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 200m Backstroke",
+      "Men's 200m Individual Medley",
+      "Women's 400m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 100m Backstroke",
+      "Women's 200m Backstroke",
+      "Women's 200m Butterfly",
+      "Women's 200m Individual Medley",
+      "Women's 400m Individual Medley",
+      "Men's 100m Freestyle",
+      "Men's 100m Breaststroke",
+      "Men's 200m Breaststroke",
+      "Men's 100m Butterfly",
+      "Men's 400m Individual Medley",
+      "Men's 100m Backstroke",
+      "Men's 50m Freestyle"
     ],
     "Judo": [
       "Middleweight, Men",
@@ -5077,7 +5105,7 @@ export const eventsByYear = {
       "Men's 1500m",
       "Men's 10,000m",
       "Men's 500m",
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Women's 500m",
       "Women's 1000m",
       "Women's 1500m",
@@ -5087,21 +5115,21 @@ export const eventsByYear = {
     ],
     "Shooting": [
       "Trap, Open",
-      "Air Pistol, 10 metres, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Women",
-      "Skeet, Open",
+      "10m Air Pistol Men",
+      "50m Rifle 3 Positions Women",
+      "Skeet, Mixed",
       "Running Target, 50 metres, Men",
       "Small-Bore Rifle, Prone, 50 metres, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
-      "Air Rifle, 10 metres, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
+      "25m Rapid Fire Pistol Men",
+      "10m Air Rifle Men",
+      "50m Rifle 3 Positions Men",
       "Sporting Pistol, 25 metres, Women",
       "Free Pistol, 50 metres, Men",
-      "Air Pistol, 10 metres, Women",
-      "Air Rifle, 10 metres, Women"
+      "10m Air Pistol Women",
+      "10m Air Rifle Women"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Sailing": [
       "Two Person Keelboat, Open",
@@ -5133,19 +5161,19 @@ export const eventsByYear = {
       "Individual, Women"
     ],
     "Rowing": [
-      "Single Sculls, Women",
-      "Double Sculls, Women",
+      "Women's Single Sculls",
+      "Women's Double Sculls",
       "Coxless Pairs, Women",
       "Coxed Fours, Women",
       "Eights, Women",
-      "Single Sculls, Men",
-      "Quadruple Sculls, Men",
+      "Men's Single Sculls",
+      "Men's Quadruple Sculls",
       "Coxed Pairs, Men",
       "Coxless Fours, Men",
       "Coxed Fours, Men",
-      "Quadruple Sculls, Women",
+      "Women's Quadruple Sculls",
       "Coxless Pairs, Men",
-      "Double Sculls, Men",
+      "Men's Double Sculls",
       "Eights, Men"
     ],
     "Weightlifting": [
@@ -5184,7 +5212,7 @@ export const eventsByYear = {
     ],
     "Artistic Swimming": [
       "Solo, Women",
-      "Duet, Women"
+      "Duet"
     ],
     "Equestrian Dressage": [
       "Team, Open",
@@ -5224,9 +5252,9 @@ export const eventsByYear = {
       "Large Hill, Men's Team"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
+      "Men's Road Race",
       "100 kilometres Team Time Trial, Men",
-      "Road Race, Individual, Women"
+      "Women's Road Race"
     ],
     "Fencing": [
       "Foil, Individual, Men",
@@ -5253,7 +5281,7 @@ export const eventsByYear = {
       "Singles, Women"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Equestrian Jumping": [
       "Individual, Open",
@@ -5352,28 +5380,28 @@ export const eventsByYear = {
     ],
     "Canoe Slalom": [
       "Kayak Singles, Slalom, Women",
-      "Canadian Singles, Slalom, Men",
+      "Men's Canoe Single",
       "Canadian Doubles, Slalom, Men",
       "Kayak Singles, Slalom, Men"
     ],
     "Canoe Sprint": [
-      "Kayak Singles, Men's 1000m",
-      "Kayak Fours, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
+      "Kayak Fours, 1,000 metres, Men",
       "Canadian Singles, Men's 500m",
-      "Canadian Singles, Men's 1000m",
+      "Canadian Singles, 1,000 metres, Men",
       "Canadian Doubles, Men's 500m",
-      "Canadian Doubles, Men's 1000m",
+      "Canadian Doubles, 1,000 metres, Men",
       "Kayak Singles, Men's 500m",
       "Kayak Doubles, Men's 500m",
-      "Kayak Doubles, Men's 1000m",
+      "Kayak Doubles, 1,000 metres, Men",
       "Kayak Singles, Women's 500m",
       "Kayak Doubles, Women's 500m",
       "Kayak Fours, Women's 500m"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Women",
+      "Women's Road Race",
       "100 kilometres Team Time Trial, Men",
-      "Road Race, Individual, Men"
+      "Men's Road Race"
     ],
     "Cycling Track": [
       "Sprint, Men",
@@ -5389,23 +5417,23 @@ export const eventsByYear = {
       "Team, Open"
     ],
     "Hockey": [
-      "Hockey, Men",
-      "Hockey, Women"
+      "Men",
+      "Women"
     ],
     "Rowing": [
-      "Double Sculls, Men",
+      "Men's Double Sculls",
       "Coxless Fours, Men",
-      "Single Sculls, Women",
+      "Women's Single Sculls",
       "Eights, Men",
       "Coxless Pairs, Women",
       "Coxless Fours, Women",
       "Eights, Women",
-      "Double Sculls, Women",
-      "Single Sculls, Men",
-      "Quadruple Sculls, Men",
+      "Women's Double Sculls",
+      "Men's Single Sculls",
+      "Men's Quadruple Sculls",
       "Coxless Pairs, Men",
       "Coxed Fours, Men",
-      "Quadruple Sculls, Women",
+      "Women's Quadruple Sculls",
       "Coxed Pairs, Men"
     ],
     "Sailing": [
@@ -5421,37 +5449,37 @@ export const eventsByYear = {
       "One Person Dinghy, Women"
     ],
     "Swimming": [
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "100 metres Breaststroke, Men",
-      "400 metres Freestyle, Women",
-      "800 metres Freestyle, Women",
-      "200 metres Backstroke, Women",
-      "100 metres Breaststroke, Women",
-      "200 metres Butterfly, Women",
-      "100 metres Freestyle, Men",
-      "100 metres Backstroke, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "50 metres Freestyle, Women",
-      "100 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "200 metres Breaststroke, Women",
-      "100 metres Butterfly, Women",
-      "200 metres Individual Medley, Women",
-      "400 metres Individual Medley, Women",
-      "200 metres Freestyle, Men",
-      "200 metres Butterfly, Men",
-      "4 × 100 metres Freestyle Relay, Men",
-      "200 metres Freestyle, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "200 metres Breaststroke, Men",
-      "200 metres Individual Medley, Men",
-      "400 metres Individual Medley, Men",
-      "100 metres Backstroke, Women",
-      "200 metres Backstroke, Men",
-      "100 metres Butterfly, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "50 metres Freestyle, Men"
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 100m Breaststroke",
+      "Women's 400m Freestyle",
+      "Women's 800m Freestyle",
+      "Women's 200m Backstroke",
+      "Women's 100m Breaststroke",
+      "Women's 200m Butterfly",
+      "Men's 100m Freestyle",
+      "Men's 100m Backstroke",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 50m Freestyle",
+      "Women's 100m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 200m Breaststroke",
+      "Women's 100m Butterfly",
+      "Women's 200m Individual Medley",
+      "Women's 400m Individual Medley",
+      "Men's 200m Freestyle",
+      "Men's 200m Butterfly",
+      "Men's 4 x 100m Freestyle Relay",
+      "Women's 200m Freestyle",
+      "Women's 4 x 100m Medley Relay",
+      "Men's 200m Breaststroke",
+      "Men's 200m Individual Medley",
+      "Men's 400m Individual Medley",
+      "Women's 100m Backstroke",
+      "Men's 200m Backstroke",
+      "Men's 100m Butterfly",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 50m Freestyle"
     ],
     "Equestrian Jumping": [
       "Team, Open",
@@ -5492,7 +5520,7 @@ export const eventsByYear = {
       "Women's 500m",
       "Women's 1000m",
       "Men's 500m",
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Women's 1500m",
       "Women's 5000m",
       "Men's 1500m",
@@ -5516,22 +5544,22 @@ export const eventsByYear = {
       "Lightweight, Men"
     ],
     "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Shooting": [
-      "Air Pistol, 10 metres, Women",
-      "Air Rifle, 10 metres, Women",
-      "Small-Bore Rifle, Three Positions, 50 metres, Women",
-      "Air Pistol, 10 metres, Men",
+      "10m Air Pistol Women",
+      "10m Air Rifle Women",
+      "50m Rifle 3 Positions Women",
+      "10m Air Pistol Men",
       "Free Pistol, 50 metres, Men",
-      "Skeet, Open",
+      "Skeet, Mixed",
       "Sporting Pistol, 25 metres, Women",
       "Running Target, 10 metres, Men",
       "Trap, Open",
-      "Air Rifle, 10 metres, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
+      "10m Air Rifle Men",
+      "25m Rapid Fire Pistol Men",
+      "50m Rifle 3 Positions Men",
       "Small-Bore Rifle, Prone, 50 metres, Men"
     ],
     "Weightlifting": [
@@ -5570,7 +5598,7 @@ export const eventsByYear = {
     ],
     "Artistic Swimming": [
       "Solo, Women",
-      "Duet, Women"
+      "Duet"
     ],
     "Biathlon": [
       "15 kilometres, Women",
@@ -5587,10 +5615,10 @@ export const eventsByYear = {
       "Singles, Women"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Short Track Speed Skating": [
-      "Men's 1000m",
+      "1,000 metres, Men",
       "5,000 metres Relay, Men",
       "3,000 metres Relay, Women",
       "Women's 500m"
@@ -5676,7 +5704,7 @@ export const eventsByYear = {
       "Team, Open"
     ],
     "Football": [
-      "Football, Men"
+      "Men"
     ],
     "Modern Pentathlon": [
       "Individual, Men",
@@ -5692,7 +5720,7 @@ export const eventsByYear = {
   "1994": {
     "Short Track Speed Skating": [
       "5,000 metres Relay, Men",
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Women's 1000m",
       "3,000 metres Relay, Women",
       "Women's 500m",
@@ -5723,7 +5751,7 @@ export const eventsByYear = {
     "Speed Skating": [
       "Women's 1500m",
       "Women's 3000m",
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Women's 500m",
       "Women's 1000m",
       "Women's 5000m",
@@ -5753,7 +5781,7 @@ export const eventsByYear = {
       "Aerials, Women"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men"
+      "Ice Men"
     ],
     "Cross Country Skiing": [
       "30 kilometres, Men",
@@ -5838,8 +5866,8 @@ export const eventsByYear = {
       "Super-Heavyweight, Men"
     ],
     "Football": [
-      "Football, Men",
-      "Football, Women"
+      "Men",
+      "Women"
     ],
     "Sailing": [
       "Windsurfer, Men",
@@ -5880,19 +5908,19 @@ export const eventsByYear = {
       "Basketball, Men"
     ],
     "Beach Volleyball": [
-      "Beach Volleyball, Women",
-      "Beach Volleyball, Men"
+      "Women",
+      "Men"
     ],
     "Canoe Sprint": [
-      "Kayak Singles, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
       "Kayak Doubles, Men's 500m",
       "Kayak Doubles, Women's 500m",
-      "Kayak Doubles, Men's 1000m",
+      "Kayak Doubles, 1,000 metres, Men",
       "Kayak Singles, Women's 500m",
       "Canadian Singles, Men's 500m",
-      "Canadian Singles, Men's 1000m",
-      "Kayak Fours, Men's 1000m",
-      "Canadian Doubles, Men's 1000m",
+      "Canadian Singles, 1,000 metres, Men",
+      "Kayak Fours, 1,000 metres, Men",
+      "Canadian Doubles, 1,000 metres, Men",
       "Kayak Fours, Women's 500m",
       "Canadian Doubles, Men's 500m",
       "Kayak Singles, Men's 500m"
@@ -5912,78 +5940,78 @@ export const eventsByYear = {
       "Individual, Open"
     ],
     "Hockey": [
-      "Hockey, Men",
-      "Hockey, Women"
+      "Men",
+      "Women"
     ],
     "Rowing": [
       "Coxless Pairs, Men",
-      "Quadruple Sculls, Men",
+      "Men's Quadruple Sculls",
       "Coxless Fours, Men",
-      "Lightweight Double Sculls, Men",
+      "Lightweight Men's Double Sculls",
       "Coxless Pairs, Women",
-      "Lightweight Double Sculls, Women",
-      "Single Sculls, Women",
+      "Lightweight Women's Double Sculls",
+      "Women's Single Sculls",
       "Eights, Women",
-      "Single Sculls, Men",
+      "Men's Single Sculls",
       "Lightweight Coxless Fours, Men",
-      "Double Sculls, Women",
-      "Quadruple Sculls, Women",
-      "Double Sculls, Men",
+      "Women's Double Sculls",
+      "Women's Quadruple Sculls",
+      "Men's Double Sculls",
       "Eights, Men"
     ],
     "Shooting": [
       "Trap, Men",
       "Double Trap, Men",
       "Double Trap, Women",
-      "Air Rifle, 10 metres, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
+      "10m Air Rifle Men",
+      "50m Rifle 3 Positions Men",
       "Free Pistol, 50 metres, Men",
-      "Air Pistol, 10 metres, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
-      "Air Pistol, 10 metres, Women",
+      "10m Air Pistol Men",
+      "25m Rapid Fire Pistol Men",
+      "10m Air Pistol Women",
       "Sporting Pistol, 25 metres, Women",
       "Running Target, 10 metres, Men",
       "Small-Bore Rifle, Prone, 50 metres, Men",
-      "Air Rifle, 10 metres, Women",
+      "10m Air Rifle Women",
       "Skeet, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Women"
+      "50m Rifle 3 Positions Women"
     ],
     "Softball": [
       "Softball, Women"
     ],
     "Swimming": [
-      "200 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "100 metres Butterfly, Men",
-      "200 metres Butterfly, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "4 × 200 metres Freestyle Relay, Women",
-      "100 metres Breaststroke, Women",
-      "200 metres Butterfly, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "100 metres Breaststroke, Men",
-      "50 metres Freestyle, Men",
-      "100 metres Freestyle, Men",
-      "200 metres Individual Medley, Men",
-      "400 metres Individual Medley, Men",
-      "200 metres Individual Medley, Women",
-      "50 metres Freestyle, Women",
-      "100 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Butterfly, Women",
-      "200 metres Freestyle, Women",
-      "100 metres Backstroke, Men",
-      "4 × 100 metres Freestyle Relay, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "400 metres Freestyle, Women",
-      "800 metres Freestyle, Women",
-      "200 metres Backstroke, Women",
-      "200 metres Breaststroke, Men",
-      "200 metres Breaststroke, Women",
-      "400 metres Individual Medley, Women",
-      "200 metres Backstroke, Men",
-      "100 metres Backstroke, Women"
+      "Men's 200m Freestyle",
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 100m Butterfly",
+      "Men's 200m Butterfly",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 4 x 200m Freestyle Relay",
+      "Women's 100m Breaststroke",
+      "Women's 200m Butterfly",
+      "Women's 4 x 100m Medley Relay",
+      "Men's 100m Breaststroke",
+      "Men's 50m Freestyle",
+      "Men's 100m Freestyle",
+      "Men's 200m Individual Medley",
+      "Men's 400m Individual Medley",
+      "Women's 200m Individual Medley",
+      "Women's 50m Freestyle",
+      "Women's 100m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 100m Butterfly",
+      "Women's 200m Freestyle",
+      "Men's 100m Backstroke",
+      "Men's 4 x 100m Freestyle Relay",
+      "Men's 4 x 200m Freestyle Relay",
+      "Women's 400m Freestyle",
+      "Women's 800m Freestyle",
+      "Women's 200m Backstroke",
+      "Men's 200m Breaststroke",
+      "Women's 200m Breaststroke",
+      "Women's 400m Individual Medley",
+      "Men's 200m Backstroke",
+      "Women's 100m Backstroke"
     ],
     "Tennis": [
       "Doubles, Men",
@@ -6040,25 +6068,25 @@ export const eventsByYear = {
       "Individual, Open"
     ],
     "Volleyball": [
-      "Volleyball, Women",
-      "Volleyball, Men"
+      "Women",
+      "Men"
     ],
     "Rhythmic Gymnastics": [
       "Group, Women",
       "Individual, Women"
     ],
     "Artistic Swimming": [
-      "Women's Team"
+      "Team"
     ],
     "Cycling Mountain Bike": [
-      "Cross-Country, Women",
-      "Cross-Country, Men"
+      "Women's Cross-country",
+      "Men's Cross-country"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Women",
-      "Individual Time Trial, Women",
-      "Road Race, Individual, Men",
-      "Individual Time Trial, Men"
+      "Women's Road Race",
+      "Women's Individual Time Trial",
+      "Men's Road Race",
+      "Men's Individual Time Trial"
     ],
     "Diving": [
       "Springboard, Women",
@@ -6108,7 +6136,7 @@ export const eventsByYear = {
       "Foil, Individual, Women"
     ],
     "Canoe Slalom": [
-      "Canadian Singles, Slalom, Men",
+      "Men's Canoe Single",
       "Canadian Doubles, Slalom, Men",
       "Kayak Singles, Slalom, Women",
       "Kayak Singles, Slalom, Men"
@@ -6184,7 +6212,7 @@ export const eventsByYear = {
       "Women's 1500m",
       "Women's 3000m",
       "Women's 5000m",
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Men's 1500m",
       "Men's 10,000m"
     ],
@@ -6203,11 +6231,11 @@ export const eventsByYear = {
       "Pairs, Mixed"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Women",
-      "Ice Hockey, Men"
+      "Ice Women",
+      "Ice Men"
     ],
     "Short Track Speed Skating": [
-      "Men's 1000m",
+      "1,000 metres, Men",
       "5,000 metres Relay, Men",
       "Women's 500m",
       "3,000 metres Relay, Women",
@@ -6283,8 +6311,8 @@ export const eventsByYear = {
       "Welterweight, Men"
     ],
     "Hockey": [
-      "Hockey, Women",
-      "Hockey, Men"
+      "Women",
+      "Men"
     ],
     "Sailing": [
       "Windsurfer, Men",
@@ -6327,21 +6355,21 @@ export const eventsByYear = {
       "Basketball, Men"
     ],
     "Beach Volleyball": [
-      "Beach Volleyball, Women",
-      "Beach Volleyball, Men"
+      "Women",
+      "Men"
     ],
     "Canoe Sprint": [
       "Kayak Doubles, Men's 500m",
       "Kayak Singles, Women's 500m",
       "Kayak Singles, Men's 500m",
-      "Kayak Singles, Men's 1000m",
-      "Canadian Singles, Men's 1000m",
-      "Canadian Doubles, Men's 1000m",
-      "Kayak Fours, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
+      "Canadian Singles, 1,000 metres, Men",
+      "Canadian Doubles, 1,000 metres, Men",
+      "Kayak Fours, 1,000 metres, Men",
       "Canadian Singles, Men's 500m",
       "Kayak Doubles, Women's 500m",
       "Kayak Fours, Women's 500m",
-      "Kayak Doubles, Men's 1000m",
+      "Kayak Doubles, 1,000 metres, Men",
       "Canadian Doubles, Men's 500m"
     ],
     "Cycling Track": [
@@ -6394,71 +6422,71 @@ export const eventsByYear = {
       "Eights, Men",
       "Lightweight Coxless Fours, Men",
       "Coxless Pairs, Women",
-      "Single Sculls, Women",
+      "Women's Single Sculls",
       "Eights, Women",
-      "Lightweight Double Sculls, Men",
-      "Single Sculls, Men",
-      "Quadruple Sculls, Men",
-      "Double Sculls, Women",
-      "Quadruple Sculls, Women",
-      "Lightweight Double Sculls, Women",
-      "Double Sculls, Men"
+      "Lightweight Men's Double Sculls",
+      "Men's Single Sculls",
+      "Men's Quadruple Sculls",
+      "Women's Double Sculls",
+      "Women's Quadruple Sculls",
+      "Lightweight Women's Double Sculls",
+      "Men's Double Sculls"
     ],
     "Shooting": [
       "Trap, Men",
       "Double Trap, Men",
-      "Air Pistol, 10 metres, Women",
+      "10m Air Pistol Women",
       "Skeet, Women",
-      "Air Pistol, 10 metres, Men",
+      "10m Air Pistol Men",
       "Free Pistol, 50 metres, Men",
       "Small-Bore Rifle, Prone, 50 metres, Men",
       "Sporting Pistol, 25 metres, Women",
-      "Air Rifle, 10 metres, Men",
+      "10m Air Rifle Men",
       "Running Target, 10 metres, Men",
-      "Air Rifle, 10 metres, Women",
+      "10m Air Rifle Women",
       "Trap, Women",
       "Skeet, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
+      "50m Rifle 3 Positions Men",
       "Double Trap, Women",
-      "Small-Bore Rifle, Three Positions, 50 metres, Women",
-      "Rapid-Fire Pistol, 25 metres, Men"
+      "50m Rifle 3 Positions Women",
+      "25m Rapid Fire Pistol Men"
     ],
     "Softball": [
       "Softball, Women"
     ],
     "Swimming": [
-      "200 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "4 × 100 metres Freestyle Relay, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "100 metres Backstroke, Men",
-      "200 metres Backstroke, Men",
-      "100 metres Butterfly, Men",
-      "200 metres Butterfly, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "200 metres Freestyle, Women",
-      "4 × 200 metres Freestyle Relay, Women",
-      "100 metres Breaststroke, Women",
-      "200 metres Butterfly, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "400 metres Individual Medley, Men",
-      "400 metres Freestyle, Women",
-      "200 metres Backstroke, Women",
-      "200 metres Breaststroke, Women",
-      "100 metres Breaststroke, Men",
-      "200 metres Breaststroke, Men",
-      "200 metres Individual Medley, Men",
-      "100 metres Backstroke, Women",
-      "400 metres Individual Medley, Women",
-      "50 metres Freestyle, Men",
-      "100 metres Freestyle, Men",
-      "50 metres Freestyle, Women",
-      "100 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Butterfly, Women",
-      "200 metres Individual Medley, Women",
-      "800 metres Freestyle, Women"
+      "Men's 200m Freestyle",
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 4 x 100m Freestyle Relay",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 100m Backstroke",
+      "Men's 200m Backstroke",
+      "Men's 100m Butterfly",
+      "Men's 200m Butterfly",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 200m Freestyle",
+      "Women's 4 x 200m Freestyle Relay",
+      "Women's 100m Breaststroke",
+      "Women's 200m Butterfly",
+      "Women's 4 x 100m Medley Relay",
+      "Men's 400m Individual Medley",
+      "Women's 400m Freestyle",
+      "Women's 200m Backstroke",
+      "Women's 200m Breaststroke",
+      "Men's 100m Breaststroke",
+      "Men's 200m Breaststroke",
+      "Men's 200m Individual Medley",
+      "Women's 100m Backstroke",
+      "Women's 400m Individual Medley",
+      "Men's 50m Freestyle",
+      "Men's 100m Freestyle",
+      "Women's 50m Freestyle",
+      "Women's 100m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 100m Butterfly",
+      "Women's 200m Individual Medley",
+      "Women's 800m Freestyle"
     ],
     "Taekwondo": [
       "Heavyweight, Men",
@@ -6481,8 +6509,8 @@ export const eventsByYear = {
       "Individual, Women"
     ],
     "Triathlon": [
-      "Olympic Distance, Women",
-      "Olympic Distance, Men"
+      "Individual, Women",
+      "Individual, Men"
     ],
     "Water Polo": [
       "Water Polo, Women",
@@ -6515,16 +6543,16 @@ export const eventsByYear = {
       "Group, Women"
     ],
     "Cycling Mountain Bike": [
-      "Cross-Country, Men",
-      "Cross-Country, Women"
+      "Men's Cross-country",
+      "Women's Cross-country"
     ],
     "Equestrian Jumping": [
       "Team, Open",
       "Individual, Open"
     ],
     "Volleyball": [
-      "Volleyball, Women",
-      "Volleyball, Men"
+      "Women",
+      "Men"
     ],
     "Artistic Gymnastics": [
       "Men's Floor Exercise",
@@ -6543,12 +6571,12 @@ export const eventsByYear = {
       "Women's Vault"
     ],
     "Football": [
-      "Football, Men",
-      "Football, Women"
+      "Men",
+      "Women"
     ],
     "Artistic Swimming": [
-      "Women's Team",
-      "Duet, Women"
+      "Team",
+      "Duet"
     ],
     "Badminton": [
       "Singles, Men",
@@ -6581,7 +6609,7 @@ export const eventsByYear = {
     "Canoe Slalom": [
       "Canadian Doubles, Slalom, Men",
       "Kayak Singles, Slalom, Women",
-      "Canadian Singles, Slalom, Men",
+      "Men's Canoe Single",
       "Kayak Singles, Slalom, Men"
     ],
     "Handball": [
@@ -6589,10 +6617,10 @@ export const eventsByYear = {
       "Handball, Men"
     ],
     "Cycling Road": [
-      "Individual Time Trial, Women",
-      "Road Race, Individual, Men",
-      "Individual Time Trial, Men",
-      "Road Race, Individual, Women"
+      "Women's Individual Time Trial",
+      "Men's Road Race",
+      "Men's Individual Time Trial",
+      "Women's Road Race"
     ],
     "Equestrian Dressage": [
       "Individual, Open",
@@ -6607,7 +6635,7 @@ export const eventsByYear = {
       "Moguls, Women"
     ],
     "Short Track Speed Skating": [
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Women's 500m",
       "Women's 1500m",
       "Men's 500m",
@@ -6677,8 +6705,8 @@ export const eventsByYear = {
       "Singles, Women"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men",
-      "Ice Hockey, Women"
+      "Ice Men",
+      "Ice Women"
     ],
     "Speed Skating": [
       "Women's 500m",
@@ -6688,7 +6716,7 @@ export const eventsByYear = {
       "Women's 1000m",
       "Women's 1500m",
       "Men's 500m",
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Men's 1500m",
       "Men's 10,000m"
     ],
@@ -6715,12 +6743,12 @@ export const eventsByYear = {
       "Basketball, Women"
     ],
     "Football": [
-      "Football, Men",
-      "Football, Women"
+      "Men",
+      "Women"
     ],
     "Hockey": [
-      "Hockey, Women",
-      "Hockey, Men"
+      "Women",
+      "Men"
     ],
     "Sailing": [
       "Multihull, Open",
@@ -6736,38 +6764,38 @@ export const eventsByYear = {
       "Two Person Dinghy, Women"
     ],
     "Swimming": [
-      "400 metres Individual Medley, Women",
-      "100 metres Freestyle, Men",
-      "200 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "50 metres Freestyle, Women",
-      "100 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "100 metres Breaststroke, Women",
-      "200 metres Breaststroke, Women",
-      "100 metres Butterfly, Women",
-      "200 metres Butterfly, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "100 metres Backstroke, Men",
-      "200 metres Backstroke, Men",
-      "4 × 200 metres Freestyle Relay, Women",
-      "50 metres Freestyle, Men",
-      "100 metres Breaststroke, Men",
-      "200 metres Freestyle, Women",
-      "400 metres Freestyle, Women",
-      "800 metres Freestyle, Women",
-      "100 metres Backstroke, Women",
-      "4 × 100 metres Medley Relay, Men",
-      "200 metres Backstroke, Women",
-      "200 metres Butterfly, Men",
-      "200 metres Breaststroke, Men",
-      "400 metres Individual Medley, Men",
-      "4 × 100 metres Freestyle Relay, Men",
-      "200 metres Individual Medley, Men",
-      "100 metres Butterfly, Men",
-      "200 metres Individual Medley, Women"
+      "Women's 400m Individual Medley",
+      "Men's 100m Freestyle",
+      "Men's 200m Freestyle",
+      "Men's 400m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 4 x 200m Freestyle Relay",
+      "Women's 50m Freestyle",
+      "Women's 100m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 100m Breaststroke",
+      "Women's 200m Breaststroke",
+      "Women's 100m Butterfly",
+      "Women's 200m Butterfly",
+      "Women's 4 x 100m Medley Relay",
+      "Men's 100m Backstroke",
+      "Men's 200m Backstroke",
+      "Women's 4 x 200m Freestyle Relay",
+      "Men's 50m Freestyle",
+      "Men's 100m Breaststroke",
+      "Women's 200m Freestyle",
+      "Women's 400m Freestyle",
+      "Women's 800m Freestyle",
+      "Women's 100m Backstroke",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 200m Backstroke",
+      "Men's 200m Butterfly",
+      "Men's 200m Breaststroke",
+      "Men's 400m Individual Medley",
+      "Men's 4 x 100m Freestyle Relay",
+      "Men's 200m Individual Medley",
+      "Men's 100m Butterfly",
+      "Women's 200m Individual Medley"
     ],
     "Tennis": [
       "Doubles, Women",
@@ -6835,22 +6863,22 @@ export const eventsByYear = {
     "Canoe Sprint": [
       "Kayak Singles, Men's 500m",
       "Kayak Doubles, Men's 500m",
-      "Kayak Singles, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
       "Kayak Singles, Women's 500m",
       "Canadian Doubles, Men's 500m",
-      "Kayak Fours, Men's 1000m",
+      "Kayak Fours, 1,000 metres, Men",
       "Canadian Singles, Men's 500m",
-      "Canadian Singles, Men's 1000m",
-      "Canadian Doubles, Men's 1000m",
+      "Canadian Singles, 1,000 metres, Men",
+      "Canadian Doubles, 1,000 metres, Men",
       "Kayak Doubles, Women's 500m",
       "Kayak Fours, Women's 500m",
-      "Kayak Doubles, Men's 1000m"
+      "Kayak Doubles, 1,000 metres, Men"
     ],
     "Cycling Road": [
-      "Individual Time Trial, Men",
-      "Road Race, Individual, Women",
-      "Road Race, Individual, Men",
-      "Individual Time Trial, Women"
+      "Men's Individual Time Trial",
+      "Women's Road Race",
+      "Men's Road Race",
+      "Women's Individual Time Trial"
     ],
     "Cycling Track": [
       "Sprint, Men",
@@ -6880,34 +6908,34 @@ export const eventsByYear = {
       "Coxless Pairs, Men",
       "Eights, Men",
       "Lightweight Coxless Fours, Men",
-      "Quadruple Sculls, Women",
-      "Single Sculls, Women",
+      "Women's Quadruple Sculls",
+      "Women's Single Sculls",
       "Coxless Pairs, Women",
-      "Single Sculls, Men",
+      "Men's Single Sculls",
       "Coxless Fours, Men",
-      "Quadruple Sculls, Men",
-      "Double Sculls, Men",
-      "Lightweight Double Sculls, Men",
-      "Double Sculls, Women",
-      "Lightweight Double Sculls, Women",
+      "Men's Quadruple Sculls",
+      "Men's Double Sculls",
+      "Lightweight Men's Double Sculls",
+      "Women's Double Sculls",
+      "Lightweight Women's Double Sculls",
       "Eights, Women"
     ],
     "Shooting": [
       "Trap, Men",
       "Trap, Women",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
+      "50m Rifle 3 Positions Men",
       "Sporting Pistol, 25 metres, Women",
       "Skeet, Women",
       "Small-Bore Rifle, Prone, 50 metres, Men",
-      "Air Pistol, 10 metres, Women",
-      "Air Pistol, 10 metres, Men",
-      "Air Rifle, 10 metres, Men",
+      "10m Air Pistol Women",
+      "10m Air Pistol Men",
+      "10m Air Rifle Men",
       "Double Trap, Men",
-      "Air Rifle, 10 metres, Women",
-      "Small-Bore Rifle, Three Positions, 50 metres, Women",
+      "10m Air Rifle Women",
+      "50m Rifle 3 Positions Women",
       "Double Trap, Women",
       "Skeet, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
+      "25m Rapid Fire Pistol Men",
       "Running Target, 10 metres, Men",
       "Free Pistol, 50 metres, Men"
     ],
@@ -6915,8 +6943,8 @@ export const eventsByYear = {
       "Softball, Women"
     ],
     "Triathlon": [
-      "Olympic Distance, Women",
-      "Olympic Distance, Men"
+      "Individual, Women",
+      "Individual, Men"
     ],
     "Judo": [
       "Half-Middleweight, Women",
@@ -6985,16 +7013,16 @@ export const eventsByYear = {
       "Heavyweight, Women"
     ],
     "Beach Volleyball": [
-      "Beach Volleyball, Men",
-      "Beach Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Equestrian Jumping": [
       "Individual, Open",
       "Team, Open"
     ],
     "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Artistic Gymnastics": [
       "Men's Floor Exercise",
@@ -7017,8 +7045,8 @@ export const eventsByYear = {
       "Individual, Women"
     ],
     "Cycling Mountain Bike": [
-      "Cross-Country, Women",
-      "Cross-Country, Men"
+      "Women's Cross-country",
+      "Men's Cross-country"
     ],
     "Trampoline": [
       "Individual, Women",
@@ -7066,7 +7094,7 @@ export const eventsByYear = {
     "Canoe Slalom": [
       "Canadian Doubles, Slalom, Men",
       "Kayak Singles, Slalom, Men",
-      "Canadian Singles, Slalom, Men",
+      "Men's Canoe Single",
       "Kayak Singles, Slalom, Women"
     ],
     "Modern Pentathlon": [
@@ -7086,8 +7114,8 @@ export const eventsByYear = {
       "Water Polo, Men"
     ],
     "Artistic Swimming": [
-      "Duet, Women",
-      "Women's Team"
+      "Duet",
+      "Team"
     ]
   },
   "2006": {
@@ -7154,7 +7182,7 @@ export const eventsByYear = {
       "Men's 1500m",
       "Women's 1000m",
       "Women's 1500m",
-      "Men's 1000m"
+      "1,000 metres, Men"
     ],
     "Bobsleigh": [
       "Two, Men",
@@ -7172,8 +7200,8 @@ export const eventsByYear = {
       "Ice Dancing, Mixed"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Women",
-      "Ice Hockey, Men"
+      "Ice Women",
+      "Ice Men"
     ],
     "Skeleton": [
       "Skeleton, Men",
@@ -7189,7 +7217,7 @@ export const eventsByYear = {
       "Women's 500m",
       "Men's 1500m",
       "Men's 5000m",
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Men's 10,000m",
       "Men's 500m"
     ],
@@ -7250,12 +7278,12 @@ export const eventsByYear = {
       "Individual Pursuit, Women"
     ],
     "Football": [
-      "Football, Men",
-      "Football, Women"
+      "Men",
+      "Women"
     ],
     "Hockey": [
-      "Hockey, Women",
-      "Hockey, Men"
+      "Women",
+      "Men"
     ],
     "Sailing": [
       "Multihull, Open",
@@ -7370,21 +7398,21 @@ export const eventsByYear = {
       "Men's 400m Hurdles"
     ],
     "Canoe Slalom": [
-      "Canadian Singles, Slalom, Men",
+      "Men's Canoe Single",
       "Kayak Singles, Slalom, Women",
       "Canadian Doubles, Slalom, Men",
       "Kayak Singles, Slalom, Men"
     ],
     "Canoe Sprint": [
       "Kayak Singles, Men's 500m",
-      "Kayak Singles, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
       "Kayak Fours, Women's 500m",
       "Kayak Doubles, Men's 500m",
-      "Kayak Fours, Men's 1000m",
-      "Canadian Doubles, Men's 1000m",
-      "Canadian Singles, Men's 1000m",
+      "Kayak Fours, 1,000 metres, Men",
+      "Canadian Doubles, 1,000 metres, Men",
+      "Canadian Singles, 1,000 metres, Men",
       "Canadian Doubles, Men's 500m",
-      "Kayak Doubles, Men's 1000m",
+      "Kayak Doubles, 1,000 metres, Men",
       "Kayak Doubles, Women's 500m",
       "Kayak Singles, Women's 500m",
       "Canadian Singles, Men's 500m"
@@ -7404,78 +7432,78 @@ export const eventsByYear = {
       "Individual, Open"
     ],
     "Rowing": [
-      "Double Sculls, Men",
+      "Men's Double Sculls",
       "Coxless Pairs, Men",
       "Coxless Fours, Men",
-      "Single Sculls, Women",
+      "Women's Single Sculls",
       "Coxless Pairs, Women",
       "Eights, Men",
       "Lightweight Coxless Fours, Men",
-      "Lightweight Double Sculls, Women",
-      "Quadruple Sculls, Women",
-      "Single Sculls, Men",
-      "Lightweight Double Sculls, Men",
-      "Quadruple Sculls, Men",
-      "Double Sculls, Women",
+      "Lightweight Women's Double Sculls",
+      "Women's Quadruple Sculls",
+      "Men's Single Sculls",
+      "Lightweight Men's Double Sculls",
+      "Men's Quadruple Sculls",
+      "Women's Double Sculls",
       "Eights, Women"
     ],
     "Shooting": [
       "Small-Bore Rifle, Prone, 50 metres, Men",
-      "Air Pistol, 10 metres, Men",
+      "10m Air Pistol Men",
       "Free Pistol, 50 metres, Men",
-      "Air Rifle, 10 metres, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
+      "10m Air Rifle Men",
+      "50m Rifle 3 Positions Men",
       "Double Trap, Men",
-      "Air Pistol, 10 metres, Women",
+      "10m Air Pistol Women",
       "Sporting Pistol, 25 metres, Women",
-      "Small-Bore Rifle, Three Positions, 50 metres, Women",
-      "Air Rifle, 10 metres, Women",
+      "50m Rifle 3 Positions Women",
+      "10m Air Rifle Women",
       "Trap, Men",
       "Trap, Women",
       "Skeet, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
+      "25m Rapid Fire Pistol Men",
       "Skeet, Women"
     ],
     "Softball": [
       "Softball, Women"
     ],
     "Swimming": [
-      "100 metres Freestyle, Men",
-      "1,500 metres Freestyle, Men",
-      "4 × 100 metres Freestyle Relay, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "100 metres Backstroke, Men",
-      "200 metres Breaststroke, Men",
-      "100 metres Butterfly, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "50 metres Freestyle, Women",
-      "100 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "4 × 200 metres Freestyle Relay, Women",
-      "100 metres Breaststroke, Women",
-      "200 metres Breaststroke, Women",
-      "100 metres Butterfly, Women",
-      "200 metres Butterfly, Women",
-      "200 metres Individual Medley, Women",
-      "400 metres Individual Medley, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "50 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "200 metres Freestyle, Women",
-      "800 metres Freestyle, Women",
-      "100 metres Breaststroke, Men",
-      "400 metres Freestyle, Women",
-      "200 metres Butterfly, Men",
-      "200 metres Individual Medley, Men",
-      "400 metres Individual Medley, Men",
-      "200 metres Backstroke, Women",
-      "200 metres Backstroke, Men",
-      "200 metres Freestyle, Men",
-      "100 metres Backstroke, Women"
+      "Men's 100m Freestyle",
+      "Men's 1500m Freestyle",
+      "Men's 4 x 100m Freestyle Relay",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 100m Backstroke",
+      "Men's 200m Breaststroke",
+      "Men's 100m Butterfly",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 50m Freestyle",
+      "Women's 100m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 4 x 200m Freestyle Relay",
+      "Women's 100m Breaststroke",
+      "Women's 200m Breaststroke",
+      "Women's 100m Butterfly",
+      "Women's 200m Butterfly",
+      "Women's 200m Individual Medley",
+      "Women's 400m Individual Medley",
+      "Women's 4 x 100m Medley Relay",
+      "Men's 50m Freestyle",
+      "Men's 400m Freestyle",
+      "Women's 200m Freestyle",
+      "Women's 800m Freestyle",
+      "Men's 100m Breaststroke",
+      "Women's 400m Freestyle",
+      "Men's 200m Butterfly",
+      "Men's 200m Individual Medley",
+      "Men's 400m Individual Medley",
+      "Women's 200m Backstroke",
+      "Men's 200m Backstroke",
+      "Men's 200m Freestyle",
+      "Women's 100m Backstroke"
     ],
     "Triathlon": [
-      "Olympic Distance, Women",
-      "Olympic Distance, Men"
+      "Individual, Women",
+      "Individual, Men"
     ],
     "Water Polo": [
       "Water Polo, Women",
@@ -7490,12 +7518,12 @@ export const eventsByYear = {
       "Group, Women"
     ],
     "Beach Volleyball": [
-      "Beach Volleyball, Men",
-      "Beach Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Equestrian Jumping": [
       "Individual, Open",
@@ -7534,8 +7562,8 @@ export const eventsByYear = {
       "Women's Floor Exercise"
     ],
     "Artistic Swimming": [
-      "Women's Team",
-      "Duet, Women"
+      "Team",
+      "Duet"
     ],
     "Badminton": [
       "Singles, Men",
@@ -7574,8 +7602,8 @@ export const eventsByYear = {
       "BMX, Men"
     ],
     "Cycling Mountain Bike": [
-      "Cross-Country, Men",
-      "Cross-Country, Women"
+      "Men's Cross-country",
+      "Women's Cross-country"
     ],
     "Handball": [
       "Handball, Men",
@@ -7586,10 +7614,10 @@ export const eventsByYear = {
       "10 kilometres Open Water, Women"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Women",
-      "Individual Time Trial, Women",
-      "Road Race, Individual, Men",
-      "Individual Time Trial, Men"
+      "Women's Road Race",
+      "Women's Individual Time Trial",
+      "Men's Road Race",
+      "Men's Individual Time Trial"
     ]
   },
   "2010": {
@@ -7664,8 +7692,8 @@ export const eventsByYear = {
       "Singles, Men"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men",
-      "Ice Hockey, Women"
+      "Ice Men",
+      "Ice Women"
     ],
     "Short Track Speed Skating": [
       "Men's 500m",
@@ -7674,7 +7702,7 @@ export const eventsByYear = {
       "3,000 metres Relay, Women",
       "Women's 1000m",
       "Women's 1500m",
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Men's 1500m"
     ],
     "Skeleton": [
@@ -7693,7 +7721,7 @@ export const eventsByYear = {
       "Men's 1500m",
       "Men's 5000m",
       "Men's 10,000m",
-      "Men's 1000m"
+      "1,000 metres, Men"
     ],
     "Cross Country Skiing": [
       "15 kilometres, Men",
@@ -7771,8 +7799,8 @@ export const eventsByYear = {
       "Men's 4 x 400m Relay"
     ],
     "Hockey": [
-      "Hockey, Women",
-      "Hockey, Men"
+      "Women",
+      "Men"
     ],
     "Sailing": [
       "Two Person Dinghy, Men",
@@ -7820,18 +7848,18 @@ export const eventsByYear = {
     "Canoe Slalom": [
       "Kayak Singles, Slalom, Women",
       "Kayak Singles, Slalom, Men",
-      "Canadian Singles, Slalom, Men",
+      "Men's Canoe Single",
       "Canadian Doubles, Slalom, Men"
     ],
     "Canoe Sprint": [
-      "Kayak Fours, Men's 1000m",
+      "Kayak Fours, 1,000 metres, Men",
       "Kayak Doubles, Men's 200m",
-      "Canadian Doubles, Men's 1000m",
+      "Canadian Doubles, 1,000 metres, Men",
       "Kayak Fours, Women's 500m",
       "Kayak Singles, Men's 200m",
-      "Kayak Singles, Men's 1000m",
-      "Canadian Singles, Men's 1000m",
-      "Kayak Doubles, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
+      "Canadian Singles, 1,000 metres, Men",
+      "Kayak Doubles, 1,000 metres, Men",
       "Kayak Doubles, Women's 500m",
       "Kayak Singles, Women's 200m",
       "Kayak Singles, Women's 500m",
@@ -7864,58 +7892,58 @@ export const eventsByYear = {
       "Springboard, Women"
     ],
     "Rowing": [
-      "Quadruple Sculls, Men",
+      "Men's Quadruple Sculls",
       "Coxless Fours, Men",
-      "Single Sculls, Women",
-      "Double Sculls, Women",
+      "Women's Single Sculls",
+      "Women's Double Sculls",
       "Coxless Pairs, Women",
       "Eights, Men",
       "Eights, Women",
-      "Lightweight Double Sculls, Women",
-      "Single Sculls, Men",
-      "Lightweight Double Sculls, Men",
+      "Lightweight Women's Double Sculls",
+      "Men's Single Sculls",
+      "Lightweight Men's Double Sculls",
       "Lightweight Coxless Fours, Men",
       "Coxless Pairs, Men",
-      "Quadruple Sculls, Women",
-      "Double Sculls, Men"
+      "Women's Quadruple Sculls",
+      "Men's Double Sculls"
     ],
     "Swimming": [
-      "100 metres Freestyle, Men",
-      "100 metres Breaststroke, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "200 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "4 × 200 metres Freestyle Relay, Women",
-      "100 metres Backstroke, Women",
-      "100 metres Butterfly, Women",
-      "200 metres Individual Medley, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "50 metres Freestyle, Women",
-      "100 metres Freestyle, Women",
-      "50 metres Freestyle, Men",
-      "400 metres Individual Medley, Men",
-      "1,500 metres Freestyle, Men",
-      "200 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "200 metres Butterfly, Women",
-      "400 metres Individual Medley, Women",
-      "4 × 100 metres Freestyle Relay, Men",
-      "400 metres Freestyle, Women",
-      "200 metres Breaststroke, Men",
-      "800 metres Freestyle, Women",
-      "200 metres Individual Medley, Men",
-      "100 metres Backstroke, Men",
-      "200 metres Backstroke, Men",
-      "200 metres Butterfly, Men",
-      "100 metres Breaststroke, Women",
-      "200 metres Breaststroke, Women",
-      "100 metres Butterfly, Men",
-      "200 metres Backstroke, Women"
+      "Men's 100m Freestyle",
+      "Men's 100m Breaststroke",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 200m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 4 x 200m Freestyle Relay",
+      "Women's 100m Backstroke",
+      "Women's 100m Butterfly",
+      "Women's 200m Individual Medley",
+      "Women's 4 x 100m Medley Relay",
+      "Women's 50m Freestyle",
+      "Women's 100m Freestyle",
+      "Men's 50m Freestyle",
+      "Men's 400m Individual Medley",
+      "Men's 1500m Freestyle",
+      "Men's 200m Freestyle",
+      "Men's 400m Freestyle",
+      "Men's 4 x 200m Freestyle Relay",
+      "Women's 200m Butterfly",
+      "Women's 400m Individual Medley",
+      "Men's 4 x 100m Freestyle Relay",
+      "Women's 400m Freestyle",
+      "Men's 200m Breaststroke",
+      "Women's 800m Freestyle",
+      "Men's 200m Individual Medley",
+      "Men's 100m Backstroke",
+      "Men's 200m Backstroke",
+      "Men's 200m Butterfly",
+      "Women's 100m Breaststroke",
+      "Women's 200m Breaststroke",
+      "Men's 100m Butterfly",
+      "Women's 200m Backstroke"
     ],
     "Triathlon": [
-      "Olympic Distance, Women",
-      "Olympic Distance, Men"
+      "Individual, Women",
+      "Individual, Men"
     ],
     "Water Polo": [
       "Water Polo, Women",
@@ -7942,20 +7970,20 @@ export const eventsByYear = {
     ],
     "Shooting": [
       "Small-Bore Rifle, Prone, 50 metres, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
+      "25m Rapid Fire Pistol Men",
       "Free Pistol, 50 metres, Men",
-      "Air Pistol, 10 metres, Women",
+      "10m Air Pistol Women",
       "Sporting Pistol, 25 metres, Women",
-      "Air Rifle, 10 metres, Women",
+      "10m Air Rifle Women",
       "Skeet, Women",
       "Trap, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Women",
+      "50m Rifle 3 Positions Women",
       "Skeet, Men",
       "Trap, Women",
       "Double Trap, Men",
-      "Air Rifle, 10 metres, Men",
-      "Air Pistol, 10 metres, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men"
+      "10m Air Rifle Men",
+      "10m Air Pistol Men",
+      "50m Rifle 3 Positions Men"
     ],
     "Judo": [
       "Extra-Lightweight, Women",
@@ -7990,20 +8018,20 @@ export const eventsByYear = {
       "Women's All-Around (Individual)"
     ],
     "Beach Volleyball": [
-      "Beach Volleyball, Men",
-      "Beach Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Football": [
-      "Football, Men",
-      "Football, Women"
+      "Men",
+      "Women"
     ],
     "Modern Pentathlon": [
       "Individual, Women",
       "Individual, Men"
     ],
     "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Weightlifting": [
       "Middleweight, Women",
@@ -8037,8 +8065,8 @@ export const eventsByYear = {
       "Individual, Women"
     ],
     "Artistic Swimming": [
-      "Duet, Women",
-      "Women's Team"
+      "Duet",
+      "Team"
     ],
     "Badminton": [
       "Singles, Men",
@@ -8066,18 +8094,18 @@ export const eventsByYear = {
       "Women's Team"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
-      "Individual Time Trial, Men",
-      "Individual Time Trial, Women",
-      "Road Race, Individual, Women"
+      "Men's Road Race",
+      "Men's Individual Time Trial",
+      "Women's Individual Time Trial",
+      "Women's Road Race"
     ],
     "Handball": [
       "Handball, Men",
       "Handball, Women"
     ],
     "Cycling Mountain Bike": [
-      "Cross-Country, Men",
-      "Cross-Country, Women"
+      "Men's Cross-country",
+      "Women's Cross-country"
     ],
     "Equestrian Dressage": [
       "Team, Open",
@@ -8176,8 +8204,8 @@ export const eventsByYear = {
       "Singles, Women"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men",
-      "Ice Hockey, Women"
+      "Ice Men",
+      "Ice Women"
     ],
     "Short Track Speed Skating": [
       "Men's 500m",
@@ -8187,10 +8215,10 @@ export const eventsByYear = {
       "Women's 500m",
       "Women's 1000m",
       "Women's 1500m",
-      "Men's 1000m"
+      "1,000 metres, Men"
     ],
     "Speed Skating": [
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Men's 1500m",
       "Women's 1000m",
       "Women's 3000m",
@@ -8273,8 +8301,8 @@ export const eventsByYear = {
       "Women's 100m Hurdles"
     ],
     "Hockey": [
-      "Hockey, Men",
-      "Hockey, Women"
+      "Men",
+      "Women"
     ],
     "Judo": [
       "Extra-Lightweight, Women",
@@ -8293,7 +8321,7 @@ export const eventsByYear = {
       "Half-Middleweight, Men"
     ],
     "Sailing": [
-      "Multihull, Mixed",
+      "Mixed Multihull",
       "One Person Dinghy, Men",
       "Two Person Dinghy, Men",
       "Skiff, Men",
@@ -8357,18 +8385,18 @@ export const eventsByYear = {
     "Canoe Slalom": [
       "Kayak Singles, Slalom, Women",
       "Kayak Singles, Slalom, Men",
-      "Canadian Singles, Slalom, Men",
+      "Men's Canoe Single",
       "Canadian Doubles, Slalom, Men"
     ],
     "Canoe Sprint": [
-      "Kayak Doubles, Men's 1000m",
+      "Kayak Doubles, 1,000 metres, Men",
       "Canadian Singles, Men's 200m",
       "Kayak Singles, Women's 200m",
       "Kayak Fours, Women's 500m",
-      "Canadian Singles, Men's 1000m",
-      "Canadian Doubles, Men's 1000m",
-      "Kayak Singles, Men's 1000m",
-      "Kayak Fours, Men's 1000m",
+      "Canadian Singles, 1,000 metres, Men",
+      "Canadian Doubles, 1,000 metres, Men",
+      "Kayak Singles, 1,000 metres, Men",
+      "Kayak Fours, 1,000 metres, Men",
       "Kayak Singles, Women's 500m",
       "Kayak Singles, Men's 200m",
       "Kayak Doubles, Women's 500m",
@@ -8405,75 +8433,75 @@ export const eventsByYear = {
       "Individual, Men"
     ],
     "Rowing": [
-      "Quadruple Sculls, Men",
+      "Men's Quadruple Sculls",
       "Coxless Fours, Men",
-      "Single Sculls, Women",
-      "Lightweight Double Sculls, Women",
-      "Single Sculls, Men",
-      "Double Sculls, Men",
+      "Women's Single Sculls",
+      "Lightweight Women's Double Sculls",
+      "Men's Single Sculls",
+      "Men's Double Sculls",
       "Lightweight Coxless Fours, Men",
       "Coxless Pairs, Women",
-      "Lightweight Double Sculls, Men",
+      "Lightweight Men's Double Sculls",
       "Eights, Men",
-      "Quadruple Sculls, Women",
-      "Double Sculls, Women",
+      "Women's Quadruple Sculls",
+      "Women's Double Sculls",
       "Eights, Women",
       "Coxless Pairs, Men"
     ],
     "Rugby Sevens": [
-      "Rugby Sevens, Women",
-      "Rugby Sevens, Men"
+      "Women",
+      "Men"
     ],
     "Shooting": [
       "Trap, Women",
-      "Air Pistol, 10 metres, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
-      "Air Pistol, 10 metres, Women",
-      "Air Rifle, 10 metres, Women",
-      "Small-Bore Rifle, Three Positions, 50 metres, Women",
+      "10m Air Pistol Men",
+      "25m Rapid Fire Pistol Men",
+      "10m Air Pistol Women",
+      "10m Air Rifle Women",
+      "50m Rifle 3 Positions Women",
       "Trap, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
+      "50m Rifle 3 Positions Men",
       "Small-Bore Rifle, Prone, 50 metres, Men",
       "Sporting Pistol, 25 metres, Women",
       "Double Trap, Men",
-      "Air Rifle, 10 metres, Men",
+      "10m Air Rifle Men",
       "Skeet, Men",
       "Skeet, Women",
       "Free Pistol, 50 metres, Men"
     ],
     "Swimming": [
-      "100 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "4 × 100 metres Freestyle Relay, Men",
-      "200 metres Backstroke, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "200 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "4 × 200 metres Freestyle Relay, Women",
-      "200 metres Butterfly, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "50 metres Freestyle, Women",
-      "100 metres Freestyle, Women",
-      "100 metres Backstroke, Women",
-      "200 metres Backstroke, Women",
-      "100 metres Butterfly, Women",
-      "200 metres Freestyle, Men",
-      "100 metres Backstroke, Men",
-      "200 metres Individual Medley, Men",
-      "200 metres Breaststroke, Women",
-      "50 metres Freestyle, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "100 metres Breaststroke, Men",
-      "400 metres Freestyle, Women",
-      "800 metres Freestyle, Women",
-      "200 metres Individual Medley, Women",
-      "100 metres Butterfly, Men",
-      "200 metres Butterfly, Men",
-      "400 metres Individual Medley, Women",
-      "1,500 metres Freestyle, Men",
-      "400 metres Individual Medley, Men",
-      "200 metres Breaststroke, Men",
-      "100 metres Breaststroke, Women"
+      "Men's 100m Freestyle",
+      "Men's 400m Freestyle",
+      "Men's 4 x 100m Freestyle Relay",
+      "Men's 200m Backstroke",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 200m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 4 x 200m Freestyle Relay",
+      "Women's 200m Butterfly",
+      "Women's 4 x 100m Medley Relay",
+      "Women's 50m Freestyle",
+      "Women's 100m Freestyle",
+      "Women's 100m Backstroke",
+      "Women's 200m Backstroke",
+      "Women's 100m Butterfly",
+      "Men's 200m Freestyle",
+      "Men's 100m Backstroke",
+      "Men's 200m Individual Medley",
+      "Women's 200m Breaststroke",
+      "Men's 50m Freestyle",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 100m Breaststroke",
+      "Women's 400m Freestyle",
+      "Women's 800m Freestyle",
+      "Women's 200m Individual Medley",
+      "Men's 100m Butterfly",
+      "Men's 200m Butterfly",
+      "Women's 400m Individual Medley",
+      "Men's 1500m Freestyle",
+      "Men's 400m Individual Medley",
+      "Men's 200m Breaststroke",
+      "Women's 100m Breaststroke"
     ],
     "Boxing": [
       "Light-Welterweight, Men",
@@ -8505,10 +8533,10 @@ export const eventsByYear = {
       "Individual, Women"
     ],
     "Cycling Road": [
-      "Road Race, Individual, Men",
-      "Individual Time Trial, Men",
-      "Road Race, Individual, Women",
-      "Individual Time Trial, Women"
+      "Men's Road Race",
+      "Men's Individual Time Trial",
+      "Women's Road Race",
+      "Women's Individual Time Trial"
     ],
     "Artistic Gymnastics": [
       "Men's Floor Exercise",
@@ -8527,36 +8555,36 @@ export const eventsByYear = {
       "Women's Vault"
     ],
     "Beach Volleyball": [
-      "Beach Volleyball, Men",
-      "Beach Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Football": [
-      "Football, Men",
-      "Football, Women"
+      "Men",
+      "Women"
     ],
     "Marathon Swimming": [
       "10 kilometres Open Water, Women",
       "10 kilometres Open Water, Men"
     ],
     "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Rhythmic Gymnastics": [
       "Group, Women",
       "Individual, Women"
     ],
     "Cycling Mountain Bike": [
-      "Cross-Country, Women",
-      "Cross-Country, Men"
+      "Women's Cross-country",
+      "Men's Cross-country"
     ],
     "Equestrian Jumping": [
       "Individual, Open",
       "Team, Open"
     ],
     "Artistic Swimming": [
-      "Duet, Women",
-      "Women's Team"
+      "Duet",
+      "Team"
     ],
     "Badminton": [
       "Singles, Men",
@@ -8604,8 +8632,8 @@ export const eventsByYear = {
       "Team, Open"
     ],
     "Triathlon": [
-      "Olympic Distance, Men",
-      "Olympic Distance, Women"
+      "Individual, Men",
+      "Individual, Women"
     ],
     "Basketball": [
       "Basketball, Men",
@@ -8685,7 +8713,7 @@ export const eventsByYear = {
       "Women's 1500m",
       "Mass Start, Women",
       "Team Pursuit (6 laps), Women",
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Men's 1500m",
       "Team Pursuit (8 laps), Men",
       "Women's 3000m"
@@ -8708,11 +8736,11 @@ export const eventsByYear = {
       "Singles, Men"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Men",
-      "Ice Hockey, Women"
+      "Ice Men",
+      "Ice Women"
     ],
     "Short Track Speed Skating": [
-      "Men's 1000m",
+      "1,000 metres, Men",
       "5,000 metres Relay, Men",
       "Women's 500m",
       "Women's 1000m",
@@ -8748,16 +8776,16 @@ export const eventsByYear = {
   },
   "2020": {
     "Hockey": [
-      "Hockey, Women",
-      "Hockey, Men"
+      "Women",
+      "Men"
     ],
     "Rugby Sevens": [
-      "Rugby Sevens, Men",
-      "Rugby Sevens, Women"
+      "Men",
+      "Women"
     ],
     "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
+      "Men",
+      "Women"
     ],
     "Artistic Gymnastics": [
       "Men's Vault",
@@ -8881,38 +8909,38 @@ export const eventsByYear = {
       "Basketball, Women"
     ],
     "Beach Volleyball": [
-      "Beach Volleyball, Women",
-      "Beach Volleyball, Men"
+      "Women",
+      "Men"
     ],
     "Canoe Slalom": [
       "Kayak Singles, Slalom, Women",
-      "Canadian Singles, Slalom, Women",
+      "Women's Canoe Single",
       "Kayak Singles, Slalom, Men",
-      "Canadian Singles, Slalom, Men"
+      "Men's Canoe Single"
     ],
     "Canoe Sprint": [
-      "Kayak Doubles, Men's 1000m",
+      "Kayak Doubles, 1,000 metres, Men",
       "Kayak Fours, Women's 500m",
-      "Canadian Singles, Men's 1000m",
+      "Canadian Singles, 1,000 metres, Men",
       "Canadian Singles, Women's 200m",
       "Canadian Doubles, Women's 500m",
-      "Canadian Doubles, Men's 1000m",
+      "Canadian Doubles, 1,000 metres, Men",
       "Kayak Singles, Women's 200m",
       "Kayak Singles, Women's 500m",
       "Kayak Fours, Men's 500m",
       "Kayak Singles, Men's 200m",
-      "Kayak Singles, Men's 1000m",
+      "Kayak Singles, 1,000 metres, Men",
       "Kayak Doubles, Women's 500m"
     ],
     "Cycling BMX Freestyle": [
-      "Park, Men",
-      "Park, Women"
+      "Men's Park",
+      "Women's Park"
     ],
     "Cycling Road": [
-      "Individual Time Trial, Men",
-      "Road Race, Individual, Women",
-      "Road Race, Individual, Men",
-      "Individual Time Trial, Women"
+      "Men's Individual Time Trial",
+      "Women's Road Race",
+      "Men's Road Race",
+      "Women's Individual Time Trial"
     ],
     "Cycling Track": [
       "Team Pursuit, 4,000 metres, Men",
@@ -8947,20 +8975,20 @@ export const eventsByYear = {
       "10 kilometres Open Water, Men"
     ],
     "Rowing": [
-      "Quadruple Sculls, Men",
+      "Men's Quadruple Sculls",
       "Coxless Fours, Men",
-      "Quadruple Sculls, Women",
+      "Women's Quadruple Sculls",
       "Coxless Fours, Women",
-      "Single Sculls, Women",
+      "Women's Single Sculls",
       "Coxless Pairs, Women",
       "Eights, Women",
-      "Double Sculls, Men",
-      "Single Sculls, Men",
+      "Men's Double Sculls",
+      "Men's Single Sculls",
       "Coxless Pairs, Men",
-      "Lightweight Double Sculls, Women",
+      "Lightweight Women's Double Sculls",
       "Eights, Men",
-      "Lightweight Double Sculls, Men",
-      "Double Sculls, Women"
+      "Lightweight Men's Double Sculls",
+      "Women's Double Sculls"
     ],
     "Sailing": [
       "One Person Dinghy, Men",
@@ -8972,54 +9000,55 @@ export const eventsByYear = {
       "Two Person Dinghy, Women",
       "Skiff, Men",
       "One Person Heavyweight Dinghy, Men",
-      "Multihull, Mixed"
+      "Mixed Multihull"
     ],
     "Skateboarding": [
-      "Park, Men",
-      "Street, Men",
-      "Street, Women",
-      "Park, Women"
+      "Men's Park",
+      "Men's Street",
+      "Women's Street",
+      "Women's Park"
     ],
     "Surfing": [
-      "Shortboard, Men",
-      "Shortboard, Women"
+      "Men",
+      "Women"
     ],
     "Swimming": [
-      "100 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "4 × 100 metres Freestyle Relay, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "200 metres Breaststroke, Men",
-      "400 metres Individual Medley, Men",
-      "50 metres Freestyle, Women",
-      "100 metres Freestyle, Women",
-      "200 metres Freestyle, Women",
-      "400 metres Freestyle, Women",
-      "800 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "4 × 200 metres Freestyle Relay, Women",
-      "100 metres Backstroke, Women",
-      "200 metres Backstroke, Women",
-      "100 metres Butterfly, Women",
-      "4 × 100 metres Medley Relay, Women",
+      "Men's 100m Freestyle",
+      "Men's 400m Freestyle",
+      "Men's 4 x 100m Freestyle Relay",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 200m Breaststroke",
+      "Men's 400m Individual Medley",
+      "Women's 50m Freestyle",
+      "Women's 100m Freestyle",
+      "Women's 200m Freestyle",
+      "Women's 400m Freestyle",
+      "Women's 800m Freestyle",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 4 x 200m Freestyle Relay",
+      "Women's 100m Backstroke",
+      "Women's 200m Backstroke",
+      "Women's 100m Butterfly",
+      "Women's 4 x 100m Medley Relay",
       "4 × 100 metres Medley Relay, Mixed",
-      "50 metres Freestyle, Men",
-      "200 metres Freestyle, Men",
-      "200 metres Individual Medley, Men",
-      "200 metres Butterfly, Women",
-      "200 metres Backstroke, Men",
-      "100 metres Breaststroke, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "100 metres Butterfly, Men",
-      "200 metres Butterfly, Men",
-      "800 metres Freestyle, Men",
-      "200 metres Individual Medley, Women",
-      "400 metres Individual Medley, Women",
-      "100 metres Backstroke, Men",
-      "100 metres Breaststroke, Women",
-      "200 metres Breaststroke, Women",
-      "1,500 metres Freestyle, Men",
-      "1,500 metres Freestyle, Women"
+      "Men's 50m Freestyle",
+      "Men's 200m Freestyle",
+      "Men's 200m Individual Medley",
+      "Women's 200m Butterfly",
+      "Mixed 4 x 100m Medley Relay",
+      "Men's 200m Backstroke",
+      "Men's 100m Breaststroke",
+      "Men's 4 x 100m Medley Relay",
+      "Men's 100m Butterfly",
+      "Men's 200m Butterfly",
+      "Men's 800m Freestyle",
+      "Women's 200m Individual Medley",
+      "Women's 400m Individual Medley",
+      "Men's 100m Backstroke",
+      "Women's 100m Breaststroke",
+      "Women's 200m Breaststroke",
+      "Men's 1500m Freestyle",
+      "Women's 1500m Freestyle"
     ],
     "Tennis": [
       "Doubles, Mixed",
@@ -9072,28 +9101,28 @@ export const eventsByYear = {
       "Individual, Open"
     ],
     "Triathlon": [
-      "Olympic Distance, Women",
+      "Individual, Women",
       "Relay, Mixed",
-      "Olympic Distance, Men"
+      "Individual, Men"
     ],
     "Football": [
-      "Football, Men",
-      "Football, Women"
+      "Men",
+      "Women"
     ],
     "Shooting": [
-      "Air Pistol, 10 metres, Women",
-      "Air Pistol, 10 metres, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
-      "Air Rifle, 10 metres, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
+      "10m Air Pistol Women",
+      "10m Air Pistol Men",
+      "25m Rapid Fire Pistol Men",
+      "10m Air Rifle Men",
+      "50m Rifle 3 Positions Men",
       "Sporting Pistol, 25 metres, Women",
-      "Air Rifle, 10 metres, Women",
+      "10m Air Rifle Women",
       "Skeet, Women",
-      "Air Pistol, 10 metres, Team, Mixed",
+      "10m Air Rifle Mixed Team",
       "Air Rifle, 10 metres, Team, Mixed",
       "Trap, Men",
       "Skeet, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Women",
+      "50m Rifle 3 Positions Women",
       "Trap, Women",
       "Trap, Team, Mixed"
     ],
@@ -9105,8 +9134,8 @@ export const eventsByYear = {
       "Men"
     ],
     "Artistic Swimming": [
-      "Duet, Women",
-      "Women's Team"
+      "Duet",
+      "Team"
     ],
     "Badminton": [
       "Singles, Men",
@@ -9173,8 +9202,8 @@ export const eventsByYear = {
       "Team, Open"
     ],
     "Cycling Mountain Bike": [
-      "Cross-Country, Men",
-      "Cross-Country, Women"
+      "Men's Cross-country",
+      "Women's Cross-country"
     ],
     "Modern Pentathlon": [
       "Individual, Men",
@@ -9282,14 +9311,14 @@ export const eventsByYear = {
       "Men's 1500m",
       "5,000 metres Relay, Men",
       "Women's 500m",
-      "Men's 1000m",
+      "1,000 metres, Men",
       "3,000 metres Relay, Women",
       "2,000 metres Relay, Mixed",
       "Women's 1500m"
     ],
     "Speed Skating": [
       "Mass Start, Men",
-      "Men's 1000m",
+      "1,000 metres, Men",
       "Women's 3000m",
       "Women's 5000m",
       "Mass Start, Women",
@@ -9314,8 +9343,8 @@ export const eventsByYear = {
       "Mixed Doubles, Mixed"
     ],
     "Ice Hockey": [
-      "Ice Hockey, Women",
-      "Ice Hockey, Men"
+      "Ice Women",
+      "Ice Men"
     ],
     "Figure Skating": [
       "Pairs, Mixed",
@@ -9325,441 +9354,435 @@ export const eventsByYear = {
       "Team, Mixed"
     ]
   },
-"2024": {
-    "Hockey": [
-      "Hockey, Women",
-      "Hockey, Men"
-    ],
-    "Rugby Sevens": [
-      "Rugby Sevens, Men",
-      "Rugby Sevens, Women"
-    ],
-    "Volleyball": [
-      "Volleyball, Men",
-      "Volleyball, Women"
-    ],
-    "Artistic Gymnastics": [
-      "Men's Vault",
-      "Women's Uneven Bars",
-      "Women's All-Around (Individual)",
-      "Women's Vault",
-      "Men's All-Around (Individual)",
-      "Men's All-Around (Team)",
-      "Men's Floor Exercise",
-      "Men's Parallel Bars",
-      "Men's Rings",
-      "Women's Balance Beam",
-      "Men's Pommel Horse",
-      "Men's Horizontal Bar",
-      "Women's All-Around (Team)",
-      "Women's Floor Exercise"
-    ],
-    "Boxing": [
-      "Lightweight, Men",
-      "Light-Heavyweight, Men",
-      "Middleweight, Men",
-      "Heavyweight, Men",
-      "Lightweight, Women",
-      "Flyweight, Women",
-      "Welterweight, Women",
-      "Middleweight, Women",
-      "Featherweight, Men",
-      "Welterweight, Men",
-      "Flyweight, Men",
-      "Super-Heavyweight, Men",
-      "Featherweight, Women"
-    ],
-    "Weightlifting": [
-      "Heavyweight, Men",
-      "Middleweight, Women",
-      "Featherweight, Men",
-      "Lightweight, Men",
-      "Middleweight, Men",
-      "Light-Heavyweight, Men",
-      "Flyweight, Women",
-      "Featherweight, Women",
-      "Heavyweight, Women",
-      "Super-Heavyweight, Women",
-      "Lightweight, Women",
-      "Light-Heavyweight, Women",
-      "Middle-Heavyweight, Men",
-      "Super-Heavyweight, Men"
-    ],
-    "Wrestling": [
-      "Heavyweight, Greco-Roman, Men",
-      "Middleweight, Greco-Roman, Men",
-      "Welterweight, Freestyle, Men",
-      "Flyweight, Freestyle, Women",
-      "Middleweight, Freestyle, Men",
-      "Featherweight, Freestyle, Women",
-      "Lightweight, Freestyle, Women",
-      "Middleweight, Freestyle, Women",
-      "Featherweight, Greco-Roman, Men",
-      "Heavyweight, Freestyle, Women",
-      "Super-Heavyweight, Greco-Roman, Men",
-      "Heavyweight, Freestyle, Men",
-      "Super-Heavyweight, Freestyle, Men",
-      "Light-Heavyweight, Greco-Roman, Men",
-      "Featherweight, Freestyle, Men",
-      "Welterweight, Greco-Roman, Men",
-      "Light-Heavyweight, Freestyle, Men",
-      "Light-Heavyweight, Freestyle, Women"
-    ],
-    "Athletics": [
-      "Mixed Marathon Race Walk Relay",
-      "Men's Decathlon",
-      "Women's High Jump",
-      "Women's Javelin Throw",
-      "Men's Discus Throw",
-      "Women's 10,000m",
-      "Men's High Jump",
-      "Men's Marathon",
-      "Women's Heptathlon",
-      "Men's 4 x 400m Relay",
-      "Men's 400m Hurdles",
-      "Men's Pole Vault",
-      "Men's Triple Jump",
-      "Men's 100m",
-      "Men's 200m",
-      "Men's 5000m",
-      "Men's 4 x 100m Relay",
-      "Men's 50km Race Walk",
-      "Women's 20km Race Walk",
-      "Women's Shot Put",
-      "Women's Hammer Throw",
-      "Men's 400m",
-      "Men's Long Jump",
-      "Women's Discus Throw",
-      "Men's Javelin Throw",
-      "Women's 400m",
-      "Mixed 4 × 400m Relay",
-      "Men's 10,000m",
-      "Men's 3000m Steeplechase",
-      "Women's 5000m",
-      "Women's Long Jump",
-      "Men's 1500m",
-      "Women's 800m",
-      "Women's 1500m",
-      "Women's 4 x 100m Relay",
-      "Women's Pole Vault",
-      "Men's 20km Race Walk",
-      "Men's 110m Hurdles",
-      "Women's 100m",
-      "Women's 200m",
-      "Women's 100m Hurdles",
-      "Women's 4 x 400m Relay",
-      "Men's 800m",
-      "Women's Marathon",
-      "Women's 3000m Steeplechase",
-      "Women's 400m Hurdles",
-      "Men's Shot Put",
-      "Men's Hammer Throw",
-      "Women's Triple Jump"
-    ],
-    // "Basketball": [
-    //   "Basketball, Men",
-    //   "Basketball, Women"
-    // ],
-    // "Beach Volleyball": [
-    //   "Beach Volleyball, Women",
-    //   "Beach Volleyball, Men"
-    // ],
-    "Canoe Slalom": [
-      "Kayak Singles, Slalom, Women",
-      "Canadian Singles, Slalom, Women",
-      "Kayak Singles, Slalom, Men",
-      "Canadian Singles, Slalom, Men"
-    ],
-    "Canoe Sprint": [
-      "Kayak Doubles, Men's 1000m",
-      "Kayak Fours, Women's 500m",
-      "Canadian Singles, Men's 1000m",
-      "Canadian Singles, Women's 200m",
-      "Canadian Doubles, Women's 500m",
-      "Canadian Doubles, Men's 1000m",
-      "Kayak Singles, Women's 200m",
-      "Kayak Singles, Women's 500m",
-      "Kayak Fours, Men's 500m",
-      "Kayak Singles, Men's 200m",
-      "Kayak Singles, Men's 1000m",
-      "Kayak Doubles, Women's 500m"
-    ],
-    "Cycling BMX Freestyle": [
-      "Park, Men",
-      "Park, Women"
-    ],
-    "Cycling Road": [
-      "Individual Time Trial, Men",
-      "Road Race, Individual, Women",
-      "Road Race, Individual, Men",
-      "Individual Time Trial, Women"
-    ],
-    "Cycling Track": [
-      "Team Pursuit, 4,000 metres, Men",
-      "Sprint, Women",
-      "Keirin, Women",
-      "Team Sprint, Women",
-      "Madison, Men",
-      "Madison, Women",
-      "Team Sprint, Men",
-      "Team Pursuit, Women",
-      "Sprint, Men",
-      "Keirin, Men",
-      "Omnium, Men",
-      "Omnium, Women"
-    ],
-    "Diving": [
-      "Platform, Women",
-      "Synchronized Springboard, Women",
-      "Springboard, Men",
-      "Platform, Men",
-      "Synchronized Springboard, Men",
-      "Synchronized Platform, Men",
-      "Springboard, Women",
-      "Synchronized Platform, Women"
-    ],
-    "Equestrian Eventing": [
-      "Individual, Open",
-      "Team, Open"
-    ],
-    "Marathon Swimming": [
-      "10 kilometres Open Water, Women",
-      "10 kilometres Open Water, Men"
-    ],
-    "Rowing": [
-      "Quadruple Sculls, Men",
-      "Coxless Fours, Men",
-      "Quadruple Sculls, Women",
-      "Coxless Fours, Women",
-      "Single Sculls, Women",
-      "Coxless Pairs, Women",
-      "Eights, Women",
-      "Double Sculls, Men",
-      "Single Sculls, Men",
-      "Coxless Pairs, Men",
-      "Lightweight Double Sculls, Women",
-      "Eights, Men",
-      "Lightweight Double Sculls, Men",
-      "Double Sculls, Women"
-    ],
-    "Sailing": [
-      "One Person Dinghy, Men",
-      "Two Person Dinghy, Men",
-      "Skiff, Women",
-      "Windsurfer, Men",
-      "Windsurfer, Women",
-      "One Person Dinghy, Women",
-      "Two Person Dinghy, Women",
-      "Skiff, Men",
-      "One Person Heavyweight Dinghy, Men",
-      "Multihull, Mixed"
-    ],
-    "Skateboarding": [
-      "Park, Men",
-      "Street, Men",
-      "Street, Women",
-      "Park, Women"
-    ],
-    "Surfing": [
-      "Shortboard, Men",
-      "Shortboard, Women"
-    ],
-    "Swimming": [
-      "100 metres Freestyle, Men",
-      "400 metres Freestyle, Men",
-      "4 × 100 metres Freestyle Relay, Men",
-      "4 × 200 metres Freestyle Relay, Men",
-      "200 metres Breaststroke, Men",
-      "400 metres Individual Medley, Men",
-      "50 metres Freestyle, Women",
-      "100 metres Freestyle, Women",
-      "200 metres Freestyle, Women",
-      "400 metres Freestyle, Women",
-      "800 metres Freestyle, Women",
-      "4 × 100 metres Freestyle Relay, Women",
-      "4 × 200 metres Freestyle Relay, Women",
-      "100 metres Backstroke, Women",
-      "200 metres Backstroke, Women",
-      "100 metres Butterfly, Women",
-      "4 × 100 metres Medley Relay, Women",
-      "4 × 100 metres Medley Relay, Mixed",
-      "50 metres Freestyle, Men",
-      "200 metres Freestyle, Men",
-      "200 metres Individual Medley, Men",
-      "200 metres Butterfly, Women",
-      "200 metres Backstroke, Men",
-      "100 metres Breaststroke, Men",
-      "4 × 100 metres Medley Relay, Men",
-      "100 metres Butterfly, Men",
-      "200 metres Butterfly, Men",
-      "800 metres Freestyle, Men",
-      "200 metres Individual Medley, Women",
-      "400 metres Individual Medley, Women",
-      "100 metres Backstroke, Men",
-      "100 metres Breaststroke, Women",
-      "200 metres Breaststroke, Women",
-      "1,500 metres Freestyle, Men",
-      "1,500 metres Freestyle, Women"
-    ],
-    "Tennis": [
-      "Doubles, Mixed",
-      "Doubles, Women",
-      "Doubles, Men",
-      "Singles, Women",
-      "Singles, Men"
-    ],
-    "Judo": [
-      "Half-Middleweight, Men",
-      "Middleweight, Women",
-      "Heavyweight, Women",
-      "Half-Lightweight, Men",
-      "Half-Heavyweight, Women",
-      "Lightweight, Women",
-      "Half-Middleweight, Women",
-      "Extra-Lightweight, Men",
-      "Heavyweight, Men",
-      "Half-Lightweight, Women",
-      "Team, Mixed",
-      "Lightweight, Men",
-      "Middleweight, Men",
-      "Half-Heavyweight, Men",
-      "Extra-Lightweight, Women"
-    ],
-    "Karate": [
-      "Kumite, ≤55 kg, Women",
-      "Kumite, ≤75 kg, Men",
-      "Kumite, >61 kg, Women",
-      "Kumite, ≤61 kg, Women",
-      "Kumite, ≤67 kg, Men",
-      "Kata, Women",
-      "Kumite, >75 kg, Men",
-      "Kata, Men"
-    ],
-    "Sport Climbing": [
-      "Combined, Men",
-      "Combined, Women"
-    ],
-    "Rhythmic Gymnastics": [
-      "Individual, Women",
-      "Group, Women"
-    ],
-    "Trampoline": [
-      "Individual, Men",
-      "Individual, Women"
-    ],
-    "Equestrian Jumping": [
-      "Team, Open",
-      "Individual, Open"
-    ],
-    "Triathlon": [
-      "Olympic Distance, Women",
-      "Relay, Mixed",
-      "Olympic Distance, Men"
-    ],
-    "Football": [
-      "Football, Men",
-      "Football, Women"
-    ],
-    "Shooting": [
-      "Air Pistol, 10 metres, Women",
-      "Air Pistol, 10 metres, Men",
-      "Rapid-Fire Pistol, 25 metres, Men",
-      "Air Rifle, 10 metres, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Men",
-      "Sporting Pistol, 25 metres, Women",
-      "Air Rifle, 10 metres, Women",
-      "Skeet, Women",
-      "Air Pistol, 10 metres, Team, Mixed",
-      "Air Rifle, 10 metres, Team, Mixed",
-      "Trap, Men",
-      "Skeet, Men",
-      "Small-Bore Rifle, Three Positions, 50 metres, Women",
-      "Trap, Women",
-      "Trap, Team, Mixed"
-    ],
-    "Softball": [
-      "Softball, Women"
-    ],
+  "2024": {
     "3x3 Basketball": [
       "Women",
       "Men"
     ],
-    "Artistic Swimming": [
-      "Duet, Women",
-      "Women's Team"
+    "Archery": [
+      "Individual, Men",
+      "Team, Mixed",
+      "Women's Team",
+      "Men's Team",
+      "Individual, Women"
     ],
-    "Badminton": [
-      "Singles, Men",
-      "Doubles, Men",
-      "Singles, Women",
-      "Doubles, Women",
-      "Doubles, Mixed"
+    "Artistic Gymnastics": [
+      "Women's All-Around (Team)",
+      "Women's All-Around (Individual)",
+      "Women's Vault",
+      "Women's Floor Exercise",
+      "Men's All-Around (Team)",
+      "Men's Pommel Horse",
+      "Women's Uneven Bars",
+      "Men's Rings",
+      "Men's Parallel Bars",
+      "Men's All-Around (Individual)",
+      "Women's Balance Beam",
+      "Men's Horizontal Bar",
+      "Men's Floor Exercise",
+      "Men's Vault"
+    ],
+    "Artistic Swimming": [
+      "Team",
+      "Duet"
+    ],
+    "Athletics": [
+      "Men's 100m",
+      "Men's 400m",
+      "Men's 1500m",
+      "Men's 110m Hurdles",
+      "Men's 400m Hurdles",
+      "Men's Shot Put",
+      "Men's 4 x 400m Relay",
+      "Women's 200m",
+      "Women's 100m Hurdles",
+      "Women's 400m Hurdles",
+      "Women's Long Jump",
+      "Women's Discus Throw",
+      "Women's 4 x 100m Relay",
+      "Women's 4 x 400m Relay",
+      "Men's 200m",
+      "Men's 3000m Steeplechase",
+      "Men's High Jump",
+      "Men's Pole Vault",
+      "Women's 100m",
+      "Women's Pole Vault",
+      "Women's Hammer Throw",
+      "Mixed 4 x 400m Relay Mixed",
+      "Men's 5000m",
+      "Men's 10,000m",
+      "Women's Triple Jump",
+      "Women's 20km Race Walk",
+      "Women's Shot Put",
+      "Women's Javelin Throw",
+      "Women's 1500m",
+      "Women's High Jump",
+      "Men's Discus Throw",
+      "Marathon Race Walk Relay Mixed",
+      "Women's Marathon",
+      "Women's 5000m",
+      "Women's 10,000m",
+      "Women's 800m",
+      "Women's Heptathlon",
+      "Men's 4 x 100m Relay",
+      "Men's Long Jump",
+      "Men's Triple Jump",
+      "Men's Decathlon",
+      "Men's Hammer Throw",
+      "Men's 800m",
+      "Men's 20km Race Walk",
+      "Men's Marathon",
+      "Women's 3000m Steeplechase",
+      "Women's 400m",
+      "Men's Javelin Throw"
+    ],
+    "Basketball": [
+      "Men",
+      "Women"
+    ],
+    "Boxing": [
+      "Men's 71kg",
+      "Women's 50kg",
+      "Women's 54kg",
+      "Women's 75kg",
+      "Women's 60kg",
+      "Women's 66kg",
+      "Men's 57kg",
+      "Men's 51kg",
+      "Men's 63.5kg",
+      "Men's +92kg",
+      "Men's 92kg",
+      "Men's 80kg",
+      "Women's 57kg"
+    ],
+    "Breaking": [
+      "B-Boys",
+      "B-Girls"
+    ],
+    "Canoe Slalom": [
+      "Women's Canoe Single",
+      "Women's Kayak Single",
+      "Women's Kayak Cross",
+      "Men's Canoe Single",
+      "Men's Kayak Single",
+      "Men's Kayak Cross"
+    ],
+    "Canoe Sprint": [
+      "Canadian Singles, Women's 200m",
+      "Canadian Doubles, Men's 500m",
+      "Canadian Doubles, Women's 500m",
+      "Men's Kayak Four 500m",
+      "Men's Kayak Double 500m",
+      "Women's Kayak Four 500m",
+      "Women's Kayak Double 500m",
+      "Women's Kayak Single 500m",
+      "Men's Kayak Single 1000m",
+      "Canadian Singles, Men's 1000m"
+    ],
+    "Cycling BMX Freestyle": [
+      "Women's Park",
+      "Men's Park"
+    ],
+    "Cycling Mountain Bike": [
+      "Women's Cross-country",
+      "Men's Cross-country"
+    ],
+    "Cycling Road": [
+      "Women's Road Race",
+      "Individual Time Trial, Women",
+      "Men's Road Race",
+      "Individual Time Trial, Men"
+    ],
+    "Cycling Track": [
+      "Team Pursuit, Women",
+      "Women's Omnium",
+      "Men's Team Pursuit",
+      "Men's Sprint",
+      "Men's Keirin",
+      "Men's Team Sprint",
+      "Men's Omnium",
+      "Women's Keirin",
+      "Women's Madison",
+      "Women's Team Sprint",
+      "Women's Sprint",
+      "Men's Madison"
+    ],
+    "Diving": [
+      "Synchronized Springboard, Women",
+      "Springboard, Women",
+      "Platform, Women",
+      "Women's Synchronised 10m Platform",
+      "Springboard, Men",
+      "Platform, Men",
+      "Synchronized Platform, Men",
+      "Men's Synchronised 10m Platform"
+    ],
+    "Equestrian Jumping": [
+      "Team, Open",
+      "Individual, Open",
+      "Eventing Individual",
+      "Dressage Team",
+      "Dressage Individual"
     ],
     "Fencing": [
-      "Épée, Individual, Women",
+      "Foil, Individual, Women",
+      "Foil, Team, Women",
       "Foil, Individual, Men",
-      "Épée, Women's Team",
-      "Foil, Men's Team",
       "Épée, Individual, Men",
-      "Foil, Women's Team",
+      "Foil, Team, Men",
+      "Épée, Team, Men",
+      "Sabre, Team, Women",
       "Sabre, Individual, Women",
-      "Sabre, Women's Team",
-      "Sabre, Individual, Men",
-      "Sabre, Men's Team",
-      "Épée, Men's Team",
-      "Foil, Individual, Women"
+      "Épée, Individual, Women",
+      "Épée, Team, Women",
+      "Sabre, Team, Men",
+      "Sabre, Individual, Men"
     ],
-    "Table Tennis": [
-      "Singles, Men",
-      "Men's Team",
-      "Singles, Women",
-      "Women's Team",
-      "Doubles, Mixed"
-    ],
-    "Taekwondo": [
-      "Featherweight, Men",
-      "Featherweight, Women",
-      "Welterweight, Women",
-      "Welterweight, Men",
-      "Heavyweight, Men",
-      "Heavyweight, Women",
-      "Flyweight, Women",
-      "Flyweight, Men"
-    ],
-    "Archery": [
-      "Men's Team",
-      "Women's Team",
-      "Individual, Men",
-      "Individual, Women",
-      "Team, Mixed"
+    "Football": [
+      "Women",
+      "Men"
     ],
     "Golf": [
       "Individual, Men",
       "Individual, Women"
     ],
-    "Cycling BMX Racing": [
-      "BMX, Men",
-      "BMX, Women"
+    "Rowing": [
+      "Coxless Fours, Men",
+      "Eights, Men",
+      "Women's Pair",
+      "Coxless Fours, Women",
+      "Women's Single Sculls",
+      "Men's Quadruple Sculls",
+      "Men's Double Sculls",
+      "Women's Quadruple Sculls",
+      "Men's Single Sculls",
+      "Lightweight Women's Double Sculls",
+      "Men's Pair",
+      "Women's Double Sculls",
+      "Eights, Women",
+      "Lightweight Men's Double Sculls"
     ],
-    "Handball": [
-      "Handball, Men",
-      "Handball, Women"
+    "Rugby Sevens": [
+      "Women",
+      "Men"
     ],
-    "Equestrian Dressage": [
-      "Individual, Open",
-      "Team, Open"
+    "Sailing": [
+      "Skiff, Men",
+      "Mixed Dinghy",
+      "Men's Dinghy",
+      "Men's Windsurfing",
+      "Women's Kite",
+      "Skiff, Women",
+      "Women's Dinghy",
+      "Women's Windsurfing",
+      "Mixed Multihull",
+      "Men's Kite"
     ],
-    "Cycling Mountain Bike": [
-      "Cross-Country, Men",
-      "Cross-Country, Women"
+    "Shooting": [
+      "Skeet, Men",
+      "50m Rifle 3 Positions Women",
+      "Skeet, Mixed",
+      "Skeet, Women",
+      "10m Air Rifle Men",
+      "50m Rifle 3 Positions Men",
+      "10m Air Pistol Men",
+      "25m Rapid Fire Pistol Men",
+      "10m Air Rifle Mixed Team",
+      "Trap, Men",
+      "10m Air Rifle Women",
+      "Trap, Women",
+      "25m Pistol Women",
+      "10m Air Pistol Women",
+      "10m Air Pistol Mixed Team"
     ],
-    "Modern Pentathlon": [
+    "Skateboarding": [
+      "Men's Street",
+      "Men's Park",
+      "Women's Street",
+      "Women's Park"
+    ],
+    "Sport Climbing": [
+      "Women's Boulder & Lead",
+      "Men's Speed",
+      "Women's Speed",
+      "Men's Boulder & Lead"
+    ],
+    "Surfing": [
+      "Women",
+      "Men"
+    ],
+    "Swimming": [
+      "Women's 800m Freestyle",
+      "Women's 1500m Freestyle",
+      "Women's 200m Breaststroke",
+      "Women's 100m Butterfly",
+      "Women's 4 x 100m Medley Relay",
+      "Men's 1500m Freestyle",
+      "Men's 4 x 100m Freestyle Relay",
+      "Mixed 4 x 100m Medley Relay",
+      "Women's 100m Freestyle",
+      "Women's 100m Backstroke",
+      "Women's 200m Backstroke",
+      "Women's 200m Butterfly",
+      "Women's 200m Individual Medley",
+      "Women's 400m Individual Medley",
+      "Women's 4 x 100m Freestyle Relay",
+      "Women's 4 x 200m Freestyle Relay",
+      "Men's 800m Freestyle",
+      "Men's 100m Breaststroke",
+      "Men's 4 x 200m Freestyle Relay",
+      "Men's 4 x 100m Medley Relay",
+      "Women's 400m Freestyle",
+      "Men's 200m Freestyle",
+      "Men's 100m Backstroke",
+      "Men's 400m Individual Medley",
+      "Men's 100m Freestyle",
+      "Women's 100m Breaststroke",
+      "Women's 50m Freestyle",
+      "Men's 200m Individual Medley",
+      "Women's 200m Freestyle",
+      "Men's 50m Freestyle",
+      "Men's 400m Freestyle",
+      "Men's 200m Breaststroke",
+      "Men's 200m Butterfly",
+      "Men's 100m Butterfly",
+      "Men's 200m Backstroke"
+    ],
+    "Taekwondo": [
+      "Women -67kg",
+      "Women -49kg",
+      "Men -68kg",
+      "Women +67kg",
+      "Men -58kg",
+      "Men +80kg",
+      "Women -57kg",
+      "Men -80kg"
+    ],
+    "Tennis": [
+      "Doubles, Men",
+      "Singles, Women",
+      "Doubles, Mixed",
+      "Doubles, Women",
+      "Singles, Men"
+    ],
+    "Triathlon": [
+      "Relay, Mixed",
+      "Women's Individual",
+      "Men's Individual"
+    ],
+    "Volleyball": [
+      "Women",
+      "Men"
+    ],
+    "Water Polo": [
+      "Men",
+      "Women"
+    ],
+    "Weightlifting": [
+      "Women's 71kg",
+      "Men's 61kg",
+      "Women's 49kg",
+      "Women's 59kg",
+      "Women's +81kg",
+      "Men's 102kg",
+      "Men's 89kg",
+      "Women's 81kg",
+      "Men's +102kg",
+      "Men's 73kg"
+    ],
+    "Wrestling": [
+      "Women's Freestyle 50kg",
+      "Women's Freestyle 68kg",
+      "Women's Freestyle 76kg",
+      "Men's Freestyle 57kg",
+      "Women's Freestyle 57kg",
+      "Men's Freestyle 74kg",
+      "Men's Freestyle 86kg",
+      "Men's Greco-Roman 60kg",
+      "Men's Greco-Roman 130kg",
+      "Women's Freestyle 53kg",
+      "Men's Greco-Roman 77kg",
+      "Women's Freestyle 62kg",
+      "Men's Freestyle 65kg",
+      "Men's Greco-Roman 67kg",
+      "Men's Greco-Roman 97kg",
+      "Men's Greco-Roman 87kg",
+      "Men's Freestyle 125kg",
+      "Men's Freestyle 97kg"
+    ],
+    "Badminton": [
+      "Doubles, Women",
+      "Doubles, Mixed",
+      "Singles, Women",
+      "Doubles, Men",
+      "Singles, Men"
+    ],
+    "Hockey": [
+      "Women",
+      "Men"
+    ],
+    "Judo": [
+      "Half-Heavyweight, Women",
+      "Extra-Lightweight, Women",
+      "Half-Lightweight, Men",
+      "Half-Middleweight, Men",
+      "Middleweight, Men",
+      "Team, Mixed",
+      "Lightweight, Women",
+      "Extra-Lightweight, Men",
+      "Lightweight, Men",
+      "Heavyweight, Men",
+      "Half-Lightweight, Women",
+      "Half-Middleweight, Women",
+      "Heavyweight, Women",
+      "Middleweight, Women",
+      "Half-Heavyweight, Men"
+    ],
+    "Rhythmic Gymnastics": [
+      "Group All-Around",
+      "Individual, Women"
+    ],
+    "Table Tennis": [
+      "Singles, Men",
+      "Singles, Women",
+      "Doubles, Mixed",
+      "Men's Team",
+      "Women's Team"
+    ],
+    "Trampoline": [
       "Individual, Men",
       "Individual, Women"
     ],
-    "Water Polo": [
-      "Water Polo, Men",
-      "Water Polo, Women"
+    "Equestrian": [
+      "Eventing Team",
+      "Eventing Individual",
+      "Dressage Team",
+      "Dressage Individual"
+    ],
+    "Modern Pentathlon": [
+      "Men's Individual",
+      "Women's Individual"
+    ],
+    "Cycling BMX Racing": [
+      "Women",
+      "Men"
+    ],
+    "Marathon Swimming": [
+      "Women's 10km",
+      "Men's 10km"
+    ],
+    "Handball": [
+      "Women",
+      "Men"
+    ],
+    "Beach Volleyball": [
+      "Men",
+      "Women"
+    ]
+  },
+  "year": {
+    "sport": [
+      "event"
     ]
   }
 }
