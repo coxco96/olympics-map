@@ -90,11 +90,6 @@
 
     // just k-means clustering to get breaks for colors using chroma
     $: breaks = chroma.limits(pointsTotalArr, "k", 4);
-    // $: colorize = chroma
-    //     .scale("Purples")
-    //     .domain(breaks)
-    //     .mode("lch")
-    //     .correctLightness()
 
     $: originalColors = chroma.scale("Purples").colors(breaks.length);
     $: darkenedColors = originalColors.map((color, index) =>

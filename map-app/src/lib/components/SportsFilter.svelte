@@ -25,6 +25,11 @@
             relevantSports = ["All sports", ...Object.keys(eventsByYear[year] || {}).sort()];
         }
     }
+
+
+    $: if (year != 'All years (1896-2024)' && !Object.keys(eventsByYear[year]).includes(sport)) {
+        selectedSport.set('All sports');
+    }
 </script>
 
 <select bind:value={sport} on:change={handleChange} class="form-select" name="Sport">
