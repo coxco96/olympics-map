@@ -15,10 +15,10 @@
             <p class="lead">
                 Some of these caveats are here to stay; some will go away as I gradually work through further cleaning the data. I will update this page through the process.
             </p>
-            <p class='lead'>Last updated: August 7, 2024</p>
+            <p class='lead'>Last updated: August 12, 2024</p>
             
             <ul>
-                <li>2024 behaves a bit wonky right now. I am actively working on this.</li>
+                <li>The phrasing of some 2024 event names may not match that of other years. This also affects the total counts for "All years (1896-2024)." I am actively working on going through these.</li>
                 <li>I have used basemaps from 1880, 1900, 1914, 1920, 1930, 1938, 1945, 1960, 1994 and 2000. Any changes in borders or country names between these dates or after 2000 will not be accurately reflected on the map.</li>
                 <li>There is a known issue with Switzerland. It does not behave as expected on the map from 1994-2024. Its counts in the table view should be accurate.</li>
                 <li>Russia's counts presently include those which were competed for under the names: Russian Federation, Russian Empire and Soviet Union. At this time, the following Russia-affiliated teams have not been included in this data: Unified Team (1992), Olympic Athletes from Russia (2018), ROC (2020-2022), Individual Neutral Athletes (2024). I plan to give this more attention and consideration at a later date.</li>

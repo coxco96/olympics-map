@@ -65,62 +65,6 @@
     </Container>
 </div>
 
-<!-- <Container>
-    <div class="legend-container">
-        <div class="first-row">
-            <Row class="mb-2">
-                <Col
-                    ><div class="info-text">
-                        <p style='text-transform: uppercase; font-weight: 500;'>Legend</p>
-                        <p>Medal count is weighted by medal type.</p>
-                    </div></Col
-                >
-            </Row>
-        </div>
-
-        <div class="second-row mb-2">
-            <Row>
-                <Col xs={{ size: 1 }}
-                    ><div class="games-marker-legend"></div></Col
-                >
-                <Col><span class='label-text'>Host city</span></Col>
-            </Row>
-        </div>
-
-        <div class="second-row">
-            <Row class="g-1 mb-1">
-                <Col xs={{ size: 1 }}>
-                    <div class="no-medals-color"></div>
-                </Col>
-                <Col>
-                    <div class="label-text no-medals-text">No medals</div>
-                </Col>
-            </Row>
-        </div>
-
-        <div>
-            <Row class='mt-3'>
-                <Col xs={{ size: 1 }}
-                    ><div
-                        class="vertical-gradient"
-                        style="background: {gradientStyle}"
-                    ></div></Col>
-                <!-- Top aligned content -->
-<!-- <Col class="d-flex flex-column">
-                    <div class="mb-2">
-                        <span class='label-text'>Most</span>
-                    </div>
-                    <div class="mt-auto">
-                        <!-- Bottom aligned content -->
-<!-- <span class='label-text'>Least</span>
-                    </div>
-                </Col>
-
-            </Row>
-        </div>
-    </div>
-</Container> -->
-
 <style>
     .legend-container {
         position: absolute;
@@ -140,9 +84,7 @@
         height: 15px;
         bottom: -4.5px;
         position: relative;
-        /* display: inline-block !important; */
         margin-right: 5px;
-        /* box-shadow: 0 0 4px 1.5px #ccc; */
     }
 
     .label-text {
