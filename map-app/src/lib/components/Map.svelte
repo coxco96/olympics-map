@@ -85,9 +85,11 @@
 
     $: pointsTotalStore.subscribe((value) => (pointsTotalArr = value));
 
-    // just k-means clustering to get breaks for colors using chroma
+
+    /* HANDLE COLORS USED FOR CURRENT FILTERED DATA */
 
     $: lengthOfData = Object.keys(filteredData).length;
+    // use k-means clustering to get breaks for colors using chroma
     // use 4 clusters if there are at least 4 countries being visualized. if less, use that many cluster groups
     $: breaks = lengthOfData >= 4 ? chroma.limits(pointsTotalArr, "k", 4) : chroma.limits(pointsTotalArr, "k", lengthOfData);
 
@@ -98,7 +100,6 @@
     $: filteredColors = darkenedColors.filter((color, index) => {
     return index !== 0;
 });
-
 
     $: colorize = chroma
         .scale(filteredColors.length >= lengthOfData ? filteredColors : chroma.scale("Purples").colors(lengthOfData).filter((color, index) => {return index !==0}))
