@@ -2,7 +2,7 @@
 An interactive map of Olympic medals, filterable by sport and country, since 1896
 
 ## URL
-- [https://olympics-map.vercel.app](View and interact with the map here!)
+- [https://olympics-map.vercel.app](View and interact with the map here)!
 
 ## Data Sources
 - Historic boundary maps are sourced from [@aourednik on Github](https://github.com/aourednik/historical-basemaps/tree/master).
