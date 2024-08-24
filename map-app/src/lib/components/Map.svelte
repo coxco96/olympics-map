@@ -78,10 +78,7 @@
 
     /* SUBSCRIBE TO STORES FOR DATA FILTERING */
 
-    // TODO / question: why did I not make these not reactive here?
-    selectedYear.subscribe(
-        (value) => (year = value || "All years (1896-2024)"),
-    );
+    selectedYear.subscribe((value) => (year = value || "All years (1896-2024)"));
     selectedSport.subscribe((value) => (sport = value || "All sports"));
     selectedEvent.subscribe((value) => (sportEvent = value || "All events"));
     filteredDataStore.subscribe((value) => (filteredData = value));
