@@ -146,8 +146,6 @@
             </Col>
         </Row>
         <Row class="mb-3 g-2">
-            <!-- TODO: check form accessibility here -->
-
             <Col xs={{ size: 6 }} lg={{ size: 3 }}>
                 <YearsFilter />
             </Col>
