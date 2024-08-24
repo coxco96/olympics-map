@@ -1,8 +1,10 @@
-# olympics-map
+# Olmypic Medals Map
 An interactive map of Olympic medals, filterable by sport and country, since 1896
 
-## Data Sources
-Historic boundaries are sourced from [@aourednik on Github](https://github.com/aourednik/historical-basemaps/tree/master).
+## URL
+- [https://olympics-map.vercel.app]
 
-## TODO:
-- Make dataset of Olympic participation so participating countries show as different color than non-participating countries
+## Data Sources
+- Historic boundary maps are sourced from [@aourednik on Github](https://github.com/aourednik/historical-basemaps/tree/master).
+- I created the dataset that powers this map by web scraping from Olympedia (1896-2022 games) and using data from the Olympic Games site (2024 games only).
+- The underlying dataset is in a private Google Sheet, which the app connects to on initial load.
