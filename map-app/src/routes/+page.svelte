@@ -1,5 +1,5 @@
 <script>
-    // initial data pulled in from google sheet
+    // initial data pulled in from google sheet (see +page.server.js)
     export let data;
 
     // components
@@ -10,7 +10,7 @@
     import EventsFilter from "$lib/components/EventsFilter.svelte";
     import { Container, Col, Row, Button } from "@sveltestrap/sveltestrap";
 
-    // function to convert data into object
+// functions and data structures to process data
     import {
         convertData,
         filterData,
@@ -31,7 +31,7 @@
     import { setContext } from "svelte";
 
     // predeclared vars
-    let initialData;
+    let initialData, sport, year, sportEvent, filteredData;
 
     /* SET CONTEXT WITH INITIAL DATA AND ALSO AS THE INITIAL STORE */
     $: {
@@ -42,7 +42,6 @@
         }
     }
 
-    let sport, year, sportEvent;
     $: selectedYear.subscribe((value) => (year = value));
     $: selectedSport.subscribe((value) => (sport = value));
     $: selectedEvent.subscribe((value) => (sportEvent = value));
@@ -53,7 +52,6 @@
     $: sportEvent = $selectedEvent;
 
     // filter the data and write it to the store
-    let filteredData;
     $: {
         filteredData = filterData(year, sport, sportEvent, initialData);
         filteredDataStore.set(filteredData);
@@ -211,7 +209,4 @@
         font-weight: 600;
     }
 
-    /* a {
-        color: rgb(138, 247, 255);
-    } */
 </style>
