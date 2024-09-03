@@ -1,4 +1,4 @@
-# Olmypic Medals Map
+# Olympic Medals Map
 An interactive map of Olympic medals, filterable by sport and country, since 1896
 
 ## URL
