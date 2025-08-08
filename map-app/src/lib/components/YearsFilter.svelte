@@ -27,7 +27,7 @@
     name="Year"
 >
     {#each yearsArray as year}
-        {#if year == "1916 (not held)" || year == "1940 (not held)" || year == "1944 (not held)"}
+        {#if year == "1916 (not held)" || year == "1934 (not held)" || year == "1940 (not held)" || year == "1944 (not held)"}
             <option value={year} disabled>{year}</option>
         {:else}
             <option value={year}>{year}</option>
