@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "fs": "^0.0.1-security"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-vercel": "^6.2.0"
   }
 }
