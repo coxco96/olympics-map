@@ -21,7 +21,6 @@
     import { world1960 } from "$lib/geojsons/world-1960.js";
     import { world1994 } from "$lib/geojsons/world-1994.js";
     import { world2000 } from "$lib/geojsons/world-2000.js";
-    // import { world2000 } from "$lib/geojsons/ee2000.js";
 
     // store in object for easy access to historic basemaps
     const geojsons = {
@@ -234,7 +233,7 @@
             dragRotate: false,
             renderWorldCopies: false,
             maplibreLogo: false,
-            // projection: "equalEarth"
+            projection: 'globe'
         });
 
         map.getCanvas().style.cursor = "auto";
