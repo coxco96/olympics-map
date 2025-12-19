@@ -11,6 +11,7 @@ I plan to improve it and build it out over time.
 - The underlying dataset is in a private Google Sheet, which the app connects to on initial load.
 
 ## To-Dos
+- Organize this to-do list in sections
 - Set up 2026 data slots
 - Figure out how to keep data updated during 2026 winter Olympics (API endpoints too expensive; see if possible to discern patterns to write a web scraper prior to start of events)
 - Add winter Olympics host location
@@ -55,6 +56,8 @@ I plan to improve it and build it out over time.
 - Look into keeping the data local to the repo rather than connecting to a Google Sheet (to save time on initial load)
 - Add medals (or at least colors) to GOLD/SILVER/BRONZE in Table View.
 - Possibly right-align numbers in Table View.
+- Do more mobile testing.
+- Style the dropdown menu itself.
 
 ## Eventual Goals
 - Migrate to Svelte 5
