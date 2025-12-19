@@ -47,6 +47,7 @@ I plan to improve it and build it out over time.
 - Adjust bounding box so not as much up/down drag is allowed
 - Redesign map tooltip so that when country name and team name differ, it is clearer what is meant (example: compare Russia's tooltip between 2006 > Alpine Skiing and 2006 > Bobsleigh
 - When a specific year, sport and event have all been selected, it should be easier to see the ranking among the max 3 countries
+- Look into keeping the data local to the repo rather than connecting to a Google Sheet (to save time on initial load)
 
 ## Eventual Goals
 - Migrate to Svelte 5
@@ -57,3 +58,5 @@ I plan to improve it and build it out over time.
 - A/B test Map View vs. Table View on initial load
 - Add URL params for filters (e.g. olympicsmap.com?/year=2004&sport=artisticgymnastics&event=mensvault)
 - Add icons for each sport in Sports filter
+
+
