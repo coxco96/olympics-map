@@ -1,8 +1,8 @@
 <script>
     // initial data pulled in from google sheet (see +page.server.js)
-    import { injectAnalytics } from '@vercel/analytics/sveltekit'
-    injectAnalytics()
-    
+    import { injectAnalytics } from "@vercel/analytics/sveltekit";
+    injectAnalytics();
+
     export let data;
 
     // components
@@ -13,12 +13,12 @@
     import EventsFilter from "$lib/components/EventsFilter.svelte";
     import { Container, Col, Row, Button } from "@sveltestrap/sveltestrap";
 
-// functions and data structures to process data
+    // functions and data structures to process data
     import {
         convertData,
         filterData,
         eventsByYear,
-        makeSportEventObj
+        makeSportEventObj,
     } from "../lib/utils/exports.js";
 
     // stores, context and lifecycle
@@ -69,7 +69,10 @@
                 filteredData[x].forEach((y) => {
                     if (eventsByYear[year][sport]) {
                         // if there are sportEvents in the data
-                        if (!eventsByYear[year][sport].includes(y.sportEvent) && !newSportEvents.includes(y.sportEvent)) {
+                        if (
+                            !eventsByYear[year][sport].includes(y.sportEvent) &&
+                            !newSportEvents.includes(y.sportEvent)
+                        ) {
                             newSportEvents.push(y.sportEvent);
                         }
                     }
@@ -137,14 +140,57 @@
                         target="_blank">mapcourt.com</a
                     >
                 </p> -->
-                <span class='visually-hidden'>Note for users of assistive technology: This page contains a world map, which visually shows medal counts with color. Darker colors mean more medals. When the map is hovered over, a popup displays with the data specific to that country. You can explore the data using the "view as table" button, which contains all of the same data as is displayed on the map. 
-                    When the year, sport or event filters are changed, the table is adjusted to reflect the filters.</span>
+                <span class="visually-hidden"
+                    >Note for users of assistive technology: This page contains
+                    a world map, which visually shows medal counts with color.
+                    Darker colors mean more medals. When the map is hovered
+                    over, a popup displays with the data specific to that
+                    country. You can explore the data using the "view as table"
+                    button, which contains all of the same data as is displayed
+                    on the map. When the year, sport or event filters are
+                    changed, the table is adjusted to reflect the filters.</span
+                >
                 <!-- <p class="lead">
                     Hover over the map for detailed information, and use filters
                     to customize your view.
                 </p> -->
             </Col>
         </Row>
+            <Col class='mb-3'>
+                <div
+                    class="toggle-container"
+                    role="tablist"
+                    aria-label="View selection"
+                >
+                    <button
+                        type="button"
+                        role="tab"
+                        aria-selected={!tableView}
+                        class="toggle-btn"
+                        on:click={!tableView ? null : toggleView}
+                    >
+                        Map
+                        {#if !tableView}
+                            <span class="underline" aria-hidden="true"></span>
+                        {/if}
+                    </button>
+
+                    <span class="separator" aria-hidden="true">|</span>
+
+                    <button
+                        type="button"
+                        role="tab"
+                        aria-selected={tableView}
+                        class="toggle-btn"
+                        on:click={tableView ? null : toggleView}
+                    >
+                        Table
+                        {#if tableView}
+                            <span class="underline" aria-hidden="true"></span>
+                        {/if}
+                    </button>
+                </div>
+            </Col>
         <Row class="mb-3 g-2">
             <Col xs={{ size: 6 }} lg={{ size: 3 }}>
                 <YearsFilter />
@@ -156,33 +202,26 @@
                 <EventsFilter />
             </Col>
 
-            <Col xs={{ size: 6 }} lg={{ size: 3 }}>
+
+
+            <!-- <Col xs={{ size: 6 }} lg={{ size: 3 }}>
                 <Button color="dark" on:click={toggleView}>
                     <div class="map-table-toggle">
                         {tableView ? "View as map" : "View as table"}
                     </div>
                 </Button>
-            </Col>
+            </Col> -->
         </Row>
 
         <Row>
             <Col>
                 {#if tableView}
-                    <Table/>
+                    <Table />
                 {:else}
                     <Map />
                 {/if}
             </Col>
         </Row>
-
-        <!-- <Row class="d-flex justify-content-end">
-            <div class="mt-3 right-align-container">
-                <p>
-                    <span style='font-weight:500'>Sources</span>: Olympedia (1896-2022 Games); Olympic Games (2024
-                    Games); @aourednik via Github (historic basemaps).<br><span style='font-weight:500'>Note</span>: This data has some caveats. Read them <a href='./notes'>here</a>.
-                </p>
-            </div>
-        </Row> -->
     </Container>
 </main>
 
@@ -211,4 +250,52 @@
         font-weight: 600;
     }
 
+    .toggle-container {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Helvetica, Arial, sans-serif;
+    }
+
+    .toggle-btn {
+        background: none;
+        border: none;
+        padding: 4px 0;
+        margin: 0;
+        font-size: 14px;
+        cursor: pointer;
+        position: relative;
+        color: #86868b; /* Lighter gray for inactive */
+        transition: color 0.2s ease;
+    }
+
+    .toggle-btn[aria-selected="true"] {
+        color: #000; /* Solid black for active */
+        font-weight: 500;
+    }
+
+    /* The custom underline indicator */
+    .underline {
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background-color: currentColor;
+        border-radius: 2px;
+    }
+
+    .separator {
+        color: #d2d2d7;
+        font-size: 12px;
+        user-select: none;
+    }
+
+    /* Focus states for keyboard navigation (Accessibility) */
+    .toggle-btn:focus-visible {
+        outline: 2px solid #0071e3;
+        outline-offset: 4px;
+        border-radius: 2px;
+    }
 </style>
