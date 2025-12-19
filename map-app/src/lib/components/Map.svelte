@@ -219,6 +219,7 @@
             container: container, // binded
             dragRotate: false,
             renderWorldCopies: false,
+            maplibreLogo: false
         });
 
         map.getCanvas().style.cursor = "auto";
@@ -479,7 +480,7 @@
 
     .map-container {
         position: relative;
-        height: 600px;
+        height: 800px;
         width: 100%;
     }
 

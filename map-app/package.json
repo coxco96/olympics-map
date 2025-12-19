@@ -20,6 +20,7 @@
 	"type": "module",
 	"dependencies": {
 		"@sveltestrap/sveltestrap": "^6.2.7",
+		"@vercel/analytics": "^1.6.1",
 		"dotenv": "^16.4.5",
 		"googleapis": "^140.0.1",
 		"install": "^0.13.0",

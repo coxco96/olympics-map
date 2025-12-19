@@ -1,5 +1,8 @@
 <script>
     // initial data pulled in from google sheet (see +page.server.js)
+    import { injectAnalytics } from '@vercel/analytics/sveltekit'
+    injectAnalytics()
+    
     export let data;
 
     // components
@@ -36,7 +39,6 @@
     /* SET CONTEXT WITH INITIAL DATA AND ALSO AS THE INITIAL STORE */
     $: {
         if (data) {
-            // console.log(makeSportEventObj(data));
             initialData = convertData(data); // convert to object by country
             setContext(initialDataContext, initialData);
         }
@@ -125,8 +127,8 @@
     <Container class="mt-2">
         <Row>
             <Col md="8">
-                <h1 class="display-4">Olympic Medal Counts</h1>
-                <p
+                <h1 class="display-4">The Olympics Atlas</h1>
+                <!-- <p
                     class="lead"
                     style="font-weight: 450; font-size:1rem; margin-bottom: .6rem;"
                 >
@@ -134,7 +136,7 @@
                         href="https://www.mapcourt.com"
                         target="_blank">mapcourt.com</a
                     >
-                </p>
+                </p> -->
                 <span class='visually-hidden'>Note for users of assistive technology: This page contains a world map, which visually shows medal counts with color. Darker colors mean more medals. When the map is hovered over, a popup displays with the data specific to that country. You can explore the data using the "view as table" button, which contains all of the same data as is displayed on the map. 
                     When the year, sport or event filters are changed, the table is adjusted to reflect the filters.</span>
                 <p class="lead">
