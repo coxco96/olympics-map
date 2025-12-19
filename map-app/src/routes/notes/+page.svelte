@@ -1,17 +1,25 @@
 <script>
-    import { Container, Row, Col, ListGroup, ListGroupItem } from "@sveltestrap/sveltestrap";
+    import { Container, Row, Col } from "@sveltestrap/sveltestrap";
 </script>
 
 <Container class="mt-2">
+
     <Row>
         <Col md="8">
-            <h1 class="display-4">Data Notes & Caveats</h1>
+            <h1 class="display-4">Data Sources & Caveats</h1>
             <p
                 class="lead"
                 style="font-weight: 450; font-size:1rem; margin-bottom: .6rem;"
             >
-                <a href="./..">Back to map</a>
             </p>
+            <Row class="d-flex justify-content-end">
+            <div class="mt-3 right-align-container">
+                <p>
+                    <span style='font-weight:600'>Sources</span>: Olympedia (1896-2022 Games); Olympic Games (2024
+                    Games); @aourednik via Github (historic basemaps).
+                </p>
+            </div>
+        </Row>
             <p class="lead">
                 Some of these caveats are here to stay; some will go away as I gradually work through further cleaning the data. I will update this page through the process.
             </p>
@@ -29,7 +37,7 @@
                 <li>From 1896-1912, Austria and Hungary appear as one feature on the map, but sources usually separate out these wins. For now, all wins are attributed to Austria (random choice for simplicity), including in the All years (1896-2024) counts. Eventually I will separate these for the total.</li>
                 <li>From 1900-1912, there is one Sweden Norway feature on the map. All medals from that time count for Norway in totals (random choice for simplicity). I will separate these out at a later date.</li>
                 <li>The first Olympic year Ireland appears on the map as its own feature is 1948, though Ireland competed earlier. Before 1948, Ireland is grouped with Great Britain, and all wins count toward Great Britain's total. I will separate these out at a later date.</li>
-                <li>From 1945-1956, Germany is spliton the map as Germany (USA) and Germany (Soviet). For now I have set both to count toward Germany's total, but I will check later if Germany (Soviet) should count toward Russia's totals in the All years view.</li>
+                <li>From 1945-1956, Germany is split on the map as Germany (USA) and Germany (Soviet). For now I have set both to count toward Germany's total, but I will check later if Germany (Soviet) should count toward Russia's totals in the All years view.</li>
                 <li>Liechtenstein does not show up on the map from 1960-1992. Medals are still counted toward its total counts.</li>
                 <li>Medals won by 'Serbia and Montenegro' do not appear on the map but do appear under this name on the table. The countries competed separately post-2000.</li>
                 <li>Medal counts for Bahrain, Bermuda, Kosovo, Mauritius, Netherlands Antilles, Singapore, West Indies Federation and United States Virgin Islands do not display on the map. They <em>can</em> be viewed via the table view.</li>              

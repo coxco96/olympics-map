@@ -127,7 +127,7 @@
     <Container class="mt-2">
         <Row>
             <Col md="8">
-                <h1 class="display-4">The Olympics Atlas</h1>
+                <!-- <h1 class="display-4">The Olympics Atlas</h1> -->
                 <!-- <p
                     class="lead"
                     style="font-weight: 450; font-size:1rem; margin-bottom: .6rem;"
@@ -139,10 +139,10 @@
                 </p> -->
                 <span class='visually-hidden'>Note for users of assistive technology: This page contains a world map, which visually shows medal counts with color. Darker colors mean more medals. When the map is hovered over, a popup displays with the data specific to that country. You can explore the data using the "view as table" button, which contains all of the same data as is displayed on the map. 
                     When the year, sport or event filters are changed, the table is adjusted to reflect the filters.</span>
-                <p class="lead">
+                <!-- <p class="lead">
                     Hover over the map for detailed information, and use filters
                     to customize your view.
-                </p>
+                </p> -->
             </Col>
         </Row>
         <Row class="mb-3 g-2">
@@ -175,14 +175,14 @@
             </Col>
         </Row>
 
-        <Row class="d-flex justify-content-end">
+        <!-- <Row class="d-flex justify-content-end">
             <div class="mt-3 right-align-container">
                 <p>
                     <span style='font-weight:500'>Sources</span>: Olympedia (1896-2022 Games); Olympic Games (2024
                     Games); @aourednik via Github (historic basemaps).<br><span style='font-weight:500'>Note</span>: This data has some caveats. Read them <a href='./notes'>here</a>.
                 </p>
             </div>
-        </Row>
+        </Row> -->
     </Container>
 </main>
 

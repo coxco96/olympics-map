@@ -21,6 +21,7 @@
     import { world1960 } from "$lib/geojsons/world-1960.js";
     import { world1994 } from "$lib/geojsons/world-1994.js";
     import { world2000 } from "$lib/geojsons/world-2000.js";
+    // import { world2000 } from "$lib/geojsons/ee2000.js";
 
     // store in object for easy access to historic basemaps
     const geojsons = {
@@ -78,31 +79,44 @@
 
     /* SUBSCRIBE TO STORES FOR DATA FILTERING */
 
-    selectedYear.subscribe((value) => (year = value || "All years (1896-2024)"));
+    selectedYear.subscribe(
+        (value) => (year = value || "All years (1896-2024)"),
+    );
     selectedSport.subscribe((value) => (sport = value || "All sports"));
     selectedEvent.subscribe((value) => (sportEvent = value || "All events"));
     filteredDataStore.subscribe((value) => (filteredData = value));
 
     $: pointsTotalStore.subscribe((value) => (pointsTotalArr = value));
 
-
     /* HANDLE COLORS USED FOR CURRENT FILTERED DATA */
 
     $: lengthOfData = Object.keys(filteredData).length;
     // use k-means clustering to get breaks for colors using chroma
     // use 4 clusters if there are at least 4 countries being visualized. if less, use that many cluster groups
-    $: breaks = lengthOfData >= 4 ? chroma.limits(pointsTotalArr, "k", 4) : chroma.limits(pointsTotalArr, "k", lengthOfData);
+    $: breaks =
+        lengthOfData >= 4
+            ? chroma.limits(pointsTotalArr, "k", 4)
+            : chroma.limits(pointsTotalArr, "k", lengthOfData);
 
     $: originalColors = chroma.scale("Purples").colors(breaks.length);
     $: darkenedColors = originalColors.map((color, index) =>
         index === 0 ? chroma(color).darken(1.6).hex() : color,
     );
     $: filteredColors = darkenedColors.filter((color, index) => {
-    return index !== 0;
-});
+        return index !== 0;
+    });
 
     $: colorize = chroma
-        .scale(filteredColors.length >= lengthOfData ? filteredColors : chroma.scale("Purples").colors(lengthOfData).filter((color, index) => {return index !==0}))
+        .scale(
+            filteredColors.length >= lengthOfData
+                ? filteredColors
+                : chroma
+                      .scale("Purples")
+                      .colors(lengthOfData)
+                      .filter((color, index) => {
+                          return index !== 0;
+                      }),
+        )
         .domain(breaks)
         .mode("lch")
         .correctLightness();
@@ -219,7 +233,8 @@
             container: container, // binded
             dragRotate: false,
             renderWorldCopies: false,
-            maplibreLogo: false
+            maplibreLogo: false,
+            // projection: "equalEarth"
         });
 
         map.getCanvas().style.cursor = "auto";
