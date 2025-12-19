@@ -150,10 +150,6 @@
                     on the map. When the year, sport or event filters are
                     changed, the table is adjusted to reflect the filters.</span
                 >
-                <!-- <p class="lead">
-                    Hover over the map for detailed information, and use filters
-                    to customize your view.
-                </p> -->
             </Col>
         </Row>
             <Col class='mb-3'>
