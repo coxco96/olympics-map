@@ -37,6 +37,7 @@ I plan to improve it and build it out over time.
 - Change info page routing from 'notes' to 'info'
 - Reset filters if navbar title is clicked from Map View
 - Darken Github & Info icons just a bit
+- Address package vulnerabilities
 - Improve tooltip design (especially G/S/B)
 - Shift center so Russia does not show on lefthand side of map
 - Adjust top/bottom margin/padding around "Medal type is weighted by type."
@@ -51,6 +52,7 @@ I plan to improve it and build it out over time.
 
 ## Eventual Goals
 - Migrate to Svelte 5
+- Set up dependabot 
 - Migrate from JavaScript to Typescript
 - Migrate from Maplibre to d3 (for a non-mercator projection)
 - Create dropdowns in Table View with athlete info, year, sport & event (for non-filtered metrics)
