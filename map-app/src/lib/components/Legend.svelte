@@ -1,22 +1,17 @@
 <script>
-    import { Container, Row, Col } from "@sveltestrap/sveltestrap";
-    import { makePaint } from "$lib/utils/exports.js";
     import { pointsTotalStore } from "$lib/utils/stores.js";
-    let pointsTotalArr;
-
-    $: pointsTotalStore.subscribe((value) => (pointsTotalArr = value));
-
-    // TODO: turn these into stores to avoid the repeated code from Map
     import chroma from "chroma-js";
+
+    let pointsTotalArr = [];
+    $: pointsTotalArr = $pointsTotalStore || [];
+
+    // Reactive color logic preserved from your original code
     $: breaks = chroma.limits(pointsTotalArr, "k", 4);
     $: originalColors = chroma.scale("Purples").colors(breaks.length);
     $: darkenedColors = originalColors.map((color, index) =>
-        index === 0 ? chroma(color).darken(1.6).hex() : color,
+        index === 0 ? chroma(color).darken(1.6).hex() : color
     );
-    $: filteredColors = darkenedColors.filter((color, index) => {
-    return index !== 0;
-    });
-
+    $: filteredColors = darkenedColors.filter((_, index) => index !== 0);
 
     $: colorize = chroma
         .scale(filteredColors)
@@ -26,108 +21,183 @@
 
     $: gradientColors = colorize.colors();
     $: gradientStyle = `linear-gradient(to right, ${gradientColors.join(", ")})`;
-
 </script>
 
-<div class="legend-container">
-    <Container>
-        <Row noGutters>
-            <Col xs="6">
-                <Row noGutters>
-                    <Col xs="auto">
-                        <div class="games-marker-legend"></div>
-                    </Col>
-                    <Col xs="auto">
-                        <span class="label-text">Host city</span>
-                    </Col>
-                </Row>
-            </Col>
-            <Col xs="6">
-                <Row noGutters>
-                    <Col xs="auto">
-                        <div class="no-medals-color"></div>
-                    </Col>
-                    <Col xs="auto">
-                        <span class="label-text">No medals</span>
-                    </Col>
-                </Row>
-            </Col>
-        </Row>
-    
+<div class="legend-card">
+    <div class="legend-row categories">
+        <div class="legend-item">
+            <span class="marker host"></span>
+            <span class="label-text">Host city</span>
+        </div>
+        <div class="legend-item">
+            <span class="marker no-medals"></span>
+            <span class="label-text">No medals</span>
+        </div>
+    </div>
 
-        <Row noGutters class='mt-3'>
-            <Col><span class='label-text'>Least</span></Col>
-            <Col xs={{size: 8}}><div class='gradient-box' style='background: {gradientStyle}'></div></Col>
-            <Col><span style='padding-left: 5px' class='label-text'>Most</span></Col>
+    <div class="gradient-section">
+        <div class="gradient-labels">
+            <span class="label-text">Least</span>
+            <span class="label-text">Most</span>
+        </div>
+        <div class="gradient-bar" style="background: {gradientStyle}"></div>
+        <p class="caption">Medal count is weighted by type.</p>
+    </div>
 
-        </Row>
-        <Row><p style='font-size: 13px;'>Medal count is weighted by type.</p></Row>
-    </Container>
+<div class="credit-section">
+        <div class="brand-line">
+            <span class="brand-name">mapcourt<span class="dot-com">.com</span></span>
+            <a href="mailto:your-email@example.com" class="contact-link" title="Contact Courtney">Contact</a>
+        </div>
+        <p class="author-tag">Built by Courtney Cox</p>
+    </div>
 </div>
 
 <style>
-    .legend-container {
+    .legend-card {
         position: absolute;
-        bottom: 10px;
-        left: 10px;
-        width: 300px;
-        background-color: white;
-        z-index: 100;
-        padding: 5px;
+        bottom: 20px;
+        left: 20px;
+        z-index: 1000;
+        
+        /* Glassmorphism */
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        border-radius: 12px;
+        
+        padding: 16px;
+        width: 260px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
     }
 
-    .games-marker-legend {
-        background-color: #fcba03;
-        border-radius: 50%;
-        border: 1px solid #dbd7d7;
-        width: 15px;
-        height: 15px;
-        bottom: -4.5px;
-        position: relative;
-        margin-right: 5px;
+    .legend-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+
+    .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
     }
 
     .label-text {
-        white-space: nowrap;
+        font-family: -apple-system, sans-serif;
+        font-size: 0.65rem;
+        font-weight: 600;
         text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: #86868b;
+    }
+
+    /* Markers */
+    .marker {
+        width: 10px;
+        height: 10px;
+        border: 1px solid rgba(0,0,0,0.1);
+    }
+
+    .marker.host {
+        background-color: #fcba03;
+        border-radius: 50%;
+    }
+
+    .marker.no-medals {
+        background-color: #e5e5e7;
+        border-radius: 2px;
+    }
+
+    /* Gradient */
+    .gradient-section {
+        margin-top: 12px;
+    }
+
+    .gradient-labels {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 4px;
+    }
+
+    .gradient-bar {
+        height: 8px;
+        width: 100%;
+        border-radius: 4px;
+        border: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .caption {
+        font-size: 0.6rem;
+        color: #86868b;
+        margin: 6px 0 0 0;
+        font-style: italic;
+    }
+
+    .credit-section {
+        margin-top: 14px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .brand-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4px;
+    }
+
+    .brand-name {
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: #1d1d1f;
+        letter-spacing: -0.01em;
+    }
+
+    .dot-com {
+        color: #86868b;
+        font-weight: 400;
+    }
+
+    .author-tag {
+        font-size: 0.6rem;
+        margin: 0;
+        color: #86868b;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+    }
+
+    .contact-link {
+        font-size: 0.65rem;
+        color: #0071e3;
+        text-decoration: none;
         font-weight: 500;
-        font-size: 12px;
+        transition: opacity 0.2s ease;
     }
 
-    .no-medals-color {
-        width: 16px;
-        height: 18px;
-        background-color: #ccc;
-        position: relative;
-        opacity: 0.5; /* TODO: update opacity here */
-        border: 1px solid #999;
-        margin-right: 5px;
-        bottom: -3.5px;
+    .contact-link:hover {
+        opacity: 0.7;
+        text-decoration: underline;
     }
 
-    .gradient-box {
-        height: 20px;
-        width: 100%;
-        border: 1px solid #ccc;
+   
+
+    /* MOBILE RESPONSIVE */
+    @media (max-width: 768px) {
+        .legend-card {
+            position: relative;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: none;
+            backdrop-filter: none;
+            border: none;
+            box-shadow: none;
+            padding: 20px 0;
+            border-top: 1px solid #f2f2f7;
+            margin-top: 10px;
+        }
     }
-
-
-    .vertical-gradient {
-        width: 15px;
-        height: 100px;
-        border: 1px solid #ccc;
-    }
-
-
-
-    /* .gradient-rectangle {
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            to right,
-            #92b3d1 0%,
-            #92b3d2 30%,
-            #010742 100%
-        );
-    } */
 </style>
