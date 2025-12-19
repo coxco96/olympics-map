@@ -587,7 +587,7 @@
 
     .map-container {
         position: relative;
-        height: calc(90vh - 100px); /* Adjust based on navbar + filter height */
+        height: calc(85vh - 100px); /* Adjust based on navbar + filter height */
         min-height: 500px;
         width: 100%;
         border-radius: 16px;

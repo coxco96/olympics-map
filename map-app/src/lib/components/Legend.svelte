@@ -106,11 +106,10 @@
     .legend-card {
         position: absolute;
         /* Nudge this up from the bottom edge */
-        bottom: 150px;
+        bottom: 40px;
         left: 20px;
         z-index: 1000;
 
-        /* Glassmorphism */
         background: rgba(255, 255, 255, 0.75);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
@@ -143,7 +142,6 @@
         color: #86868b;
     }
 
-    /* Markers */
     .marker {
         width: 10px;
         height: 10px;
@@ -161,7 +159,6 @@
         border-radius: 2px;
     }
 
-    /* Gradient */
     .gradient-section {
         margin-top: 12px;
     }
