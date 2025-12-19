@@ -577,7 +577,7 @@
     #map {
         height: 100%;
         width: 100%;
-        background-color: #f7f7f7; 
+        background-color: #f7f7f7;
     }
 
     :global(.map-wrapper) {
@@ -585,12 +585,9 @@
         border: 1px solid #d1d1d6;
     }
 
-
     .map-container {
         position: relative;
-        height: calc(
-            100vh - 200px
-        ); /* Adjust based on navbar + filter height */
+        height: calc(90vh - 100px); /* Adjust based on navbar + filter height */
         min-height: 500px;
         width: 100%;
         border-radius: 16px;
@@ -605,9 +602,9 @@
     }
 
     :global(.maplibregl-popup-content) {
-        background: rgba(255, 255, 255, 0.8) !important;
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.94) !important;
+        backdrop-filter: blur(12px) saturate(180%);
+        -webkit-backdrop-filter: blur(12px) saturate(180%);
         border: 1px solid rgba(0, 0, 0, 0.05);
         border-radius: 8px !important;
         padding: 12px !important;
@@ -619,8 +616,6 @@
     :global(.maplibregl-popup-tip) {
         border-top-color: rgba(255, 255, 255, 0.8) !important;
     }
-
-
 
     :global(.games-marker) {
         width: 16px;
@@ -658,5 +653,70 @@
             transform: scale(4);
             opacity: 0;
         }
+    }
+
+
+
+    /* 3. THE DOTS: Solid, small, and sharp */
+    :global(.medal-dot) {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        display: inline-block;
+        flex-shrink: 0;
+    }
+
+    :global(.gold) { background-color: #FFD700; }
+    :global(.silver) { background-color: #B8B8B8; }
+    :global(.bronze) { background-color: #CD7F32; }
+
+/* 1. THE CONTAINER: Dynamic and flexible */
+    :global(.maplibregl-popup-content) {
+        /* Remove fixed width, use fit-content */
+        width: fit-content !important; 
+        min-width: 200px;
+        max-width: 320px; /* Safety cap for very long country names */
+        background: rgba(255, 255, 255, 0.96) !important;
+        backdrop-filter: blur(12px) saturate(180%);
+        -webkit-backdrop-filter: blur(12px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 12px !important;
+        padding: 16px !important; 
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12) !important;
+    }
+
+    /* 2. THE STATS: Ensure items never wrap or overflow */
+    :global(.tooltip-stats) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 16px; /* Space between G, S, and B columns */
+        margin-top: 12px;
+        padding-top: 12px;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    :global(.medal-item) {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        /* This prevents the count from dropping below the label */
+        white-space: nowrap; 
+    }
+
+    /* 3. TYPOGRAPHY REFINEMENT */
+    :global(.medal-label) {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #86868b;
+        /* Slight opacity makes the 'G' feel more secondary */
+        opacity: 0.8; 
+    }
+
+    :global(.medal-count) {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #1d1d1f;
+        font-variant-numeric: tabular-nums;
     }
 </style>

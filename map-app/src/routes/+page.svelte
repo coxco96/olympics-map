@@ -11,15 +11,16 @@
     import YearsFilter from "$lib/components/YearsFilter.svelte";
     import SportsFilter from "$lib/components/SportsFilter.svelte";
     import EventsFilter from "$lib/components/EventsFilter.svelte";
-    import { Container, Col, Row } from "@sveltestrap/sveltestrap";
-    import { fade } from 'svelte/transition';
+    import { Container, Col, Row, Button } from "@sveltestrap/sveltestrap";
+    
 
     // functions and data structures to process data
     import {
         convertData,
         filterData,
         eventsByYear,
-    } from "$lib/utils/exports.js";
+        makeSportEventObj,
+    } from "../lib/utils/exports.js";
 
     // stores, context and lifecycle
     import {
@@ -33,62 +34,93 @@
     import { initialDataContext } from "$lib/utils/context.js";
     import { setContext } from "svelte";
 
-    // reactive declarations to update local variables from stores using $ syntax
-    $: year = $selectedYear;
-    $: sport = $selectedSport;
-    $: sportEvent = $selectedEvent;
+    // predeclared vars
+    let initialData, sport, year, sportEvent, filteredData;
 
-    let initialData;
-
-    /* SET CONTEXT WITH INITIAL DATA */
+    /* SET CONTEXT WITH INITIAL DATA AND ALSO AS THE INITIAL STORE */
     $: {
         if (data) {
-            initialData = convertData(data);
+            initialData = convertData(data); // convert to object by country
             setContext(initialDataContext, initialData);
         }
     }
 
-    // Filter the data and write it to the store
+    $: selectedYear.subscribe((value) => (year = value));
+    $: selectedSport.subscribe((value) => (sport = value));
+    $: selectedEvent.subscribe((value) => (sportEvent = value));
+
+    // reactive declarations to update local variables from stores
+    $: year = $selectedYear;
+    $: sport = $selectedSport;
+    $: sportEvent = $selectedEvent;
+
+    // filter the data and write it to the store
     $: {
-        if (initialData) {
-            const filteredData = filterData(year, sport, sportEvent, initialData);
-            filteredDataStore.set(filteredData);
-            processMedalStats(filteredData);
-        }
+        filteredData = filterData(year, sport, sportEvent, initialData);
+        filteredDataStore.set(filteredData);
     }
 
-    function processMedalStats(filteredData) {
+    let pointsTotalArr = [];
+    $: if (filteredData) {
+        // check if any sports or events are in the data but not in eventsByYear...
+        let newSports = [];
+        let newSportEvents = [];
+        if (year != "All years (1896-2024)" && sport != "All sports") {
+            for (let x in filteredData) {
+                filteredData[x].forEach((y) => {
+                    if (eventsByYear[year][sport]) {
+                        // if there are sportEvents in the data
+                        if (
+                            !eventsByYear[year][sport].includes(y.sportEvent) &&
+                            !newSportEvents.includes(y.sportEvent)
+                        ) {
+                            newSportEvents.push(y.sportEvent);
+                        }
+                    }
+                });
+            }
+        } // end debug
+
         let arr = [];
         let mostPoints = 1;
-
         for (let country in filteredData) {
-            let pointsTotal = 0;
+            let pointsTotal = 0; // initialize
             let countryData = filteredData[country];
-            
             countryData.forEach((row) => {
-                if (row.medal === "Gold") pointsTotal += 4;
-                else if (row.medal === "Silver") pointsTotal += 3;
-                else if (row.medal === "Bronze") pointsTotal += 2;
-            });
+                // destructure row object to access medal
+                const { medal } = row;
 
-            if (pointsTotal !== 0) {
+                // count medals
+                if (medal === "Gold") {
+                    pointsTotal += 3;
+                } else if (medal === "Silver") {
+                    pointsTotal += 2;
+                } else if (medal === "Bronze") {
+                    pointsTotal += 1;
+                }
+            });
+            // if pointsTotal is not 0, push it to pointsTotal
+            if (pointsTotal != 0) {
                 arr.push(pointsTotal);
             }
             if (pointsTotal > mostPoints) {
                 mostPoints = pointsTotal;
             }
         }
-
-        if (mostPoints < 2) mostPoints = 2;
-        
-        pointsTotalStore.set(arr.sort((a, b) => a - b));
-        
+        if (mostPoints < 2) {
+            mostPoints = 2;
+        }
+        pointsTotalArr = arr.sort((a, b) => a - b); // sort lowest to highest
+        pointsTotalStore.set(pointsTotalArr); // this is in case want to later use all  values to create statistical breaks in color gradient
         if (isFinite(mostPoints)) {
             maxPointsStore.set(mostPoints);
+        } else {
+            console.log("error: mostPoints was not finite...", mostPoints);
         }
     }
 
-    let tableView = false; 
+    // TODO: default to tableView for screen reader devices (and possibly mobile?)
+    let tableView = false; // default to map instead of table
 
     function toggleView() {
         tableView = !tableView;
@@ -96,26 +128,43 @@
 </script>
 
 <main>
-    <Container class="mt-2 pb-5">
+    <Container class="mt-2">
         <Row>
             <Col md="8">
-                <span class="visually-hidden">
-                    Note for users of assistive technology: This page contains a world map visually showing medal counts with color. 
-                    Darker colors mean more medals. A popup displays specific data on hover. 
-                    Use the "Table" tab to explore the same data in a screen-reader friendly format.
-                </span>
+                <!-- <h1 class="display-4">The Olympics Atlas</h1> -->
+                <!-- <p
+                    class="lead"
+                    style="font-weight: 450; font-size:1rem; margin-bottom: .6rem;"
+                >
+                    Designed and developed by Courtney Cox | <a
+                        href="https://www.mapcourt.com"
+                        target="_blank">mapcourt.com</a
+                    >
+                </p> -->
+                <span class="visually-hidden"
+                    >Note for users of assistive technology: This page contains
+                    a world map, which visually shows medal counts with color.
+                    Darker colors mean more medals. When the map is hovered
+                    over, a popup displays with the data specific to that
+                    country. You can explore the data using the "view as table"
+                    button, which contains all of the same data as is displayed
+                    on the map. When the year, sport or event filters are
+                    changed, the table is adjusted to reflect the filters.</span
+                >
             </Col>
         </Row>
-
         <Col class="mb-3">
-            <div class="toggle-container" role="tablist" aria-label="View selection">
+            <div
+                class="toggle-container"
+                role="tablist"
+                aria-label="View selection"
+            >
                 <button
                     type="button"
                     role="tab"
                     aria-selected={!tableView}
-                    aria-controls="view-content"
                     class="toggle-btn"
-                    on:click={() => tableView && toggleView()}
+                    on:click={!tableView ? null : toggleView}
                 >
                     Map
                     {#if !tableView}
@@ -129,9 +178,8 @@
                     type="button"
                     role="tab"
                     aria-selected={tableView}
-                    aria-controls="view-content"
                     class="toggle-btn"
-                    on:click={() => !tableView && toggleView()}
+                    on:click={tableView ? null : toggleView}
                 >
                     Table
                     {#if tableView}
@@ -148,15 +196,11 @@
         </Row>
 
         <Row>
-            <Col id="view-content">
+            <Col>
                 {#if tableView}
-                    <div transition:fade={{ duration: 200 }}>
-                        <Table />
-                    </div>
+                    <Table />
                 {:else}
-                    <div transition:fade={{ duration: 200 }}>
-                        <Map />
-                    </div>
+                    <Map />
                 {/if}
             </Col>
         </Row>
@@ -164,11 +208,30 @@
 </main>
 
 <style>
+
+
+
+    @media (prefers-contrast: more) {
+        h1,
+        p {
+            color: black;
+        }
+
+        a {
+            color: blue;
+        }
+    }
+
+    h1 {
+        font-weight: 600;
+    }
+
     .toggle-container {
         display: flex;
         align-items: center;
         gap: 12px;
-        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+            Helvetica, Arial, sans-serif;
     }
 
     .toggle-btn {
@@ -210,12 +273,13 @@
         border-radius: 2px;
     }
 
-    /* Mobile responsiveness for filters */
+    /* mobile-specific spacing for filters */
     @media (max-width: 768px) {
         :global(.col-12) {
-            margin-bottom: 1rem;
+            margin-bottom: 1rem; /* Prevents the dropdowns from touching each other */
         }
 
+        /* font slightly larger for easier tapping on mobile */
         :global(.minimal-select) {
             font-size: 16px !important;
         }

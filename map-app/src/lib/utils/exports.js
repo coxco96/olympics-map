@@ -76,44 +76,36 @@ export function convertData(data) {
 }
 
 export function makeTooltipString(country, data, olympicTeam) {
-  let goldMedalCount = 0;
-  let silverMedalCount = 0;
-  let bronzeMedalCount = 0;
+    let counts = { Gold: 0, Silver: 0, Bronze: 0 };
+    data.forEach(d => { if (counts[d.medal] !== undefined) counts[d.medal]++; });
 
-  data.forEach(d => {
-    let {
-      medal
-    } = d;
-    if (medal === 'Gold') {
-      goldMedalCount++;
-    }
-    if (medal === 'Silver') {
-      silverMedalCount++;
-    }
-    if (medal === 'Bronze') {
-      bronzeMedalCount++;
-    }
-  })
-  let string = (olympicTeam == '' || olympicTeam == undefined)
-    // second one if olympicTeam is specified,
-    // first one if not
-    ?
-    `
-  <strong>${country}</strong> <br>
-  Gold: ${goldMedalCount}<br>
-  Silver: ${silverMedalCount}<br>
-  Bronze: ${bronzeMedalCount}<br>
-  ` :
-    `
-  <strong>${country}</strong> <br>
-  <strong>(Team ${olympicTeam})</strong><br>
-  Gold: ${goldMedalCount}<br>
-  Silver: ${silverMedalCount}<br>
-  Bronze: ${bronzeMedalCount}<br>
-  `
+    const teamHtml = (olympicTeam && olympicTeam !== country && olympicTeam !== '') 
+        ? `<div style="font-size: 0.75rem; color: #86868b; font-weight: 400; margin-top: 2px;">${olympicTeam}</div>` 
+        : '';
 
-
-  return string;
+    return `
+        <div class="tooltip-container">
+            <div style="font-weight: 700; color: #1d1d1f; font-size: 1.1rem; letter-spacing: -0.01em;">${country}</div>
+            ${teamHtml}
+            <div class="tooltip-stats">
+                <div class="medal-item">
+                    <span class="medal-dot gold"></span>
+                    <span class="medal-label">G</span>
+                    <span class="medal-count">${counts.Gold}</span>
+                </div>
+                <div class="medal-item">
+                    <span class="medal-dot silver"></span>
+                    <span class="medal-label">S</span>
+                    <span class="medal-count">${counts.Silver}</span>
+                </div>
+                <div class="medal-item">
+                    <span class="medal-dot bronze"></span>
+                    <span class="medal-label">B</span>
+                    <span class="medal-count">${counts.Bronze}</span>
+                </div>
+            </div>
+        </div>
+    `;
 }
 
 

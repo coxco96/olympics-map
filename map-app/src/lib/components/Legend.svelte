@@ -105,7 +105,8 @@
 <style>
     .legend-card {
         position: absolute;
-        bottom: 20px;
+        /* Nudge this up from the bottom edge */
+        bottom: 150px;
         left: 20px;
         z-index: 1000;
 
@@ -265,28 +266,55 @@
         border: 1px solid transparent;
         /* Ensures the button sits tight to the bottom line */
         margin-bottom: 1px;
+        transition: all 0.2s ease;
     }
 
     .contact-button:hover {
-        background: #fff;
-        border-color: rgba(0, 0, 0, 0.1);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        background: rgba(255, 0, 85, 0.05); /* Very light pink tint */
+        color: #ff0055; /* Signature Pink */
+        border-color: rgba(255, 0, 85, 0.2);
+        box-shadow: 0 2px 8px rgba(255, 0, 85, 0.1);
         transform: translateY(-1px);
+    }
+
+    .contact-button:hover svg {
+        stroke: #ff0055;
     }
 
     @media (max-width: 768px) {
         .legend-card {
-            position: relative;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: none;
-            backdrop-filter: none;
-            border: none;
-            box-shadow: none;
-            padding: 20px 0;
-            border-top: 1px solid #f2f2f7;
-            margin-top: 10px;
+            /* Keep it floating instead of pushing it below the map */
+            position: absolute;
+            bottom: 30px; /* Pin it just above the MapLibre/i logo */
+            left: 10px;
+
+            /* Scale down the footprint */
+            width: calc(100% - 20px);
+            max-width: 240px;
+            padding: 12px;
+
+            /* Maintain the premium glass look */
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Shrink vertical spacing to keep it compact */
+        .legend-row {
+            margin-bottom: 8px;
+        }
+        .credit-section {
+            margin-top: 12px;
+            padding-top: 8px;
+        }
+
+        /* Make the brand name a bit smaller for mobile screens */
+        .brand-name {
+            font-size: 0.85rem;
+        }
+        .dot-link {
+            font-size: 0.75rem;
         }
     }
 </style>
