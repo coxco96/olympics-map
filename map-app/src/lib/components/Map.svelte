@@ -577,7 +577,7 @@
     #map {
         height: 100%;
         width: 100%;
-        background-color: #e8e8ef; 
+        background-color: #f7f7f7; 
     }
 
     :global(.map-wrapper) {
@@ -585,11 +585,6 @@
         border: 1px solid #d1d1d6;
     }
 
-    /* .map-container {
-        position: relative;
-        height: 800px;
-        width: 100%;
-    } */
 
     .map-container {
         position: relative;
@@ -625,22 +620,7 @@
         border-top-color: rgba(255, 255, 255, 0.8) !important;
     }
 
-    /* Style the marker internally within the component for better control */
-    /* :global(.games-marker) {
-        background-color: #fcba03;
-        border-radius: 50%; 
-        width: 14px;
-        height: 14px;
-        box-shadow:
-            0 0 0 1px rgba(0, 0, 0, 0.1),
-            0 2px 4px rgba(0, 0, 0, 0.2);
-        cursor: pointer;
-        transition: transform 0.2s ease;
-    } */
 
-    /* :global(.games-marker:hover) {
-        transform: scale(1.2);
-    } */
 
     :global(.games-marker) {
         width: 16px;

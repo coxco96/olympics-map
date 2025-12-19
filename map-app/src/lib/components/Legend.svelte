@@ -1,25 +1,49 @@
 <script>
-    import { pointsTotalStore } from "$lib/utils/stores.js";
+    import { pointsTotalStore, filteredDataStore } from "$lib/utils/stores.js";
     import chroma from "chroma-js";
 
     let pointsTotalArr = [];
-    $: pointsTotalArr = $pointsTotalStore || [];
+    let filteredData = {};
 
-    // Reactive color logic preserved from your original code
-    $: breaks = chroma.limits(pointsTotalArr, "k", 4);
-    $: originalColors = chroma.scale("Purples").colors(breaks.length);
+    // Subscribe to both stores to replicate Map.svelte logic
+    $: pointsTotalArr = $pointsTotalStore || [];
+    $: filteredData = $filteredDataStore || {};
+    $: lengthOfData = Object.keys(filteredData).length;
+
+    // NOIR LOGIC: Matches Map.svelte exactly
+    $: breaks =
+        lengthOfData >= 4
+            ? chroma.limits(pointsTotalArr, "k", 4)
+            : chroma.limits(pointsTotalArr, "k", Math.max(lengthOfData, 3));
+
+    // Sample the Noir palette
+    $: originalColors = chroma
+        .scale(["#f5f5f7", "#424245", "#1d1d1f"])
+        .colors(breaks.length);
+
+    // Apply the same "Darken First Bucket" logic
     $: darkenedColors = originalColors.map((color, index) =>
-        index === 0 ? chroma(color).darken(1.6).hex() : color
+        index === 0 ? chroma(color).darken(1.6).hex() : color,
     );
+
+    // Filter out the background/zero color
     $: filteredColors = darkenedColors.filter((_, index) => index !== 0);
 
+    // Final colorize function for the gradient bar
     $: colorize = chroma
-        .scale(filteredColors)
+        .scale(
+            filteredColors.length >= lengthOfData
+                ? filteredColors
+                : chroma
+                      .scale(["#f5f5f7", "#424245", "#1d1d1f"])
+                      .colors(lengthOfData)
+                      .filter((_, index) => index !== 0),
+        )
         .domain(breaks)
-        .mode("lch")
-        .correctLightness();
+        .mode("lch");
 
-    $: gradientColors = colorize.colors();
+    // Generate the CSS gradient string
+    $: gradientColors = colorize.colors(10); // Sample 10 points for a smooth bar
     $: gradientStyle = `linear-gradient(to right, ${gradientColors.join(", ")})`;
 </script>
 
@@ -44,10 +68,14 @@
         <p class="caption">Medal count is weighted by type.</p>
     </div>
 
-<div class="credit-section">
+    <div class="credit-section">
         <div class="brand-line">
-            <span class="brand-name">mapcourt<span class="dot-com">.com</span></span>
-            <a href="mailto:your-email@example.com" class="contact-link" title="Contact Courtney">Contact</a>
+            <span class="brand-name">mapcourt</span>
+            <a
+                href="mailto:contact@mapcourt.com"
+                class="contact-link"
+                title="Contact Courtney">Contact</a
+            >
         </div>
         <p class="author-tag">Built by Courtney Cox</p>
     </div>
@@ -59,14 +87,14 @@
         bottom: 20px;
         left: 20px;
         z-index: 1000;
-        
+
         /* Glassmorphism */
         background: rgba(255, 255, 255, 0.75);
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border: 1px solid rgba(0, 0, 0, 0.08);
         border-radius: 12px;
-        
+
         padding: 16px;
         width: 260px;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
@@ -97,7 +125,7 @@
     .marker {
         width: 10px;
         height: 10px;
-        border: 1px solid rgba(0,0,0,0.1);
+        border: 1px solid rgba(0, 0, 0, 0.1);
     }
 
     .marker.host {
@@ -106,7 +134,8 @@
     }
 
     .marker.no-medals {
-        background-color: #e5e5e7;
+        background-color: #f5f5f7;
+        border: 1px solid rgba(0, 0, 0, 0.05);
         border-radius: 2px;
     }
 
@@ -125,7 +154,8 @@
         height: 8px;
         width: 100%;
         border-radius: 4px;
-        border: 1px solid rgba(0,0,0,0.05);
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .caption {
@@ -149,7 +179,8 @@
     }
 
     .brand-name {
-        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
+            sans-serif;
         font-weight: 700;
         font-size: 0.85rem;
         color: #1d1d1f;
@@ -182,9 +213,6 @@
         text-decoration: underline;
     }
 
-   
-
-    /* MOBILE RESPONSIVE */
     @media (max-width: 768px) {
         .legend-card {
             position: relative;
