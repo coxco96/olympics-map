@@ -12,7 +12,10 @@ I plan to improve it and build it out over time.
 
 ## To-Dos
 - Set up 2026 data slots
+- Figure out how to keep data updated during 2026 winter Olympics (API endpoints too expensive; see if possible to discern patterns to write a web scraper prior to start of events)
+- Add winter Olympics host location
 - Fix legend gradient
+- Add country name to host city tooltip
 - Work through data caveats (listed on info page)
 - Debug the Switzerland issue
 - Add icons for winter vs. summer in the year filter dropdown
