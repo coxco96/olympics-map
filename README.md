@@ -20,6 +20,7 @@ I plan to improve it and build it out over time.
 - Debug the Switzerland issue
 - Add icons for winter vs. summer in the year filter dropdown
 - Add a loading bar
+- Add some sort of animation when you hover over Map/Table (whichever is not already selected)
 - Display table if JavaScript is disabled
 - Switch to Map View if navbar title is selected while in Table View
 - Declutter mobile interface (maybe move legend above or below map)
