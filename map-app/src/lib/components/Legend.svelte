@@ -70,14 +70,35 @@
 
     <div class="credit-section">
         <div class="brand-line">
-            <span class="brand-name">mapcourt</span>
-            <a
-                href="mailto:contact@mapcourt.com"
-                class="contact-link"
-                title="Contact Courtney">Contact</a
-            >
+            <div class="signature">
+                <span class="prefix">Built by</span>
+                <a
+                    href="https://www.mapcourt.com"
+                    target="_blank"
+                    class="brand-name"
+                >
+                    mapcourt<span class="dot-link">.com</span>
+                </a>
+            </div>
+            <a href="mailto:courtneygcox96@gmail.com" class="contact-button">
+                <span>Contact</span>
+                <svg
+                    width="10"
+                    height="10"
+                    viewBox="0 0 10 10"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path
+                        d="M1 9L9 1M9 1H3M9 1V7"
+                        stroke="currentColor"
+                        stroke-width="1.2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    />
+                </svg>
+            </a>
         </div>
-        <p class="author-tag">Built by Courtney Cox</p>
     </div>
 </div>
 
@@ -166,51 +187,91 @@
     }
 
     .credit-section {
-        margin-top: 14px;
+        margin-top: 20px;
         padding-top: 12px;
-        border-top: 1px solid rgba(0, 0, 0, 0.06);
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
     }
 
     .brand-line {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        margin-bottom: 4px;
+        /* Aligns the contact button to the baseline of "mapcourt" */
+        align-items: flex-end;
+    }
+
+    .signature {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .prefix {
+        font-size: 0.55rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #86868b;
+        font-weight: 600;
     }
 
     .brand-name {
         font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display",
             sans-serif;
         font-weight: 700;
-        font-size: 0.85rem;
+        font-size: 1rem; /* Slightly larger for presence */
         color: #1d1d1f;
-        letter-spacing: -0.01em;
+        letter-spacing: -0.02em;
+        text-decoration: none;
+        position: relative;
+        display: inline-block;
     }
 
-    .dot-com {
+    /* Custom underline to show it's a link */
+    .brand-name::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 100%;
+        height: 1.5px;
+        background-color: #ff0090; /* Using your Pink as the "interactive" signal */
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+    }
+
+    .brand-name:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    .dot-link {
         color: #86868b;
         font-weight: 400;
+        font-size: 0.9rem;
     }
 
-    .author-tag {
-        font-size: 0.6rem;
-        margin: 0;
-        color: #86868b;
-        text-transform: uppercase;
-        letter-spacing: 0.03em;
-    }
-
-    .contact-link {
+    .contact-button {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 5px 10px;
+        background: rgba(0, 0, 0, 0.04);
+        border-radius: 6px;
         font-size: 0.65rem;
-        color: #0071e3;
+        color: #1d1d1f;
         text-decoration: none;
-        font-weight: 500;
-        transition: opacity 0.2s ease;
+        font-weight: 600;
+        transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid transparent;
+        /* Ensures the button sits tight to the bottom line */
+        margin-bottom: 1px;
     }
 
-    .contact-link:hover {
-        opacity: 0.7;
-        text-decoration: underline;
+    .contact-button:hover {
+        background: #fff;
+        border-color: rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        transform: translateY(-1px);
     }
 
     @media (max-width: 768px) {
