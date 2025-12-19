@@ -10,21 +10,11 @@
     function makeTableData(data, sortType) {
         if (!data) return [];
         let tableArr = Object.entries(data).map(([country, rows]) => {
-            let gold = 0,
-                silver = 0,
-                bronze = 0,
-                total = 0;
+            let gold = 0, silver = 0, bronze = 0, total = 0;
             rows.forEach((row) => {
-                if (row.medal === "Gold") {
-                    gold++;
-                    total += 3;
-                } else if (row.medal === "Silver") {
-                    silver++;
-                    total += 2;
-                } else if (row.medal === "Bronze") {
-                    bronze++;
-                    total += 1;
-                }
+                if (row.medal === "Gold") { gold++; total += 3; } 
+                else if (row.medal === "Silver") { silver++; total += 2; } 
+                else if (row.medal === "Bronze") { bronze++; total += 1; }
             });
             return { country, gold, silver, bronze, total };
         });
@@ -39,41 +29,28 @@
     }
 
     $: tableData = makeTableData(filteredData, sortBy);
-    $: nextAction =
-        sortBy === "pointsTotal" ? "Sort alphabetically" : "Sort by rank";
+    $: nextAction = sortBy === "pointsTotal" ? "Sort alphabetically" : "Sort by rank";
 </script>
 
 <div class="olympic-table-root">
-    <header class="controls">
+    <div class="sort-action-row">
         <button
             type="button"
             class="sort-btn"
             on:click={toggleSort}
             aria-label={nextAction}
+            title={nextAction}
         >
-            <span class="icon" aria-hidden="true">
-                <svg
-                    width="12"
-                    height="12"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="3"
-                >
-                    <path
-                        d="m9 18 6-6-6-6"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                    />
+            <span class="sort-icon" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                    <path d="m9 18 6-6-6-6" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
             </span>
-            <span class="label"
-                >Sorted by <span class="current"
-                    >{sortBy === "pointsTotal" ? "rank" : "alphabet"}</span
-                ></span
-            >
+            <span class="sort-text">
+                Sorted by <span class="active-val">{sortBy === "pointsTotal" ? "rank" : "alphabet"}</span>
+            </span>
         </button>
-    </header>
+    </div>
 
     <div class="table-scroll-container">
         <Table borderless={true} responsive={true}>
@@ -101,39 +78,46 @@
 
 <style>
     .olympic-table-root {
-        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
-            sans-serif;
-        margin-top: 1.5rem;
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", sans-serif;
+        margin-top: 1rem;
     }
 
-    .controls {
-        margin-bottom: 1rem;
+    .sort-action-row {
+        margin-bottom: 1.25rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        z-index: 1001; /* Must be higher than the sticky TH */
     }
 
     .sort-btn {
         background: none;
         border: none;
+        padding: 0;
         display: inline-flex;
         align-items: center;
-        gap: 8px;
+        gap: 6px;
         cursor: pointer;
         color: #86868b;
         font-size: 0.875rem;
     }
 
-    .sort-btn .current {
+    .active-val {
         color: #1d1d1f;
         font-weight: 600;
         text-decoration: underline;
-        text-underline-offset: 4px;
+        text-underline-offset: 3px;
         text-decoration-color: rgba(0, 0, 0, 0.1);
     }
 
-
+    /* THE STICKY CORE */
     .table-scroll-container {
-        max-height: 600px; 
-        overflow-y: auto;
-        border-top: 1px solid #f2f2f7;
+        overflow: visible !important;
+    }
+
+    /* Sveltestrap responsive wrapper often has overflow-x: auto, which kills sticky */
+    .table-scroll-container :global(.table-responsive) {
+        overflow: visible !important;
     }
 
     .table-scroll-container :global(table) {
@@ -142,75 +126,11 @@
         border-spacing: 0;
     }
 
-    .table-scroll-container :global(thead) {
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        background: white; 
-    }
-
     .table-scroll-container :global(th) {
-        text-align: left;
-        text-transform: uppercase;
-        font-size: 0.7rem;
-        letter-spacing: 0.06em;
-        color: #86868b;
-        font-weight: 600;
-        padding: 12px 16px 12px 0;
-        border-bottom: 2px solid #1d1d1f !important; 
-    }
-
-    .table-scroll-container :global(td) {
-        padding: 16px 16px 16px 0;
-        font-size: 0.93rem;
-        color: #1d1d1f;
-        border-bottom: 1px solid #f2f2f7 !important;
-    }
-
-
-    .modern-row:nth-child(even) td {
-        background-color: #fbfbfc; 
-    }
-
-    .modern-row:hover td {
-        background-color: #f2f2f7 !important; 
-        cursor: default;
-    }
-
-    .country-name {
-        font-weight: 500;
-    }
-    .num-cell {
-        color: #424245;
-    } 
-
-    .w-country {
-        width: 45%;
-    }
-    .w-medal {
-        width: 18%;
-    }
-
-    /* hide scrollbar for Chrome/Safari but keep functionality */
-    .table-scroll-container::-webkit-scrollbar {
-        width: 4px;
-    }
-    .table-scroll-container::-webkit-scrollbar-thumb {
-        background: #d2d2d7;
-        border-radius: 10px;
-    }
-
-    .table-scroll-container {
-        overflow: visible; 
-        position: relative;
-        border-top: 1px solid #f2f2f7;
-    }
-
-    .table-scroll-container :global(th) {
-        position: sticky;
-        top: 0px; /* if I end up making the nav bar sticky, change this to its height */
-        z-index: 100;
-        background-color: rgba(255, 255, 255, 0.8);
+        position: sticky !important;
+        top: 56px; /* Match Navbar Height */
+        z-index: 1000;
+        background-color: rgba(255, 255, 255, 0.9);
         backdrop-filter: blur(12px);
         -webkit-backdrop-filter: blur(12px);
         text-align: left;
@@ -223,8 +143,29 @@
         border-bottom: 1px solid #d2d2d7 !important;
     }
 
-    /* ensure the table doesn't have an overflow wrapper from Sveltestrap */
-    .table-scroll-container :global(.table-responsive) {
-        overflow: visible !important;
+    /* The "Glass Bridge" - fills the gap between Navbar and Table Header */
+    .table-scroll-container :global(th::before) {
+        content: "";
+        position: absolute;
+        top: -56px;
+        left: 0;
+        right: 0;
+        height: 56px;
+        background: inherit;
+        backdrop-filter: inherit;
+        pointer-events: none;
     }
+
+    .table-scroll-container :global(td) {
+        padding: 16px 16px 16px 0;
+        font-size: 0.93rem;
+        color: #1d1d1f;
+        border-bottom: 1px solid #f2f2f7 !important;
+    }
+
+    .modern-row:nth-child(even) td { background-color: #fbfbfc; }
+    .modern-row:hover td { background-color: #f2f2f7 !important; }
+    .country-name { font-weight: 500; }
+    .w-country { width: 45%; }
+    .w-medal { width: 18%; }
 </style>
