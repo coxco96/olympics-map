@@ -28,7 +28,7 @@
 		"googleapis": "^140.0.1",
 		"install": "^0.13.0",
 		"maplibre-gl": "^4.5.0",
-		"npm": "^10.8.2",
+		"npm": "^11.7.0",
 		"vite-plugin-env-compatible": "^2.0.1"
 	}
 }
